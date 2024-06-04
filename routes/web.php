@@ -98,7 +98,10 @@ Route::controller(GeneralPage::class) -> group(function () {
     Route::get('/dashboard/riwayat-cuti', 'riwayatcuti');
     // CUTI
     // ABSENSI
-    Route::get('/dashboard/riwayat-absensi', 'riwayatabsensi');
+    Route::get('/dashboard/riwayat-diri', 'riwayatdiri');
+    Route::get('/dashboard/riwayat-diri/tambah-diri', 'tambahdiri');
+    Route::get('/dashboard/riwayat-diri/lihat-diri', 'lihatdiri');
+    Route::get('/dashboard/riwayat-diri/pengajuan-diri', 'pengajuandiri');
     // ABSENSI
     // DASHBOARD
     // -
@@ -143,6 +146,26 @@ Route::controller(GeneralPage::class) -> group(function () {
     Route::get('/admin/edit-pegawai/pmk', 'pegawaipmk');
     Route::get('/admin/edit-pegawai/golongan', 'pegawaigolongan');
     Route::get('/admin/edit-pegawai/jabatan', 'pegawaijabatan');
+    //PENDIDIKAN
+    Route::get('/admin/edit-pegawai/data-pendidikan', 'dataPendidikan');
+    Route::get('/admin/edit-pegawai/detail-pendidikan', 'detailPendidikan');
+    //PENDIDIKAN
+    //JABATAN
+    Route::get('/admin/edit-pegawai/data-jabatan', 'dataJabatan');
+    Route::get('/admin/edit-pegawai/detail-jabatan', 'detailJabatan');
+    //JABATAN
+    //GOLONGAN
+    Route::get('/admin/edit-pegawai/data-golongan', 'dataGolongan');
+    Route::get('/admin/edit-pegawai/detail-golongan', 'detailGolongan');
+    //GOLONGAN
+    //CPNS
+    Route::get('/admin/edit-pegawai/data-cpns', 'datacpns');
+    Route::get('/admin/edit-pegawai/detail-cpns', 'detailcpns');
+    //CPNS
+    //DIKLAT
+    Route::get('/admin/edit-pegawai/data-diklat', 'dataDiklat');
+    Route::get('/admin/edit-pegawai/detail-diklat', 'detailDiklat');
+    //DIKLAT
     // Lihat
     Route::get('/admin/lihat-pegawai', 'pegawaiLihat');
     // PEGAWAI

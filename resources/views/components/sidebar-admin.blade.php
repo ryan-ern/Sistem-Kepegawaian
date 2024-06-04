@@ -176,7 +176,7 @@
         <div
             class="side md:pt-[120px] bg-white shadow-md w-[70%] md:w-[175px] h-screen fixed  p-3 md:px-[10px] text-white">
             {{-- MENU --}}
-            <div class="menu  flex flex-col h-[80%] md:h-[90%] justify-between">
+            <div class="menu  flex flex-col h-[80%] md:h-[100%] justify-between">
                 <div class="menu flex flex-col gap-3 ">
                     {{-- dashboard --}}
                     <a href="/admin/dashboard"

@@ -187,8 +187,17 @@ class GeneralPage extends Controller
     }
     // CUTI
     // ABSENSI
-    function riwayatabsensi () {
-        return view('pages/user/dashboard/riwayat-absensi/riwayat-absensi');
+    function riwayatdiri () {
+        return view('pages/user/dashboard/riwayat-diri/riwayat-diri');
+    }
+    function tambahdiri () {
+        return view('pages/user/dashboard/riwayat-diri/tambah-diri');
+    }
+    function pengajuandiri () {
+        return view('pages/user/dashboard/riwayat-diri/pengajuan-diri');
+    }
+    function lihatdiri () {
+        return view('pages/user/dashboard/riwayat-diri/lihat-diri');
     }
     // ABSENSI
     // DASHBOARD
@@ -276,6 +285,31 @@ class GeneralPage extends Controller
     function pegawaijabatan () {
         return view('pages/admin/pegawai/edit/jabatan-pegawai');
     }
+
+    // PENDIDIKAN
+    function dataPendidikan () {
+        return view('pages/admin/pegawai/edit/pendidikan/data-pendidikan-pegawai');
+    }
+    function detailPendidikan () {
+        return view('pages/admin/pegawai/edit/pendidikan/detail-pendidikan-pegawai');
+    }
+    // PENDIDIKAN
+    // JABATAN
+    function dataJabatan () {
+        return view('pages/admin/pegawai/edit/jabatan/data-jabatan-pegawai');
+    }
+    function detailJabatan () {
+        return view('pages/admin/pegawai/edit/jabatan/detail-jabatan-pegawai');
+    }
+    // JABATAN
+    // GOLONGAN
+    function dataGolongan () {
+        return view('pages/admin/pegawai/edit/golongan/data-golongan-pegawai');
+    }
+    function detailGolongan () {
+        return view('pages/admin/pegawai/edit/golongan/detail-golongan-pegawai');
+    }
+    // GOLONGAN
     // LIHAT
     function pegawaiLihat () {
         return view('pages/admin/pegawai/lihat/lihat-pegawai');

@@ -86,13 +86,15 @@
                                 <div class="nama">:</div>
                             </div>
                             <select
-                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
-                                id="cars">
-                                <option value="Cuti Hamil">Cuti Hamil</option>
-                                <option value="Izin">Izin</option>
-                                <option value="Cuti Besar">Cuti Besar</option>
-                                <option value="Cuti Tahunan">Cuti Tahunan</option>
-                            </select>
+                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
+                            id="cars">
+                            <option value="Sakit">Sakit</option>
+                            <option value="Tahunan">Tahunan</option>
+                            <option value="Melahirkan">Melahirkan</option>
+                            <option value="Alasan Penting">Alasan Penting</option>
+                            <option value="Diluar Tanggung Negara">Diluar Tanggung Negara</option>
+                            <option value="Cuti Besar">Cuti Besar</option>
+                        </select>
                         </div>
                     </div>
                 </div>

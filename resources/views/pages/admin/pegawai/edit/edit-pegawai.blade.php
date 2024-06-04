@@ -57,28 +57,22 @@
                             placeholder="Masukkan No Kartu Keluarga" />
                     </div>
                     <div class="wrap">
-                        <label For="" class="text-black ">Jabatan </label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Jabatan " />
-                    </div>
-                    <div class="wrap">
                         <label For="" class="text-black ">Nomor Telepon</label>
                         <input type="text"
                             class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                             placeholder="Masukkan Nomor Telepon" />
                     </div>
                     <div class="wrap">
-                        <label For="" class="text-black ">Golongan</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Golongan" />
-                    </div>
-                    <div class="wrap">
                         <label For="" class="text-black ">Alamat</label>
                         <input type="text"
                             class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                             placeholder="Masukkan Alamat" />
+                    </div>
+                    <div class="wrap">
+                        <label For="" class="text-black ">Tanggal NPWP</label>
+                        <input type="date"
+                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                            placeholder="Masukkan Tanggal NPWP" />
                     </div>
                 </div>
                 {{-- TENGAH --}}
@@ -130,12 +124,6 @@
                         <input type="text"
                             class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                             placeholder="Masukkan No NPWP" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Tanggal NPWP</label>
-                        <input type="date"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Tanggal NPWP" />
                     </div>
                 </div>
                 {{-- KANAN --}}

@@ -125,7 +125,7 @@
             // 
             // 
             'dashboard/riwayat-cuti',
-            'dashboard/riwayat-absensi',
+            'dashboard/riwayat-diri', 'dashboard/riwayat-diri/tambah-diri', 'dashboard/riwayat-diri/lihat-diri', 'dashboard/riwayat-diri/pengajuan-diri',
             // 
         ];
         @endphp

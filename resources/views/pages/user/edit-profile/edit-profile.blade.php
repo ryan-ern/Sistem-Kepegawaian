@@ -102,7 +102,6 @@
                             <div class="foto h-[180px] aspect-square bg-[#C3C3C3] rounded-lg"></div>
                             <div class="flex flex-col gap-1 items-center">
                                 <div class="User text-[30px] font-semibold">User </div>
-                                <div class="User text-[18px]">Jobdesk </div>
                             </div>
                         </div>
                     </div>
