@@ -22,38 +22,38 @@
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
-                <a href="/admin/edit-pegawai/keluarga-orangtua" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                <a href="/admin/edit-pegawai/data-diri" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Data Diri
                     </a>
-                    <a href="/admin/edit-pegawai/pendidikan" class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-pendidikan" class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Pendidikan
                     </a>
-                    <a href="/admin/edit-pegawai/keluarga-orangtua" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-orangtua" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Keluarga
                     </a>
-                    <a href="/admin/edit-pegawai/skp" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-skp" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         SKP
                     </a>
-                    <a href="/admin/edit-pegawai/penghargaan" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-penghargaan" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Penghargaan
                     </a>
-                    <a href="/admin/edit-pegawai/kinerja" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-kinerja" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Laporan Kinerja
                     </a>
-                    <a href="/admin/edit-pegawai/cpns" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-cpns" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         CPNS/PNS
                     </a>
-                    <a href="/admin/edit-pegawai/diklat" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-diklat" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Diklat/Kursus
                     </a>
-                    <a href="/admin/edit-pegawai/pmk" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
+                    <a href="/admin/edit-pegawai/data-pmk" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
                         Peninjauan Masa Kerja
                     </a>
-                    <a href="/admin/edit-pegawai/golongan"
+                    <a href="/admin/edit-pegawai/data-golongan"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Golongan
                     </a>
-                    <a href="/admin/edit-pegawai/jabatan"
+                    <a href="/admin/edit-pegawai/data-jabatan"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Jabatan
                     </a>

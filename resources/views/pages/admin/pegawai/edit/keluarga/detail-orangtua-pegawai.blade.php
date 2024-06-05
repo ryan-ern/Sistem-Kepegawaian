@@ -17,59 +17,56 @@
         <div class="text-[32px] font-semibold text-[#2F5B6B] mb-3">Edit Data Pegawai</div>
         {{-- as --}}
         <div class="wrap flex flex-col md:flex-row gap-3 md:gap-8">
-        <div class="left w-full md:w-[12%] ">
+            <div class="left w-full md:w-[12%] ">
                 <div class="avatar">
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
-                <a href="/admin/edit-pegawai/data-diri" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-diri" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Data Diri
-                    </a>
-                    <a href="/admin/edit-pegawai/data-pendidikan"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-pendidikan" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Pendidikan
                     </a>
-                    <a href="/admin/edit-pegawai/data-orangtua"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-orangtua" class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Keluarga
                     </a>
                     <a href="/admin/edit-pegawai/data-skp" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         SKP
                     </a>
-                    <a href="/admin/edit-pegawai/data-penghargaan"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-penghargaan" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Penghargaan
                     </a>
-                    <a href="/admin/edit-pegawai/data-kinerja"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-kinerja" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Laporan Kinerja
                     </a>
-                    <a href="/admin/edit-pegawai/data-cpns"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-cpns" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         CPNS/PNS
                     </a>
-                    <a href="/admin/edit-pegawai/data-diklat"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-diklat" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Diklat/Kursus
                     </a>
-                    <a href="/admin/edit-pegawai/data-pmk"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
+                    <a href="/admin/edit-pegawai/data-pmk" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
                         Peninjauan Masa Kerja
                     </a>
                     <a href="/admin/edit-pegawai/data-golongan"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md ">
                         Golongan
                     </a>
                     <a href="/admin/edit-pegawai/data-jabatan"
-                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md ">
                         Jabatan
                     </a>
                 </div>
             </div>
             <div class="right w-full md:w-[88%]">
                 <div class="hea flex justify-between">
-                    <div class="text-[#2F5B6B] font-semibold text-[22px]">Data Jabatan</div>
+                    <div class="text-[#2F5B6B] font-semibold text-[22px]">Data Orang Tua</div>
                     <button class="p-1 text-white px-5 rounded bg-[#2F5B6B]">Simpan</button>
+                </div>
+                <div class="tab flex gap-2">
+                    <a href="/admin/edit-pegawai/data-orangtua" class="font-medium text-[#4F8EA5] underline">Orang Tua</a>
+                    <a href="/admin/edit-pegawai/data-pasangan" class="font-medium text-[#B3B3B3] ">Pasangan</a>
+                    <a href="/admin/edit-pegawai/data-anak" class="font-medium text-[#B3B3B3] ">Anak</a>
                 </div>
                 <div class="wrap mt-3">
                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
@@ -78,49 +75,42 @@
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Jenis Jabatan</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Status Hidup</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Jenis Mutasi</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Status Pekerjaan Orang Tua</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Jenis Penugasan</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Nama</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Tanggal SK</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Status Pernikahan</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Tanggal TMT Jabatan</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Jenis Kelamin</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Tanggal TMT Pelantikan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
-                                </div>
-                            </div>
-                            <div class="wrap">
-                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Nomor SK</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Email</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
@@ -130,49 +120,49 @@
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Status Riwayat</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Tanggal Lahir</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Instansi</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Tanggal  Meninggal</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Satuan Kerja</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Nomor Identitas</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Satuan Kerja Induk</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Agama</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Nama Organisasi</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Nomor Telepon</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Nama Jabatan</label>
+                                    <label For="" class="text-black font-medium text-[14px]">Nomor Handphone</label>
                                     <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                         </div>
                     </div>
                     {{-- table --}}
-                <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                    <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
                     <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
                         <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
                             <tr>
@@ -230,9 +220,6 @@
                         </tbody>
                     </table>
                 </div>
-                </div>
-            </div>
-        </div>
     </x-sidebar-admin>
 </body>
 

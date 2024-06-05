@@ -33,7 +33,7 @@
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Keluarga
                     </a>
-                    <a href="/admin/edit-pegawai/skp" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-skp" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         SKP
                     </a>
                     <a href="/admin/edit-pegawai/data-penghargaan"
@@ -45,7 +45,7 @@
                         Laporan Kinerja
                     </a>
                     <a href="/admin/edit-pegawai/data-cpns"
-                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         CPNS/PNS
                     </a>
                     <a href="/admin/edit-pegawai/data-diklat"
@@ -53,7 +53,7 @@
                         Diklat/Kursus
                     </a>
                     <a href="/admin/edit-pegawai/data-pmk"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
+                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md text-[14px]">
                         Peninjauan Masa Kerja
                     </a>
                     <a href="/admin/edit-pegawai/data-golongan"
@@ -68,17 +68,24 @@
             </div>
             <div class="right w-full md:w-[88%]">
                 <div class="hea flex justify-between">
-                    <div class="text-[#2F5B6B] font-semibold text-[22px]">Data CPNS/PNS</div>
+                    <div class="text-[#2F5B6B] font-semibold text-[22px]">Data Peninjauan Masa Kerja</div>
                 </div>
-                <div class="wrap-content">
                 <div class="wrap-content">
             <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                 <div class="wrap">
-                    <div class="text-[18px] font-medium">Monica Adella Aisyah Renaldi</div>
-                    <div class="text-[16px]">Pemerintahan Provinsi Lampung</div>
-                    <div class="text-[16px]">1234567899654</div>
+                    <div class="text-[18px] font-medium">Negeri</div>
+                    <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
                 </div>
-                <a href="/admin/edit-pegawai/detail-cpns" class="link">
+                <a href="/admin/edit-pegawai/detail-pmk" class="link">
+                    <img src="../../Assets/book.svg" alt="">
+                </a>
+            </div>
+            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                <div class="wrap">
+                    <div class="text-[18px] font-medium">Negeri</div>
+                    <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
+                </div>
+                <a href="/admin/edit-pegawai/detail-pmk" class="link">
                     <img src="../../Assets/book.svg" alt="">
                 </a>
             </div>

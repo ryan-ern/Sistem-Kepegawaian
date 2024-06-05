@@ -310,6 +310,86 @@ class GeneralPage extends Controller
         return view('pages/admin/pegawai/edit/golongan/detail-golongan-pegawai');
     }
     // GOLONGAN
+    // CPNS
+    function datacpns () {
+        return view('pages/admin/pegawai/edit/cpns/data-cpns-pegawai');
+    }
+    function detailcpns () {
+        return view('pages/admin/pegawai/edit/cpns/detail-cpns-pegawai');
+    }
+    // CPNS
+    // DIKLAT
+    function dataDiklat () {
+        return view('pages/admin/pegawai/edit/diklat/data-diklat-pegawai');
+    }
+    function detailDiklat () {
+        return view('pages/admin/pegawai/edit/diklat/detail-diklat-pegawai');
+    }
+    // DIKLAT
+    // PENGHARGAAN
+    function dataPenghargaan () {
+        return view('pages/admin/pegawai/edit/penghargaan/data-penghargaan-pegawai');
+    }
+    function detailPenghargaan () {
+        return view('pages/admin/pegawai/edit/penghargaan/detail-penghargaan-pegawai');
+    }
+    // PENGHARGAAN
+    // KINERJA
+    function dataKinerja () {
+        return view('pages/admin/pegawai/edit/kinerja/data-kinerja-pegawai');
+    }
+    function detailKinerja () {
+        return view('pages/admin/pegawai/edit/kinerja/detail-kinerja-pegawai');
+    }
+    // KINERJA
+    // PMK
+    function dataPmk () {
+        return view('pages/admin/pegawai/edit/pmk/data-pmk-pegawai');
+    }
+    function detailPmk () {
+        return view('pages/admin/pegawai/edit/pmk/detail-pmk-pegawai');
+    }
+    // PMK
+    // SKP
+    function dataSkp () {
+        return view('pages/admin/pegawai/edit/skp/data-skp-pegawai');
+    }
+    function detailSkp () {
+        return view('pages/admin/pegawai/edit/skp/detail-skp-pegawai');
+    }
+    // SKP
+    // KELUARGA-ORANGTUA
+    function dataOrangtua () {
+        return view('pages/admin/pegawai/edit/keluarga/data-orangtua-pegawai');
+    }
+    function detailOrangtua () {
+        return view('pages/admin/pegawai/edit/keluarga/detail-orangtua-pegawai');
+    }
+    // KELUARGA-ORANGTUA
+    // KELUARGA-PASANGAN
+    function dataPasangan () {
+        return view('pages/admin/pegawai/edit/keluarga/data-pasangan-pegawai');
+    }
+    function detailPasangan () {
+        return view('pages/admin/pegawai/edit/keluarga/detail-pasangan-pegawai');
+    }
+    // KELUARGA-PASANGAN
+    // KELUARGA-ANAK
+    function dataAnak () {
+        return view('pages/admin/pegawai/edit/keluarga/data-anak-pegawai');
+    }
+    function detailAnak () {
+        return view('pages/admin/pegawai/edit/keluarga/detail-anak-pegawai');
+    }
+    // KELUARGA-ANAK
+    // DATA DIRI
+    function dataDiri () {
+        return view('pages/admin/pegawai/edit/diri/data-diri-pegawai');
+    }
+    function detailDiri () {
+        return view('pages/admin/pegawai/edit/diri/detail-diri-pegawai');
+    }
+    // DATA DIRI
     // LIHAT
     function pegawaiLihat () {
         return view('pages/admin/pegawai/lihat/lihat-pegawai');

@@ -14,7 +14,7 @@
 
 <body>
     <x-sidebar-admin>
-        <div class="text-[32px] font-semibold text-[#2F5B6B] mb-3">Edit Data Pegawai</div>
+        <div class="text-[32px] font-semibold text-[#2F5B6B] mb-3">Edit Data Keluarga</div>
         {{-- as --}}
         <div class="wrap flex flex-col md:flex-row gap-3 md:gap-8">
             <div class="left w-full md:w-[12%] ">
@@ -30,10 +30,10 @@
                         Pendidikan
                     </a>
                     <a href="/admin/edit-pegawai/data-orangtua"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Keluarga
                     </a>
-                    <a href="/admin/edit-pegawai/skp" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-skp" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         SKP
                     </a>
                     <a href="/admin/edit-pegawai/data-penghargaan"
@@ -45,7 +45,7 @@
                         Laporan Kinerja
                     </a>
                     <a href="/admin/edit-pegawai/data-cpns"
-                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         CPNS/PNS
                     </a>
                     <a href="/admin/edit-pegawai/data-diklat"
@@ -68,17 +68,20 @@
             </div>
             <div class="right w-full md:w-[88%]">
                 <div class="hea flex justify-between">
-                    <div class="text-[#2F5B6B] font-semibold text-[22px]">Data CPNS/PNS</div>
+                    <div class="text-[#2F5B6B] font-semibold text-[22px]">Data Anak</div>
                 </div>
-                <div class="wrap-content">
+                <div class="tab flex gap-2 mb-3">
+                    <a href="/admin/edit-pegawai/data-orangtua" class="font-medium text-[#B3B3B3] underline">Orang Tua</a>
+                    <a href="/admin/edit-pegawai/data-pasangan" class="font-medium text-[#B3B3B3] ">Pasangan</a>
+                    <a href="/admin/edit-pegawai/data-anak" class="font-medium text-[#4F8EA5] ">Anak</a>
+                </div>
                 <div class="wrap-content">
             <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                 <div class="wrap">
-                    <div class="text-[18px] font-medium">Monica Adella Aisyah Renaldi</div>
-                    <div class="text-[16px]">Pemerintahan Provinsi Lampung</div>
-                    <div class="text-[16px]">1234567899654</div>
+                    <div class="text-[18px] font-medium">Aisyah</div>
+                    <div class="text-[16px]">-Perempuan</div>
                 </div>
-                <a href="/admin/edit-pegawai/detail-cpns" class="link">
+                <a href="/admin/edit-pegawai/detail-anak" class="link">
                     <img src="../../Assets/book.svg" alt="">
                 </a>
             </div>

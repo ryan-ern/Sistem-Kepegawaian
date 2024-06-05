@@ -22,42 +22,37 @@
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
-                    <a href="/admin/edit-pegawai/pendidikan"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-diri" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        Data Diri
+                    <a href="/admin/edit-pegawai/data-pendidikan" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Pendidikan
                     </a>
-                    <a href="/admin/edit-pegawai/keluarga-orangtua"
-                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-orangtua" class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Keluarga
                     </a>
-                    <a href="/admin/edit-pegawai/skp" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-skp" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         SKP
                     </a>
-                    <a href="/admin/edit-pegawai/penghargaan"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-penghargaan" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Penghargaan
                     </a>
-                    <a href="/admin/edit-pegawai/kinerja"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-kinerja" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Laporan Kinerja
                     </a>
-                    <a href="/admin/edit-pegawai/cpns"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-cpns" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         CPNS/PNS
                     </a>
-                    <a href="/admin/edit-pegawai/diklat"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-diklat" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Diklat/Kursus
                     </a>
-                    <a href="/admin/edit-pegawai/pmk"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
+                    <a href="/admin/edit-pegawai/data-pmk" class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
                         Peninjauan Masa Kerja
                     </a>
-                    <a href="/admin/edit-pegawai/golongan"
+                    <a href="/admin/edit-pegawai/data-golongan"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md ">
                         Golongan
                     </a>
-                    <a href="/admin/edit-pegawai/jabatan"
+                    <a href="/admin/edit-pegawai/data-jabatan"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md ">
                         Jabatan
                     </a>
@@ -69,10 +64,9 @@
                     <button class="p-1 text-white px-5 rounded bg-[#2F5B6B]">Simpan</button>
                 </div>
                 <div class="tab flex gap-2">
-                    <a href="/admin/edit-pegawai/keluarga-orangtua" class="font-medium text-[#B3B3B3]">Orang Tua</a>
-                    <a href="/admin/edit-pegawai/keluarga-pasangan"
-                        class="font-medium text-[#4F8EA5]  underline ">Pasangan</a>
-                    <a href="/admin/edit-pegawai/keluarga-anak" class="font-medium text-[#B3B3B3] ">Anak</a>
+                    <a href="/admin/edit-pegawai/data-orangtua" class="font-medium text-[#B3B3B3] underline">Orang Tua</a>
+                    <a href="/admin/edit-pegawai/data-pasangan" class="font-medium text-[#4F8EA5] ">Pasangan</a>
+                    <a href="/admin/edit-pegawai/data-anak" class="font-medium text-[#B3B3B3] ">Anak</a>
                 </div>
                 <div class="wrap mt-3">
                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
@@ -280,62 +274,63 @@
                     </div>
                     {{-- table --}}
                     <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                        <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                            <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                <tr>
-                                    <th scope="col" class="px-3 py-3">
-                                        No
-                                    </th>
-                                    <th scope="col" class="px-3 py-3">
-                                        Nama Surat
-                                    </th>
-                                    <th scope="col" class="px-3 py-3">
-                                        Aksi
-                                    </th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr
-                                    class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                    <td class="px-3 py-3">
-                                        1
-                                    </td>
-                                    <td class="px-3 py-3">
-                                        Dokumen Surat.pdf
-                                    </td>
-                                    <td class="px-3 py-3">
-                                        <button title="Download" class="mr-3">
-                                            <img src="./../../Assets/download.svg" alt="">
-                                        </button>
-                                        <button title="Lihat">
-                                            <img src="./../../Assets/eye.svg" alt="">
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr
-                                    class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                    <td class="px-3 py-3">
-                                        1
-                                    </td>
-                                    <td class="px-3 py-3">
-                                        Dokumen Surat.pdf
-                                    </td>
-                                    <td class="px-3 py-3">
-                                        <button title="Download" class="mr-3">
-                                            <img src="./../../Assets/download.svg" alt="">
-                                        </button>
-                                        <button title="Lihat">
-                                            <img src="./../../Assets/eye.svg" alt="">
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                        <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                            <tr>
+                                <th scope="col" class="px-3 py-3">
+                                    No
+                                </th>
+                                <th scope="col" class="px-3 py-3">
+                                    Nama Surat
+                                </th>
+                                <th scope="col" class="px-3 py-3">
+                                    Aksi
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                <td class="px-3 py-3">
+                                    1
+                                </td>
+                                <td class="px-3 py-3">
+                                    Dokumen Surat.pdf
+                                </td>
+                                <td class="px-3 py-3">
+                                    <button title="Download" class="mr-3">
+                                        <img src="./../../Assets/download.svg" alt="">
+                                    </button>
+                                    <button title="Lihat" class="mr-3">
+                                        <img src="./../../Assets/eye.svg" alt="">
+                                    </button>
+                                    <button title="Hapus">
+                                        <img src="./../../Assets/del.svg" alt="">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                <td class="px-3 py-3">
+                                    1
+                                </td>
+                                <td class="px-3 py-3">
+                                    Dokumen Surat.pdf
+                                </td>
+                                <td class="px-3 py-3">
+                                    <button title="Download" class="mr-3">
+                                        <img src="./../../Assets/download.svg" alt="">
+                                    </button>
+                                    <button title="Lihat" class="mr-3">
+                                        <img src="./../../Assets/eye.svg" alt="">
+                                    </button>
+                                    <button title="Hapus">
+                                        <img src="./../../Assets/del.svg" alt="">
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-        </div>
     </x-sidebar-admin>
 </body>
 
