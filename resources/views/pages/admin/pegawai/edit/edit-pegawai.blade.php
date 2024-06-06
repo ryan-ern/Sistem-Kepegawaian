@@ -79,15 +79,27 @@
                 <div class="md:w-1/3 w-full flex flex-col gap-3">
                     <div class="wrap ">
                         <label For="" class="text-black ">Status</label>
-                        <input type="text" id=""
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Status" />
+                        <select
+                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
+                            id="cars">
+                            <option value="Hidup">Hidup</option>
+                            <option value="Meninggal">Meninggal</option>
+                        </select>
                     </div>
                     <div class="wrap">
                         <label For="" class="text-black ">Agama</label>
-                        <input type="text" id="kontak"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Agama" />
+                        
+                        <select
+                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
+                            id="cars">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katholik">Katholik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Budha">Budha</option>
+                            <option value="Lainnya">Lainnya</option>
+                            <option value="Kepercayaan Terhadap Tuhan YME">Kepercayaan Terhadap Tuhan YME</option>
+                        </select>
                     </div>
                     <div class="wrap">
                         <label For="" class="text-black ">Satuan Kerja</label>

@@ -134,18 +134,7 @@ Route::controller(GeneralPage::class) -> group(function () {
     // PEGAWAI
     Route::get('/admin/pegawai', 'pegawaiAdmin');
     Route::get('/admin/edit-pegawai', 'pegawaiEdit');
-    Route::get('/admin/edit-pegawai/pendidikan', 'pegawaiPendidikan');
-    Route::get('/admin/edit-pegawai/keluarga-orangtua', 'pegawaiOrangtua');
-    Route::get('/admin/edit-pegawai/keluarga-pasangan', 'pegawaipasangan');
-    Route::get('/admin/edit-pegawai/keluarga-anak', 'pegawaianak');
-    Route::get('/admin/edit-pegawai/skp', 'pegawaiskp');
-    Route::get('/admin/edit-pegawai/penghargaan', 'pegawaipenghargaan');
-    Route::get('/admin/edit-pegawai/kinerja', 'pegawaikinerja');
-    Route::get('/admin/edit-pegawai/cpns', 'pegawaicpns');
-    Route::get('/admin/edit-pegawai/diklat', 'pegawaidiklat');
-    Route::get('/admin/edit-pegawai/pmk', 'pegawaipmk');
-    Route::get('/admin/edit-pegawai/golongan', 'pegawaigolongan');
-    Route::get('/admin/edit-pegawai/jabatan', 'pegawaijabatan');
+    
     //PENDIDIKAN
     Route::get('/admin/edit-pegawai/data-pendidikan', 'dataPendidikan');
     Route::get('/admin/edit-pegawai/detail-pendidikan', 'detailPendidikan');

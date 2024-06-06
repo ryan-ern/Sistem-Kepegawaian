@@ -79,7 +79,51 @@
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Jenis Penghargaan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <select
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px] flex-shrink-0"
+                            id="cars">
+                            <option value="Bintang">Bintang</option>
+                            <option value="R.I Adipurna">R.I Adipurna</option>
+                            <option value="R.I Adipradana">R.I Adipradana</option>
+                            <option value="R.I Utama">R.I Utama</option>
+                            <option value="R.I Pratama">R.I Pratama</option>
+                            <option value="R.I Nararya">R.I Nararya</option>
+                            <option value="Mahaputera Adipurna">Mahaputera Adipurna</option>
+                            <option value="Mahaputera Adipradana">Mahaputera Adipradana</option>
+                            <option value="Mahaputera Utama">Mahaputera Utama</option>
+                            <option value="Mahaputera Pratama">Mahaputera Pratama</option>
+                            <option value="Mahaputera Nararya">Mahaputera Nararya</option>
+                            <option value="Tanda Perhargaan Trikora">Tanda Perhargaan Trikora</option>
+                            <option value="TP Pembebasan Irian Barat">TP Pembebasan Irian Barat</option>
+                            <option value="Satyalancana Karya Satya 10 Tahun">Satyalancana Karya Satya 10 Tahun</option>
+                            <option value="Satyalancana Karya Satya 20 Tahun">Satyalancana Karya Satya 20 Tahun</option>
+                            <option value="Satyalancana Karya Satya 20 Tahun">Satyalancana Karya Satya 20 Tahun</option>
+                            <option value="Satyalancana Karya Satya 30 Tahun">Satyalancana Karya Satya 30 Tahun</option>
+                            <option value="Satyalancana Wira Karya">Satyalancana Wira Karya</option>
+                            <option value="Satyalancana Perintis Kemerdekaan">Satyalancana Perintis Kemerdekaan</option>
+                            <option value="Satyalancana Pembangunan">Satyalancana Pembangunan</option>
+                            <option value="Satyalancana Kebaktian Sosial">Satyalancana Kebaktian Sosial</option>
+                            <option value="Satyalancana Kebudayaan">Satyalancana Kebudayaan</option>
+                            <option value="Satyalancana Pendidikan">Satyalancana Pendidikan</option>
+                            <option value="Satyalancana Dharma Olahraga">Satyalancana Dharma Olahraga</option>
+                            <option value="Satyalancana Dharma Pemuda">Satyalancana Dharma Pemuda</option>
+                            <option value="Satyalancana Kepariwisataan">Satyalancana Kepariwisataan</option>
+                            <option value="Satyalancana Karya Bhakti Praja Nugraha">Satyalancana Karya Bhakti Praja Nugraha</option>
+                            <option value="Satyalancana Karya Bhakti">Satyalancana Karya Bhakti</option>
+                            <option value="Tanda Jasa Lainnya">Tanda Jasa Lainnya</option>
+                            <option value="TP Sidhakarya Adhyaksa">TP Sidhakarya Adhyaksa</option>
+                            <option value="TP Purnabakti Adhyaksa">TP Purnabakti Adhyaksa</option>
+                            <option value="TP Dharma Adhyaksa">TP Dharma Adhyaksa</option>
+                            <option value="TP Teladan TK Nasional">TP Teladan TK Nasional</option>
+                            <option value="TP Teladan TK Propinsi">TP Teladan TK Propinsi</option>
+                            <option value="TP Teladan TK Kabupaten/Kota">TP Teladan TK Kabupaten/Kota</option>
+                            <option value="TP PNS Luar Biasa Prestasinya">TP PNS Luar Biasa Prestasinya</option>
+                            <option value="TP Penemuan Bermanfaat bagi Negara">TP Penemuan Bermanfaat bagi Negara</option>
+                            <option value="Siswa Teladan">Siswa Teladan</option>
+                            <option value="Olimpiade">Olimpiade</option>
+                            <option value="Tanda Penghargaan Lainnya">Tanda Penghargaan Lainnya</option>
+                            <option value="Bintang Jawa Utama ">Bintang Jawa Utama </option>
+                        </select>
                                 </div>
                             </div>
                             <div class="wrap">

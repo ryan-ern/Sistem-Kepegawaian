@@ -249,43 +249,7 @@ class GeneralPage extends Controller
     function pegawaiEdit () {
         return view('pages/admin/pegawai/edit/edit-pegawai');
     }
-    function pegawaiPendidikan () {
-        return view('pages/admin/pegawai/edit/pendidikan-pegawai');
-    }
-    function pegawaiOrangtua () {
-        return view('pages/admin/pegawai/edit/keluarga-orangtua');
-    }
-    function pegawaianak () {
-        return view('pages/admin/pegawai/edit/keluarga-anak');
-    }
-    function pegawaipasangan () {
-        return view('pages/admin/pegawai/edit/keluarga-pasangan');
-    }
-    function pegawaiskp () {
-        return view('pages/admin/pegawai/edit/skp-pegawai');
-    }
-    function pegawaipenghargaan () {
-        return view('pages/admin/pegawai/edit/penghargaan-pegawai');
-    }
-    function pegawaikinerja () {
-        return view('pages/admin/pegawai/edit/kinerja-pegawai');
-    }
-    function pegawaicpns () {
-        return view('pages/admin/pegawai/edit/cpns-pegawai');
-    }
-    function pegawaidiklat () {
-        return view('pages/admin/pegawai/edit/diklat-pegawai');
-    }
-    function pegawaipmk () {
-        return view('pages/admin/pegawai/edit/pmk-pegawai');
-    }
-    function pegawaigolongan () {
-        return view('pages/admin/pegawai/edit/golongan-pegawai');
-    }
-    function pegawaijabatan () {
-        return view('pages/admin/pegawai/edit/jabatan-pegawai');
-    }
-
+    
     // PENDIDIKAN
     function dataPendidikan () {
         return view('pages/admin/pegawai/edit/pendidikan/data-pendidikan-pegawai');
