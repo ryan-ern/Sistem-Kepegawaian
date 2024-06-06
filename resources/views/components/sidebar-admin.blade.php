@@ -88,7 +88,7 @@
             $dashboard = ['admin/dashboard'];
         @endphp
         @php
-            $pegawai = ['admin/pegawai', 'admin/edit-pegawai','admin/edit-pegawai/pendidikan','admin/edit-pegawai/keluarga-orangtua','admin/edit-pegawai/keluarga-anak','admin/edit-pegawai/keluarga-pasangan','admin/edit-pegawai/skp','admin/edit-pegawai/penghargaan','admin/edit-pegawai/kinerja','admin/edit-pegawai/cpns','admin/edit-pegawai/diklat','admin/edit-pegawai/pmk','admin/edit-pegawai/golongan','admin/edit-pegawai/jabatan', 'admin/lihat-pegawai' ];
+            $pegawai = ['admin/pegawai', 'admin/edit-pegawai','admin/edit-pegawai/pendidikan','admin/edit-pegawai/keluarga-orangtua','admin/edit-pegawai/keluarga-anak','admin/edit-pegawai/keluarga-pasangan','admin/edit-pegawai/skp','admin/edit-pegawai/penghargaan','admin/edit-pegawai/kinerja','admin/edit-pegawai/data-cpns','admin/edit-pegawai/diklat','admin/edit-pegawai/pmk','admin/edit-pegawai/golongan','admin/edit-pegawai/jabatan', 'admin/lihat-pegawai' ];
         @endphp
         @php
             $cuti = ['admin/cuti', 'admin/cuti/form-cuti'];

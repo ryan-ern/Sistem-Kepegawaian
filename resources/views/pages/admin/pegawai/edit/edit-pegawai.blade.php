@@ -180,7 +180,7 @@
             </div>
         </div>
         <div class="kirim flex justify-end mt-5">
-            <a href="/admin/edit-pegawai/pendidikan" class="bg-[#2F5B6B] hover:bg-[#1c404d] text-white py-2 px-8 rounded-lg">Selanjutnya</a>
+            <a href="/admin/edit-pegawai/data-diri" class="bg-[#2F5B6B] hover:bg-[#1c404d] text-white py-2 px-8 rounded-lg">Selanjutnya</a>
         </div>
     </x-sidebar-admin>
 </body>

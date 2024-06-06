@@ -33,6 +33,10 @@
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
+                    <button data-modal-target="Data Diri" data-modal-toggle="Data Diri"
+                        class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
+                        Data Diri
+                </button>
                     <button data-modal-target="pendidikan" data-modal-toggle="pendidikan"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         Pendidikan
@@ -123,22 +127,6 @@
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                    <label For="" class="text-black font-medium w-[200px]">Jabatan</label>
-                                    <div class="is">
-                                        Sekretaris</div>
-                                </div>
-                            </div>
-                            <div class="wrap">
-                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                    <label For="" class="text-black font-medium w-[200px]">Golongan</label>
-                                    <div class="is">
-                                        Golongan II</div>
-                                </div>
-                            </div>
-                            <div class="wrap">
-                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px] ">Status</label>
                                     <div class="is">
                                         Aktif</div>
@@ -180,10 +168,6 @@
                                 </div>
                                 <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
                             </div>
-
-                        </div>
-                        {{-- KANAN --}}
-                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
                             <div class="wrap">
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Email</label>
@@ -207,10 +191,16 @@
                                     </label>
                                     <div class="is">
                                         Bandar Lampung</div>
+                                    </div>
                                 </div>
+                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+
+                        </div>
+                        {{-- KANAN --}}
+                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
+                            <div class="wrap">
                             </div>
                             <div class="wrap">
-                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No NPWP </label>
                                     <div class="is">
@@ -304,6 +294,92 @@
             </div>
 
             {{-- MODAL --}}
+            {{-- DATA DIRI --}}
+            <div id="Data Diri" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Diri
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="Data Diri">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                            </div>
+                            {{-- table --}}
+                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                <table
+                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                        <tr>
+                                            <th scope="col" class="px-3 py-3">
+                                                No
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Nama
+                                            </th>
+                                            <th scope="col" class="px-5 py-3">
+                                                Aksi
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                Dokumen Surat
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                Dokumen Surat
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {{-- PENDIDIKAN --}}
             <div id="pendidikan" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
