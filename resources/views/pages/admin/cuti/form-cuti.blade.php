@@ -197,11 +197,9 @@
                                             name='keterangan'></textarea>
                                     </div>
                                 </div>
-                                <div class="flex justify-center">
-                                    <button data-modal-hide="ditolak"
-                                        class="head p-1 text-white px-5 rounded bg-[#4F8EA5] hover:bg-[#3f7386]">
-                                        Kirim
-                                    </button>
+                                <div class="wrap flex justify-center">
+                                    <button data-modal-target="tolak" data-modal-toggle="tolak" 
+                                        class="p-1 bg-[#9BB8C3] hover:bg-[#4F8EA5] px-16 rounded text-white">Kirim</button>
                                 </div>
                             </div>
                         </div>
@@ -209,6 +207,38 @@
                 </div>
             </div>
             {{-- Ditolak --}}
+            {{--POP UP Tolak --}}
+            <div id="tolak" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div data-modal-hide="tolak" class="relative p-4 w-full flex justify-center items-center h-full">
+                <!-- Modal content -->
+                <div class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                        <button type="button"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                            data-modal-hide="tolak">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                        <div class="wrap flex items-center gap-8 flex-col">
+                            <div class="head font-medium text-[28px]">Data Berhasil Ditolak</div>
+                            <div class="icon">
+                                <img src="../../Assets/ceklist.svg" alt="">
+                            </div>
+                            <button data-modal-hide="setuju"
+                                class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
+                                Selesai
+                            </button>
+                        </div>
+                    </div>
         </div>
     </x-sidebar-admin>
 </body>

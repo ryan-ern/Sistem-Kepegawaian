@@ -104,7 +104,8 @@
                                         <img src="./../../Assets/download.svg" alt="">
                                     </button>
                                     <button title="Lihat" class="mr-3">
-                                        <img src="./../../Assets/eye.svg" alt="">
+                                        <img src="./../../Assets/eye.svg" alt="https://ogzrespublish.com/index.php/JEB" url="">
+                                        
                                     </button>
                                     <button title="Hapus">
                                         <img src="./../../Assets/del.svg" alt="">
