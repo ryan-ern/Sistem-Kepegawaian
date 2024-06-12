@@ -36,7 +36,7 @@
         <div class="wrap-content">
             <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                 <div class="wrap">
-                    <div class="text-[16px]">Penata...</div>
+                    <div title="Penata..." class="text-[16px]">Penata...</div>
                     <div class="text-[16px]">IIB</div>
                 </div>
                 <a href="/dashboard/riwayat-golongan/lihat-golongan" class="link">
@@ -45,7 +45,7 @@
             </div>
             <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                 <div class="wrap">
-                    <div class="text-[16px]">Penata...</div>
+                    <div title="Penata..." class="text-[16px]">Penata...</div>
                     <div class="text-[16px]">IVC</div>
                 </div>
                 <a href="" class="link">
@@ -54,7 +54,7 @@
             </div>
             <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                 <div class="wrap">
-                    <div class="text-[16px]">Penata...</div>
+                    <div title="Penata..." class="text-[16px]">Penata...</div>
                     <div class="text-[16px]">IA</div>
                 </div>
                 <a href="" class="link">
