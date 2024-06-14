@@ -21,7 +21,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Anak Ke-</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="1" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             1</div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Status Pekerjaan Anak</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Bukan PNS" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Bukan PNS</div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nama</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Yasmin Aisyah" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Yasmin Aisyah</div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Identitas</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="1856897845523" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             1856897845523</div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Jenis Kelamin</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Perempuan" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Perempuan</div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Status Pernikahan</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Belum kawin" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Belum kawin</div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Akta Meninggal</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="-" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             -</div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Akta Kelahiran</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="235689784512" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             235689784512</div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Telepon</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="235698" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             235698</div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Status Hidup</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Hidup" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Hidup</div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Email</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="yasmin@gmail.com" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             yasmin@gmail.com</div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Agama</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Islam" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Islam</div>
                     </div>
                 </div>

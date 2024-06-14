@@ -21,7 +21,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Jenis Jabatan</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Jabatan Pelaksana" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Jabatan Pelaksana</div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Jenis Mutasi</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="-" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                            -</div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Jenis Penugasan</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="-" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             -</div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Tanggal TMT Pelantikan</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="-" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             -</div>
                     </div>
                 </div>
@@ -69,8 +69,8 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor SK</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            MIGRASI</div>
+                        <div title="8902/79/AT/VI.01" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            8902/79/AT/VI.01</div>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Status Riwayat</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="-" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             -</div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Instansi</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Pemerintahan Kab.Mesuji" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Pemerintahan Kab.Mesuji</div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Satuan Kerja</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Pemerintahan Kab.Mesuji" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Pemerintahan Kab.Mesuji</div>
                     </div>
                 </div>
@@ -104,15 +104,15 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Satuan Kerja Induk</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Mesuji" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Mesuji</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Nama Organisasi</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <label For="" class="text-black font-medium text-[14px]">Unit Organisasi</label>
+                        <div title="RSUD KABUPATEN MESUJI" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             RSUD KABUPATEN MESUJI</div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nama Jabatan</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Staff" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Staff</div>
                     </div>
                 </div>

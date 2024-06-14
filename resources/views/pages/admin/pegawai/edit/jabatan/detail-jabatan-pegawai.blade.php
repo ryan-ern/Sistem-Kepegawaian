@@ -192,7 +192,7 @@
                                 <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                                 <div
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                                    <label For="" class="text-black font-medium text-[14px]">Nama
+                                    <label For="" class="text-black font-medium text-[14px]">Unit
                                         Organisasi</label>
                                     <input type="text"
                                         class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded flex-shrink-0 w-[380px]">

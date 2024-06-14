@@ -36,8 +36,8 @@
         <div class="wrap-content">
             <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                 <div class="wrap">
-                    <div class="text-[18px] font-medium">S1</div>
-                    <div class="text-[16px]">- Ekonomi</div>
+                    <div class="text-[18px] font-medium">Analisis</div>
+                    <div class="text-[16px]">-2020</div>
                 </div>
                 <a href="/dashboard/riwayat-jabatan/lihat-jabatan" class="link">
                     <img src="../Assets/book.svg" alt="">
@@ -45,8 +45,8 @@
             </div>
             <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                 <div class="wrap">
-                    <div class="text-[18px] font-medium">S1</div>
-                    <div class="text-[16px]">- Ekonomi</div>
+                    <div class="text-[18px] font-medium">Kepala</div>
+                    <div class="text-[16px]">-S1</div>
                 </div>
                 <a href="" class="link">
                     <img src="../Assets/book.svg" alt="">

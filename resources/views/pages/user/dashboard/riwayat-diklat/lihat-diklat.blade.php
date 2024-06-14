@@ -21,7 +21,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Jenis Diklat</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="Diklat Struktural" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             Diklat Struktural</div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nama Diklat</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="SEPALA/ADUM/DIKLAT PIM TK.II" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             SEPALA/ADUM/DIKLAT PIM TK.II</div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Institusi Penyelenggara</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="PEMPROV LAMPUNG" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             PEMPROV LAMPUNG</div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Rumpun Diklat</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="-" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             -</div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Sertifikat</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                        <div title="549/I.09/DIKLATPIM TK.IV/LAN/2012" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
                             549/I.09/DIKLATPIM TK.IV/LAN/2012</div>
                     </div>
                 </div>

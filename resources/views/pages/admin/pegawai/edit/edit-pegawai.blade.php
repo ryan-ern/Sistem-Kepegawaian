@@ -58,7 +58,7 @@
                         <label For="" class="text-black ">NIP</label>
                         <input type="text" id="kontak"
                             class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan NIPi" />
+                            placeholder="Masukkan NIP" />
                     </div>
                     <div class="wrap">
                         <label For="" class="text-black ">No Kartu Keluarga</label>
@@ -92,13 +92,12 @@
                         <select
                             class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
                             id="cars">
-                            <option value="Hidup">Hidup</option>
-                            <option value="Meninggal">Meninggal</option>
+                            <option value="Aktif">Aktif</option>
+                            <option value="Non-Aktif">Non-Aktif</option>
                         </select>
                     </div>
                     <div class="wrap">
                         <label For="" class="text-black ">Agama</label>
-
                         <select
                             class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
                             id="cars">

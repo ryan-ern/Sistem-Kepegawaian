@@ -13,7 +13,8 @@
 
 <body>
     <x-sidebar-user title="Riwayat CPNS/PNS">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
             <p class="text-[14px] md:text-[16px]">Berikut tampilan data CPNS/PNS anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-cpns/pengajuan-cpns"

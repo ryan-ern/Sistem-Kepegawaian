@@ -64,17 +64,17 @@
                                 <img class="w-full h-full object-cover" src="./../Assets/man.jpg" alt="">
                             </div>
                         </td>
-                        <td class="px-3 py-3">
-                            12345678 123456 1 123
+                        <td title="12345678 1234561123" class="px-3 py-3">
+                            12345678...
                         </td>
-                        <td class="px-3 py-3">
+                        <td title="Muhammad Udin" class="px-3 py-3">
                             Muhammad Udin
                         </td>
-                        <td class="px-3 py-3">
+                        <td title="Sekretaris" class="px-3 py-3">
                             Sekretaris
                         </td>
-                        <td class="px-3 py-3">
-                            Gol II
+                        <td title="II" class="px-3 py-3">
+                            II
                         </td>
                         <td class="px-3 py-3">
                             <div class="p-1 bg-slate-400 rounded-sm text-black inline-block px-4">Aktif</div>
@@ -125,17 +125,17 @@
                                 <img class="w-full h-full object-cover" src="./../Assets/man.jpg" alt="">
                             </div>
                         </td>
-                        <td class="px-3 py-3">
-                            12345678 123456 1 123
+                        <td title="12345678 1234561123" class="px-3 py-3">
+                            12345678...
                         </td>
-                        <td class="px-3 py-3">
+                        <td title="Muhammad Udin" class="px-3 py-3">
                             Muhammad Udin
                         </td>
-                        <td class="px-3 py-3">
+                        <td title="Sekretaris" class="px-3 py-3">
                             Sekretaris
                         </td>
-                        <td class="px-3 py-3">
-                            Gol II
+                        <td title="II" class="px-3 py-3">
+                            II
                         </td>
                         <td class="px-3 py-3">
                             <div class="p-1 bg-slate-400 rounded-sm text-black inline-block px-4">Aktif</div>
