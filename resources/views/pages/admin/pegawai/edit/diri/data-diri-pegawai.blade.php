@@ -170,7 +170,7 @@
                 </div>
             </div>
         </div>
-        {{-- simpan --}}
+        {{-- POP UP simpan --}}
 
         {{-- POP UP HAPUS --}}
         <div id="hapus" tabindex="-1" aria-hidden="true"
