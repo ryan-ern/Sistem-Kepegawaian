@@ -21,64 +21,72 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Status Pegawai</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            P</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->status_pns }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor SK CPNS</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            813/579/IV.04/KPTS/MSJ/2015</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->no_sk_cpns }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor SK PNS</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded min-w-[380px]">
-                            821/1673/IV.04/KPTS/MSJ/2016/00007866/DIKLAT</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded min-w-[380px]">
+                            {{ $pns->no_sk_pns }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor SK STTPL</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            PRAJABATAN III/18/1801/LAN/2015</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->no_sk_sttpl }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Karpeg</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            B 05005563</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->karpeg }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Surat Dokter</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            441/388/1.3/VII/2015</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->no_surat_dokter }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor SPMT</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            813/579/IV.04/KPTS/MSJ/2014</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->no_spmt }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Pertek C2TH</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            -</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->no_c2th }}</div>
                     </div>
                 </div>
             </div>
@@ -87,57 +95,66 @@
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Tanggal Surat Keputusan CPNS</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            05/05/2015</div>
+                        <label For="" class="text-black font-medium text-[14px]">Tanggal Surat Keputusan
+                            CPNS</label>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->tgl_sk_cpns }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Tanggal Surat Keputusan PNS</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            17/12/2016</div>
+                        <label For="" class="text-black font-medium text-[14px]">Tanggal Surat Keputusan
+                            PNS</label>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->tgl_sk_pns }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Tanggal STTPL</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            17/12/2018</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->tgl_sttpl }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Tanggal  TMT CPNS</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            18/02/2019</div>
+                        <label For="" class="text-black font-medium text-[14px]">Tanggal TMT CPNS</label>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->tgl_tmt_cpns }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Tanggal  TMT PNS</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            -</div>
+                        <label For="" class="text-black font-medium text-[14px]">Tanggal TMT PNS</label>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->tgl_tmt_pns }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Tanggal SPMT</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            06/03/2023</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->tgl_spmt }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Tanggal Pertek C2TH</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            02/03/2023</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pns->tgl_c2th }}</div>
                     </div>
                 </div>
             </div>
@@ -156,42 +173,34 @@
                         <th scope="col" class="px-3 py-3">
                             Aksi
                         </th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Dokumen Surat.pdf
-                        </td>
-                        <td class="px-3 py-3">
-                            <button title="Download" class="mr-3">
-                                <img src="./../../Assets/download.svg" alt="">
-                            </button>
-                            <button title="Lihat">
-                                <img src="./../../Assets/eye.svg" alt="">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Dokumen Surat.pdf
-                        </td>
-                        <td class="px-3 py-3">
-                            <button title="Download" class="mr-3">
-                                <img src="./../../Assets/download.svg" alt="">
-                            </button>
-                            <button title="Lihat">
-                                <img src="./../../Assets/eye.svg" alt="">
-                            </button>
-                        </td>
-                    </tr>
+                    @foreach ($pns->files as $file)
+                        <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                            <td class="px-3 py-3">
+                                {{ $loop->iteration }}
+                            </td>
+                            <td class="px-3 py-3">
+                                {{ $file->file_name ? $file->file_name : '-' }}
+                            </td>
+                            <td class="px-3 py-3">
+                                <button title="Download" class="mr-3">
+                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                        download="{{ $file->file_name }}" title="Download">
+                                        <img src="{{ asset('Assets/download.svg') }}" alt="">
+                                    </a>
+                                </button>
+                                <button title="Lihat">
+                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                        target="_blank">
+                                        <img src="{{ asset('Assets/eye.svg') }}" alt="">
+                                    </a>
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

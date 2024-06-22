@@ -13,7 +13,8 @@
 
 <body>
     <x-sidebar-user title="Riwayat Jabatan">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
             <p class="text-[14px] md:text-[16px]">Berikut tampilan data jabatan anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-jabatan/pengajuan-jabatan"
@@ -34,24 +35,17 @@
         </div>
 
         <div class="wrap-content">
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">S1</div>
-                    <div class="text-[16px]">- Ekonomi</div>
+            @foreach ($jabatanData as $g)
+                <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                    <div class="wrap">
+                        <div class="text-[18px] font-medium">{{ $g->nama_jabatan }}</div>
+                        <div class="text-[16px]">{{ $g->tgl_tmt }}</div>
+                    </div>
+                    <a href="{{ route('jabatan.show', $g->id) }}" class="link">
+                        <img src="../Assets/book.svg" alt="">
+                    </a>
                 </div>
-                <a href="/dashboard/riwayat-jabatan/lihat-jabatan" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">S1</div>
-                    <div class="text-[16px]">- Ekonomi</div>
-                </div>
-                <a href="" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
+            @endforeach
         </div>
     </x-sidebar-user>
 </body>

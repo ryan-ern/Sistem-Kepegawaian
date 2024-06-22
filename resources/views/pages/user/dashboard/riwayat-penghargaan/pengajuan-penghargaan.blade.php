@@ -17,37 +17,19 @@
             Berikut tampilan riwayat pengajuan Penghargaan
         </div>
         <div class="wrap flex flex-col gap-3">
-            <div class="data flex flex-col p-2 pl-0 pr-5 gap-1">
-                <div class="wrap flex justify-between items-center">
-                    <div class="wrap">
-                        <div class="">Mengusulkan perubahan riwayat Penghargaan</div>
-                        <div class="mb-2">04/03/2023</div>
+            @foreach ($rewardData as $r)
+                <div class="data flex flex-col p-2 pl-0 pr-5 gap-1">
+                    <div class="wrap flex justify-between items-center">
+                        <div class="wrap">
+                            <div class="">Mengusulkan perubahan riwayat Penghargaan</div>
+                            <div class="mb-2">{{ $r->created_at }}</div>
+                        </div>
+                        <div class="p-1 bg-[#2F5B6B] rounded px-3 text-white">{{ $r->status }}</div>
                     </div>
-                    <div class="p-1 bg-[#2F5B6B] rounded px-3 text-white">Diproses</div>
+                    <div class="garis w-full h-[1px] bg-[#969BA0]"></div>
                 </div>
-                <div class="garis w-full h-[1px] bg-[#969BA0]"></div>
-            </div>
-            <div class="data flex flex-col p-2 pl-0 pr-5 gap-1">
-                <div class="wrap flex justify-between items-center">
-                    <div class="wrap">
-                        <div class="">Mengusulkan perubahan riwayat Penghargaan</div>
-                        <div class="mb-2">04/03/2023</div>
-                    </div>
-                    <div class="p-1 bg-[#2F5B6B] rounded px-3 text-white">Diproses</div>
-                </div>
-                <div class="garis w-full h-[1px] bg-[#969BA0]"></div>
-            </div>
-            <div class="data flex flex-col p-2 pl-0 pr-5 gap-1">
-                <div class="wrap flex justify-between items-center">
-                    <div class="wrap">
-                        <div class="">Mengusulkan perubahan riwayat Penghargaan</div>
-                        <div class="mb-2">04/03/2023</div>
-                    </div>
-                    <div class="p-1 bg-[#2F5B6B] rounded px-3 text-white">Diproses</div>
-                </div>
-                <div class="garis w-full h-[1px] bg-[#969BA0]"></div>
-            </div>
-            
+            @endforeach
+
         </div>
     </x-sidebar-user>
 </body>

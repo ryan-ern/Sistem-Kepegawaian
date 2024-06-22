@@ -21,48 +21,55 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Status HIdup</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            -</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->status_keluarga }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Status Pekerjaan Orang Tua</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            PNS</div>
+                        <label For="" class="text-black font-medium text-[14px]">Status Pekerjaan Orang
+                            Tua</label>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->status_pekerjaan }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nama</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            M.Yusuf</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->nama }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Status Pernikahan</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            Cerai Mati</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->status_pernikahan }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Jenis Kelamin</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            Laki-laki</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->jk_kelamin }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Email</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            yusuf@gmail.com</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->email }}</div>
                     </div>
                 </div>
             </div>
@@ -72,48 +79,54 @@
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Tanggal Lahir</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            13/02/1950</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->tgl_lahir }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Tanggal  Meninggal</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            12/02/2020</div>
+                        <label For="" class="text-black font-medium text-[14px]">Tanggal Meninggal</label>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->tgl_meninggal ? $ortu->tgl_meninggal : '-' }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Identitas</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            2356898784512</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->no_identitas }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Agama</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            Islam</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->agama }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Telepon</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            08121235689</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->no_tel }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Nomor Handphone</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            085645125623</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $ortu->no_hp }}</div>
                     </div>
                 </div>
             </div>
@@ -132,42 +145,34 @@
                         <th scope="col" class="px-3 py-3">
                             Aksi
                         </th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Dokumen Surat.pdf
-                        </td>
-                        <td class="px-3 py-3">
-                            <button title="Download" class="mr-3">
-                                <img src="./../../Assets/download.svg" alt="">
-                            </button>
-                            <button title="Lihat">
-                                <img src="./../../Assets/eye.svg" alt="">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Dokumen Surat.pdf
-                        </td>
-                        <td class="px-3 py-3">
-                            <button title="Download" class="mr-3">
-                                <img src="./../../Assets/download.svg" alt="">
-                            </button>
-                            <button title="Lihat">
-                                <img src="./../../Assets/eye.svg" alt="">
-                            </button>
-                        </td>
-                    </tr>
+                    @foreach ($ortu->files as $file)
+                        <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                            <td class="px-3 py-3">
+                                {{ $loop->iteration }}
+                            </td>
+                            <td class="px-3 py-3">
+                                {{ $file->file_name ? $file->file_name : '-' }}
+                            </td>
+                            <td class="px-3 py-3">
+                                <button title="Download" class="mr-3">
+                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                        download="{{ $file->file_name }}" title="Download">
+                                        <img src="{{ asset('Assets/download.svg') }}" alt="">
+                                    </a>
+                                </button>
+                                <button title="Lihat">
+                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                        target="_blank">
+                                        <img src="{{ asset('Assets/eye.svg') }}" alt="">
+                                    </a>
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

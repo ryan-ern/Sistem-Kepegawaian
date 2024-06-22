@@ -8,186 +8,237 @@ class GeneralPage extends Controller
 {
     // USER
     // DASHBOARD
-    function dashboard () {
+    function dashboard()
+    {
         return view('pages/user/dashboard/dashboard');
     }
     // GOLONGAN
-    function riwayatGolongan () {
+    function riwayatGolongan()
+    {
         return view('pages/user/dashboard/riwayat-golongan/riwayat-golongan');
     }
-    function lihatGolongan () {
+    function lihatGolongan()
+    {
         return view('pages/user/dashboard/riwayat-golongan/lihat-golongan');
     }
-    function tambahGolongan () {
+    function tambahGolongan()
+    {
         return view('pages/user/dashboard/riwayat-golongan/tambah-golongan');
     }
-    function pengajuanGolongan () {
+    function pengajuanGolongan()
+    {
         return view('pages/user/dashboard/riwayat-golongan/pengajuan-golongan');
     }
     // GOLONGAN
     // PENDIDIKAN
-    function riwayatPendidikan () {
+    function riwayatPendidikan()
+    {
         return view('pages/user/dashboard/riwayat-pendidikan/riwayat-pendidikan');
     }
-    function lihatPendidikan () {
+    function lihatPendidikan()
+    {
         return view('pages/user/dashboard/riwayat-pendidikan/lihat-pendidikan');
     }
-    function tambahPendidikan () {
+    function tambahPendidikan()
+    {
         return view('pages/user/dashboard/riwayat-pendidikan/tambah-pendidikan');
     }
-    function pengajuanPendidikan () {
+    function pengajuanPendidikan()
+    {
         return view('pages/user/dashboard/riwayat-pendidikan/pengajuan-pendidikan');
     }
     // PENDIDIKAN
     // JABATAN
-    function riwayatJabatan () {
+    function riwayatJabatan()
+    {
         return view('pages/user/dashboard/riwayat-jabatan/riwayat-jabatan');
     }
-    function lihatJabatan () {
+    function lihatJabatan()
+    {
         return view('pages/user/dashboard/riwayat-jabatan/lihat-jabatan');
     }
-    function tambahJabatan () {
+    function tambahJabatan()
+    {
         return view('pages/user/dashboard/riwayat-jabatan/tambah-jabatan');
     }
-    function pengajuanJabatan () {
+    function pengajuanJabatan()
+    {
         return view('pages/user/dashboard/riwayat-jabatan/pengajuan-jabatan');
     }
     // JABATAN
     // PMK
-    function riwayatPmk () {
+    function riwayatPmk()
+    {
         return view('pages/user/dashboard/riwayat-pmk/riwayat-pmk');
     }
-    function lihatPmk () {
+    function lihatPmk()
+    {
         return view('pages/user/dashboard/riwayat-pmk/lihat-pmk');
     }
-    function tambahPmk () {
+    function tambahPmk()
+    {
         return view('pages/user/dashboard/riwayat-pmk/tambah-pmk');
     }
-    function pengajuanPmk () {
+    function pengajuanPmk()
+    {
         return view('pages/user/dashboard/riwayat-pmk/pengajuan-pmk');
     }
     // PMK
     // CPNS
-    function riwayatCpns () {
+    function riwayatCpns()
+    {
         return view('pages/user/dashboard/riwayat-cpns/riwayat-cpns');
     }
-    function lihatCpns () {
+    function lihatCpns()
+    {
         return view('pages/user/dashboard/riwayat-cpns/lihat-cpns');
     }
-    function tambahCpns () {
+    function tambahCpns()
+    {
         return view('pages/user/dashboard/riwayat-cpns/tambah-cpns');
     }
-    function pengajuanCpns () {
+    function pengajuanCpns()
+    {
         return view('pages/user/dashboard/riwayat-cpns/pengajuan-cpns');
     }
     // CPNS
     // DIKLAT
-    function riwayatDiklat () {
+    function riwayatDiklat()
+    {
         return view('pages/user/dashboard/riwayat-diklat/riwayat-diklat');
     }
-    function lihatDiklat () {
+    function lihatDiklat()
+    {
         return view('pages/user/dashboard/riwayat-diklat/lihat-diklat');
     }
-    function tambahDiklat () {
+    function tambahDiklat()
+    {
         return view('pages/user/dashboard/riwayat-diklat/tambah-diklat');
     }
-    function pengajuanDiklat () {
+    function pengajuanDiklat()
+    {
         return view('pages/user/dashboard/riwayat-diklat/pengajuan-diklat');
     }
     // DIKLAT
     // KELUARGA
     // ORANGTUA
-    function riwayatorangtua () {
+    function riwayatorangtua()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/orangtua/riwayat-orangtua');
     }
-    function lihatorangtua () {
+    function lihatorangtua()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/orangtua/lihat-orangtua');
     }
-    function tambahorangtua () {
+    function tambahorangtua()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/orangtua/tambah-orangtua');
     }
-    function pengajuanorangtua () {
+    function pengajuanorangtua()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/orangtua/pengajuan-orangtua');
     }
     // ORANGTUA
     // PASANGAN
-    function riwayatpasangan () {
+    function riwayatpasangan()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/pasangan/riwayat-pasangan');
     }
-    function lihatpasangan () {
+    function lihatpasangan()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/pasangan/lihat-pasangan');
     }
-    function tambahpasangan () {
+    function tambahpasangan()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/pasangan/tambah-pasangan');
     }
-    function pengajuanpasangan () {
+    function pengajuanpasangan()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/pasangan/pengajuan-pasangan');
     }
     // PASANGAN
     // ANAK
-    function riwayatanak () {
+    function riwayatanak()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/anak/riwayat-anak');
     }
-    function lihatanak () {
+    function lihatanak()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/anak/lihat-anak');
     }
-    function tambahanak () {
+    function tambahanak()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/anak/tambah-anak');
     }
-    function pengajuananak () {
+    function pengajuananak()
+    {
         return view('pages/user/dashboard/riwayat-keluarga/anak/pengajuan-anak');
     }
     // ANAK
     // KELUARGA
     // SKP
-    function riwayatSkp () {
+    function riwayatSkp()
+    {
         return view('pages/user/dashboard/riwayat-skp/riwayat-skp');
     }
-    function lihatSkp () {
+    function lihatSkp()
+    {
         return view('pages/user/dashboard/riwayat-skp/lihat-skp');
     }
-    function tambahSkp () {
+    function tambahSkp()
+    {
         return view('pages/user/dashboard/riwayat-skp/tambah-skp');
     }
-    function pengajuanSkp () {
+    function pengajuanSkp()
+    {
         return view('pages/user/dashboard/riwayat-skp/pengajuan-skp');
     }
     // SKP
     // PENGHARGAAN
-    function riwayatpenghargaan () {
+    function riwayatpenghargaan()
+    {
         return view('pages/user/dashboard/riwayat-penghargaan/riwayat-penghargaan');
     }
-    function lihatpenghargaan () {
+    function lihatpenghargaan()
+    {
         return view('pages/user/dashboard/riwayat-penghargaan/lihat-penghargaan');
     }
-    function tambahpenghargaan () {
+    function tambahpenghargaan()
+    {
         return view('pages/user/dashboard/riwayat-penghargaan/tambah-penghargaan');
     }
-    function pengajuanpenghargaan () {
+    function pengajuanpenghargaan()
+    {
         return view('pages/user/dashboard/riwayat-penghargaan/pengajuan-penghargaan');
     }
     // PENGHARGAAN
     // LAPORAN
-    function riwayatlaporan () {
+    function riwayatlaporan()
+    {
         return view('pages/user/dashboard/riwayat-laporan/riwayat-laporan');
     }
-    function lihatlaporan () {
+    function lihatlaporan()
+    {
         return view('pages/user/dashboard/riwayat-laporan/lihat-laporan');
     }
-    function tambahlaporan () {
+    function tambahlaporan()
+    {
         return view('pages/user/dashboard/riwayat-laporan/tambah-laporan');
     }
-    function pengajuanlaporan () {
+    function pengajuanlaporan()
+    {
         return view('pages/user/dashboard/riwayat-laporan/pengajuan-laporan');
     }
     // LAPORAN
     // CUTI
-    function riwayatcuti () {
+    function riwayatcuti()
+    {
         return view('pages/user/dashboard/riwayat-cuti/riwayat-cuti');
     }
     // CUTI
     // ABSENSI
-    function riwayatabsensi () {
+    function riwayatabsensi()
+    {
         return view('pages/user/dashboard/riwayat-absensi/riwayat-absensi');
     }
     // ABSENSI
@@ -195,32 +246,38 @@ class GeneralPage extends Controller
     // -
 
     // EDIT PROFILE
-    function editProfile () {
+    function editProfile()
+    {
         return view('pages/user/edit-profile/edit-profile');
     }
-    function editProfile2 () {
+    function editProfile2()
+    {
         return view('pages/user/edit-profile/edit-profile-pendukung');
     }
     // EDIT PROFILE
     // -
 
     // ABSENSI
-    function absensi () {
+    function absensi()
+    {
         return view('pages/user/absensi/absensi');
     }
-    function uploadabsensi () {
+    function uploadabsensi()
+    {
         return view('pages/user/absensi/upload-absensi');
     }
     // ABSENSI
     // -
 
     // CUTI
-    function cuti () {
+    function cuti()
+    {
         return view('pages/user/cuti/cuti');
     }
     // CUTI
 
-    function profileuser () {
+    function profileuser()
+    {
         return view('pages/user/profile-user');
     }
 
@@ -229,82 +286,104 @@ class GeneralPage extends Controller
 
     // ADMIN
     // DASHBOARD
-    function dashboardAdmin () {
+    function dashboardAdmin()
+    {
         return view('pages/admin/dashboard/dashboard-admin');
     }
     // DASHBOARD
     // PEGAWAI
-    function pegawaiAdmin () {
+    function pegawaiAdmin()
+    {
         return view('pages/admin/pegawai/pegawai');
     }
-    function pegawaiEdit () {
+    function pegawaiEdit()
+    {
         return view('pages/admin/pegawai/edit/edit-pegawai');
     }
-    function pegawaiPendidikan () {
+    function pegawaiPendidikan()
+    {
         return view('pages/admin/pegawai/edit/pendidikan-pegawai');
     }
-    function pegawaiOrangtua () {
+    function pegawaiOrangtua()
+    {
         return view('pages/admin/pegawai/edit/keluarga-orangtua');
     }
-    function pegawaianak () {
+    function pegawaianak()
+    {
         return view('pages/admin/pegawai/edit/keluarga-anak');
     }
-    function pegawaipasangan () {
+    function pegawaipasangan()
+    {
         return view('pages/admin/pegawai/edit/keluarga-pasangan');
     }
-    function pegawaiskp () {
+    function pegawaiskp()
+    {
         return view('pages/admin/pegawai/edit/skp-pegawai');
     }
-    function pegawaipenghargaan () {
+    function pegawaipenghargaan()
+    {
         return view('pages/admin/pegawai/edit/penghargaan-pegawai');
     }
-    function pegawaikinerja () {
+    function pegawaikinerja()
+    {
         return view('pages/admin/pegawai/edit/kinerja-pegawai');
     }
-    function pegawaicpns () {
+    function pegawaicpns()
+    {
         return view('pages/admin/pegawai/edit/cpns-pegawai');
     }
-    function pegawaidiklat () {
+    function pegawaidiklat()
+    {
         return view('pages/admin/pegawai/edit/diklat-pegawai');
     }
-    function pegawaipmk () {
+    function pegawaipmk()
+    {
         return view('pages/admin/pegawai/edit/pmk-pegawai');
     }
-    function pegawaigolongan () {
+    function pegawaigolongan()
+    {
         return view('pages/admin/pegawai/edit/golongan-pegawai');
     }
-    function pegawaijabatan () {
+    function pegawaijabatan()
+    {
         return view('pages/admin/pegawai/edit/jabatan-pegawai');
     }
     // LIHAT
-    function pegawaiLihat () {
+    function pegawaiLihat()
+    {
         return view('pages/admin/pegawai/lihat/lihat-pegawai');
     }
     // PEGAWAI
 
     // ABESENSI
-    function absensiAdmin () {
+    function absensiAdmin()
+    {
         return view('pages/admin/absensi/absensi');
     }
-    function absensiDetail () {
+    function absensiDetail()
+    {
         return view('pages/admin/absensi/detail-absensi');
     }
     // ABESENSI
 
     // CUTI
-    function cutiAdmin () {
+    function cutiAdmin()
+    {
         return view('pages/admin/cuti/cuti');
     }
-    function cutiForm () {
+    function cutiForm()
+    {
         return view('pages/admin/cuti/form-cuti');
     }
     // CUTI
 
     // LOGIN
-    function loginAdmin () {
+    function loginAdmin()
+    {
         return view('pages/admin/login/login');
     }
-    function loginUser () {
+    function loginUser()
+    {
         return view('pages/user/login/login');
     }
     // LOGIN

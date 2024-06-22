@@ -19,41 +19,47 @@
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Jenis Peninjauan Masa Kerja</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            Negeri</div>
+                        <label For="" class="text-black font-medium text-[14px]">Jenis Peninjauan Masa
+                            Kerja</label>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pmk->masa_kerja }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Instansi/Perusahaan</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            Dinas Kesehatan Kabupaten</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pmk->instansi }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Tanggal Awal</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            23/03/2014</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pmk->tgl_awal }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Tanggal Akhir</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            02/03/208</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pmk->tgl_akhir }}</div>
                     </div>
                 </div>
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Masa Kerja (Bulan)</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            0</div>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pmk->masa_kerja_bulan }}</div>
                     </div>
                 </div>
             </div>
@@ -62,41 +68,53 @@
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Nomor Surat Keputusan (SK)</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            823.3/88/VI.04/2024</div>
+                        <label For="" class="text-black font-medium text-[14px]">Nomor Surat Keputusan
+                            (SK)</label>
+                        <div
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            {{ $pmk->no_sk }}/div>
+                        </div>
                     </div>
-                </div>
-                <div class="wrap">
-                    <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
-                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Tanggal Surat Keputusan (SK)</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            03/02/2022</div>
+                    <div class="wrap">
+                        <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                            <label For="" class="text-black font-medium text-[14px]">Tanggal Surat Keputusan
+                                (SK)</label>
+                            <div
+                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                {{ $pmk->tgl_sk }}</div>
+                        </div>
                     </div>
-                </div>
-                <div class="wrap">
-                    <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
-                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Nomor Pertek BKN</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            FG-256897845</div>
+                    <div class="wrap">
+                        <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                            <label For="" class="text-black font-medium text-[14px]">Nomor Pertek BKN</label>
+                            <div
+                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                {{ $pmk->no_bkn }}</div>
+                        </div>
                     </div>
-                </div>
-                <div class="wrap">
-                    <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
-                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Tanggal Pertek BKN</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            06/03/2023</div>
+                    <div class="wrap">
+                        <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                            <label For="" class="text-black font-medium text-[14px]">Tanggal Pertek BKN</label>
+                            <div
+                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                {{ $pmk->tgl_bkn }}</div>
+                        </div>
                     </div>
-                </div>
-                <div class="wrap">
-                    <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
-                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Masa Kerja (Tahun)</label>
-                        <div class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            0</div>
+                    <div class="wrap">
+                        <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                            <label For="" class="text-black font-medium text-[14px]">Masa Kerja (Tahun)</label>
+                            <div
+                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                {{ $pmk->masa_kerja_tahun }}</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,42 +133,34 @@
                         <th scope="col" class="px-3 py-3">
                             Aksi
                         </th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Dokumen Surat.pdf
-                        </td>
-                        <td class="px-3 py-3">
-                            <button title="Download" class="mr-3">
-                                <img src="./../../Assets/download.svg" alt="">
-                            </button>
-                            <button title="Lihat">
-                                <img src="./../../Assets/eye.svg" alt="">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Dokumen Surat.pdf
-                        </td>
-                        <td class="px-3 py-3">
-                            <button title="Download" class="mr-3">
-                                <img src="./../../Assets/download.svg" alt="">
-                            </button>
-                            <button title="Lihat">
-                                <img src="./../../Assets/eye.svg" alt="">
-                            </button>
-                        </td>
-                    </tr>
+                    @foreach ($pmk->files as $file)
+                        <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                            <td class="px-3 py-3">
+                                {{ $loop->iteration }}
+                            </td>
+                            <td class="px-3 py-3">
+                                {{ $file->file_name ? $file->file_name : '-' }}
+                            </td>
+                            <td class="px-3 py-3">
+                                <button title="Download" class="mr-3">
+                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                        download="{{ $file->file_name }}" title="Download">
+                                        <img src="{{ asset('Assets/download.svg') }}" alt="">
+                                    </a>
+                                </button>
+                                <button title="Lihat">
+                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                        target="_blank">
+                                        <img src="{{ asset('Assets/eye.svg') }}" alt="">
+                                    </a>
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

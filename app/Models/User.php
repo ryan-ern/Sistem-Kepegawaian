@@ -19,8 +19,32 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'nip',
+        'nik',
         'email',
         'password',
+        'no_tel',
+        'no_hp',
+        'satuan_kerja',
+        'alamat',
+        'tempat_lahir',
+        'tgl_lahir',
+        'agama',
+        'jk_user',
+        'foto',
+        'role',
+        'lokasi_kerja',
+        'no_npwp',
+        'tgl_npwp',
+        'no_bpjs',
+        'no_taspen',
+        'tgl_taspen',
+        'no_tapera',
+        'kelas_jabatan',
+        'no_karis',
+        'kppn',
+        'no_akta',
+        'no_kk',
     ];
 
     /**
@@ -30,7 +54,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**

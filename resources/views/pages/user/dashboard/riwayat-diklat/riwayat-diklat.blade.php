@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Riwayat  Diklat/Kursus</title>
+    <title>Riwayat Diklat/Kursus</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="../Assets/logoo.png">
@@ -13,8 +13,9 @@
 
 <body>
     <x-sidebar-user title="Riwayat  Diklat/Kursus">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
-            <p class="text-[14px] md:text-[16px]">Berikut tampilan data  Diklat/Kursus anda</p>
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+            <p class="text-[14px] md:text-[16px]">Berikut tampilan data Diklat/Kursus anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-diklat/pengajuan-diklat"
                     class="bt1 hover:bg-[#4F8EA5] bg-[#2F5B6B] text-white flex items-center gap-2 p-1 px-2 text-center rounded">
@@ -34,24 +35,17 @@
         </div>
 
         <div class="wrap-content">
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Diklat Struktur</div>
-                    <div class="text-[16px]">-Sepada</div>
+            @foreach ($diklatData as $diklat)
+                <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                    <div class="wrap">
+                        <div class="text-[18px] font-medium">{{ $diklat->jenis_diklat }}</div>
+                        <div class="text-[16px]">-{{ $diklat->nama_diklat }}</div>
+                    </div>
+                    <a href="{{ route('diklat.show', $diklat->id) }}" class="link">
+                        <img src="../Assets/book.svg" alt="">
+                    </a>
                 </div>
-                <a href="/dashboard/riwayat-diklat/lihat-diklat" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Diklat Struktur</div>
-                    <div class="text-[16px]">-Sepada</div>
-                </div>
-                <a href="" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
+            @endforeach
         </div>
     </x-sidebar-user>
 </body>

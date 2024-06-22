@@ -13,7 +13,8 @@
 
 <body>
     <x-sidebar-user title="Riwayat SKP">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
             <p class="text-[14px] md:text-[16px]">Berikut tampilan data SKP anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-skp/pengajuan-skp"
@@ -34,24 +35,18 @@
         </div>
 
         <div class="wrap-content">
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Nilai SKP : 100</div>
-                    <div class="text-[16px]">Tahun : 2010</div>
+            @foreach ($SkpData as $s)
+                <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                    <div class="wrap">
+                        <div class="text-[18px] font-medium">Nilai SKP : {{ $s->nilai }}</div>
+                        <div class="text-[16px]">Tahun : {{ $s->tahun }}</div>
+                    </div>
+                    <a href="{{ route('skp.show', $s->id) }}" class="link">
+                        <img src="../Assets/book.svg" alt="">
+                    </a>
                 </div>
-                <a href="/dashboard/riwayat-skp/lihat-skp" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Nilai SKP : 100</div>
-                    <div class="text-[16px]">Tahun : 2010</div>
-                </div>
-                <a href="" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
+            @endforeach
+
         </div>
     </x-sidebar-user>
 </body>

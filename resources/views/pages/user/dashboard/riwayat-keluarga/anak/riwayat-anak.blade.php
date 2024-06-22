@@ -13,7 +13,8 @@
 
 <body>
     <x-sidebar-user title="Riwayat Keluarga">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
             <p class="text-[14px] md:text-[16px]">Berikut tampilan data Keluarga anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-anak/pengajuan-anak"
@@ -37,23 +38,26 @@
         <div class="wrap mb-6">
             <div class="menu flex ">
                 <a href="/dashboard/riwayat-orangtua" class="px-2 p-3 rounded-t-2xl w-[130px] ">Orang Tua</a>
-                <a href="/dashboard/riwayat-pasangan" class="px-2 p-3 rounded-t-2xl">anak</a>
-                <a href="/dashboard/riwayat-anak" class="text-[#2F5B6B] font-semibold px-2 p-3 rounded-t-2xl border-t-2 border-x-2 border-[#969BA0] flex justify-center">Anak</a>
+                <a href="/dashboard/riwayat-pasangan" class="px-2 p-3 rounded-t-2xl">Pasangan</a>
+                <a href="/dashboard/riwayat-anak"
+                    class="text-[#2F5B6B] font-semibold px-2 p-3 rounded-t-2xl border-t-2 border-x-2 border-[#969BA0] flex justify-center">Anak</a>
                 <div class="w-full px-2 p-3 rounded-t-2xl border-b-2 border-[#969BA0]"></div>
             </div>
         </div>
         {{-- pilihan --}}
 
         <div class="wrap-content">
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Aisyah</div>
-                    <div class="text-[16px]">-Perempuan</div>
+            @foreach ($AnakData as $a)
+                <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                    <div class="wrap">
+                        <div class="text-[18px] font-medium">{{ $a->nama }}</div>
+                        <div class="text-[16px]">-{{ $a->jk }}</div>
+                    </div>
+                    <a href="{{ route('anak.show', $a->id) }}" class="link">
+                        <img src="../Assets/book.svg" alt="">
+                    </a>
                 </div>
-                <a href="/dashboard/riwayat-anak/lihat-anak" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
+            @endforeach
         </div>
     </x-sidebar-user>
 </body>

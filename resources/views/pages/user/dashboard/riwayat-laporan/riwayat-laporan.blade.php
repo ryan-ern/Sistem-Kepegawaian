@@ -13,7 +13,8 @@
 
 <body>
     <x-sidebar-user title="Riwayat Laporan Kinerja">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
             <p class="text-[14px] md:text-[16px]">Berikut tampilan data Laporan Kinerja anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-laporan/pengajuan-laporan"
@@ -34,22 +35,16 @@
         </div>
 
         <div class="wrap-content">
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">2020</div>
+            @foreach ($kinerjaData as $k)
+                <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                    <div class="wrap">
+                        <div class="text-[18px] font-medium">{{ $k->tahun }}</div>
+                    </div>
+                    <a href="{{ route('kinerja.show', $k->id) }}" class="link">
+                        <img src="../Assets/book.svg" alt="">
+                    </a>
                 </div>
-                <a href="/dashboard/riwayat-laporan/lihat-laporan" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">2021</div>
-                </div>
-                <a href="" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
+            @endforeach
         </div>
     </x-sidebar-user>
 </body>

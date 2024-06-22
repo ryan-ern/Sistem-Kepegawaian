@@ -13,7 +13,8 @@
 
 <body>
     <x-sidebar-user title="Riwayat Keluarga">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
             <p class="text-[14px] md:text-[16px]">Berikut tampilan data Keluarga anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-orangtua/pengajuan-orangtua"
@@ -36,8 +37,11 @@
         {{-- pilihan --}}
         <div class="wrap mb-6">
             <div class="menu flex ">
-                <a href="/dashboard/riwayat-orangtua" class="text-[#2F5B6B] font-semibold px-2 p-3 rounded-t-2xl border-t-2 border-x-2 border-[#969BA0] w-[130px] flex justify-center">Orang Tua</a>
-                <a href="/dashboard/riwayat-pasangan" class=" px-2 p-3 rounded-t-2xl border-b-2 border-[#969BA0]">Pasangan</a>
+                <a href="/dashboard/riwayat-orangtua"
+                    class="text-[#2F5B6B] font-semibold px-2 p-3 rounded-t-2xl border-t-2 border-x-2 border-[#969BA0] w-[130px] flex justify-center">Orang
+                    Tua</a>
+                <a href="/dashboard/riwayat-pasangan"
+                    class=" px-2 p-3 rounded-t-2xl border-b-2 border-[#969BA0]">Pasangan</a>
                 <a href="/dashboard/riwayat-anak" class="px-2 p-3 rounded-t-2xl border-b-2 border-[#969BA0]">Anak</a>
                 <div class="w-full px-2 p-3 rounded-t-2xl border-b-2 border-[#969BA0]"></div>
             </div>
@@ -45,15 +49,17 @@
         {{-- pilihan --}}
 
         <div class="wrap-content">
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Susanto</div>
-                    <div class="text-[16px]">-Ayah</div>
+            @foreach ($OrtuData as $o)
+                <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                    <div class="wrap">
+                        <div class="text-[18px] font-medium">{{ $o->nama }}</div>
+                        <div class="text-[16px]">-{{ $o->jk_kelamin == 'laki-laki' ? 'Ayah' : 'Ibu' }}</div>
+                    </div>
+                    <a href="{{ route('orangtua.show', $o->id) }}" class="link">
+                        <img src="../Assets/book.svg" alt="">
+                    </a>
                 </div>
-                <a href="/dashboard/riwayat-orangtua/lihat-orangtua" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
+            @endforeach
         </div>
     </x-sidebar-user>
 </body>

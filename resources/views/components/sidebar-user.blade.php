@@ -86,48 +86,86 @@
 <body>
     <div class="admin">
         @php
-            $dashboard = ['dashboard', '/',
-            // 
-            'dashboard/riwayat-golongan', 'dashboard/riwayat-golongan/tambah-golongan', 'dashboard/riwayat-golongan/lihat-golongan', 'dashboard/riwayat-golongan/pengajuan-golongan',
-            // 
-            // 
-            'dashboard/riwayat-cpns', 'dashboard/riwayat-cpns/tambah-cpns', 'dashboard/riwayat-cpns/lihat-cpns', 'dashboard/riwayat-cpns/pengajuan-cpns',
-            // 
-            // 
-            'dashboard/riwayat-diklat', 'dashboard/riwayat-diklat/tambah-diklat', 'dashboard/riwayat-diklat/lihat-diklat', 'dashboard/riwayat-diklat/pengajuan-diklat',
-            // 
-            // 
-            'dashboard/riwayat-jabatan', 'dashboard/riwayat-jabatan/tambah-jabatan', 'dashboard/riwayat-jabatan/lihat-jabatan', 'dashboard/riwayat-jabatan/pengajuan-jabatan',
-            // 
-            // 
-            'dashboard/riwayat-laporan', 'dashboard/riwayat-laporan/tambah-laporan', 'dashboard/riwayat-laporan/lihat-laporan', 'dashboard/riwayat-laporan/pengajuan-laporan',
-            // 
-            // 
-            'dashboard/riwayat-pendidikan', 'dashboard/riwayat-pendidikan/tambah-pendidikan', 'dashboard/riwayat-pendidikan/lihat-pendidikan', 'dashboard/riwayat-pendidikan/pengajuan-pendidikan',
-            // 
-            // 
-            'dashboard/riwayat-penghargaan', 'dashboard/riwayat-penghargaan/tambah-penghargaan', 'dashboard/riwayat-penghargaan/lihat-penghargaan', 'dashboard/riwayat-penghargaan/pengajuan-penghargaan',
-            // 
-            // 
-            'dashboard/riwayat-pmk', 'dashboard/riwayat-pmk/tambah-pmk', 'dashboard/riwayat-pmk/lihat-pmk', 'dashboard/riwayat-pmk/pengajuan-pmk',
-            // 
-            // 
-            'dashboard/riwayat-skp', 'dashboard/riwayat-skp/tambah-skp', 'dashboard/riwayat-skp/lihat-skp', 'dashboard/riwayat-skp/pengajuan-skp',
-            // 
-            // 
-            'dashboard/riwayat-orangtua', 'dashboard/riwayat-orangtua/tambah-orangtua', 'dashboard/riwayat-orangtua/lihat-orangtua', 'dashboard/riwayat-orangtua/pengajuan-orangtua',
-            // 
-            // 
-            'dashboard/riwayat-pasangan', 'dashboard/riwayat-pasangan/tambah-pasangan', 'dashboard/riwayat-pasangan/lihat-pasangan', 'dashboard/riwayat-pasangan/pengajuan-pasangan',
-            // 
-            // 
-            'dashboard/riwayat-anak', 'dashboard/riwayat-anak/tambah-anak', 'dashboard/riwayat-anak/lihat-anak', 'dashboard/riwayat-anak/pengajuan-anak',
-            // 
-            // 
-            'dashboard/riwayat-cuti',
-            'dashboard/riwayat-absensi',
-            // 
-        ];
+            $dashboard = [
+                'dashboard',
+                '/',
+                //
+                'dashboard/riwayat-golongan',
+                'dashboard/riwayat-golongan/tambah-golongan',
+                'dashboard/riwayat-golongan/lihat-golongan',
+                'dashboard/riwayat-golongan/pengajuan-golongan',
+                //
+                //
+                'dashboard/riwayat-cpns',
+                'dashboard/riwayat-cpns/tambah-cpns',
+                'dashboard/riwayat-cpns/lihat-cpns',
+                'dashboard/riwayat-cpns/pengajuan-cpns',
+                //
+                //
+                'dashboard/riwayat-diklat',
+                'dashboard/riwayat-diklat/tambah-diklat',
+                'dashboard/riwayat-diklat/lihat-diklat',
+                'dashboard/riwayat-diklat/pengajuan-diklat',
+                //
+                //
+                'dashboard/riwayat-jabatan',
+                'dashboard/riwayat-jabatan/tambah-jabatan',
+                'dashboard/riwayat-jabatan/lihat-jabatan',
+                'dashboard/riwayat-jabatan/pengajuan-jabatan',
+                //
+                //
+                'dashboard/riwayat-laporan',
+                'dashboard/riwayat-laporan/tambah-laporan',
+                'dashboard/riwayat-laporan/lihat-laporan',
+                'dashboard/riwayat-laporan/pengajuan-laporan',
+                //
+                //
+                'dashboard/riwayat-pendidikan',
+                'dashboard/riwayat-pendidikan/tambah-pendidikan',
+                'dashboard/riwayat-pendidikan/lihat-pendidikan',
+                'dashboard/riwayat-pendidikan/pengajuan-pendidikan',
+                //
+                //
+                'dashboard/riwayat-penghargaan',
+                'dashboard/riwayat-penghargaan/tambah-penghargaan',
+                'dashboard/riwayat-penghargaan/lihat-penghargaan',
+                'dashboard/riwayat-penghargaan/pengajuan-penghargaan',
+                //
+                //
+                'dashboard/riwayat-pmk',
+                'dashboard/riwayat-pmk/tambah-pmk',
+                'dashboard/riwayat-pmk/lihat-pmk',
+                'dashboard/riwayat-pmk/pengajuan-pmk',
+                //
+                //
+                'dashboard/riwayat-skp',
+                'dashboard/riwayat-skp/tambah-skp',
+                'dashboard/riwayat-skp/lihat-skp',
+                'dashboard/riwayat-skp/pengajuan-skp',
+                //
+                //
+                'dashboard/riwayat-orangtua',
+                'dashboard/riwayat-orangtua/tambah-orangtua',
+                'dashboard/riwayat-orangtua/lihat-orangtua',
+                'dashboard/riwayat-orangtua/pengajuan-orangtua',
+                //
+                //
+                'dashboard/riwayat-pasangan',
+                'dashboard/riwayat-pasangan/tambah-pasangan',
+                'dashboard/riwayat-pasangan/lihat-pasangan',
+                'dashboard/riwayat-pasangan/pengajuan-pasangan',
+                //
+                //
+                'dashboard/riwayat-anak',
+                'dashboard/riwayat-anak/tambah-anak',
+                'dashboard/riwayat-anak/lihat-anak',
+                'dashboard/riwayat-anak/pengajuan-anak',
+                //
+                //
+                'dashboard/riwayat-cuti',
+                'dashboard/riwayat-absensi',
+                //
+            ];
         @endphp
         @php
             $editProfile = ['edit-profile', 'edit-profile-pendukung'];
@@ -172,18 +210,20 @@
                 <div class="icon">
                     <img src="./../../Assets/user.svg" alt="">
                 </div>
-                <div class="text-[15px] text-white">User</div>
+                <div class="text-[15px] text-white">
+                    {{ explode(' ', auth()->user()->name)[0] }}
+                </div>
             </a>
             {{-- MENU --}}
             <div class="menu flex flex-col h-[80%] md:h-[80%] justify-between">
                 <div class="menu flex flex-col gap-3 ">
                     <a href="/dashboard"
-                        class="p-2 rounded-s-full flex items-start justify-between @if (in_array(Request::path(), $dashboard)) bg-white text-[#093545] 
+                        class="p-2 rounded-s-full flex items-start justify-between @if (in_array(Request::path(), $dashboard)) bg-white text-[#093545]
                         @else
                         bg-[#2F5B6B] text-white @endif">
                         <div class="wrap w-full flex flex-col items-center">
                             <div class="icon">
-                                <svg class="@if (in_array(Request::path(), $dashboard)) fill-[#093545] 
+                                <svg class="@if (in_array(Request::path(), $dashboard)) fill-[#093545]
                                 @else
                                 fill-white @endif"
                                     width="18" height="19" viewBox="0 0 18 19" fill="none"
@@ -197,12 +237,12 @@
                         <div class="garis bg-[#2F5B6B] h-full w-[3px] rounded"></div>
                     </a>
                     <a href="/edit-profile"
-                        class="p-2 rounded-s-full flex items-start justify-between @if (in_array(Request::path(), $editProfile)) bg-white text-[#093545] 
+                        class="p-2 rounded-s-full flex items-start justify-between @if (in_array(Request::path(), $editProfile)) bg-white text-[#093545]
                         @else
                         bg-[#2F5B6B] text-white @endif">
                         <div class="wrap w-full flex flex-col items-center">
                             <div class="icon">
-                                <svg class="@if (in_array(Request::path(), $editProfile)) fill-[#093545] 
+                                <svg class="@if (in_array(Request::path(), $editProfile)) fill-[#093545]
                                     @else
                                     fill-white @endif"
                                     width="24" height="18" viewBox="0 0 24 18" fill="none"
@@ -216,12 +256,12 @@
                         <div class="garis bg-[#2F5B6B] h-full w-[3px] rounded"></div>
                     </a>
                     <a href="/absensi"
-                        class="p-2 rounded-s-full flex items-start justify-between @if (in_array(Request::path(), $absensi)) bg-white text-[#093545] 
+                        class="p-2 rounded-s-full flex items-start justify-between @if (in_array(Request::path(), $absensi)) bg-white text-[#093545]
                         @else
                         bg-[#2F5B6B] text-white @endif">
                         <div class="wrap w-full flex flex-col items-center">
                             <div class="icon">
-                                <svg class="@if (in_array(Request::path(), $absensi)) fill-[#093545] 
+                                <svg class="@if (in_array(Request::path(), $absensi)) fill-[#093545]
                                 @else
                                 fill-white @endif"
                                     width="24" height="23" viewBox="0 0 24 23" fill="none"
@@ -246,12 +286,12 @@
                     </a>
                     </a>
                     <a href="/cuti"
-                        class="p-2 rounded-s-full flex items-start justify-between @if (in_array(Request::path(), $cuti)) bg-white text-[#093545] 
+                        class="p-2 rounded-s-full flex items-start justify-between @if (in_array(Request::path(), $cuti)) bg-white text-[#093545]
                         @else
                         bg-[#2F5B6B] text-white @endif">
                         <div class="wrap w-full flex flex-col items-center">
                             <div class="icon">
-                                <svg class="@if (in_array(Request::path(), $cuti)) fill-[#093545] 
+                                <svg class="@if (in_array(Request::path(), $cuti)) fill-[#093545]
                                 @else
                                 fill-white @endif"
                                     width="16" height="20" viewBox="0 0 16 20" fill="none"
@@ -265,7 +305,13 @@
                         <div class="garis bg-[#2F5B6B] h-full w-[3px] rounded"></div>
                     </a>
                 </div>
-                <a href="/user/login" class="bg-white text-[#093545]  p-2 text-center rounded mr-3 md:mr-[30px]">Logout</a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="bg-white text-[#093545] p-2 text-center rounded mr-3 md:mr-[30px]">
+                        Logout
+                    </button>
+                </form>
+
             </div>
         </div>
         {{-- CONTENT --}}

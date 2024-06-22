@@ -13,7 +13,8 @@
 
 <body>
     <x-sidebar-user title="Riwayat Peninjauan Masa Kerja">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
             <p class="text-[14px] md:text-[16px]">Berikut tampilan data Peninjauan Masa Kerja anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-pmk/pengajuan-pmk"
@@ -34,24 +35,17 @@
         </div>
 
         <div class="wrap-content">
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Negeri</div>
-                    <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
+            @foreach ($pmkData as $pmk)
+                <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                    <div class="wrap">
+                        <div class="text-[18px] font-medium">{{ $pmk->masa_kerja }}</div>
+                        <div class="text-[16px]">-{{ $pmk->instansi }}</div>
+                    </div>
+                    <a href="{{ route('pmk.show', $pmk->id) }}" class="link">
+                        <img src="../Assets/book.svg" alt="">
+                    </a>
                 </div>
-                <a href="/dashboard/riwayat-pmk/lihat-pmk" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Negeri</div>
-                    <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
-                </div>
-                <a href="" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
+            @endforeach
         </div>
     </x-sidebar-user>
 </body>

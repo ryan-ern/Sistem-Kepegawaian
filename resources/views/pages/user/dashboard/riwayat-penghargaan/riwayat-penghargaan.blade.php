@@ -13,8 +13,9 @@
 
 <body>
     <x-sidebar-user title="Riwayat Penghargaan">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
-            <p class="text-[14px] md:text-[16px]">Berikut tampilan data  Penghargaan anda</p>
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+            <p class="text-[14px] md:text-[16px]">Berikut tampilan data Penghargaan anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-penghargaan/pengajuan-penghargaan"
                     class="bt1 hover:bg-[#4F8EA5] bg-[#2F5B6B] text-white flex items-center gap-2 p-1 px-2 text-center rounded">
@@ -34,24 +35,18 @@
         </div>
 
         <div class="wrap-content">
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Olimpiade</div>
-                    <div class="text-[16px]">Tahun : 2010</div>
+            @foreach ($rewardData as $r)
+                <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                    <div class="wrap">
+                        <div class="text-[18px] font-medium">{{ $r->jenis }}</div>
+                        <div class="text-[16px]">Tahun : {{ $r->tahun }}</div>
+                    </div>
+                    <a href="{{ route('reward.show', $r->id) }}" class="link">
+                        <img src="../Assets/book.svg" alt="">
+                    </a>
                 </div>
-                <a href="/dashboard/riwayat-penghargaan/lihat-penghargaan" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Wira Karya</div>
-                    <div class="text-[16px]">Tahun : 2010</div>
-                </div>
-                <a href="" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
+            @endforeach
+
         </div>
     </x-sidebar-user>
 </body>
