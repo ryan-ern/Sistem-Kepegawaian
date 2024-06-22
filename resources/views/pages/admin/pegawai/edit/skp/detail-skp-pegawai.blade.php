@@ -22,42 +22,47 @@
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
-                    <a href="/admin/edit-pegawai/pendidikan"
+                    <a href="/admin/edit-pegawai/data-diri"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        Data Diri
+                    </a>
+                    <a href="/admin/edit-pegawai/data-pendidikan"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Pendidikan
                     </a>
-                    <a href="/admin/edit-pegawai/keluarga-orangtua"
+                    <a href="/admin/edit-pegawai/data-orangtua"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Keluarga
                     </a>
-                    <a href="/admin/edit-pegawai/skp" class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                    <a href="/admin/edit-pegawai/data-skp"
+                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         SKP
                     </a>
-                    <a href="/admin/edit-pegawai/penghargaan"
+                    <a href="/admin/edit-pegawai/data-penghargaan"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Penghargaan
                     </a>
-                    <a href="/admin/edit-pegawai/kinerja"
+                    <a href="/admin/edit-pegawai/data-kinerja"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Laporan Kinerja
                     </a>
-                    <a href="/admin/edit-pegawai/cpns"
+                    <a href="/admin/edit-pegawai/data-cpns"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         CPNS/PNS
                     </a>
-                    <a href="/admin/edit-pegawai/diklat"
+                    <a href="/admin/edit-pegawai/data-diklat"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Diklat/Kursus
                     </a>
-                    <a href="/admin/edit-pegawai/pmk"
+                    <a href="/admin/edit-pegawai/data-pmk"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
                         Peninjauan Masa Kerja
                     </a>
-                    <a href="/admin/edit-pegawai/golongan"
+                    <a href="/admin/edit-pegawai/data-golongan"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Golongan
                     </a>
-                    <a href="/admin/edit-pegawai/jabatan"
+                    <a href="/admin/edit-pegawai/data-jabatan"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Jabatan
                     </a>
@@ -66,7 +71,8 @@
             <div class="right w-full md:w-[88%]">
                 <div class="hea flex justify-between">
                     <div class="text-[#2F5B6B] font-semibold text-[22px]">Data SKP</div>
-                    <button class="p-1 text-white px-5 rounded bg-[#2F5B6B]">Simpan</button>
+                    <button data-modal-target="simpan" data-modal-toggle="simpan"
+                        class="p-1 bg-[#9BB8C3] hover:bg-[#2F5B6B] px-5 rounded text-white">Simpan</button>
                 </div>
                 <div class="wrap mt-3">
                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
@@ -77,7 +83,8 @@
                                 <div
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Tahun</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -85,7 +92,8 @@
                                 <div
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Nilai SKP</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -94,7 +102,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Orientasi
                                         Pelayanan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -102,7 +111,8 @@
                                 <div
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Integritas</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -110,7 +120,8 @@
                                 <div
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Komitmen</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -118,7 +129,8 @@
                                 <div
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Disiplin</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -126,7 +138,8 @@
                                 <div
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Kerja Sama</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -135,7 +148,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For=""
                                         class="text-black font-medium text-[14px]">Kepemimpinan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -144,7 +158,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Status
                                         Atasan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -153,7 +168,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Status
                                         Penilai</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -162,7 +178,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Nama
                                         Atasan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -171,7 +188,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Nama
                                         Penilai</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -180,7 +198,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Jenis
                                         Jabatan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                         </div>
@@ -191,7 +210,8 @@
                                 <div
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Jumlah</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -200,7 +220,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Nilai Perilaku
                                         Kerja</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -209,7 +230,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Nilai Prestasi
                                         Kerja</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -218,7 +240,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Atasan Non PNS
                                         ID</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -227,7 +250,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Jabatan
                                         Atasan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -236,7 +260,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Jabatan
                                         Penilai</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -245,7 +270,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Golongan Penilai
                                         TMT</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -254,7 +280,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Golongan Atasan
                                         TMT</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -263,7 +290,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Golongan
                                         Penilai</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -272,7 +300,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">Golongan
                                         Atasan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -281,7 +310,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">NIP/NIK
                                         Penilai</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                             <div class="wrap">
@@ -290,7 +320,8 @@
                                     class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                                     <label For="" class="text-black font-medium text-[14px]">NIP/NIK
                                         Atasan</label>
-                                    <input type="text" class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
+                                    <input type="text"
+                                        class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded w-[380px]">
                                 </div>
                             </div>
                         </div>
@@ -325,8 +356,11 @@
                                         <button title="Download" class="mr-3">
                                             <img src="./../../Assets/download.svg" alt="">
                                         </button>
-                                        <button title="Lihat">
+                                        <button title="Lihat" class="mr-3">
                                             <img src="./../../Assets/eye.svg" alt="">
+                                        </button>
+                                        <button data-modal-target="hapus" data-modal-toggle="hapus" class="">
+                                            <img src="./../../Assets/del.svg" alt="">
                                         </button>
                                     </td>
                                 </tr>
@@ -342,8 +376,11 @@
                                         <button title="Download" class="mr-3">
                                             <img src="./../../Assets/download.svg" alt="">
                                         </button>
-                                        <button title="Lihat">
+                                        <button title="Lihat" class="mr-3">
                                             <img src="./../../Assets/eye.svg" alt="">
+                                        </button>
+                                        <button data-modal-target="hapus" data-modal-toggle="hapus" class="">
+                                            <img src="./../../Assets/del.svg" alt="">
                                         </button>
                                     </td>
                                 </tr>
@@ -352,7 +389,78 @@
                     </div>
                 </div>
             </div>
-        </div>
+            {{-- POP UP simpan --}}
+            <div id="simpan" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div data-modal-hide="simpan" class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="simpan">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap flex items-center gap-8 flex-col">
+                                <div class="head font-medium text-[28px]">Data Berhasil Dikirim</div>
+                                <div class="icon">
+                                    <img src="../../Assets/ceklist.svg" alt="">
+                                </div>
+                                <button data-modal-hide="simpan"
+                                    class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
+                                    Selesai
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- simpan --}}
+
+            {{-- POP UP HAPUS --}}
+            <div id="hapus" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div data-modal-hide="hapus" class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="hapus">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap flex items-center gap-8 flex-col">
+                                <div class="head font-medium text-[28px]">Data Berhasil Dihapus</div>
+                                <div class="icon">
+                                    <img src="../../Assets/sampah.svg" alt="">
+                                </div>
+                                <button data-modal-hide="hapus" class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
+                                    Selesai
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- POP UP HAPUS --}}
     </x-sidebar-admin>
 </body>
 

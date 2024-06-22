@@ -48,9 +48,6 @@
                             NIP
                         </th>
                         <th scope="col" class="px-3 py-3">
-                            Tanggal
-                        </th>
-                        <th scope="col" class="px-3 py-3">
                             Status
                         </th>
                     </tr>
@@ -67,7 +64,18 @@
                             12314534534534
                         </td>
                         <td class="px-3 py-3">
-                            13-02-2024
+                            <a href="/admin/absensi/detail-absensi" class="bg-[#E9F6FB] p-1 rounded px-6" >Lihat Absensi</a>
+                        </td>
+                    </tr>
+                    <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
+                        <td class="px-3 py-3">
+                            1
+                        </td>
+                        <td class="px-3 py-3">
+                            Monica Adela
+                        </td>
+                        <td class="px-3 py-3">
+                            12314534534534
                         </td>
                         <td class="px-3 py-3">
                             <a href="/admin/absensi/detail-absensi" class="bg-[#E9F6FB] p-1 rounded px-6" >Lihat Absensi</a>
@@ -84,9 +92,6 @@
                             12314534534534
                         </td>
                         <td class="px-3 py-3">
-                            13-02-2024
-                        </td>
-                        <td class="px-3 py-3">
                             <a href="/admin/absensi/detail-absensi" class="bg-[#E9F6FB] p-1 rounded px-6" >Lihat Absensi</a>
                         </td>
                     </tr>
@@ -99,26 +104,6 @@
                         </td>
                         <td class="px-3 py-3">
                             12314534534534
-                        </td>
-                        <td class="px-3 py-3">
-                            13-02-2024
-                        </td>
-                        <td class="px-3 py-3">
-                            <a href="/admin/absensi/detail-absensi" class="bg-[#E9F6FB] p-1 rounded px-6" >Lihat Absensi</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Monica Adela
-                        </td>
-                        <td class="px-3 py-3">
-                            12314534534534
-                        </td>
-                        <td class="px-3 py-3">
-                            13-02-2024
                         </td>
                         <td class="px-3 py-3">
                             <a href="/admin/absensi/detail-absensi" class="bg-[#E9F6FB] p-1 rounded px-6" >Lihat Absensi</a>

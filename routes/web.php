@@ -207,7 +207,10 @@ Route::controller(GeneralPage::class)->group(function () {
     Route::get('/dashboard/riwayat-cuti', 'riwayatcuti');
     // CUTI
     // ABSENSI
-    Route::get('/dashboard/riwayat-absensi', 'riwayatabsensi');
+    Route::get('/dashboard/riwayat-diri', 'riwayatdiri');
+    Route::get('/dashboard/riwayat-diri/tambah-diri', 'tambahdiri');
+    Route::get('/dashboard/riwayat-diri/lihat-diri', 'lihatdiri');
+    Route::get('/dashboard/riwayat-diri/pengajuan-diri', 'pengajuandiri');
     // ABSENSI
     // DASHBOARD
     // -
@@ -240,18 +243,59 @@ Route::controller(GeneralPage::class)->group(function () {
     // PEGAWAI
     Route::get('/admin/pegawai', 'pegawaiAdmin');
     Route::get('/admin/edit-pegawai', 'pegawaiEdit');
-    Route::get('/admin/edit-pegawai/pendidikan', 'pegawaiPendidikan');
-    Route::get('/admin/edit-pegawai/keluarga-orangtua', 'pegawaiOrangtua');
-    Route::get('/admin/edit-pegawai/keluarga-pasangan', 'pegawaipasangan');
-    Route::get('/admin/edit-pegawai/keluarga-anak', 'pegawaianak');
-    Route::get('/admin/edit-pegawai/skp', 'pegawaiskp');
-    Route::get('/admin/edit-pegawai/penghargaan', 'pegawaipenghargaan');
-    Route::get('/admin/edit-pegawai/kinerja', 'pegawaikinerja');
-    Route::get('/admin/edit-pegawai/cpns', 'pegawaicpns');
-    Route::get('/admin/edit-pegawai/diklat', 'pegawaidiklat');
-    Route::get('/admin/edit-pegawai/pmk', 'pegawaipmk');
-    Route::get('/admin/edit-pegawai/golongan', 'pegawaigolongan');
-    Route::get('/admin/edit-pegawai/jabatan', 'pegawaijabatan');
+    
+    //PENDIDIKAN
+    Route::get('/admin/edit-pegawai/data-pendidikan', 'dataPendidikan');
+    Route::get('/admin/edit-pegawai/detail-pendidikan', 'detailPendidikan');
+    //PENDIDIKAN
+    //JABATAN
+    Route::get('/admin/edit-pegawai/data-jabatan', 'dataJabatan');
+    Route::get('/admin/edit-pegawai/detail-jabatan', 'detailJabatan');
+    //JABATAN
+    //GOLONGAN
+    Route::get('/admin/edit-pegawai/data-golongan', 'dataGolongan');
+    Route::get('/admin/edit-pegawai/detail-golongan', 'detailGolongan');
+    //GOLONGAN
+    //CPNS
+    Route::get('/admin/edit-pegawai/data-cpns', 'datacpns');
+    Route::get('/admin/edit-pegawai/detail-cpns', 'detailcpns');
+    //CPNS
+    //DIKLAT
+    Route::get('/admin/edit-pegawai/data-diklat', 'dataDiklat');
+    Route::get('/admin/edit-pegawai/detail-diklat', 'detailDiklat');
+    //DIKLAT
+    //PENGHARGAAN
+    Route::get('/admin/edit-pegawai/data-penghargaan', 'dataPenghargaan');
+    Route::get('/admin/edit-pegawai/detail-penghargaan', 'detailPenghargaan');
+    //PENGHARGAAN
+    //KINERJA
+    Route::get('/admin/edit-pegawai/data-kinerja', 'dataKinerja');
+    Route::get('/admin/edit-pegawai/detail-kinerja', 'detailKinerja');
+    //KINERJA
+    //PMK
+    Route::get('/admin/edit-pegawai/data-pmk', 'dataPmk');
+    Route::get('/admin/edit-pegawai/detail-pmk', 'detailPmk');
+    //PMK
+    //SKP
+    Route::get('/admin/edit-pegawai/data-skp', 'dataSkp');
+    Route::get('/admin/edit-pegawai/detail-skp', 'detailSkp');
+    //SKP
+    //KELUARGA-ORANGTUA
+    Route::get('/admin/edit-pegawai/data-orangtua', 'dataOrangtua');
+    Route::get('/admin/edit-pegawai/detail-orangtua', 'detailOrangtua');
+    //KELUARGA-ORANGTUA
+    //KELUARGA-PASANGAN
+    Route::get('/admin/edit-pegawai/data-pasangan', 'dataPasangan');
+    Route::get('/admin/edit-pegawai/detail-pasangan', 'detailPasangan');
+    //KELUARGA-PASANGAN
+    //KELUARGA-ANAK
+    Route::get('/admin/edit-pegawai/data-anak', 'dataAnak');
+    Route::get('/admin/edit-pegawai/detail-anak', 'detailAnak');
+    //KELUARGA-ANAK
+    //DATA DIRI
+    Route::get('/admin/edit-pegawai/data-diri', 'dataDiri');
+    Route::get('/admin/edit-pegawai/detail-diri', 'detailDiri');
+    //DATA DIRI
     // Lihat
     Route::get('/admin/lihat-pegawai', 'pegawaiLihat');
     // PEGAWAI

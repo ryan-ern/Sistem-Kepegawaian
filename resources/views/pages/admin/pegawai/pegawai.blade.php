@@ -64,17 +64,17 @@
                                 <img class="w-full h-full object-cover" src="./../Assets/man.jpg" alt="">
                             </div>
                         </td>
-                        <td class="px-3 py-3">
-                            12345678 123456 1 123
+                        <td title="12345678 1234561123" class="px-3 py-3">
+                            12345678...
                         </td>
-                        <td class="px-3 py-3">
+                        <td title="Muhammad Udin" class="px-3 py-3">
                             Muhammad Udin
                         </td>
-                        <td class="px-3 py-3">
+                        <td title="Sekretaris" class="px-3 py-3">
                             Sekretaris
                         </td>
-                        <td class="px-3 py-3">
-                            Gol II
+                        <td title="II" class="px-3 py-3">
+                            II
                         </td>
                         <td class="px-3 py-3">
                             <div class="p-1 bg-slate-400 rounded-sm text-black inline-block px-4">Aktif</div>
@@ -105,7 +105,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <button data-modal-target="penghargaan" data-modal-toggle="penghargaan"
+                                            <button data-modal-target="hapus" data-modal-toggle="hapus"
                                                 class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
                                                 <img src="./../Assets/hapus.svg" alt="">
                                                 Hapus
@@ -125,17 +125,17 @@
                                 <img class="w-full h-full object-cover" src="./../Assets/man.jpg" alt="">
                             </div>
                         </td>
-                        <td class="px-3 py-3">
-                            12345678 123456 1 123
+                        <td title="12345678 1234561123" class="px-3 py-3">
+                            12345678...
                         </td>
-                        <td class="px-3 py-3">
+                        <td title="Muhammad Udin" class="px-3 py-3">
                             Muhammad Udin
                         </td>
-                        <td class="px-3 py-3">
+                        <td title="Sekretaris" class="px-3 py-3">
                             Sekretaris
                         </td>
-                        <td class="px-3 py-3">
-                            Gol II
+                        <td title="II" class="px-3 py-3">
+                            II
                         </td>
                         <td class="px-3 py-3">
                             <div class="p-1 bg-slate-400 rounded-sm text-black inline-block px-4">Aktif</div>
@@ -166,7 +166,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <button data-modal-target="penghargaan" data-modal-toggle="penghargaan"
+                                            <button data-modal-target="hapus" data-modal-toggle="hapus"
                                                 class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
                                                 <img src="./../Assets/hapus.svg" alt="">
                                                 Hapus
@@ -179,17 +179,17 @@
                     </tr>
                 </tbody>
             </table>
-            {{-- hapus --}}
-            <div id="penghargaan" tabindex="-1" aria-hidden="true"
+            {{-- POP UP HAPUS --}}
+            <div id="hapus" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div data-modal-hide="penghargaan" class="relative p-4 w-full flex justify-center items-center h-full">
+                <div data-modal-hide="hapus" class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
                     <div class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
                         <!-- Modal header -->
                         <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="penghargaan">
+                                data-modal-hide="hapus">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -205,7 +205,7 @@
                                 <div class="icon">
                                     <img src="../../Assets/sampah.svg" alt="">
                                 </div>
-                                <button data-modal-hide="penghargaan" class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
+                                <button data-modal-hide="hapus" class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
                                     Selesai
                                 </button>
                             </div>
@@ -213,7 +213,7 @@
                     </div>
                 </div>
             </div>
-            {{-- hapus --}}
+            {{-- POP UP HAPUS --}}
         </div>
     </x-sidebar-admin>
 </body>

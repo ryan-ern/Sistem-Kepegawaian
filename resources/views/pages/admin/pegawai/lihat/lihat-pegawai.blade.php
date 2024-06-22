@@ -33,7 +33,11 @@
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
-                    <button data-modal-target="pendidikan" data-modal-toggle="pendidikan"
+                    <button data-modal-target="Data Diri" data-modal-toggle="Data Diri"
+                        class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
+                        Data Diri
+                    </button>
+                    <button data-modal-target="datapendidikan" data-modal-toggle="datapendidikan"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         Pendidikan
                     </button>
@@ -41,35 +45,35 @@
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         Keluarga
                     </button>
-                    <button data-modal-target="skp" data-modal-toggle="skp"
+                    <button data-modal-target="dataskp" data-modal-toggle="dataskp"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         SKP
                     </button>
-                    <button data-modal-target="penghargaan" data-modal-toggle="penghargaan"
+                    <button data-modal-target="datapenghargaan" data-modal-toggle="datapenghargaan"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         Penghargaan
                     </button>
-                    <button data-modal-target="kinerja" data-modal-toggle="kinerja"
+                    <button data-modal-target="datakinerja" data-modal-toggle="datakinerja"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         Laporan Kinerja
                     </button>
-                    <button data-modal-target="cpns" data-modal-toggle="cpns"
+                    <button data-modal-target="datacpns" data-modal-toggle="datacpns"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         CPNS/PNS
                     </button>
-                    <button data-modal-target="diklat" data-modal-toggle="diklat"
+                    <button data-modal-target="datadiklat" data-modal-toggle="datadiklat"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         Diklat/Kursus
                     </button>
-                    <button data-modal-target="pmk" data-modal-toggle="pmk"
+                    <button data-modal-target="datapmk" data-modal-toggle="datapmk"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md text-[14px]">
                         Peninjauan Masa Kerja
                     </button>
-                    <button data-modal-target="golongan" data-modal-toggle="golongan"
+                    <button data-modal-target="datagolongan" data-modal-toggle="datagolongan"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         Golongan
                     </button>
-                    <button data-modal-target="jabatan" data-modal-toggle="jabatan"
+                    <button data-modal-target="datajabatan" data-modal-toggle="datajabatan"
                         class="w-full p-3 text-white bg-[#4F8EA5] hover:bg-[#093545]  text-center rounded-md">
                         Jabatan
                         </a>
@@ -83,7 +87,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For=""
                                         class="text-black font-medium w-[200px] flex-shrink-0">Nama</label>
-                                    <div class="is">
+                                    <div title="Monica Adella" class="is">
                                         Monica Adella</div>
                                 </div>
                             </div>
@@ -91,7 +95,7 @@
                                 <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">NIP</label>
-                                    <div class="is">
+                                    <div title="120563458" class="is">
                                         120563458</div>
                                 </div>
                             </div>
@@ -99,7 +103,7 @@
                                 <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">NIK </label>
-                                    <div class="is">
+                                    <div title="120563458" class="is">
                                         12345678902</div>
                                 </div>
                             </div>
@@ -108,7 +112,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No Kartu
                                         Keluarga</label>
-                                    <div class="is">
+                                    <div title="1879562345789" class="is">
                                         1879562345789</div>
                                 </div>
                             </div>
@@ -116,31 +120,15 @@
                                 <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Nomor Telepon</label>
-                                    <div class="is">
+                                    <div title="08123456789" class="is">
                                         08123456789</div>
                                 </div>
                             </div>
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                    <label For="" class="text-black font-medium w-[200px]">Jabatan</label>
-                                    <div class="is">
-                                        Sekretaris</div>
-                                </div>
-                            </div>
-                            <div class="wrap">
-                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                    <label For="" class="text-black font-medium w-[200px]">Golongan</label>
-                                    <div class="is">
-                                        Golongan II</div>
-                                </div>
-                            </div>
-                            <div class="wrap">
-                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px] ">Status</label>
-                                    <div class="is">
+                                    <div title="Aktif" class="is">
                                         Aktif</div>
                                 </div>
                             </div>
@@ -149,7 +137,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For=""
                                         class="text-black font-medium w-[200px] flex-shrink-0 ">Alamat</label>
-                                    <div class="is">
+                                    <div title="Gajah Mada, Kota Baru, Tanjung Tarang Timur" class="is">
                                         Gajah Mada, Kota Baru, Tanjung Tarang Timur</div>
                                 </div>
                             </div>
@@ -157,7 +145,7 @@
                                 <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Agama</label>
-                                    <div class="is">
+                                    <div title="Islam" class="is">
                                         Islam</div>
                                 </div>
                             </div>
@@ -166,7 +154,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Satuan
                                         Kerja</label>
-                                    <div class="is">
+                                    <div title="Pegawai" class="is">
                                         Pegawai</div>
                                 </div>
                             </div>
@@ -175,19 +163,15 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Kelas
                                         Jabatan(Angka)</label>
-                                    <div class="is">
+                                    <div title="2" class="is">
                                         2</div>
                                 </div>
                                 <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
                             </div>
-
-                        </div>
-                        {{-- KANAN --}}
-                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
                             <div class="wrap">
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Email</label>
-                                    <div class="is">
+                                    <div title="monica123@gmail.com" class="is">
                                         monica123@gmail.com</div>
                                 </div>
                             </div>
@@ -205,15 +189,21 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Tempat Lahir
                                     </label>
-                                    <div class="is">
+                                    <div title="Bandar Lampung" class="is">
                                         Bandar Lampung</div>
                                 </div>
                             </div>
+                            <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+
+                        </div>
+                        {{-- KANAN --}}
+                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
                             <div class="wrap">
-                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                            </div>
+                            <div class="wrap">
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No NPWP </label>
-                                    <div class="is">
+                                    <div title="1879562345789" class="is">
                                         1879562345789</div>
                                 </div>
                             </div>
@@ -231,7 +221,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Lokasi Kerja
                                     </label>
-                                    <div class="is">
+                                    <div title="Lampung" class="is">
                                         Lampung</div>
                                 </div>
                             </div>
@@ -240,7 +230,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No BPJS Kesehatan
                                     </label>
-                                    <div class="is">
+                                    <div title="2356889" class="is">
                                         2356889</div>
                                 </div>
                             </div>
@@ -249,7 +239,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No Akta Kelahitan
                                     </label>
-                                    <div class="is">
+                                    <div title="235689784512" class="is">
                                         235689784512</div>
                                 </div>
                             </div>
@@ -258,7 +248,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No Karis/Kasus
                                     </label>
-                                    <div class="is">
+                                    <div title="12345678902" class="is">
                                         12345678902</div>
                                 </div>
                             </div>
@@ -266,7 +256,7 @@
                                 <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No TASPEN </label>
-                                    <div class="is">
+                                    <div title="12345678902" class="is">
                                         12345678902</div>
                                 </div>
                             </div>
@@ -283,7 +273,7 @@
                                 <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No TAPERA </label>
-                                    <div class="is">
+                                    <div title="12345678902" class="is">
                                         12345678902</div>
                                 </div>
                             </div>
@@ -292,7 +282,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No KPPN/Kantor
                                         Pembayaran Gaji</label>
-                                    <div class="is">
+                                    <div title="5623" class="is">
                                         5623</div>
                                 </div>
                                 <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
@@ -304,8 +294,95 @@
             </div>
 
             {{-- MODAL --}}
-            {{-- PENDIDIKAN --}}
-            <div id="pendidikan" tabindex="-1" aria-hidden="true"
+            {{-- DATA DIRI --}}
+            <div id="Data Diri" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Diri
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="Data Diri">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                            </div>
+                            {{-- table --}}
+                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                <table
+                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                        <tr>
+                                            <th scope="col" class="px-3 py-3">
+                                                No
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Nama
+                                            </th>
+                                            <th scope="col" class="px-5 py-3">
+                                                Aksi
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td title="Dokumen Surat" class="px-3 py-3">
+                                                Dokumen Surat
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td title="Dokumen Surat" class="px-3 py-3">
+                                                Dokumen Surat
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- DATA PENDIDIKAN --}}
+            <div id="datapendidikan" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
@@ -317,7 +394,65 @@
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="pendidikan">
+                                data-modal-hide="datapendidikan">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap-content">
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">S1</div>
+                                                <div class="text-[16px]">- Ekonomi</div>
+                                            </div>
+                                            <button data-modal-target="detailpendidikan"
+                                                data-modal-toggle="detailpendidikan">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">S1</div>
+                                                <div class="text-[16px]">- Ekonomi</div>
+                                            </div>
+                                            <button data-modal-target="detailpendidikan"
+                                                data-modal-toggle="detailpendidikan">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DATA PENDIDIKAN --}}
+
+            {{-- DETAIL PENDIDIKAN --}}
+            <div id="detailpendidikan" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Pendidikan
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailpendidikan">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -335,7 +470,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Pendidikan</label>
-                                            <div class="isi">
+                                            <div title="Sarjana" class="isi">
                                                 Sarjana</div>
                                         </div>
                                     </div>
@@ -346,7 +481,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Tingkat
                                                 Pendidikan</label>
-                                            <div class="isi">
+                                            <div title="S1-Teknik Informatika" class="isi">
                                                 S1-Teknik Informatika</div>
                                         </div>
                                     </div>
@@ -357,7 +492,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Tahun
                                                 Lulus</label>
-                                            <div class="isi">
+                                            <div title="1989" class="isi">
                                                 1989</div>
                                         </div>
                                     </div>
@@ -379,7 +514,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Gelar
                                                 Depan</label>
-                                            <div class="isi">
+                                            <div title="-" class="isi">
                                                 -</div>
                                         </div>
                                     </div>
@@ -390,7 +525,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Gelar
                                                 Belakang</label>
-                                            <div class="isi">
+                                            <div title="S.Kom" class="isi">
                                                 S.Kom</div>
                                         </div>
                                     </div>
@@ -401,7 +536,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nomor
                                                 Ijazah</label>
-                                            <div class="isi">
+                                            <div title="2342256897845" class="isi">
                                                 2342256897845</div>
                                         </div>
                                     </div>
@@ -412,13 +547,12 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nama
                                                 Universitas</label>
-                                            <div class="isi">
+                                            <div title="Instititut Teknologi Sumatera" class="isi">
                                                 Instititut Teknologi Sumatera</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
                                     </div>
                                 </div>
-
                             </div>
                             {{-- table --}}
                             <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
@@ -435,7 +569,6 @@
                                             <th scope="col" class="px-3 py-3">
                                                 Aksi
                                             </th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -480,10 +613,10 @@
                     </div>
                 </div>
             </div>
-            {{-- PENDIDIKAN --}}
+            {{-- DETAIL PENDIDIKAN --}}
 
-            {{-- SKP --}}
-            <div id="skp" tabindex="-1" aria-hidden="true"
+            {{-- DATA SKP --}}
+            <div id="dataskp" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
@@ -495,7 +628,7 @@
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="skp">
+                                data-modal-hide="dataskp">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -506,7 +639,62 @@
                         </div>
                         <!-- Modal body -->
                         <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap-content">
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Nilai SKP : 100</div>
+                                                <div class="text-[16px]">Tahun : 2010</div>
+                                            </div>
+                                            <button data-modal-target="detailskp" data-modal-toggle="detailskp">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Nilai SKP : 100</div>
+                                                <div class="text-[16px]">Tahun : 2010</div>
+                                            </div>
+                                            <button data-modal-target="detailskp" data-modal-toggle="detailskp">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DATA SKP --}}
 
+            {{-- DETAIL SKP --}}
+            <div id="detailskp" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data SKP
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailskp">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 {{-- KIRI --}}
                                 <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
@@ -515,7 +703,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Tahun</label>
-                                            <div class="isi">
+                                            <div title="2021" class="isi">
                                                 2021</div>
                                         </div>
                                     </div>
@@ -526,7 +714,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nilai
                                                 SKP</label>
-                                            <div class="isi">
+                                            <div title="85.45" class="isi">
                                                 85.45</div>
                                         </div>
                                     </div>
@@ -537,7 +725,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Orientasi
                                                 Pelayanan</label>
-                                            <div class="isi">
+                                            <div title="80" class="isi">
                                                 80</div>
                                         </div>
                                     </div>
@@ -547,7 +735,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Integritas</label>
-                                            <div class="isi">
+                                            <div title="80" class="isi">
                                                 80</div>
                                         </div>
                                     </div>
@@ -557,7 +745,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Komitmen</label>
-                                            <div class="isi">
+                                            <div title="85" class="isi">
                                                 85</div>
                                         </div>
                                     </div>
@@ -567,7 +755,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Disiplin</label>
-                                            <div class="isi">
+                                            <div title="85" class="isi">
                                                 85</div>
                                         </div>
                                     </div>
@@ -578,7 +766,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Kerja
                                                 Sama</label>
-                                            <div class="isi">
+                                            <div title="85" class="isi">
                                                 85</div>
                                         </div>
                                     </div>
@@ -588,7 +776,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Kepemimpinan</label>
-                                            <div class="isi">
+                                            <div title="80" class="isi">
                                                 80</div>
                                         </div>
                                     </div>
@@ -599,7 +787,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Status
                                                 Atasan</label>
-                                            <div class="isi">
+                                            <div title="PNS" class="isi">
                                                 PNS</div>
                                         </div>
                                     </div>
@@ -610,7 +798,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Status
                                                 Penilai</label>
-                                            <div class="isi">
+                                            <div title="PNS" class="isi">
                                                 PNS</div>
                                         </div>
                                     </div>
@@ -621,7 +809,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nama
                                                 Atasan</label>
-                                            <div class="isi">
+                                            <div title="Ridwan" class="isi">
                                                 Ridwan</div>
                                         </div>
                                     </div>
@@ -632,7 +820,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nama
                                                 Penilai</label>
-                                            <div class="isi">
+                                            <div title="Emidianti" class="isi">
                                                 Emidianti</div>
                                         </div>
                                     </div>
@@ -643,7 +831,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Jenis
                                                 Jabatan</label>
-                                            <div class="isi">
+                                            <div title="2" class="isi">
                                                 2</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
@@ -656,7 +844,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Jumlah</label>
-                                            <div class="isi">
+                                            <div title="505" class="isi">
                                                 505</div>
                                         </div>
                                     </div>
@@ -667,7 +855,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nilai
                                                 Perilaku Kerja</label>
-                                            <div class="isi">
+                                            <div title="35" class="isi">
                                                 35</div>
                                         </div>
                                     </div>
@@ -678,7 +866,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nilai
                                                 Prestasi Kerja</label>
-                                            <div class="isi">
+                                            <div title="86" class="isi">
                                                 86</div>
                                         </div>
                                     </div>
@@ -689,7 +877,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Atasan
                                                 Non PNS ID</label>
-                                            <div class="isi">
+                                            <div title="-" class="isi">
                                                 -</div>
                                         </div>
                                     </div>
@@ -700,7 +888,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Jabatan
                                                 Atasan</label>
-                                            <div class="isi">
+                                            <div title="KEPALA BADAN PEMBANGUNAN SISTEM INFORMASI" class="isi">
                                                 KEPALA BADAN PEMBANGUNAN.... </div>
                                         </div>
                                     </div>
@@ -711,7 +899,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Jabatan
                                                 Penilai</label>
-                                            <div class="isi">
+                                            <div title="KEPALA BIDANG PERENCANAAN MAKROMIA" class="isi">
                                                 KEPALA BIDANG PERENCANAAN MAKRO.... </div>
                                         </div>
                                     </div>
@@ -744,7 +932,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Golongan
                                                 Penilai</label>
-                                            <div class="isi">
+                                            <div title="40" class="isi">
                                                 40</div>
                                         </div>
                                     </div>
@@ -755,7 +943,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Golongan
                                                 Atasan</label>
-                                            <div class="isi">
+                                            <div title="50" class="isi">
                                                 50</div>
                                         </div>
                                     </div>
@@ -766,7 +954,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">NIP/NIK
                                                 Penilai</label>
-                                            <div class="isi">
+                                            <div title="12345678945" class="isi">
                                                 12345678945</div>
                                         </div>
                                     </div>
@@ -777,7 +965,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">NIP/NIK
                                                 Atasan</label>
-                                            <div class="isi">
+                                            <div title="1879456231245" class="isi">
                                                 1879456231245</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
@@ -800,7 +988,6 @@
                                             <th scope="col" class="px-3 py-3">
                                                 Aksi
                                             </th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -845,12 +1032,12 @@
                     </div>
                 </div>
             </div>
-            {{-- SKP --}}
+            {{-- DETAIL SKP --}}
 
-            {{-- PENGHARGAAN --}}
-            <div id="penghargaan" tabindex="-1" aria-hidden="true"
+            {{-- DATA PENGHARGAAN --}}
+            <div id="datapenghargaan" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div  class="relative p-4 w-full flex justify-center items-center h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
                     <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
                         <!-- Modal header -->
@@ -860,7 +1047,65 @@
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="penghargaan">
+                                data-modal-hide="datapenghargaan">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap-content">
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Olimpiade</div>
+                                                <div class="text-[16px]">Tahun : 2010</div>
+                                            </div>
+                                            <button data-modal-target="detailpenghargaan"
+                                                data-modal-toggle="detailpenghargaan">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Wira Karya</div>
+                                                <div class="text-[16px]">Tahun : 2010</div>
+                                            </div>
+                                            <button data-modal-target="detailpenghargaan"
+                                                data-modal-toggle="detailpenghargaan">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DATA PENGHARGAAN --}}
+
+            {{-- DETAIL PENGHARGAAN --}}
+            <div id="detailpenghargaan" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Penghargaan
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailpenghargaan">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -880,7 +1125,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[400px] flex-shrink-0">Jenis
                                                 Penghargaan</label>
-                                            <div class="isi">
+                                            <div title="Olimpiade" class="isi">
                                                 Olimpiade</div>
                                         </div>
                                     </div>
@@ -891,7 +1136,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[400px] flex-shrink-0">Tahun
                                                 Perolehan</label>
-                                            <div class="isi">
+                                            <div title="2012" class="isi">
                                                 2012</div>
                                         </div>
                                     </div>
@@ -902,7 +1147,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[400px] flex-shrink-0">Nomor Surat
                                                 Keputusan</label>
-                                            <div class="isi">
+                                            <div title="65/TK/TAHUN2012" class="isi">
                                                 65/TK/TAHUN2012</div>
                                         </div>
                                     </div>
@@ -919,8 +1164,6 @@
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
                                     </div>
                                 </div>
-
-
                             </div>
                             {{-- table --}}
                             <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
@@ -982,10 +1225,10 @@
                     </div>
                 </div>
             </div>
-            {{-- PENGHARGAAN --}}
+            {{-- DETAIL PENGHARGAAN --}}
 
-            {{-- KINERJA --}}
-            <div id="kinerja" tabindex="-1" aria-hidden="true"
+            {{-- DATA KINERJA --}}
+            <div id="datakinerja" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
@@ -997,7 +1240,63 @@
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="kinerja">
+                                data-modal-hide="datakinerja">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap-content">
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">2020</div>
+                                            </div>
+                                            <button data-modal-target="detailkinerja"
+                                                data-modal-toggle="detailkinerja">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">2021</div>
+                                            </div>
+                                            <button data-modal-target="detailkinerja"
+                                                data-modal-toggle="detailkinerja">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DATA KINERJA --}}
+
+            {{-- DETAIL KINERJA --}}
+            <div id="detailkinerja" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Laporan Kinerja
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailkinerja">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -1016,7 +1315,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Tahun</label>
-                                            <div class="isi ">
+                                            <div title="20" class="isi ">
                                                 2020</div>
                                         </div>
                                     </div>
@@ -1026,7 +1325,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">NIP</label>
-                                            <div class="isi ">
+                                            <div title="1856457213" class="isi ">
                                                 1856457213</div>
                                         </div>
                                     </div>
@@ -1036,7 +1335,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nama</label>
-                                            <div class="isi ">
+                                            <div title="Monica Adella" class="isi ">
                                                 Monica Adella</div>
                                         </div>
                                     </div>
@@ -1047,7 +1346,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Unit
                                                 Kerja</label>
-                                            <div class="isi ">
+                                            <div title="-" class="isi ">
                                                 -</div>
                                         </div>
                                     </div>
@@ -1067,7 +1366,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Jabatan</label>
-                                            <div class="isi ">
+                                            <div title="Pegawai" class="isi ">
                                                 Pegawai</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
@@ -1081,7 +1380,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Hasil
                                                 Kinerja</label>
-                                            <div class="isi ">
+                                            <div title="Sesuai Ekspektasi" class="isi ">
                                                 Sesuai Ekspektasi</div>
                                         </div>
                                     </div>
@@ -1092,7 +1391,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Perilaku
                                                 Kinerja</label>
-                                            <div class="isi ">
+                                            <div title="Diatas Ekspektasi" class="isi ">
                                                 Diatas Ekspektasi</div>
                                         </div>
                                     </div>
@@ -1103,7 +1402,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nama
                                                 Instansi</label>
-                                            <div class="isi ">
+                                            <div title="Pemerintah Provinsi Lampung" class="isi ">
                                                 Pemerintah Provinsi Lampung</div>
                                         </div>
                                     </div>
@@ -1114,7 +1413,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Kuadran
                                                 Kerja</label>
-                                            <div class="isi ">
+                                            <div title="Baik" class="isi ">
                                                 Baik</div>
                                         </div>
                                     </div>
@@ -1125,7 +1424,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nama Penilai
                                                 Jabatan</label>
-                                            <div class="isi ">
+                                            <div title="Plt. Kepala Dinas Kesehatan Provinsi Lampung" class="isi ">
                                                 Plt. Kepala Dinas Kesehatan Provinsi Lampung</div>
                                         </div>
                                     </div>
@@ -1136,7 +1435,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nama Penilai
                                             </label>
-                                            <div class="isi ">
+                                            <div title="Ridwan" class="isi ">
                                                 Ridwan</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
@@ -1203,12 +1502,12 @@
                     </div>
                 </div>
             </div>
-            {{-- KINERJA --}}
+            {{-- DETAIL KINERJA --}}
 
-            {{-- CPNS --}}
-            <div id="cpns" tabindex="-1" aria-hidden="true"
+            {{-- DATA CPNS --}}
+            <div id="datacpns" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div  class="relative p-4 w-full flex justify-center items-center h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
                     <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
                         <!-- Modal header -->
@@ -1218,7 +1517,56 @@
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="cpns">
+                                data-modal-hide="datacpns">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap-content">
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Monica Adella Aisyah Renaldi
+                                                </div>
+                                                <div class="text-[16px]">Pemerintahan Provinsi Lampung</div>
+                                                <div class="text-[16px]">1234567899654</div>
+                                            </div>
+                                            <button data-modal-target="detailcpns" data-modal-toggle="detailcpns">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DATA CPNS --}}
+
+
+            {{-- DETAIL CPNS --}}
+            <div id="detailcpns" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data CPNS/PNS
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailcpns">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -1238,7 +1586,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Status
                                                 Pegawai</label>
-                                            <div class="isi">
+                                            <div title="P" class="isi">
                                                 P</div>
                                         </div>
                                     </div>
@@ -1249,7 +1597,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nomor SK
                                                 CPNS</label>
-                                            <div class="isi">
+                                            <div title="813/579/IV.04/KPTS/MSJ/2015" class="isi">
                                                 813/579/IV.04/KPTS/MSJ/2015</div>
                                         </div>
                                     </div>
@@ -1260,7 +1608,8 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nomor SK
                                                 PNS</label>
-                                            <div class="isi">
+                                            <div title="821/1673/IV.04/KPTS/MSJ/2016/00007866/DIKLAT"
+                                                class="isi">
                                                 821/1673/IV.04/KPTS/MSJ/2016/00007866/DIKLAT</div>
                                         </div>
                                     </div>
@@ -1271,7 +1620,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nomor SK
                                                 STTPL</label>
-                                            <div class="isi">
+                                            <div title="PRAJABATAN III/18/1801/LAN/2015" class="isi">
                                                 PRAJABATAN III/18/1801/LAN/2015</div>
                                         </div>
                                     </div>
@@ -1281,7 +1630,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Karpeg</label>
-                                            <div class="isi">
+                                            <div title="B 05005563" class="isi">
                                                 B 05005563</div>
                                         </div>
                                     </div>
@@ -1292,7 +1641,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nomor Surat
                                                 Dokter</label>
-                                            <div class="isi">
+                                            <div title="441/388/1.3/VII/2015" class="isi">
                                                 441/388/1.3/VII/2015</div>
                                         </div>
                                     </div>
@@ -1303,7 +1652,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nomor
                                                 SPMT</label>
-                                            <div class="isi">
+                                            <div title="813/579/IV.04/KPTS/MSJ/2014" class="isi">
                                                 813/579/IV.04/KPTS/MSJ/2014</div>
                                         </div>
                                     </div>
@@ -1314,7 +1663,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nomor Pertek
                                                 C2TH</label>
-                                            <div class="isi">
+                                            <div title="-" class="isi">
                                                 -</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mT-3 bg-[#C3C3C3]"></div>
@@ -1461,10 +1810,10 @@
                     </div>
                 </div>
             </div>
-            {{-- CPNS --}}
+            {{-- DETAIL CPNS --}}
 
-            {{-- DIKLAT --}}
-            <div id="diklat" tabindex="-1" aria-hidden="true"
+            {{-- DATA DIKLAT --}}
+            <div id="datadiklat" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
@@ -1476,7 +1825,65 @@
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="diklat">
+                                data-modal-hide="datadiklat">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap-content">
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Diklat Struktur</div>
+                                                <div class="text-[16px]">-Sepada</div>
+                                            </div>
+                                            <button data-modal-target="detaildiklat"
+                                                data-modal-toggle="detaildiklat">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Diklat Struktur</div>
+                                                <div class="text-[16px]">-Sepada</div>
+                                            </div>
+                                            <button data-modal-target="detaildiklat"
+                                                data-modal-toggle="detaildiklat">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DATA DIKLAT --}}
+
+            {{-- DETAIL DIKLAT --}}
+            <div id="detaildiklat" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Diklat/Kursus
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detaildiklat">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -1496,7 +1903,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Jenis
                                                 Diklat</label>
-                                            <div class="isi">
+                                            <div title="Diklat Struktural" class="isi">
                                                 Diklat Struktural</div>
                                         </div>
                                     </div>
@@ -1507,7 +1914,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nama
                                                 Diklat</label>
-                                            <div class="isi">
+                                            <div title="SEPALA/ADUM/DIKLAT PIM TK.II" class="isi">
                                                 SEPALA/ADUM/DIKLAT PIM TK.II</div>
                                         </div>
                                     </div>
@@ -1518,7 +1925,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Institusi
                                                 Penyelenggara</label>
-                                            <div class="isi">
+                                            <div title="PEMPROV LAMPUNG" class="isi">
                                                 PEMPROV LAMPUNG</div>
                                         </div>
                                     </div>
@@ -1529,7 +1936,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Tahun
                                                 Diklat</label>
-                                            <div class="isi">
+                                            <div title="2012" class="isi">
                                                 2012</div>
                                         </div>
                                     </div>
@@ -1565,7 +1972,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Durasi
                                                 (Jam)</label>
-                                            <div class="isi">
+                                            <div title="315" class="isi">
                                                 315</div>
                                         </div>
                                     </div>
@@ -1576,7 +1983,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Rumpun
                                                 Diklat</label>
-                                            <div class="isi">
+                                            <div title="-" class="isi">
                                                 -</div>
                                         </div>
                                     </div>
@@ -1587,7 +1994,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Nomor
                                                 Sertifikat</label>
-                                            <div class="isi">
+                                            <div title="549/I.09/DIKLATPIM TK.IV/LAN/2012" class="isi">
                                                 549/I.09/DIKLATPIM TK.IV/LAN/2012</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
@@ -1654,12 +2061,12 @@
                     </div>
                 </div>
             </div>
-            {{-- DIKLAT --}}
+            {{-- DETAIL DIKLAT --}}
 
-            {{-- PMK --}}
-            <div id="pmk" tabindex="-1" aria-hidden="true"
+            {{-- DATA PMK --}}
+            <div id="datapmk" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div  class="relative p-4 w-full flex justify-center items-center h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
                     <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
                         <!-- Modal header -->
@@ -1669,7 +2076,63 @@
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="pmk">
+                                data-modal-hide="datapmk">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap-content">
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Negeri</div>
+                                                <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
+                                            </div>
+                                            <button data-modal-target="detailpmk" data-modal-toggle="detailpmk">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Negeri</div>
+                                                <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
+                                            </div>
+                                            <button data-modal-target="detailpmk" data-modal-toggle="detailpmk">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DATA PMK --}}
+
+            {{-- DETAIL PMK --}}
+            <div id="detailpmk" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Peninjauan Masa Kerja
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailpmk">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -1698,7 +2161,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[250px] flex-shrink-0">Instansi/Perusahaan</label>
-                                            <div class="isi">
+                                            <div title="Dinas Kesehatan Kabupaten" class="isi">
                                                 Dinas Kesehatan Kabupaten</div>
                                         </div>
                                     </div>
@@ -1731,7 +2194,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[250px] flex-shrink-0">Masa Kerja
                                                 (Bulan)</label>
-                                            <div class="isi">
+                                            <div title="0" class="isi">
                                                 0</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
@@ -1745,7 +2208,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[250px] flex-shrink-0">Nomor Surat
                                                 Keputusan (SK)</label>
-                                            <div class="isi">
+                                            <div title="823.3/88/VI.04/2024" class="isi">
                                                 823.3/88/VI.04/2024</div>
                                         </div>
                                     </div>
@@ -1767,7 +2230,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[250px] flex-shrink-0">Nomor Pertek
                                                 BKN</label>
-                                            <div class="isi">
+                                            <div title="FG-256897845" class="isi">
                                                 FG-256897845</div>
                                         </div>
                                     </div>
@@ -1789,7 +2252,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[250px] flex-shrink-0">Masa Kerja
                                                 (Tahun)</label>
-                                            <div class="isi">
+                                            <div title="0" class="isi">
                                                 0</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
@@ -1856,12 +2319,12 @@
                     </div>
                 </div>
             </div>
-            {{-- PMK --}}
+            {{-- DETAIL PMK --}}
 
-            {{-- GOLONGAN --}}
-            <div id="golongan" tabindex="-1" aria-hidden="true"
+            {{-- DATA GOLONGAN --}}
+            <div id="datagolongan" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div  class="relative p-4 w-full flex justify-center items-center h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
                     <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
                         <!-- Modal header -->
@@ -1871,7 +2334,76 @@
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="golongan">
+                                data-modal-hide="datagolongan">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap-content">
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div title="Penata..." class="text-[16px]">Penata...</div>
+                                                <div class="text-[16px]">IIB</div>
+                                            </div>
+                                            <button data-modal-target="detailgolongan"
+                                                data-modal-toggle="detailgolongan">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div title="Penata..." class="text-[16px]">Penata...</div>
+                                                <div class="text-[16px]">IVC</div>
+                                            </div>
+                                            <button data-modal-target="detailgolongan"
+                                                data-modal-toggle="detailgolongan">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div title="Penata..." class="text-[16px]">Penata...</div>
+                                                <div class="text-[16px]">IA</div>
+                                            </div>
+                                            <button data-modal-target="detailgolongan"
+                                                data-modal-toggle="detailgolongan">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DATA GOLONGAN --}}
+
+            {{-- DETAIL GOLONGAN --}}
+            <div id="detail golongan" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Golongan
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detail golongan">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -1885,22 +2417,12 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">Tanggal Surat
-                                                Keputusan (SK)</label>
-                                            <div class="isi">
-                                                II/B</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
                                         <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                         <div
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[260px] flex-shrink-0">Golongan</label>
-                                            <div class="isi">
+                                            <div title="II/B" class="isi">
                                                 II/B</div>
                                         </div>
                                     </div>
@@ -1911,7 +2433,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[260px] flex-shrink-0">Jenis Kenaikan
                                                 Pangkat</label>
-                                            <div class="isi">
+                                            <div title="Reguler" class="isi">
                                                 Reguler</div>
                                         </div>
                                     </div>
@@ -1922,8 +2444,19 @@
                                             <label For=""
                                                 class="text-black font-medium w-[260px] flex-shrink-0">Masa Kerja
                                                 Golongan (Tahun)</label>
-                                            <div class="isi">
+                                            <div title="9" class="isi">
                                                 9</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[260px] flex-shrink-0">Masa Kerja
+                                                Golongan (Bulan)</label>
+                                            <div title="1" class="isi">
+                                                1</div>
                                         </div>
                                     </div>
                                     <div class="wrap">
@@ -1947,7 +2480,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[260px] flex-shrink-0">Nomor Surat
                                                 Keputusan (SK)</label>
-                                            <div class="isi">
+                                            <div title="823.3/88/VI.04/2024" class="isi">
                                                 823.3/88/VI.04/2024</div>
                                         </div>
                                     </div>
@@ -1969,7 +2502,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[260px] flex-shrink-0">Nomor Pertek
                                                 BKN</label>
-                                            <div class="isi">
+                                            <div title="FG-256897845" class="isi">
                                                 FG-256897845</div>
                                         </div>
                                     </div>
@@ -2047,10 +2580,10 @@
                     </div>
                 </div>
             </div>
-            {{-- GOLONGAN --}}
+            {{-- DETAIL GOLONGAN --}}
 
-            {{-- JABATAN --}}
-            <div id="jabatan" tabindex="-1" aria-hidden="true"
+            {{-- DATA JABATAN --}}
+            <div id="datajabatan" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full flex justify-center items-center h-full">
                     <!-- Modal content -->
@@ -2062,7 +2595,66 @@
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="jabatan">
+                                data-modal-hide="datajabatan">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap-content">
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Analisis</div>
+                                                <div class="text-[16px]">-2020</div>
+                                            </div>
+                                            <button data-modal-target="detailjabatan"
+                                                data-modal-toggle="detailjabatan">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                            <div class="wrap">
+                                                <div class="text-[18px] font-medium">Kepala</div>
+                                                <div class="text-[16px]">-S1</div>
+                                            </div>
+                                            <button data-modal-target="detailjabatan"
+                                                data-modal-toggle="detailjabatan">
+                                                <img src="../Assets/book.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DATA JABATAN --}}
+
+
+            {{-- DETAIL JABATAN --}}
+            <div id="detailjabatan" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Jabatan
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailjabatan">
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -2082,7 +2674,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[240px] flex-shrink-0">Jenis
                                                 Jabatan</label>
-                                            <div class="isi">
+                                            <div title="Jabatan Pelaksana" class="isi">
                                                 Jabatan Pelaksana</div>
                                         </div>
                                     </div>
@@ -2093,7 +2685,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[240px] flex-shrink-0">Jenis
                                                 Mutasi</label>
-                                            <div class="isi">
+                                            <div title="-" class="isi">
                                                 -</div>
                                         </div>
                                     </div>
@@ -2104,7 +2696,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[240px] flex-shrink-0">Jenis
                                                 Penugasan</label>
-                                            <div class="isi">
+                                            <div title="-" class="isi">
                                                 -</div>
                                         </div>
                                     </div>
@@ -2148,8 +2740,8 @@
                                             <label For=""
                                                 class="text-black font-medium w-[240px] flex-shrink-0">Nomor
                                                 SK</label>
-                                            <div class="isi">
-                                                MIGRASI</div>
+                                            <div title="8902/79/AT/VI.01" class="isi">
+                                                8902/79/AT/VI.01</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
                                     </div>
@@ -2162,7 +2754,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[240px] flex-shrink-0">Status
                                                 Riwayat</label>
-                                            <div class="isi">
+                                            <div title="-" class="isi">
                                                 -</div>
                                         </div>
                                     </div>
@@ -2172,7 +2764,7 @@
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
                                                 class="text-black font-medium w-[240px] flex-shrink-0">Instansi</label>
-                                            <div class="isi">
+                                            <div title="Pemerintahan Kab.Mesuji" class="isi">
                                                 Pemerintahan Kab.Mesuji</div>
                                         </div>
                                     </div>
@@ -2183,7 +2775,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[240px] flex-shrink-0">Satuan
                                                 Kerja</label>
-                                            <div class="isi">
+                                            <div title="Pemerintahan Kab.Mesuji" class="isi">
                                                 Pemerintahan Kab.Mesuji</div>
                                         </div>
                                     </div>
@@ -2194,7 +2786,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[240px] flex-shrink-0">Satuan Kerja
                                                 Induk</label>
-                                            <div class="isi">
+                                            <div title="Mesuji" class="isi">
                                                 Mesuji</div>
                                         </div>
                                     </div>
@@ -2203,9 +2795,9 @@
                                         <div
                                             class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                             <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nama
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Unit
                                                 Organisasi</label>
-                                            <div class="isi">
+                                            <div title="RSUD KABUPATEN MESUJI" class="isi">
                                                 RSUD KABUPATEN MESUJI</div>
                                         </div>
                                     </div>
@@ -2216,7 +2808,7 @@
                                             <label For=""
                                                 class="text-black font-medium w-[240px] flex-shrink-0">Nama
                                                 Jabatan</label>
-                                            <div class="isi">
+                                            <div title="Staff" class="isi">
                                                 Staff</div>
                                         </div>
                                         <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
@@ -2283,7 +2875,8 @@
                     </div>
                 </div>
             </div>
-            {{-- JABATAN --}}
+            {{-- DETAIL JABATAN --}}
+
             {{-- KELUARGA --}}
             <div id="keluarga" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -2309,567 +2902,75 @@
                         <!-- Modal body -->
                         <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
                             <div class="tab flex gap-4">
-                                <button id="tab1" class="font-medium text-[#B3B3B3]" onclick="showTab('tab1')">Orang Tua</button>
-                                <button id="tab2" class="font-medium text-[#B3B3B3]" onclick="showTab('tab2')">Pasangan</button>
-                                <button id="tab3" class="font-medium text-[#B3B3B3]" onclick="showTab('tab3')">Anak</button>
+                                <button id="tab1" class="font-medium text-[#B3B3B3]"
+                                    onclick="showTab('tab1')">Orang Tua</button>
+                                <button id="tab2" class="font-medium text-[#B3B3B3]"
+                                    onclick="showTab('tab2')">Pasangan</button>
+                                <button id="tab3" class="font-medium text-[#B3B3B3]"
+                                    onclick="showTab('tab3')">Anak</button>
                             </div>
                             <div id="tabContent">
                                 <div id="content1">
                                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                        {{-- KIRI --}}
-                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                            <div class="wrap">
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Status Hidup</label>
-                                                    <div class="isi">
-                                                        -</div>
+                                        <div class="w-full p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                                    <div class="wrap-content">
+                                                        <div
+                                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                                            <div class="wrap">
+                                                                <div class="text-[18px] font-medium">Susaton</div>
+                                                                <div class="text-[16px]">-Ayah</div>
+                                                            </div>
+                                                            <button data-modal-target="detailorangtua"
+                                                                data-modal-toggle="detailorangtua">
+                                                                <img src="../Assets/book.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Status Pekerjaan Orang Tua</label>
-                                                    <div class="isi">
-                                                        PNS</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
-                                                    <div class="isi">
-                                                        M.Yusuf</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Status Pernikahan</label>
-                                                    <div class="isi">
-                                                        Cerai Mati</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Jenis Kelamin</label>
-                                                    <div class="isi">
-                                                        Laki-laki</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
-                                                    <div class="isi">
-                                                        yusuf@gmail.com</div>
-                                                </div>
-                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                            </div>
                                         </div>
-                                        {{-- KANAN --}}
-                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                            <div class="wrap">
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Tanggal Lahir</label>
-                                                    <div class="isi">
-                                                        13/02/1950</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Tanggal  Meninggal</label>
-                                                    <div class="isi">
-                                                        12/02/2020</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Identitas</label>
-                                                    <div class="isi">
-                                                        2356898784512</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
-                                                    <div class="isi">
-                                                        Islam</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Telepon</label>
-                                                    <div class="isi">
-                                                        08121235689</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Handphone</label>
-                                                    <div class="isi">
-                                                        085645125623</div>
-                                                </div>
-                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{-- table --}}
-                                    <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                        <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                            <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                                <tr>
-                                                    <th scope="col" class="px-3 py-3">
-                                                        No
-                                                    </th>
-                                                    <th scope="col" class="px-3 py-3">
-                                                        Nama Surat
-                                                    </th>
-                                                    <th scope="col" class="px-3 py-3">
-                                                        Aksi
-                                                    </th>
-                                                    
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                                    <td class="px-3 py-3">
-                                                        1
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        Dokumen Surat.pdf
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        <button title="Download" class="mr-3">
-                                                            <img src="./../../Assets/download.svg" alt="">
-                                                        </button>
-                                                        <button title="Lihat">
-                                                            <img src="./../../Assets/eye.svg" alt="">
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                                    <td class="px-3 py-3">
-                                                        1
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        Dokumen Surat.pdf
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        <button title="Download" class="mr-3">
-                                                            <img src="./../../Assets/download.svg" alt="">
-                                                        </button>
-                                                        <button title="Lihat">
-                                                            <img src="./../../Assets/eye.svg" alt="">
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
                                 </div>
                                 <div id="content2" class="hidden">
                                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                        {{-- KIRI --}}
-                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                            <div class="wrap">
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Suami/Istri Ke-</label>
-                                                    <div class="isi">
-                                                        1</div>
+                                        <div class="w-full p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                                    <div class="wrap-content">
+                                                        <div
+                                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                                            <div class="wrap">
+                                                                <div class="text-[18px] font-medium">Rafi Ramadhan</div>
+                                                                <div class="text-[16px]">-Suami</div>
+                                                            </div>
+                                                            <button data-modal-target="detailpasangan"
+                                                                data-modal-toggle="detailpasangan">
+                                                                <img src="../Assets/book.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Status Pekerjaan Orang Tua</label>
-                                                    <div class="isi">
-                                                        PNS</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
-                                                    <div class="isi">
-                                                        Rafi Ramadhan</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Tanggal Lahir</label>
-                                                    <div class="isi">
-                                                        03/12/1980</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Identitas</label>
-                                                    <div class="isi">
-                                                        1879456231202</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Jenis Kelamin</label>
-                                                    <div class="isi">
-                                                        Laki-laki</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Alamat</label>
-                                                    <div class="isi">
-                                                        Pahoman, Bandar Lampung</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
-                                                    <div class="isi">
-                                                        Islam</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Karsus/Karis</label>
-                                                    <div class="isi">
-                                                        -</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Telepon</label>
-                                                    <div class="isi">
-                                                        56897845</div>
-                                                </div>
-                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                            </div>
                                         </div>
-                                        {{-- KANAN --}}
-                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                            <div class="wrap">
-                                                
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Status Hidup</label>
-                                                    <div class="isi">
-                                                        Hidup</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Status Pernikahan</label>
-                                                    <div class="isi">
-                                                        Kawin</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Akta Menikah</label>
-                                                    <div class="isi">
-                                                        56238978</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Akta Menikah</label>
-                                                    <div class="isi">
-                                                        5623</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Tanggal  Akta Menikah</label>
-                                                    <div class="isi">
-                                                        06/03/2023</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
-                                                    <div class="isi">
-                                                        rafi@gmail.com</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Akta Cerai</label>
-                                                    <div class="isi">
-                                                        -</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Akta Cerai</label>
-                                                    <div class="isi">
-                                                        -</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Tanggal Akta Cerai</label>
-                                                    <div class="isi">
-                                                        -</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor HP</label>
-                                                    <div class="isi">
-                                                        085645122356</div>
-                                                </div>
-                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{-- table --}}
-                                    <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                        <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                            <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                                <tr>
-                                                    <th scope="col" class="px-3 py-3">
-                                                        No
-                                                    </th>
-                                                    <th scope="col" class="px-3 py-3">
-                                                        Nama Surat
-                                                    </th>
-                                                    <th scope="col" class="px-3 py-3">
-                                                        Aksi
-                                                    </th>
-                                                    
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                                    <td class="px-3 py-3">
-                                                        1
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        Dokumen Surat.pdf
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        <button title="Download" class="mr-3">
-                                                            <img src="./../../Assets/download.svg" alt="">
-                                                        </button>
-                                                        <button title="Lihat">
-                                                            <img src="./../../Assets/eye.svg" alt="">
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                                    <td class="px-3 py-3">
-                                                        1
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        Dokumen Surat.pdf
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        <button title="Download" class="mr-3">
-                                                            <img src="./../../Assets/download.svg" alt="">
-                                                        </button>
-                                                        <button title="Lihat">
-                                                            <img src="./../../Assets/eye.svg" alt="">
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
                                 </div>
                                 <div id="content3" class="hidden">
                                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                        {{-- KIRI --}}
-                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                            <div class="wrap">
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Anak Ke-</label>
-                                                    <div class="isi">
-                                                        1</div>
+                                        <div class="w-full p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                                                <div class="w-full flex flex-col gap-3 md:gap-3">
+                                                    <div class="wrap-content">
+                                                        <div
+                                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                                            <div class="wrap">
+                                                                <div class="text-[18px] font-medium">Aisyah</div>
+                                                                <div class="text-[16px]">-Perempuan</div>
+                                                            </div>
+                                                            <button data-modal-target="detailanak"
+                                                                data-modal-toggle="detailanak">
+                                                                <img src="../Assets/book.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Status Pekerjaan Anak</label>
-                                                    <div class="isi">
-                                                        Bukan PNS</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
-                                                    <div class="isi">
-                                                        Yasmin Aisyah</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Tanggal Lahir</label>
-                                                    <div class="isi">
-                                                        23/20/2000</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Identitas</label>
-                                                    <div class="isi">
-                                                        1856897845523</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Jenis Kelamin</label>
-                                                    <div class="isi">
-                                                        Perempuan</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Status Pernikahan</label>
-                                                    <div class="isi">
-                                                        Belum kawin</div>
-                                                </div>
-                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                            </div>
                                         </div>
-                                        {{-- KANAN --}}
-                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                            <div class="wrap">
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Tanggal Meninggal</label>
-                                                    <div class="isi">
-                                                        -</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Akta Meninggal</label>
-                                                    <div class="isi">
-                                                        -</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Akta Kelahiran</label>
-                                                    <div class="isi">
-                                                        235689784512</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Nomor Telepon</label>
-                                                    <div class="isi">
-                                                        235698</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Status Hidup</label>
-                                                    <div class="isi">
-                                                        Hidup</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
-                                                    <div class="isi">
-                                                        yasmin@gmail.com</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For="" class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
-                                                    <div class="isi">
-                                                        Islam</div>
-                                                </div>
-                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{-- table --}}
-                                    <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                        <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                            <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                                <tr>
-                                                    <th scope="col" class="px-3 py-3">
-                                                        No
-                                                    </th>
-                                                    <th scope="col" class="px-3 py-3">
-                                                        Nama Surat
-                                                    </th>
-                                                    <th scope="col" class="px-3 py-3">
-                                                        Aksi
-                                                    </th>
-                                                    
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                                    <td class="px-3 py-3">
-                                                        1
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        Dokumen Surat.pdf
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        <button title="Download" class="mr-3">
-                                                            <img src="./../../Assets/download.svg" alt="">
-                                                        </button>
-                                                        <button title="Lihat">
-                                                            <img src="./../../Assets/eye.svg" alt="">
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                                    <td class="px-3 py-3">
-                                                        1
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        Dokumen Surat.pdf
-                                                    </td>
-                                                    <td class="px-3 py-3">
-                                                        <button title="Download" class="mr-3">
-                                                            <img src="./../../Assets/download.svg" alt="">
-                                                        </button>
-                                                        <button title="Lihat">
-                                                            <img src="./../../Assets/eye.svg" alt="">
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -2878,7 +2979,793 @@
                 </div>
             </div>
             {{-- KELUARGA --}}
+
             {{-- MODAL --}}
+            {{-- DETAIL ORANGTUA --}}
+            <div id="detailorangtua" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Orang Tua
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailorangtua">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                {{-- KIRI --}}
+                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap">
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                Hidup</label>
+                                            <div title="-" class="isi">
+                                                -</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                Pekerjaan Orang Tua</label>
+                                            <div title="PNS" class="isi">
+                                                PNS</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
+                                            <div title="M.Yusuf" class="isi">
+                                                M.Yusuf</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                Pernikahan</label>
+                                            <div title="Cerai Mati" class="isi">
+                                                Cerai Mati</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Jenis
+                                                Kelamin</label>
+                                            <div title="Laki-laki" class="isi">
+                                                Laki-laki</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
+                                            <div title="yusuf@gmail.com" class="isi">
+                                                yusuf@gmail.com</div>
+                                        </div>
+                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
+                                    </div>
+                                </div>
+                                {{-- KANAN --}}
+                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap">
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
+                                                Lahir</label>
+                                            <div class="isi">
+                                                13/02/1950</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
+                                                Meninggal</label>
+                                            <div class="isi">
+                                                12/02/2020</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Identitas</label>
+                                            <div title="2356898784512" class="isi">
+                                                2356898784512</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
+                                            <div title="Islam" class="isi">
+                                                Islam</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Telepon</label>
+                                            <div title="08121235689" class="isi">
+                                                08121235689</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Handphone</label>
+                                            <div title="085645125623" class="isi">
+                                                085645125623</div>
+                                        </div>
+                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- table --}}
+                            <div
+                                class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                <table
+                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                        <tr>
+                                            <th scope="col" class="px-3 py-3">
+                                                No
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Nama Surat
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Aksi
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                Dokumen Surat.pdf
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                Dokumen Surat.pdf
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DETAIL ORANGTUA --}}
+
+            {{-- DETAIL PASANGAN --}}
+            <div id="detailpasangan" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Pasangan
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailpasangan">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                {{-- KIRI --}}
+                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap">
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Suami/Istri
+                                                Ke-</label>
+                                            <div title="1" class="isi">
+                                                1</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                Pekerjaan Orang Tua</label>
+                                            <div title="PNS" class="isi">
+                                                PNS</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
+                                            <div title="Rafi Ramadhan" class="isi">
+                                                Rafi Ramadhan</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
+                                                Lahir</label>
+                                            <div class="isi">
+                                                03/12/1980</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Identitas</label>
+                                            <div title="1879456231202" class="isi">
+                                                1879456231202</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Jenis
+                                                Kelamin</label>
+                                            <div title="Laki-laki" class="isi">
+                                                Laki-laki</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Alamat</label>
+                                            <div title="Pahoman, Bandar Lampung" class="isi">
+                                                Pahoman, Bandar Lampung</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
+                                            <div title="Islam" class="isi">
+                                                Islam</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Karsus/Karis</label>
+                                            <div title="-" class="isi">
+                                                -</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Telepon</label>
+                                            <div title="56897845" class="isi">
+                                                56897845</div>
+                                        </div>
+                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
+                                    </div>
+                                </div>
+                                {{-- KANAN --}}
+                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap">
+
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                Hidup</label>
+                                            <div title="Hidup" class="isi">
+                                                Hidup</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                Pernikahan</label>
+                                            <div title="Kawin" class="isi">
+                                                Kawin</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Akta
+                                                Menikah</label>
+                                            <div title="56238978" class="isi">
+                                                56238978</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Akta
+                                                Menikah</label>
+                                            <div title="5623" class="isi">
+                                                5623</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
+                                                Akta Menikah</label>
+                                            <div class="isi">
+                                                06/03/2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
+                                            <div title="rafi@gmail.com" class="isi">
+                                                rafi@gmail.com</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Akta
+                                                Cerai</label>
+                                            <div title="-" class="isi">
+                                                -</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Akta
+                                                Cerai</label>
+                                            <div title="-" class="isi">
+                                                -</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
+                                                Akta Cerai</label>
+                                            <div title="-" class="isi">
+                                                -</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                HP</label>
+                                            <div title="085645122356" class="isi">
+                                                085645122356</div>
+                                        </div>
+                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- table --}}
+                            <div
+                                class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                <table
+                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                        <tr>
+                                            <th scope="col" class="px-3 py-3">
+                                                No
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Nama Surat
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Aksi
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                Dokumen Surat.pdf
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                Dokumen Surat.pdf
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DETAIL PASANGAN --}}
+
+            {{-- DETAIL ANAK --}}
+            <div id="detailanak" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                            <h3 class="text-[30px] font-semibold text-gray-900 ">
+                                Data Anak
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                                data-modal-hide="detailanak">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                        {{-- KIRI --}}
+                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
+                                            <div class="wrap">
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Anak
+                                                        Ke-</label>
+                                                    <div title="1" class="isi">
+                                                        1</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                        Pekerjaan Anak</label>
+                                                    <div title="Bukan PNS" class="isi">
+                                                        Bukan PNS</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
+                                                    <div title="Yasmin Aisyah" class="isi">
+                                                        Yasmin Aisyah</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
+                                                        Lahir</label>
+                                                    <div class="isi">
+                                                        23/20/2000</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                        Identitas</label>
+                                                    <div title="1856897845523" class="isi">
+                                                        1856897845523</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Jenis
+                                                        Kelamin</label>
+                                                    <div title="Perempuan" class="isi">
+                                                        Perempuan</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                        Pernikahan</label>
+                                                    <div title="Belum kawin" class="isi">
+                                                        Belum kawin</div>
+                                                </div>
+                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
+                                            </div>
+                                        </div>
+                                        {{-- KANAN --}}
+                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
+                                            <div class="wrap">
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
+                                                        Meninggal</label>
+                                                    <div class="isi">
+                                                        -</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                        Akta
+                                                        Meninggal</label>
+                                                    <div title="-" class="isi">
+                                                        -</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                        Akta
+                                                        Kelahiran</label>
+                                                    <div title="235689784512" class="isi">
+                                                        235689784512</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                        Telepon</label>
+                                                    <div title="235698" class="isi">
+                                                        235698</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                        Hidup</label>
+                                                    <div title="Hidup" class="isi">
+                                                        Hidup</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
+                                                    <div title="yasmin@gmail.com" class="isi">
+                                                        yasmin@gmail.com</div>
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                    <label For=""
+                                                        class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
+                                                    <div title="Islam" class="isi">
+                                                        Islam</div>
+                                                </div>
+                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            {{-- table --}}
+                            <div
+                                class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                <table
+                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                        <tr>
+                                            <th scope="col" class="px-3 py-3">
+                                                No
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Nama Surat
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Aksi
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                Dokumen Surat.pdf
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                            <td class="px-3 py-3">
+                                                1
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                Dokumen Surat.pdf
+                                            </td>
+                                            <td class="px-3 py-3">
+                                                <button title="Download" class="mr-3">
+                                                    <img src="./../../Assets/download.svg" alt="">
+                                                </button>
+                                                <button title="Lihat">
+                                                    <img src="./../../Assets/eye.svg" alt="">
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- DETAIL ANAK --}}
         </div>
     </x-sidebar-admin>
 
@@ -2887,7 +3774,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Hide all tab contents except the first one
             document.querySelectorAll('[id^="content"]').forEach((el, index) => {
-                if(index !== 0) {
+                if (index !== 0) {
                     el.classList.add('hidden');
                 }
             });

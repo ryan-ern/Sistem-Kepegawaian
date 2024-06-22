@@ -82,10 +82,10 @@
                     Riwayat Cuti
                 </a>
                 <!-- Kotak 1 -->
-                <a href="/dashboard/riwayat-absensi"
+                <a href="/dashboard/riwayat-diri"
                     class=" p-4 text-white text-center hover:bg-[#4F8EA5] shadow flex flex-col gap-1 items-center h-[180px] justify-center rounded bg-[#093545]">
-                    <img src="./Assets/absensi2.svg" alt="">
-                    Riwayat Absensi
+                    <img src="./Assets/diri.svg" alt="">
+                    Riwayat Data Diri
                 </a>
             </div>
         </div>

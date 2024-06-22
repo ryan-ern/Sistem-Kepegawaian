@@ -112,10 +112,17 @@
 ">
                                 Pendidikan Tingkat Taman Kanak-Kanak, Dasar, Lanjutan, dan Sekolah Khusus
                             </option>
+                            ">
+                            Pendidikan Tingkat Taman Kanak-Kanak, Dasar, Lanjutan, dan Sekolah Khusus
+                            </option>
                             <option value="Kebudayaan">Kebudayaan</option>
                             <option value="Hukum dan Peradilan">Hukum dan Peradilan</option>
                             <option value="Pendidikan Lainnya">Pendidikan Lainnya</option>
                             <option value="Kekomputeran">Kekomputeran</option>
+                            <option value="Arsitek, Insinyur, dan Yang Berkaitan">Arsitek, Insinyur, dan Yang Berkaitan
+                            </option>
+                            <option value="Administrasi Kependudukan Pencatatan Sipil">Administrasi Kependudukan
+                                Pencatatan Sipil</option>
                             <option value="Arsitek, Insinyur, dan Yang Berkaitan">Arsitek, Insinyur, dan Yang Berkaitan
                             </option>
                             <option value="Administrasi Kependudukan Pencatatan Sipil">Administrasi Kependudukan
@@ -127,8 +134,12 @@
                             <option value="Tenaga Kerja">Tenaga Kerja</option>
                             <option value="Imigrasi, Pajak, dan Asisten Profesional Yang Berkaitan">Imigrasi, Pajak,
                                 dan Asisten Profesional Yang Berkaitan</option>
+                            <option value="Imigrasi, Pajak, dan Asisten Profesional Yang Berkaitan">Imigrasi, Pajak,
+                                dan Asisten Profesional Yang Berkaitan</option>
                             <option value="Penerangan dan Seni Budaya">Penerangan dan Seni Budaya</option>
                             <option value="Ekonomi dan Keuangan">Ekonomi dan Keuangan</option>
+                            <option value="Matematika, Statistika, dan Yang Berkaitan">Matematika, Statistika, dan Yang
+                                Berkaitan</option>
                             <option value="Matematika, Statistika, dan Yang Berkaitan">Matematika, Statistika, dan Yang
                                 Berkaitan</option>
                             <option value="Sains dan Lingkungan">Sains dan Lingkungan</option>
@@ -139,14 +150,26 @@
                             <option value="Administrasi">Administrasi</option>
                             <option value="Fisika, Kimia, dan Yang Berkaiatan">Fisika, Kimia, dan Yang Berkaiatan
                             </option>
+                            <option value="Fisika, Kimia, dan Yang Berkaiatan">Fisika, Kimia, dan Yang Berkaiatan
+                            </option>
                             <option value="Statistik">Statistik</option>
+                            <option value="Profesional Bidang Pendidikan Lainnya">Profesional Bidang Pendidikan Lainnya
+                            </option>
                             <option value="Profesional Bidang Pendidikan Lainnya">Profesional Bidang Pendidikan Lainnya
                             </option>
                             <option value="Komunikasi dan Informatika">Komunikasi dan Informatika</option>
                             <option value="Energi dan Sumber Daya Mineral">Energi dan Sumber Daya Mineral</option>
                             <option value="Koperasi Usaha Kecil dan Menengah">Koperasi Usaha Kecil dan Menengah
                             </option>
+                            <option value="Koperasi Usaha Kecil dan Menengah">Koperasi Usaha Kecil dan Menengah
+                            </option>
                             <option value="Penelitian">Penelitian</option>
+                            <option value="Pekerjaan Umum dan Penataan Ruang">Pekerjaan Umum dan Penataan Ruang
+                            </option>
+                            <option value="Pemberdayaan Perempuan dan Perlindungan Anak">Pemberdayaan Perempuan dan
+                                Perlindungan Anak</option>
+                            <option value="Arsiparis, Pustakawan, dan Yang Berkaitan">Arsiparis, Pustakawan, dan Yang
+                                Berkaitan</option>
                             <option value="Pekerjaan Umum dan Penataan Ruang">Pekerjaan Umum dan Penataan Ruang
                             </option>
                             <option value="Pemberdayaan Perempuan dan Perlindungan Anak">Pemberdayaan Perempuan dan
@@ -162,9 +185,13 @@
                             <option value="Kesehatan">Kesehatan</option>
                             <option value="Asisten Profesional Yang Berhubungan Dengan Keuangan dan Penjualan">Asisten
                                 Profesional Yang Berhubungan Dengan Keuangan dan Penjualan</option>
+                            <option value="Asisten Profesional Yang Berhubungan Dengan Keuangan dan Penjualan">Asisten
+                                Profesional Yang Berhubungan Dengan Keuangan dan Penjualan</option>
                             <option value="Hak Cipta, Paten, dan Merek">Hak Cipta, Paten, dan Merek</option>
                             <option value="Ilmu Sosial dan Yang Berkaitan">Ilmu Sosial dan Yang Berkaitan</option>
                             <option value="Hukum, Politik, dan Pemerintahan">Hukum, Politik, dan Pemerintahan</option>
+                            <option value="Ketenteraman dan Ketertiban Umum Serta Perlindungan Masyarakat">Ketenteraman
+                                dan Ketertiban Umum Serta Perlindungan Masyarakat</option>
                             <option value="Ketenteraman dan Ketertiban Umum Serta Perlindungan Masyarakat">Ketenteraman
                                 dan Ketertiban Umum Serta Perlindungan Masyarakat</option>
                             <option value="Perdagangan">Perdagangan</option>
@@ -178,7 +205,11 @@
                             <option value="Perhubungan">Perhubungan</option>
                             <option value="Pengendalian Penduduk dan Keluarga Berencana">Pengendalian Penduduk dan
                                 Keluarga Berencana</option>
+                            <option value="Pengendalian Penduduk dan Keluarga Berencana">Pengendalian Penduduk dan
+                                Keluarga Berencana</option>
                             <option value="Persandian">Persandian</option>
+                            <option value="Perumahan Rakyat dan Kawasan Pemukiman">Perumahan Rakyat dan Kawasan
+                                Pemukiman</option>
                             <option value="Perumahan Rakyat dan Kawasan Pemukiman">Perumahan Rakyat dan Kawasan
                                 Pemukiman</option>
                             <option value="Ilmu Hayat">Ilmu Hayat</option>
@@ -208,6 +239,7 @@
                             class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                             placeholder="Masukkan Tahun Diklat" />
                     </div>
+
 
                 </div>
             </div>

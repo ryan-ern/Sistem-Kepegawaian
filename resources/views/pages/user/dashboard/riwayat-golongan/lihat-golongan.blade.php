@@ -59,6 +59,16 @@
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                        <label For="" class="text-black font-medium text-[14px]">Masa Kerja Golongan
+                            (Bulan)</label>
+                        <div title="1"
+                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                            1</div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">TMT Golongan</label>
                         <div
                             class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">

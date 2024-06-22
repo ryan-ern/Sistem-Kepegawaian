@@ -58,6 +58,9 @@
                                 Tanggal
                             </th>
                             <th scope="col" class="px-3 py-3">
+                                Jam
+                            </th>
+                            <th scope="col" class="px-3 py-3">
                                 Status
                             </th>
                         </tr>
@@ -77,7 +80,11 @@
                                 13-02-2024
                             </td>
                             <td class="px-3 py-3">
-                                <div class="bg-[#E9F6FB] p-1 rounded px-6 inline-block">Hadir</div>
+                                08:00:50
+                            </td>
+                            <td class="px-3 py-3 flex items-center gap-2">
+                                <div class="under inline-block p-1 px-3 bg-[#E9F6FB] text-black w-[70px] text-center rounded-sm">Sakit</div>
+                                <img class="bg-[#4F8EA5] py-1 px-3 rounded-sm" src="../../Assets/doc.svg" alt="">
                             </td>
                         </tr>
                         <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
@@ -94,7 +101,11 @@
                                 13-02-2024
                             </td>
                             <td class="px-3 py-3">
-                                <div class="bg-[#E9F6FB] p-1 rounded px-6 inline-block">Hadir</div>
+                                08:00:50
+                            </td>
+                            <td class="px-3 py-3 flex items-center gap-2">
+                                <div class="under inline-block p-1 px-3 bg-[#E9F6FB] text-black w-[70px] text-center rounded-sm">Izin</div>
+                                <img class="bg-[#4F8EA5] py-1 px-3 rounded-sm" src="../../Assets/doc.svg" alt="">
                             </td>
                         </tr>
                         <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
@@ -111,7 +122,11 @@
                                 13-02-2024
                             </td>
                             <td class="px-3 py-3">
-                                <div class="bg-[#E9F6FB] p-1 rounded px-6 inline-block">Hadir</div>
+                                08:00:50
+                            </td>
+                            <td class="px-3 py-3 flex items-center gap-2">
+                                <div class="under inline-block p-1 px-3 bg-[#E9F6FB] text-black w-[70px] text-center rounded-sm">Sakit</div>
+                                <img class="bg-[#4F8EA5] py-1 px-3 rounded-sm" src="../../Assets/doc.svg" alt="">
                             </td>
                         </tr>
                     </tbody>
