@@ -13,7 +13,8 @@
 
 <body>
     <x-sidebar-user title="Riwayat Data Diri">
-        <div class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
+        <div
+            class="wrap mb-[10px] md:mb-[35px] flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center">
             <p class="text-[14px] md:text-[16px]">Berikut tampilan Data Diri anda</p>
             <div class="btnn flex items-center gap-2">
                 <a href="/dashboard/riwayat-diri/pengajuan-diri"
@@ -34,30 +35,16 @@
         </div>
 
         <div class="wrap-content">
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Kartu Tanda Pengenal</div>
+            @foreach ($dataDiri as $d)
+                <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                    <div class="wrap">
+                        <div class="text-[18px] font-medium">{{ $d->nama }}</div>
+                    </div>
+                    <a href="{{ route('diri.show', $d->id) }}" class="link">
+                        <img src="../Assets/book.svg" alt="">
+                    </a>
                 </div>
-                <a href="/dashboard/riwayat-diri/lihat-diri" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">Nomor Pokok Wajib Pajak</div>
-                </div>
-                <a href="/dashboard/riwayat-diri/lihat-diri" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
-            <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                <div class="wrap">
-                    <div class="text-[18px] font-medium">BPJS Kesehatan</div>
-                </div>
-                <a href="/dashboard/riwayat-diri/lihat-diri" class="link">
-                    <img src="../Assets/book.svg" alt="">
-                </a>
-            </div>
+            @endforeach
         </div>
     </x-sidebar-user>
 </body>

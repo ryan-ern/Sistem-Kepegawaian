@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('nama');
             $table->date('tgl_lahir');
             $table->string('no_identitas');
-            $table->enum('jk', ['laki-laki', 'perempuan']);
+            $table->string('jk');
             $table->string('alamat');
             $table->string('agama');
             $table->string('status_keluarga');

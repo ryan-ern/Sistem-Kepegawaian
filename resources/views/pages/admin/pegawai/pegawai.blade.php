@@ -55,128 +55,74 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            <div class="w-[73px] h-[82px]">
-                                <img class="w-full h-full object-cover" src="./../Assets/man.jpg" alt="">
-                            </div>
-                        </td>
-                        <td title="12345678 1234561123" class="px-3 py-3">
-                            12345678...
-                        </td>
-                        <td title="Muhammad Udin" class="px-3 py-3">
-                            Muhammad Udin
-                        </td>
-                        <td title="Sekretaris" class="px-3 py-3">
-                            Sekretaris
-                        </td>
-                        <td title="II" class="px-3 py-3">
-                            II
-                        </td>
-                        <td class="px-3 py-3">
-                            <div class="p-1 bg-slate-400 rounded-sm text-black inline-block px-4">Aktif</div>
-                        </td>
-                        <td class="px-3 py-3">
-                            <div class="wrap">
-                                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown1" type="button">
-                                    <div class="inline-block bg-[#9BB8C3] px-5 p-2 rounded-lg">
-                                        <img src="./../Assets/titik.svg" alt="">
-                                    </div>
-                                </button>
-                                <!-- Dropdown menu -->
-                                <div id="dropdown1"
-                                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-[120px]">
-                                    <ul class="py-2 text-sm text-[#4F8EA5]" aria-labelledby="dropdownDefaultButton">
-                                        <li>
-                                            <a href="/admin/edit-pegawai"
-                                                class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                                <img src="./../Assets/edit.svg" alt="">
-                                                Edit
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/admin/lihat-pegawai"
-                                                class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                                <img src="./../Assets/lihat.svg" alt="">
-                                                Lihat
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <button data-modal-target="hapus" data-modal-toggle="hapus"
-                                                class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                                <img src="./../Assets/hapus.svg" alt="">
-                                                Hapus
-                                                </a>
-                                        </li>
-                                    </ul>
+                    @foreach ($users as $user)
+                        <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
+                            <td class="px-3 py-3">
+                                {{ $loop->iteration }}
+                            </td>
+                            <td class="px-3 py-3">
+                                <div class="w-[73px] h-[82px]">
+                                    <img class="w-full h-full object-cover" src="{{ asset('storage/' . $user->foto) }}"
+                                        alt="">
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            <div class="w-[73px] h-[82px]">
-                                <img class="w-full h-full object-cover" src="./../Assets/man.jpg" alt="">
-                            </div>
-                        </td>
-                        <td title="12345678 1234561123" class="px-3 py-3">
-                            12345678...
-                        </td>
-                        <td title="Muhammad Udin" class="px-3 py-3">
-                            Muhammad Udin
-                        </td>
-                        <td title="Sekretaris" class="px-3 py-3">
-                            Sekretaris
-                        </td>
-                        <td title="II" class="px-3 py-3">
-                            II
-                        </td>
-                        <td class="px-3 py-3">
-                            <div class="p-1 bg-slate-400 rounded-sm text-black inline-block px-4">Aktif</div>
-                        </td>
-                        <td class="px-3 py-3">
-                            <div class="wrap">
-                                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown2" type="button">
-                                    <div class="inline-block bg-[#9BB8C3] px-5 p-2 rounded-lg">
-                                        <img src="./../Assets/titik.svg" alt="">
-                                    </div>
-                                </button>
-                                <!-- Dropdown menu -->
-                                <div id="dropdown2"
-                                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-[120px]">
-                                    <ul class="py-2 text-sm text-[#4F8EA5]" aria-labelledby="dropdownDefaultButton">
-                                        <li>
-                                            <a href="/admin/edit-pegawai"
-                                                class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                                <img src="./../Assets/edit.svg" alt="">
-                                                Edit
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/admin/lihat-pegawai"
-                                                class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                                <img src="./../Assets/lihat.svg" alt="">
-                                                Lihat
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <button data-modal-target="hapus" data-modal-toggle="hapus"
-                                                class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                                <img src="./../Assets/hapus.svg" alt="">
-                                                Hapus
-                                                </a>
-                                        </li>
-                                    </ul>
+                            </td>
+                            <td class="px-3 py-3">
+                                {{ $user->nip }}
+                            </td>
+                            <td class="px-3 py-3">
+                                {{ $user->name }}
+                            </td>
+                            <td class="px-3 py-3">
+                                {{ $user->jabatan }}
+                            </td>
+                            <td class="px-3 py-3">
+                                {{ $user->kelas_jabatan ? $user->kelas_jabatan : '-' }}
+                            </td>
+                            <td class="px-3 py-3">
+                                <div class="p-1 bg-slate-400 rounded-sm text-black inline-block px-4">
+                                    {{ $user->status }}
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                            <td class="px-3 py-3">
+                                <div class="wrap relative">
+                                    <button id="dropdownDefaultButton-{{ $user->id }}"
+                                        data-dropdown-toggle="dropdown1-{{ $user->id }}" type="button">
+                                        <div class="inline-block bg-[#9BB8C3] px-5 p-2 rounded-lg">
+                                            <img src="./../Assets/titik.svg" alt="">
+                                        </div>
+                                    </button>
+                                    <!-- Dropdown menu -->
+                                    <div id="dropdown1-{{ $user->id }}"
+                                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-[120px] absolute">
+                                        <ul class="py-2 text-sm text-[#4F8EA5]"
+                                            aria-labelledby="dropdownDefaultButton-{{ $user->id }}">
+                                            <li>
+                                                <a href="{{ route('user.edit', $user->id) }}"
+                                                    class="px-4 py-2 hover:bg-gray-100 flex items-center gap-3 link">
+                                                    <img src="{{ asset('Assets/edit.svg') }}" alt="Edit">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/admin/lihat-pegawai"
+                                                    class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
+                                                    <img src="./../Assets/lihat.svg" alt="">
+                                                    Lihat
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <button data-modal-target="hapus" data-modal-toggle="hapus"
+                                                    class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
+                                                    <img src="./../Assets/hapus.svg" alt="">
+                                                    Hapus
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
             {{-- POP UP HAPUS --}}
@@ -217,5 +163,33 @@
         </div>
     </x-sidebar-admin>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownButtons = document.querySelectorAll('[data-dropdown-toggle]');
+
+        dropdownButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-dropdown-toggle');
+                const dropdown = document.getElementById(targetId);
+
+                if (dropdown.classList.contains('hidden')) {
+                    dropdown.classList.remove('hidden');
+                } else {
+                    dropdown.classList.add('hidden');
+                }
+            });
+        });
+
+        // Close the dropdown if clicked outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('[data-dropdown-toggle]') && !event.target.closest('.wrap')) {
+                const dropdowns = document.querySelectorAll('[id^="dropdown1-"]');
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.add('hidden');
+                });
+            }
+        });
+    });
+</script>
 
 </html>

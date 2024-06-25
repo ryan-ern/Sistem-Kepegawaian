@@ -17,37 +17,19 @@
             Berikut tampilan riwayat pengajuan Data Diri
         </div>
         <div class="wrap flex flex-col gap-3">
-            <div class="data flex flex-col p-2 pl-0 pr-5 gap-1">
-                <div class="wrap flex justify-between items-center">
-                    <div class="wrap">
-                        <div class="">Mengusulkan perubahan riwayat Data Diri</div>
-                        <div class="mb-2">04/03/2023</div>
+            @foreach ($dataDiri as $d)
+                <div class="data flex flex-col p-2 pl-0 pr-5 gap-1">
+                    <div class="wrap flex justify-between items-center">
+                        <div class="wrap">
+                            <div class="">Mengusulkan perubahan riwayat Data Diri</div>
+                            <div class="mb-2">{{ $d->created_at }}</div>
+                        </div>
+                        <div class="p-1 bg-[#2F5B6B] rounded px-3 text-white">{{ $d->status }}</div>
                     </div>
-                    <div class="p-1 bg-[#2F5B6B] rounded px-3 text-white">Diproses</div>
+                    <div class="garis w-full h-[1px] bg-[#969BA0]"></div>
                 </div>
-                <div class="garis w-full h-[1px] bg-[#969BA0]"></div>
-            </div>
-            <div class="data flex flex-col p-2 pl-0 pr-5 gap-1">
-                <div class="wrap flex justify-between items-center">
-                    <div class="wrap">
-                        <div class="">Mengusulkan perubahan riwayat Data Diri</div>
-                        <div class="mb-2">04/03/2023</div>
-                    </div>
-                    <div class="p-1 bg-[#2F5B6B] rounded px-3 text-white">Diproses</div>
-                </div>
-                <div class="garis w-full h-[1px] bg-[#969BA0]"></div>
-            </div>
-            <div class="data flex flex-col p-2 pl-0 pr-5 gap-1">
-                <div class="wrap flex justify-between items-center">
-                    <div class="wrap">
-                        <div class="">Mengusulkan perubahan riwayat Data Diri</div>
-                        <div class="mb-2">04/03/2023</div>
-                    </div>
-                    <div class="p-1 bg-[#2F5B6B] rounded px-3 text-white">Diproses</div>
-                </div>
-                <div class="garis w-full h-[1px] bg-[#969BA0]"></div>
-            </div>
-            
+            @endforeach
+
         </div>
     </x-sidebar-user>
 </body>

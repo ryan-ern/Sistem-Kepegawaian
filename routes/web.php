@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\DiklatController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeneralPage;
@@ -14,6 +16,7 @@ use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\PnsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkpController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,9 +106,60 @@ Route::group(['middleware' => ['auth', 'user']], function () {
     Route::get('/dashboard/riwayat-laporan/lihat-laporan/{id}', [KinerjaController::class, 'show'])->name('kinerja.show');
     Route::get('/dashboard/riwayat-laporan/pengajuan-laporan', [KinerjaController::class, 'pengajuanKinerja'])->name('kinerja.history');
     Route::post('/dashboard/riwayat-laporan/tambah-laporan', [KinerjaController::class, 'store'])->name('kinerja.store');
+
+    Route::get('/dashboard/riwayat-diri', [DataDiriController::class, 'index'])->name('diri.index');
+    Route::get('/dashboard/riwayat-diri/tambah-diri', [GeneralPage::class, 'tambahdiri'])->name('diri.create');
+    Route::get('/dashboard/riwayat-diri/lihat-diri/{id}', [DataDiriController::class, 'show'])->name('diri.show');
+    Route::get('/dashboard/riwayat-diri/pengajuan-diri', [DataDiriController::class, 'pengajuandiri'])->name('diri.history');
+    Route::post('/dashboard/riwayat-diri/tambah-diri', [DataDiriController::class, 'store'])->name('diri.store');
 });
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/admin/pegawai', [UserController::class, 'index'])->name('user.index');
+    Route::post('/admin/dashboard', [UserController::class, 'store'])->name('user.store');
+    Route::get('/admin/edit-pegawai/{id}', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/admin/edit-pegawai/{id}', [UserController::class, 'update'])->name('user.update');
+
+    Route::get('/admin/edit-pegawai/data-diri/{id}', [UserController::class, 'dataDiri'])->name('user.dataDiri');
+    Route::delete('/file/delete/{id}', [UserController::class, 'dataDiriDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-pendidikan/{id}', [UserController::class, 'pendidikan'])->name('user.pendidikan');
+    Route::delete('/file/delete/{id}', [UserController::class, 'pendidikanDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-ortu/{id}', [UserController::class, 'ortu'])->name('user.ortu');
+    Route::delete('/file/delete/{id}', [UserController::class, 'ortuDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-pasangan/{id}', [UserController::class, 'pasangan'])->name('user.pasangan');
+    Route::delete('/file/delete/{id}', [UserController::class, 'pasanganDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-anak/{id}', [UserController::class, 'anak'])->name('user.anak');
+    Route::delete('/file/delete/{id}', [UserController::class, 'anakDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-skp/{id}', [UserController::class, 'skp'])->name('user.skp');
+    Route::delete('/file/delete/{id}', [UserController::class, 'skp'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-penghargaan/{id}', [UserController::class, 'penghargaan'])->name('user.penghargaan');
+    Route::delete('/file/delete/{id}', [UserController::class, 'penghargaanDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-kinerja/{id}', [UserController::class, 'kinerja'])->name('user.kinerja');
+    Route::delete('/file/delete/{id}', [UserController::class, 'kinerjaDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-pns/{id}', [UserController::class, 'pns'])->name('user.pns');
+    Route::delete('/file/delete/{id}', [UserController::class, 'pnsDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-diklat/{id}', [UserController::class, 'diklat'])->name('user.diklat');
+    Route::delete('/file/delete/{id}', [UserController::class, 'diklatDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-pmk/{id}', [UserController::class, 'pmk'])->name('user.pmk');
+    Route::delete('/file/delete/{id}', [UserController::class, 'pmkDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-golongan/{id}', [UserController::class, 'golongan'])->name('user.golongan');
+    Route::delete('/file/delete/{id}', [UserController::class, 'golonganDelete'])->name('file.delete');
+
+    Route::get('/admin/edit-pegawai/data-jabatan/{id}', [UserController::class, 'jabatan'])->name('user.jabatan');
+    Route::delete('/file/delete/{id}', [UserController::class, 'jabatanDelete'])->name('file.delete');
+
     // Route::get('/edit-profile', [GeneralPage::class, 'editProfile']);
 });
 
@@ -128,7 +182,7 @@ Route::controller(GeneralPage::class)->group(function () {
     // DASHBOARD
     Route::get('/dashboard', 'dashboard')->name('dashboardUser')->middleware('user');
 
-    Route::get('/admin/dashboard', 'dashboardAdmin')->name('dashboard')->middleware('admin');
+    // Route::get('/admin/dashboard', 'dashboardAdmin')->name('dashboard')->middleware('admin');
     // GOLONGAN
     // Route::get('/dashboard/riwayat-golongan', 'riwayatGolongan');
     // Route::get('/dashboard/riwayat-golongan/tambah-golongan', 'tambahGolongan');
@@ -207,10 +261,10 @@ Route::controller(GeneralPage::class)->group(function () {
     Route::get('/dashboard/riwayat-cuti', 'riwayatcuti');
     // CUTI
     // ABSENSI
-    Route::get('/dashboard/riwayat-diri', 'riwayatdiri');
-    Route::get('/dashboard/riwayat-diri/tambah-diri', 'tambahdiri');
-    Route::get('/dashboard/riwayat-diri/lihat-diri', 'lihatdiri');
-    Route::get('/dashboard/riwayat-diri/pengajuan-diri', 'pengajuandiri');
+    // Route::get('/dashboard/riwayat-diri', 'riwayatdiri');
+    // Route::get('/dashboard/riwayat-diri/tambah-diri', 'tambahdiri');
+    // Route::get('/dashboard/riwayat-diri/lihat-diri', 'lihatdiri');
+    // Route::get('/dashboard/riwayat-diri/pengajuan-diri', 'pengajuandiri');
     // ABSENSI
     // DASHBOARD
     // -
@@ -241,9 +295,9 @@ Route::controller(GeneralPage::class)->group(function () {
     // Route::get('/admin/dashboard', 'dashboardAdmin');
     // DASHBOARD
     // PEGAWAI
-    Route::get('/admin/pegawai', 'pegawaiAdmin');
-    Route::get('/admin/edit-pegawai', 'pegawaiEdit');
-    
+    // Route::get('/admin/pegawai', 'pegawaiAdmin');
+    // Route::get('/admin/edit-pegawai', 'pegawaiEdit');
+
     //PENDIDIKAN
     Route::get('/admin/edit-pegawai/data-pendidikan', 'dataPendidikan');
     Route::get('/admin/edit-pegawai/detail-pendidikan', 'detailPendidikan');
@@ -293,7 +347,7 @@ Route::controller(GeneralPage::class)->group(function () {
     Route::get('/admin/edit-pegawai/detail-anak', 'detailAnak');
     //KELUARGA-ANAK
     //DATA DIRI
-    Route::get('/admin/edit-pegawai/data-diri', 'dataDiri');
+    // Route::get('/admin/edit-pegawai/data-diri', 'dataDiri');
     Route::get('/admin/edit-pegawai/detail-diri', 'detailDiri');
     //DATA DIRI
     // Lihat

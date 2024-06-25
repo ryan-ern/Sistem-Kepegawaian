@@ -52,10 +52,10 @@
             </div>
         @endif
         <form action="{{ route('profile.edit') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
             <div class="text-[18px] text-[#2F5B6B]">Informasi Pengguna</div>
             <div class="form mt-[20px]">
-                @csrf
-                @method('PUT')
                 <div class="wrap w-full md:flex-row flex-col  flex gap-3">
                     {{-- KIRI --}}
                     <div class="md:w-1/3 w-full flex flex-col gap-3">
@@ -98,9 +98,28 @@
                         </div>
                         <div class="wrap">
                             <label For="" class="text-black ">Agama</label>
-                            <input type="text" name="agama" value="{{ old('agama', auth()->user()->agama) }}"
-                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                                placeholder="Masukkan Agama" required />
+                            <select value="{{ old('agama', auth()->user()->agama) }}" name="agama"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
+                                id="cars">
+                                <option value="Islam" {{ auth()->user()->agama == 'Islam' ? 'selected' : '' }}>Islam
+                                </option>
+                                <option value="Kristen" {{ auth()->user()->agama == 'Kristen' ? 'selected' : '' }}>
+                                    Kristen
+                                </option>
+                                <option value="Katholik" {{ auth()->user()->agama == 'Katholik' ? 'selected' : '' }}>
+                                    Katholik
+                                </option>
+                                <option value="Hindu" {{ auth()->user()->agama == 'Hindu' ? 'selected' : '' }}>Hindu
+                                </option>
+                                <option value="Budha" {{ auth()->user()->agama == 'Budha' ? 'selected' : '' }}>Budha
+                                </option>
+                                <option value="Lainnya" {{ auth()->user()->agama == 'Lainnya' ? 'selected' : '' }}>
+                                    Lainnya
+                                </option>
+                                <option value="Kepercayaan Terhadap Tuhan YME"
+                                    {{ auth()->user()->agama == 'Kepercayaan Terhadap Tuhan YME' ? 'selected' : '' }}>
+                                    Kepercayaan Terhadap Tuhan YME</option>
+                            </select>
                         </div>
                         <div class="wrap">
                             <label For="" class="text-black ">Tanggal Lahir</label>
@@ -116,37 +135,40 @@
                     <div class="md:w-1/3 w-full flex flex-col gap-3">
                         <div class="wrap ">
                             <label For="" class="text-black ">NIP</label>
-                            <input type="text" id=""
+                            <input type="text" id="" name="nip"
+                                value="{{ old('nip', auth()->user()->nip) }}"
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                                 placeholder="Masukkan NIP" />
                         </div>
                         <div class="wrap">
                             <label For="" class="text-black ">Satuan Kerja</label>
-                            <input type="text" id="kontak"
+                            <input type="text" id="kontak" name="satuan_kerja"
+                                value="{{ old('satuan_kerja', auth()->user()->satuan_kerja) }}"
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                                 placeholder="Masukkan Satuan Kerja" />
                         </div>
                         <div class="wrap">
                             <label For="" class="text-black ">Nomor Handphone</label>
-                            <input type="text"
+                            <input type="text" name="no_hp" value="{{ old('no_hp', auth()->user()->no_hp) }}"
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                                 placeholder="Masukkan Nomor Handphone" />
                         </div>
                         <div class="wrap">
                             <label For="" class="text-black ">NIK</label>
-                            <input type="text"
+                            <input type="text" name="nik" value="{{ old('nik', auth()->user()->nik) }}"
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                                 placeholder="Masukkan NIK" />
                         </div>
                         <div class="wrap">
                             <label For="" class="text-black ">Alamat</label>
-                            <input type="text"
+                            <input type="text" name="alamat" value="{{ old('alamat', auth()->user()->alamat) }}"
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                                 placeholder="Masukkan Alamat" />
                         </div>
                         <div class="wrap">
                             <label For="" class="text-black ">Tempat Lahir</label>
-                            <input type="text"
+                            <input type="text" name="tempat_lahir"
+                                value="{{ old('tempat_lahir', auth()->user()->tempat_lahir) }}"
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                                 placeholder="Masukkan Tempat Lahir" />
                         </div>
@@ -154,14 +176,17 @@
                     {{-- KANAN --}}
                     <div class="md:w-1/3 w-full flex flex-col gap-3">
                         <div class="wrap bg-[#E9F6FB] w-full rounded-xl flex justify-center p-3">
-                            <div class="kotak">
-                                <div class="foto h-[180px] aspect-square bg-[#C3C3C3] rounded-lg"></div>
+                            <div class="kotak flex flex-col items-center justify-center">
+                                <div
+                                    class="foto h-[180px] aspect-square bg-[#FFFFFF] mb-5 rounded-lg flex items-center justify-center">
+                                    <img src="{{ asset('storage/' . auth()->user()->foto) }}" alt="" />
+                                </div>
                                 <div class="flex flex-col gap-1 items-center">
-                                    <div class="User text-[30px] font-semibold">User </div>
-                                    <div class="User text-[18px]">Jobdesk </div>
+                                    <div class="User text-[30px] font-semibold">{{ auth()->user()->name }} </div>
+                                    <div class="User text-[18px]">{{ auth()->user()->jabatan }} </div>
                                 </div>
                             </div>
-                            <div class="bg-red absolute bottom-2 right-2">
+                            {{-- <div class="bg-red absolute bottom-2 right-2">
                                 <label for="file-input" class="cursor-pointer relative">
                                     <img id="selected-image" src="" alt="Selected Image" class="hidden" />
                                     <input id="file-input" type="file" class="hidden" accept="image/*"
@@ -175,26 +200,27 @@
                                         </svg>
                                     </div>
                                 </label>
+                            </div> --}}
+                        </div>
+                        <div class="wrap">
+                            <label for="image" class="text-black">Foto Profil</label>
+                            <div class="relative">
+                                <input id="image" type="file" name="foto" accept="image/*"
+                                    class="hidden" />
+                                <label for="image"
+                                    class="cursor-pointer bg-[#2F5B6B] text-white py-2 px-4 rounded-lg inline-block">
+                                    Unggah File
+                                </label>
                             </div>
                         </div>
-                        {{-- <div class="wrap">
-                        <label For="image" class="text-black">Foto Profil</label>
-                        <div class="relative">
-                            <input id="svg-container" type="file" id="image" accept="image/*"
-                                class="hidden" />
-                            <label for="image"
-                                class="cursor-pointer bg-[#2F5B6B] text-white py-2 px-4 rounded-lg inline-block">
-                                Unggah File
-                            </label>
-                        </div>
-                    </div> --}}
                     </div>
 
                 </div>
             </div>
             <div class="kirim flex justify-end mt-5">
-                <a href="/edit-profile-pendukung" class="bg-[#2F5B6B] text-white py-2 px-8 rounded-lg">Lanjutkan</a>
+                <button type="submit" class="bg-[#2F5B6B] text-white py-2 px-8 rounded-lg">Lanjutkan</button>
             </div>
+        </form>
     </x-sidebar-user>
     <script>
         document.getElementById('file-input').addEventListener('change', function(event) {

@@ -22,49 +22,50 @@
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
-                    <a href="/admin/edit-pegawai/data-diri"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="{{ route('user.dataDiri', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Data Diri
-                        <a href="/admin/edit-pegawai/data-pendidikan"
-                            class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
-                            Pendidikan
-                        </a>
-                        <a href="/admin/edit-pegawai/data-orangtua"
-                            class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
-                            Keluarga
-                        </a>
-                        <a href="/admin/edit-pegawai/data-skp"
-                            class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
-                            SKP
-                        </a>
-                        <a href="/admin/edit-pegawai/data-penghargaan"
-                            class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
-                            Penghargaan
-                        </a>
-                        <a href="/admin/edit-pegawai/data-kinerja"
-                            class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
-                            Laporan Kinerja
-                        </a>
-                        <a href="/admin/edit-pegawai/data-cpns"
-                            class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
-                            CPNS/PNS
-                        </a>
-                        <a href="/admin/edit-pegawai/data-diklat"
-                            class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
-                            Diklat/Kursus
-                        </a>
-                        <a href="/admin/edit-pegawai/data-pmk"
-                            class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
-                            Peninjauan Masa Kerja
-                        </a>
-                        <a href="/admin/edit-pegawai/data-golongan"
-                            class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md ">
-                            Golongan
-                        </a>
-                        <a href="/admin/edit-pegawai/data-jabatan"
-                            class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md ">
-                            Jabatan
-                        </a>
+                    </a>
+                    <a href="{{ route('user.pendidikan', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        Pendidikan
+                    </a>
+                    <a href="{{ route('user.ortu', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        Keluarga
+                    </a>
+                    <a href="{{ route('user.skp', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        SKP
+                    </a>
+                    <a href="{{ route('user.penghargaan', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        Penghargaan
+                    </a>
+                    <a href="{{ route('user.kinerja', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        Laporan Kinerja
+                    </a>
+                    <a href="{{ route('user.pns', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        CPNS/PNS
+                    </a>
+                    <a href="{{ route('user.diklat', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        Diklat/Kursus
+                    </a>
+                    <a href="{{ route('user.pmk', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
+                        Peninjauan Masa Kerja
+                    </a>
+                    <a href="{{ route('user.golongan', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        Golongan
+                    </a>
+                    <a href="{{ route('user.jabatan', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        Jabatan
+                    </a>
                 </div>
             </div>
             <div class="right w-full md:w-[88%]">

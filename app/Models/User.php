@@ -41,6 +41,7 @@ class User extends Authenticatable
         'tgl_taspen',
         'no_tapera',
         'kelas_jabatan',
+        'jabatan',
         'no_karis',
         'kppn',
         'no_akta',

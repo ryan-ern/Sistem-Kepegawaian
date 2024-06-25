@@ -22,47 +22,47 @@
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
-                    <a href="/admin/edit-pegawai/data-diri"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                    <a href="{{ route('user.dataDiri', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Data Diri
                     </a>
-                    <a href="/admin/edit-pegawai/data-pendidikan"
+                    <a href="{{ route('user.pendidikan', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Pendidikan
                     </a>
-                    <a href="/admin/edit-pegawai/data-orangtua"
+                    <a href="{{ route('user.ortu', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Keluarga
                     </a>
-                    <a href="/admin/edit-pegawai/data-skp"
+                    <a href="{{ route('user.skp', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         SKP
                     </a>
-                    <a href="/admin/edit-pegawai/data-penghargaan"
+                    <a href="{{ route('user.penghargaan', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Penghargaan
                     </a>
-                    <a href="/admin/edit-pegawai/data-kinerja"
+                    <a href="{{ route('user.kinerja', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Laporan Kinerja
                     </a>
-                    <a href="/admin/edit-pegawai/data-cpns"
+                    <a href="{{ route('user.pns', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         CPNS/PNS
                     </a>
-                    <a href="/admin/edit-pegawai/data-diklat"
+                    <a href="{{ route('user.diklat', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Diklat/Kursus
                     </a>
-                    <a href="/admin/edit-pegawai/data-pmk"
+                    <a href="{{ route('user.pmk', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
                         Peninjauan Masa Kerja
                     </a>
-                    <a href="/admin/edit-pegawai/data-golongan"
-                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                    <a href="{{ route('user.golongan', $user->first()->user_id) }}"
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Golongan
                     </a>
-                    <a href="/admin/edit-pegawai/data-jabatan"
+                    <a href="{{ route('user.jabatan', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Jabatan
                     </a>
@@ -271,44 +271,41 @@
         </div>
         {{-- simpan --}}
 
-                            {{-- POP UP HAPUS --}}
-                            <div id="hapus" tabindex="-1" aria-hidden="true"
-                            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                            <div data-modal-hide="hapus"
-                                class="relative p-4 w-full flex justify-center items-center h-full">
-                                <!-- Modal content -->
-                                <div class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
-                                    <!-- Modal header -->
-                                    <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                                        <button type="button"
-                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                            data-modal-hide="hapus">
-                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                            </svg>
-                                            <span class="sr-only">Close modal</span>
-                                        </button>
-                                    </div>
-                                    <!-- Modal body -->
-                                    <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                                        <div class="wrap flex items-center gap-8 flex-col">
-                                            <div class="head font-medium text-[28px]">Data Berhasil Dihapus</div>
-                                            <div class="icon">
-                                                <img src="../../Assets/sampah.svg" alt="">
-                                            </div>
-                                            <button data-modal-hide="hapus"
-                                                class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
-                                                Selesai
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+        {{-- POP UP HAPUS --}}
+        <div id="hapus" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div data-modal-hide="hapus" class="relative p-4 w-full flex justify-center items-center h-full">
+                <!-- Modal content -->
+                <div class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
+                        <button type="button"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
+                            data-modal-hide="hapus">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                        <div class="wrap flex items-center gap-8 flex-col">
+                            <div class="head font-medium text-[28px]">Data Berhasil Dihapus</div>
+                            <div class="icon">
+                                <img src="../../Assets/sampah.svg" alt="">
                             </div>
+                            <button data-modal-hide="hapus" class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
+                                Selesai
+                            </button>
                         </div>
-                        {{-- POP UP HAPUS --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- POP UP HAPUS --}}
     </x-sidebar-admin>
 </body>
 

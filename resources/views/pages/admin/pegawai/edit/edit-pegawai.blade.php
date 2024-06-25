@@ -14,6 +14,47 @@
 
 <body>
     <x-sidebar-admin>
+
+        @if ($message = Session::get('error'))
+            <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+                <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                        <div
+                            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                                <div class="sm:flex sm:items-start">
+                                    <div
+                                        class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="red" aria-hidden="true" class="oc sf axy">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01">
+                                            </path>
+                                            <circle cx="12" cy="16" r="1" fill="red" />
+                                        </svg>
+
+
+                                    </div>
+                                    <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                        <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">
+                                            <span
+                                                class="text-xl font-bold">{{ ucfirst($message[0]) }}</span>{{ substr($message, 1) }}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                <button type="button" onclick="closeModal()"
+                                    class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">
+                                    Ok
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
         <div class="text-[32px] font-semibold text-[#2F5B6B] mb-3">Data Pegawai</div>
         <div class="flex justify-end">
             <div class="sears relative">
@@ -23,17 +64,19 @@
             </div>
         </div>
         {{-- as --}}
-        <div class="form mt-[20px]">
-            <div class="wrap w-full md:flex-row flex-col  flex gap-3">
-                {{-- KIRI --}}
-                <div class="md:w-1/3 w-full flex flex-col gap-3">
-                    <label for="file-input" class="cursor-pointer relative">
-                        <div class="foto h-[180px] aspect-square bg-[#C3C3C3] rounded-lg relative">
-                            {{-- <img class="h-full w-full object-cover" src="Assets/profile.png" alt=""> --}}
-                            <img id="selected-image" src="" alt="Selected Image"
-                                class="hidden h-full w-full object-cover" />
-                            <input id="file-input" type="file" class="hidden" accept="image/*"
-                                value="" />
+        <form action="{{ route('user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            <div class="form mt-[20px]">
+                <div class="wrap w-full md:flex-row flex-col  flex gap-3">
+                    {{-- KIRI --}}
+                    <div class="md:w-1/3 w-full flex flex-col gap-3">
+                        <label for="file-input" class="cursor-pointer relative">
+                            <div class="foto h-[180px] aspect-square bg-[#C3C3C3] rounded-lg relative">
+                                <img class="h-full w-full object-cover" src="{{ asset('storage/' . $user->foto) }}"
+                                    alt="">
+                                <input id="file-input" type="file" name="foto" class="hidden" accept="image/*"
+                                    value="" />
                                 <div id="edit-icon-container" class="absolute bottom-2 right-2">
                                     <svg width="22" height="20" viewBox="0 0 22 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -42,168 +85,176 @@
                                             fill="black" />
                                     </svg>
                                 </div>
-                        </div>
-                        {{-- <img id="selected-image" src="" alt="Selected Image" class="hidden" />
+                            </div>
+                            {{-- <img id="selected-image" src="" alt="Selected Image" class="hidden" />
                         <input id="file-input" type="file" class="hidden" accept="image/*" value="" /> --}}
-                        
-                    </label>
-                    {{--  --}}
-                    <div class="wrap mt-[11px]">
-                        <label For="" class="text-black ">Nama</label>
-                        <input type="text" id=""
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Nama" />
+
+                        </label>
+                        {{--  --}}
+                        <div class="wrap mt-[11px]">
+                            <label For="" class="text-black ">Nama</label>
+                            <input type="text" id="" value="{{ $user->name }}" name="name" required
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Nama" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">NIP</label>
+                            <input type="text" id="kontak" value="{{ $user->nip }}" name="nip" required
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan NIP" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">No Kartu Keluarga</label>
+                            <input type="text" value="{{ $user->nik }}" name="nik"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan No Kartu Keluarga" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Nomor Telepon</label>
+                            <input type="text" value="{{ $user->no_tel }}" name="no_tel" required
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Nomor Telepon" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Alamat</label>
+                            <input type="text" value="{{ $user->alamat }}" name="alamat"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Alamat" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Tanggal NPWP</label>
+                            <input type="date" value="{{ $user->tgl_npwp }}" name="tgl_npwp"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Tanggal NPWP" />
+                        </div>
                     </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">NIP</label>
-                        <input type="text" id="kontak"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan NIP" />
+                    {{-- TENGAH --}}
+                    <div class="md:w-1/3 w-full flex flex-col gap-3">
+                        <div class="wrap ">
+                            <label for="status" class="text-black">Status</label>
+                            <select required name="status"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
+                                id="status">
+                                <option value="aktif" {{ $user->status == 'aktif' ? 'selected' : '' }}>Aktif</option>
+                                <option value="tidak aktif" {{ $user->status == 'tidak aktif' ? 'selected' : '' }}>
+                                    Non-Aktif
+                                </option>
+                            </select>
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Agama</label>
+                            <select value="{{ $user->agama }}" name="agama"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
+                                id="cars">
+                                <option value="Islam" {{ $user->agama == 'Islam' ? 'selected' : '' }}>Islam</option>
+                                <option value="Kristen" {{ $user->agama == 'Kristen' ? 'selected' : '' }}>Kristen
+                                </option>
+                                <option value="Katholik" {{ $user->agama == 'Katholik' ? 'selected' : '' }}>Katholik
+                                </option>
+                                <option value="Hindu" {{ $user->agama == 'Hindu' ? 'selected' : '' }}>Hindu</option>
+                                <option value="Budha" {{ $user->agama == 'Budha' ? 'selected' : '' }}>Budha</option>
+                                <option value="Lainnya" {{ $user->agama == 'Lainnya' ? 'selected' : '' }}>Lainnya
+                                </option>
+                                <option value="Kepercayaan Terhadap Tuhan YME"
+                                    {{ $user->agama == 'Kepercayaan Terhadap Tuhan YME' ? 'selected' : '' }}>
+                                    Kepercayaan Terhadap Tuhan YME</option>
+                            </select>
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Satuan Kerja</label>
+                            <input type="text" value="{{ $user->satuan_kerja }}" name="satuan_kerja"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Satuan Kerja" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Kerja Jabatan (Angka)</label>
+                            <input type="text" value="{{ $user->kelas_jabatan }}" name="kelas_jabatan"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Kerja Jabtan (Angka)" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Email</label>
+                            <input type="text" required value="{{ $user->email }}" name="email"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Email" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Tanggal Lahir</label>
+                            <input type="date" value="{{ $user->tgl_lahir }}" name="tgl_lahir"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Tanggal Lahir" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Tempat Lahir</label>
+                            <input type="text" value="{{ $user->tempat_lahir }}" name="tempat_lahir"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Tempat Lahir" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">No NPWP</label>
+                            <input type="text" value="{{ $user->no_npwp }}" name="no_npwp"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan No NPWP" />
+                        </div>
                     </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">No Kartu Keluarga</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan No Kartu Keluarga" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Nomor Telepon</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Nomor Telepon" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Alamat</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Alamat" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Tanggal NPWP</label>
-                        <input type="date"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Tanggal NPWP" />
-                    </div>
-                </div>
-                {{-- TENGAH --}}
-                <div class="md:w-1/3 w-full flex flex-col gap-3">
-                    <div class="wrap ">
-                        <label For="" class="text-black ">Status</label>
-                        <select
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
-                            id="cars">
-                            <option value="Aktif">Aktif</option>
-                            <option value="Non-Aktif">Non-Aktif</option>
-                        </select>
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Agama</label>
-                        <select
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
-                            id="cars">
-                            <option value="Islam">Islam</option>
-                            <option value="Kristen">Kristen</option>
-                            <option value="Katholik">Katholik</option>
-                            <option value="Hindu">Hindu</option>
-                            <option value="Budha">Budha</option>
-                            <option value="Lainnya">Lainnya</option>
-                            <option value="Kepercayaan Terhadap Tuhan YME">Kepercayaan Terhadap Tuhan YME</option>
-                        </select>
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Satuan Kerja</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Satuan Kerja" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Kerja Jabatan (Angka)</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Kerja Jabtan (Angka)" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Email</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Email" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Tanggal Lahir</label>
-                        <input type="date"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Tanggal Lahir" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Tempat Lahir</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Tempat Lahir" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">No NPWP</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan No NPWP" />
-                    </div>
-                </div>
-                {{-- KANAN --}}
-                <div class="md:w-1/3 w-full flex flex-col gap-3">
-                    <div class="wrap">
-                        <label For="" class="text-black ">Lokasi Kerja</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Lokasi Kerja" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">No BPJS Kesehatan</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan No BPJS Kesehatan" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">No Akta Kelahiran</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan No Akta Kelahiran" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">No Karis/Kasus</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan No Karis/Kasus" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">No TASPEN</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan No TASPEN" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">Tanggal TASPEN</label>
-                        <input type="date"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan Tanggal TASPEN" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">No TAPERA</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan No TAPERA" />
-                    </div>
-                    <div class="wrap">
-                        <label For="" class="text-black ">No KPPN/Kantor Pembayaran Gaji</label>
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                            placeholder="Masukkan No KPPN/Kantor Pembayaran Gaji" />
+                    {{-- KANAN --}}
+                    <div class="md:w-1/3 w-full flex flex-col gap-3">
+                        <div class="wrap">
+                            <label For="" class="text-black ">Lokasi Kerja</label>
+                            <input type="text" value="{{ $user->lokasi_kerja }}" name="lokasi_kerja"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Lokasi Kerja" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">No BPJS Kesehatan</label>
+                            <input type="text" value="{{ $user->no_bpjs }}" name="no_bpjs"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan No BPJS Kesehatan" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">No Akta Kelahiran</label>
+                            <input type="text" value="{{ $user->no_akta }}" name="no_akta"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan No Akta Kelahiran" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">No Karis/Kasus</label>
+                            <input type="text" value="{{ $user->no_karis }}" name="no_karis"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan No Karis/Kasus" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">No TASPEN</label>
+                            <input type="text" value="{{ $user->no_taspen }}" name="no_taspen"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan No TASPEN" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">Tanggal TASPEN</label>
+                            <input type="date" value="{{ $user->tgl_taspen }}" name="tgl_taspen"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan Tanggal TASPEN" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">No TAPERA</label>
+                            <input type="text" value="{{ $user->no_tapera }}" name="no_tapera"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan No TAPERA" />
+                        </div>
+                        <div class="wrap">
+                            <label For="" class="text-black ">No KPPN/Kantor Pembayaran Gaji</label>
+                            <input type="text" value="{{ $user->kppn }}" name="kppn"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
+                                placeholder="Masukkan No KPPN/Kantor Pembayaran Gaji" />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="kirim flex justify-end mt-5">
-            <a href="/admin/edit-pegawai/data-diri"
-                class="bg-[#2F5B6B] hover:bg-[#1c404d] text-white py-2 px-8 rounded-lg">Selanjutnya</a>
-        </div>
+            <div class="kirim flex justify-end mt-5">
+                <button type="submit"
+                    class="bg-[#2F5B6B] hover:bg-[#1c404d] link text-white py-2 px-8 rounded-lg">Selanjutnya</button>
+            </div>
+        </form>
         <script>
             document.getElementById('file-input').addEventListener('change', function(event) {
                 const file = event.target.files[0];
@@ -229,6 +280,11 @@
                 document.getElementById('hapus-icon-container').classList.add('hidden');
                 document.getElementById('file-input').value = '';
             });
+
+            function closeModal() {
+                const modal = document.querySelector('.relative.z-10');
+                modal.style.display = 'none';
+            }
         </script>
     </x-sidebar-admin>
 </body>

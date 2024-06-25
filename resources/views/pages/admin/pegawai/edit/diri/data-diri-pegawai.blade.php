@@ -22,47 +22,47 @@
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
-                    <a href="/admin/edit-pegawai/data-diri"
+                    <a href="{{ route('user.dataDiri', $user->id) }}"
                         class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Data Diri
                     </a>
-                    <a href="/admin/edit-pegawai/data-pendidikan"
+                    <a href="{{ route('user.pendidikan', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Pendidikan
                     </a>
-                    <a href="/admin/edit-pegawai/data-orangtua"
+                    <a href="{{ route('user.ortu', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Keluarga
                     </a>
-                    <a href="/admin/edit-pegawai/data-skp"
+                    <a href="{{ route('user.skp', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         SKP
                     </a>
-                    <a href="/admin/edit-pegawai/data-penghargaan"
+                    <a href="{{ route('user.penghargaan', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Penghargaan
                     </a>
-                    <a href="/admin/edit-pegawai/data-kinerja"
+                    <a href="{{ route('user.kinerja', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Laporan Kinerja
                     </a>
-                    <a href="/admin/edit-pegawai/data-cpns"
+                    <a href="{{ route('user.pns', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         CPNS/PNS
                     </a>
-                    <a href="/admin/edit-pegawai/data-diklat"
+                    <a href="{{ route('user.diklat', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Diklat/Kursus
                     </a>
-                    <a href="/admin/edit-pegawai/data-pmk"
+                    <a href="{{ route('user.pmk', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
                         Peninjauan Masa Kerja
                     </a>
-                    <a href="/admin/edit-pegawai/data-golongan"
+                    <a href="{{ route('user.golongan', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Golongan
                     </a>
-                    <a href="/admin/edit-pegawai/data-jabatan"
+                    <a href="{{ route('user.jabatan', $user->id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Jabatan
                     </a>
@@ -71,8 +71,9 @@
             <div class="right w-full md:w-[88%]">
                 <div class="hea flex justify-between">
                     <div class="text-[#2F5B6B] font-semibold text-[22px]">Data Diri</div>
-                    <button data-modal-target="simpan" data-modal-toggle="simpan"
-                        class="p-1 bg-[#9BB8C3] hover:bg-[#2F5B6B] px-5 rounded text-white">Simpan</button>
+                    <button class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
+                        <a href="{{ route('user.edit', $user->id) }}">Kembali</a>
+                    </button>
                 </div>
 
                 {{-- table --}}
@@ -93,51 +94,84 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                <td class="px-3 py-3">
-                                    1
-                                </td>
-                                <td class="px-3 py-3">
-                                    Dokumen Surat
-                                </td>
-                                <td class="px-3 py-3">
-                                    <button title="Download" class="mr-3">
-                                        <img src="./../../Assets/download.svg" alt="">
-                                    </button>
-                                    <button title="Lihat" class="mr-3">
-                                        <img src="./../../Assets/eye.svg" alt="https://ogzrespublish.com/index.php/JEB"
-                                            url="">
-                                        <button data-modal-target="hapus" data-modal-toggle="hapus" class="">
-                                            <img src="./../../Assets/del.svg" alt="">
+                            @foreach ($user->files as $file)
+                                <tr
+                                    class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                    <td class="px-3 py-3">
+                                        {{ $loop->iteration }}
+                                    </td>
+                                    <td class="px-3 py-3">
+                                        {{ $file->file_name ? $file->file_name : '-' }}
+                                    </td>
+                                    <td class="px-3 py-3">
+                                        <button title="Download" class="mr-3">
+                                            <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                download="{{ $file->file_name }}" title="Download">
+                                                <img src="{{ asset('Assets/download.svg') }}" alt="">
+                                            </a>
                                         </button>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                <td class="px-3 py-3">
-                                    1
-                                </td>
-                                <td class="px-3 py-3">
-                                    Dokumen Surat
-                                </td>
-                                <td class="px-3 py-3">
-                                    <button title="Download" class="mr-3">
-                                        <img src="./../../Assets/download.svg" alt="">
-                                    </button>
-                                    <button title="Lihat" class="mr-3">
-                                        <img src="./../../Assets/eye.svg" alt="">
-                                    </button>
-                                    <button data-modal-target="hapus" data-modal-toggle="hapus" class="">
-                                        <img src="./../../Assets/del.svg" alt="">
-                                    </button>
-                                </td>
-                            </tr>
+                                        <button title="Lihat">
+                                            <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                target="_blank">
+                                                <img src="{{ asset('Assets/eye.svg') }}" alt="">
+                                            </a>
+                                        </button>
+                                        <button title="Hapus" data-modal-target="confirm-delete-{{ $file->id }}"
+                                            data-modal-toggle="confirm-delete-{{ $file->id }}">
+                                            <img src="{{ asset('Assets/hapus.svg') }}" alt="Delete">
+                                        </button>
+                                    </td>
+                                </tr>
+                                {{-- POP UP HAPUS --}}
+                                <div id="confirm-delete-{{ $file->id }}" tabindex="-1" aria-hidden="true"
+                                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                    <div data-modal-hide="confirm-delete-{{ $file->id }}"
+                                        class="relative p-4 w-full flex justify-center items-center h-full">
+                                        <div
+                                            class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
+                                            <div
+                                                class="flex items-center justify-between p-4 md:p-3 border-b rounded-t">
+                                                <button type="button"
+                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                                    data-modal-hide="confirm-delete-{{ $file->id }}">
+                                                    <svg class="w-3 h-3" aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 14 14">
+                                                        <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2"
+                                                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                    </svg>
+                                                    <span class="sr-only">Close modal</span>
+                                                </button>
+                                            </div>
+                                            <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                                                <div class="wrap flex items-center gap-8 flex-col">
+                                                    <div class="head font-medium text-[28px]">Apakah Anda yakin ingin
+                                                        menghapus file ini?</div>
+                                                    <div class="icon">
+                                                        <img src="../../Assets/sampah.svg" alt="">
+                                                    </div>
+                                                    <form action="{{ route('file.delete', $file->id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            class="head p-1 text-white px-5 rounded bg-[#2F5B6B] link">Hapus</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            {{-- POP UP HAPUS --}}
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
         {{-- POP UP simpan --}}
-        <div id="simpan" tabindex="-1" aria-hidden="true"
+        {{-- <div id="simpan" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div data-modal-hide="simpan" class="relative p-4 w-full flex justify-center items-center h-full">
                 <!-- Modal content -->
@@ -147,8 +181,8 @@
                         <button type="button"
                             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
                             data-modal-hide="simpan">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 14">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                             </svg>
@@ -169,44 +203,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         {{-- POP UP simpan --}}
 
-        {{-- POP UP HAPUS --}}
-        <div id="hapus" tabindex="-1" aria-hidden="true"
-            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-            <div data-modal-hide="hapus" class="relative p-4 w-full flex justify-center items-center h-full">
-                <!-- Modal content -->
-                <div class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
-                    <!-- Modal header -->
-                    <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                        <button type="button"
-                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                            data-modal-hide="hapus">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Close modal</span>
-                        </button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                        <div class="wrap flex items-center gap-8 flex-col">
-                            <div class="head font-medium text-[28px]">Data Berhasil Dihapus</div>
-                            <div class="icon">
-                                <img src="../../Assets/sampah.svg" alt="">
-                            </div>
-                            <button data-modal-hide="hapus" class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
-                                Selesai
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- POP UP HAPUS --}}
+
     </x-sidebar-admin>
 </body>
 

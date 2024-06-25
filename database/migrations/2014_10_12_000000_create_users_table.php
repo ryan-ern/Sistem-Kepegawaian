@@ -16,19 +16,19 @@ return new class extends Migration
             $table->string('name');
             $table->string('jabatan');
             $table->string('nip');
-            $table->string('nik');
-            $table->string('email');
+            $table->string('nik')->nullable();
+            $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->enum('role', ['admin', 'user']);
+            $table->enum('role', ['admin', 'user'])->default('user');
             $table->string('password');
             $table->string('no_tel');
-            $table->string('no_hp');
-            $table->string('satuan_kerja');
-            $table->string('alamat');
-            $table->string('tempat_lahir');
-            $table->date('tgl_lahir');
-            $table->string('agama');
-            $table->enum('jk_user', ['laki-laki', 'perempuan']);
+            $table->string('no_hp')->nullable();
+            $table->string('satuan_kerja')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tgl_lahir')->nullable();
+            $table->string('agama')->nullable();
+            $table->enum('jk_user', ['laki-laki', 'perempuan'])->default('laki-laki');
             $table->string('foto')->nullable();
             $table->string('lokasi_kerja')->nullable();
             $table->string('no_npwp')->nullable();
@@ -42,7 +42,7 @@ return new class extends Migration
             $table->string('kppn')->nullable();
             $table->string('no_akta')->nullable();
             $table->string('no_kk')->nullable();
-            $table->enum('status', ['aktik', 'tidak aktif'])->nullable();
+            $table->enum('status', ['aktif', 'tidak aktif'])->default('aktif');
             $table->timestamps();
         });
     }
