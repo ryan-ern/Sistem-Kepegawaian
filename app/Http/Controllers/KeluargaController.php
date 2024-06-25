@@ -196,8 +196,8 @@ class KeluargaController extends Controller
             'no_identitas' => 'required',
             'email' => 'required',
             'status_nikah' => 'required',
-            'tgl_meninggal' => 'required',
-            'no_meninggal' => 'required',
+            'tgl_meninggal' => 'nullable',
+            'no_meninggal' => 'nullable',
             'no_lahir' => 'required',
             'no_tel' => 'required',
             'file_anak.*' => 'nullable'

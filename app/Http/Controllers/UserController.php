@@ -70,9 +70,9 @@ class UserController extends Controller
 
     public function dataDiri($id)
     {
-        $user = DataDiri::with('files')->find($id);
+        $user = DataDiri::with('files')->where('user_id', $id)->get();
 
-        if (!$user) {
+        if ($user->isEmpty()) {
             return redirect()->route('user.pendidikan', $id)->with('error', 'kebutuhan dokumen belum diisi oleh pegawai!');
         }
 
@@ -81,8 +81,7 @@ class UserController extends Controller
 
     public function dataDiriDelete($id)
     {
-        $user = DataDiri::with('files')->find($id);
-        dd($user);
+        $user = DataDiri::find($id);
 
         if (!$user) {
             return redirect()->back()->with('error', 'File tidak ditemukan!');

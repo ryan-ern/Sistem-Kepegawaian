@@ -22,47 +22,47 @@
                     <img class="w-[120px]" src="../../Assets/user3.png" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
-                    <a href="{{ route('user.dataDiri', $user->id) }}"
+                    <a href="{{ route('user.dataDiri', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Data Diri
                     </a>
-                    <a href="{{ route('user.pendidikan', $user->id) }}"
+                    <a href="{{ route('user.pendidikan', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Pendidikan
                     </a>
-                    <a href="{{ route('user.ortu', $user->id) }}"
+                    <a href="{{ route('user.ortu', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Keluarga
                     </a>
-                    <a href="{{ route('user.skp', $user->id) }}"
+                    <a href="{{ route('user.skp', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         SKP
                     </a>
-                    <a href="{{ route('user.penghargaan', $user->id) }}"
+                    <a href="{{ route('user.penghargaan', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Penghargaan
                     </a>
-                    <a href="{{ route('user.kinerja', $user->id) }}"
+                    <a href="{{ route('user.kinerja', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Laporan Kinerja
                     </a>
-                    <a href="{{ route('user.pns', $user->id) }}"
+                    <a href="{{ route('user.pns', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         CPNS/PNS
                     </a>
-                    <a href="{{ route('user.diklat', $user->id) }}"
+                    <a href="{{ route('user.diklat', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Diklat/Kursus
                     </a>
-                    <a href="{{ route('user.pmk', $user->id) }}"
+                    <a href="{{ route('user.pmk', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">
                         Peninjauan Masa Kerja
                     </a>
-                    <a href="{{ route('user.golongan', $user->id) }}"
+                    <a href="{{ route('user.golongan', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Golongan
                     </a>
-                    <a href="{{ route('user.jabatan', $user->id) }}"
+                    <a href="{{ route('user.jabatan', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Jabatan
                     </a>
@@ -72,7 +72,7 @@
                 <div class="hea flex justify-between">
                     <div class="text-[#2F5B6B] font-semibold text-[22px]">Data Diri</div>
                     <button class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
-                        <a href="{{ route('user.edit', $user->id) }}">Kembali</a>
+                        <a href="{{ route('user.edit', $user->first()->user_id) }}">Kembali</a>
                     </button>
                 </div>
 
@@ -94,75 +94,78 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($user->files as $file)
-                                <tr
-                                    class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                    <td class="px-3 py-3">
-                                        {{ $loop->iteration }}
-                                    </td>
-                                    <td class="px-3 py-3">
-                                        {{ $file->file_name ? $file->file_name : '-' }}
-                                    </td>
-                                    <td class="px-3 py-3">
-                                        <button title="Download" class="mr-3">
-                                            <a href="{{ asset('storage/' . $file->file_path) }}"
-                                                download="{{ $file->file_name }}" title="Download">
-                                                <img src="{{ asset('Assets/download.svg') }}" alt="">
-                                            </a>
-                                        </button>
-                                        <button title="Lihat">
-                                            <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
-                                                target="_blank">
-                                                <img src="{{ asset('Assets/eye.svg') }}" alt="">
-                                            </a>
-                                        </button>
-                                        <button title="Hapus" data-modal-target="confirm-delete-{{ $file->id }}"
-                                            data-modal-toggle="confirm-delete-{{ $file->id }}">
-                                            <img src="{{ asset('Assets/hapus.svg') }}" alt="Delete">
-                                        </button>
-                                    </td>
-                                </tr>
-                                {{-- POP UP HAPUS --}}
-                                <div id="confirm-delete-{{ $file->id }}" tabindex="-1" aria-hidden="true"
-                                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                                    <div data-modal-hide="confirm-delete-{{ $file->id }}"
-                                        class="relative p-4 w-full flex justify-center items-center h-full">
-                                        <div
-                                            class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
+                            @foreach ($user as $u)
+                                @foreach ($u->files as $file)
+                                    <tr
+                                        class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                        <td class="px-3 py-3">
+                                            {{ $loop->iteration }}
+                                        </td>
+                                        <td class="px-3 py-3">
+                                            {{ $file->file_name ? $file->file_name : '-' }}
+                                        </td>
+                                        <td class="px-3 py-3">
+                                            <button title="Download" class="mr-3">
+                                                <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                    download="{{ $file->file_name }}" title="Download">
+                                                    <img src="{{ asset('Assets/download.svg') }}" alt="">
+                                                </a>
+                                            </button>
+                                            <button title="Lihat">
+                                                <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                    target="_blank">
+                                                    <img src="{{ asset('Assets/eye.svg') }}" alt="">
+                                                </a>
+                                            </button>
+                                            <button title="Hapus"
+                                                data-modal-target="confirm-delete-{{ $file->id }}"
+                                                data-modal-toggle="confirm-delete-{{ $file->id }}">
+                                                <img src="{{ asset('Assets/hapus.svg') }}" alt="Delete">
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    {{-- POP UP HAPUS --}}
+                                    <div id="confirm-delete-{{ $file->id }}" tabindex="-1" aria-hidden="true"
+                                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                        <div data-modal-hide="confirm-delete-{{ $file->id }}"
+                                            class="relative p-4 w-full flex justify-center items-center h-full">
                                             <div
-                                                class="flex items-center justify-between p-4 md:p-3 border-b rounded-t">
-                                                <button type="button"
-                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
-                                                    data-modal-hide="confirm-delete-{{ $file->id }}">
-                                                    <svg class="w-3 h-3" aria-hidden="true"
-                                                        xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                        viewBox="0 0 14 14">
-                                                        <path stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="2"
-                                                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                                    </svg>
-                                                    <span class="sr-only">Close modal</span>
-                                                </button>
-                                            </div>
-                                            <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                                                <div class="wrap flex items-center gap-8 flex-col">
-                                                    <div class="head font-medium text-[28px]">Apakah Anda yakin ingin
-                                                        menghapus file ini?</div>
-                                                    <div class="icon">
-                                                        <img src="../../Assets/sampah.svg" alt="">
+                                                class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
+                                                <div
+                                                    class="flex items-center justify-between p-4 md:p-3 border-b rounded-t">
+                                                    <button type="button"
+                                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                                        data-modal-hide="confirm-delete-{{ $file->id }}">
+                                                        <svg class="w-3 h-3" aria-hidden="true"
+                                                            xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 14 14">
+                                                            <path stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round" stroke-width="2"
+                                                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                        </svg>
+                                                        <span class="sr-only">Close modal</span>
+                                                    </button>
+                                                </div>
+                                                <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                                                    <div class="wrap flex items-center gap-8 flex-col">
+                                                        <div class="head font-medium text-[28px]">Apakah Anda yakin
+                                                            ingin menghapus file ini?</div>
+                                                        <div class="icon">
+                                                            <img src="../../Assets/sampah.svg" alt="">
+                                                        </div>
+                                                        <form action="{{ route('file.dataDiri.delete', $file->id) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit"
+                                                                class="head p-1 text-white px-5 rounded bg-[#2F5B6B] link">Hapus</button>
+                                                        </form>
                                                     </div>
-                                                    <form action="{{ route('file.delete', $file->id) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit"
-                                                            class="head p-1 text-white px-5 rounded bg-[#2F5B6B] link">Hapus</button>
-                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                             @endforeach
                             {{-- POP UP HAPUS --}}
                         </tbody>
