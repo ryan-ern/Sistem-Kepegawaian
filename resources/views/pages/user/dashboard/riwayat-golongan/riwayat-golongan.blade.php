@@ -38,8 +38,8 @@
             @foreach ($golonganData as $g)
                 <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                     <div class="wrap">
-                        <div class="text-[16px]">Penata...</div>
                         <div class="text-[16px]">{{ $g->golongan }}</div>
+                        <div class="text-[16px]">{{ $g->jenis_kp }}</div>
                     </div>
                     <a href="{{ route('golongan.show', $g->id) }}" class="link">
                         <img src="../Assets/book.svg" alt="">

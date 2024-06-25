@@ -16,17 +16,7 @@
         <div class="font-semibold text-[#2F5B6B] mb-2 md:mb-6">Berikut data riwayat golongan</div>
         <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
             <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
-                <div class="wrap">
-                    <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
-                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Tanggal Surat Keputusan
-                            (SK)
-                        </label>
-                        <div
-                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            {{ $golongan->tgl_sk }}</div>
-                    </div>
-                </div>
+
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
@@ -61,9 +51,9 @@
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
                         <label For="" class="text-black font-medium text-[14px]">Masa Kerja Golongan
                             (Bulan)</label>
-                        <div title="1"
+                        <div
                             class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            1</div>
+                            {{ $golongan->masa_kerja_bulan ? $golongan->masa_kerja_bulan : '-' }}</div>
                     </div>
                 </div>
                 <div class="wrap">
@@ -109,13 +99,15 @@
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
-                        <label For="" class="text-black font-medium text-[14px]">Masa Kerja Golongan
-                            (Bulan)</label>
+                        <label For="" class="text-black font-medium text-[14px]">Tanggal Surat Keputusan
+                            (SK)
+                        </label>
                         <div
                             class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            {{ $golongan->masa_kerja_bulan ? $golongan->masa_kerja_bulan : '-' }}</div>
+                            {{ $golongan->tgl_sk }}</div>
                     </div>
                 </div>
+
             </div>
         </div>
 
