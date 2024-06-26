@@ -18,15 +18,3 @@ class MasaKerja extends Model
         return $this->hasMany(MasaKerjaFile::class);
     }
 }
-
-class MasaKerjaFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['masa_kerja_id', 'file_path', 'file_name'];
-
-    public function masaKerja()
-    {
-        return $this->belongsTo(MasaKerja::class);
-    }
-}

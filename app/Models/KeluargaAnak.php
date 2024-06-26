@@ -18,15 +18,3 @@ class KeluargaAnak extends Model
         return $this->hasMany(KeluargaAnakFile::class);
     }
 }
-
-class KeluargaAnakFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['keluarga_anak_id', 'file_path', 'file_name'];
-
-    public function keluarga()
-    {
-        return $this->belongsTo(KeluargaAnak::class);
-    }
-}

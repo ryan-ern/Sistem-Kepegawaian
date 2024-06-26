@@ -19,15 +19,3 @@ class Pns extends Model
         return $this->hasMany(PnsFile::class);
     }
 }
-
-class PnsFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['pns_id', 'file_path', 'file_name'];
-
-    public function pns()
-    {
-        return $this->belongsTo(Pns::class);
-    }
-}

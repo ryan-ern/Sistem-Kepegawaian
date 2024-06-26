@@ -38,7 +38,7 @@ class KeluargaController extends Controller
             'nama' => 'required',
             'status_pernikahan' => 'required',
             'tgl_lahir' => 'required',
-            'jk_kelamin' => 'required',
+            'jk' => 'required',
             'no_identitas' => 'required',
             'email' => 'required',
             'tgl_meninggal' => 'nullable',
@@ -55,7 +55,7 @@ class KeluargaController extends Controller
             'nama' => $validatedData['nama'],
             'status_pernikahan' => $validatedData['status_pernikahan'],
             'tgl_lahir' => $validatedData['tgl_lahir'],
-            'jk_kelamin' => $validatedData['jk_kelamin'],
+            'jk' => $validatedData['jk'],
             'no_identitas' => $validatedData['no_identitas'],
             'email' => $validatedData['email'],
             'tgl_meninggal' => $validatedData['tgl_meninggal'],
@@ -202,6 +202,7 @@ class KeluargaController extends Controller
             'no_tel' => 'required',
             'file_anak.*' => 'nullable'
         ]);
+
 
         $keluarga = KeluargaAnak::create([
             'user_id' => auth()->id(),

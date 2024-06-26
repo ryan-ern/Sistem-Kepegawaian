@@ -119,20 +119,25 @@
                     <div class="text-[#2F5B6B] font-semibold text-[22px]">Data Anak</div>
                 </div>
                 <div class="tab flex gap-2 mb-3">
-                    <a href="/admin/edit-pegawai/data-orangtua" class="font-medium text-[#B3B3B3] underline">Orang
+                    <a href="{{ route('user.ortu', $user->first()->user_id) }}"
+                        class="font-medium text-[#B3B3B3] underline">Orang
                         Tua</a>
-                    <a href="/admin/edit-pegawai/data-pasangan" class="font-medium text-[#B3B3B3] ">Pasangan</a>
-                    <a href="/admin/edit-pegawai/data-anak" class="font-medium text-[#4F8EA5] ">Anak</a>
+                    <a href="{{ route('user.pasangan', $user->first()->user_id) }}"
+                        class="font-medium text-[#4F8EA5] ">Pasangan</a>
+                    <a href="{{ route('user.anak', $user->first()->user_id) }}"
+                        class="font-medium text-[#B3B3B3] ">Anak</a>
                 </div>
                 <div class="wrap-content">
                     <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                        <div class="wrap">
-                            <div class="text-[18px] font-medium">Aisyah</div>
-                            <div class="text-[16px]">-Perempuan</div>
-                        </div>
-                        <a href="/admin/edit-pegawai/detail-anak" class="link">
-                            <img src="../../Assets/book.svg" alt="">
-                        </a>
+                        @foreach ($user as $u)
+                            <div class="wrap">
+                                <div class="text-[18px] font-medium">{{ $u->nama }}</div>
+                                <div class="text-[16px]">-{{ $u->jk }}</div>
+                            </div>
+                            <a href="{{ route('user.anakShow', $u->id) }}" class="link">
+                                <img src="../../../Assets/book.svg" alt="">
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>

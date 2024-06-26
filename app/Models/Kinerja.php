@@ -18,15 +18,3 @@ class Kinerja extends Model
         return $this->hasMany(KinerjaFile::class);
     }
 }
-
-class KinerjaFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['kinerja_id', 'file_path', 'file_name'];
-
-    public function kinerja()
-    {
-        return $this->belongsTo(Kinerja::class);
-    }
-}

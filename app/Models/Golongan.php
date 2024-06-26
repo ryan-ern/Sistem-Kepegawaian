@@ -19,15 +19,3 @@ class Golongan extends Model
         return $this->hasMany(GolonganFile::class);
     }
 }
-
-class GolonganFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['golongan_id', 'file_path', 'file_name'];
-
-    public function golongan()
-    {
-        return $this->belongsTo(Golongan::class);
-    }
-}

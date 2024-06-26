@@ -77,7 +77,7 @@
                         </div>
                         <div class="wrap">
                             <label For="" class="text-black ">Jenis Kelamin</label>
-                            <select name="jk_kelamin" required
+                            <select name="jk" required
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] p-2 px-2 w-full bg-transparent"
                                 id="cars">
                                 <option value="Perempuan">Perempuan</option>

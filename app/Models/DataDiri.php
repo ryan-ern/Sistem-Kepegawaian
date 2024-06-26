@@ -18,15 +18,3 @@ class DataDiri extends Model
         return $this->hasMany(DataDiriFile::class);
     }
 }
-
-class DataDiriFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['data_diri_id', 'file_path', 'file_name'];
-
-    public function data_diri()
-    {
-        return $this->belongsTo(DataDiri::class);
-    }
-}

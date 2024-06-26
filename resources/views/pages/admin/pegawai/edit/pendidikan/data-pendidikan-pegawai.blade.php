@@ -125,8 +125,8 @@
                                 <div class="text-[18px] font-medium">{{ $u->tingkat_pendidikan }}</div>
                                 <div class="text-[16px]">- {{ $u->pendidikan }}</div>
                             </div>
-                            <a href="/admin/edit-pegawai/detail-pendidikan" class="link">
-                                <img src="../../Assets/book.svg" alt="">
+                            <a href="{{ route('user.pendidikanShow', $u->id) }}" class="link">
+                                <img src="../../../Assets/book.svg" alt="">
                             </a>
                         </div>
                     @endforeach

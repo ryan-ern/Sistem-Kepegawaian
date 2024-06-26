@@ -165,9 +165,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    {{-- POP UP HAPUS --}}
                                 @endforeach
                             @endforeach
-                            {{-- POP UP HAPUS --}}
                         </tbody>
                     </table>
                 </div>

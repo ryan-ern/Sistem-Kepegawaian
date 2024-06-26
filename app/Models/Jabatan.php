@@ -19,15 +19,3 @@ class Jabatan extends Model
         return $this->hasMany(JabatanFile::class);
     }
 }
-
-class JabatanFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['jabatan_id', 'file_path', 'file_name'];
-
-    public function jabatan()
-    {
-        return $this->belongsTo(Jabatan::class);
-    }
-}

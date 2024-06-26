@@ -16,15 +16,3 @@ class Pendidikan extends Model
         return $this->hasMany(PendidikanFile::class);
     }
 }
-
-class PendidikanFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['pendidikan_id', 'file_path', 'file_name'];
-
-    public function pendidikan()
-    {
-        return $this->belongsTo(Pendidikan::class);
-    }
-}

@@ -53,7 +53,7 @@
                 <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                     <div class="wrap">
                         <div class="text-[18px] font-medium">{{ $o->nama }}</div>
-                        <div class="text-[16px]">-{{ $o->jk_kelamin == 'laki-laki' ? 'Ayah' : 'Ibu' }}</div>
+                        <div class="text-[16px]">-{{ $o->jk == 'Laki - Laki' ? 'Ayah' : 'Ibu' }}</div>
                     </div>
                     <a href="{{ route('orangtua.show', $o->id) }}" class="link">
                         <img src="../Assets/book.svg" alt="">

@@ -18,15 +18,3 @@ class Diklat extends Model
         return $this->hasMany(DiklatFile::class);
     }
 }
-
-class DiklatFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['diklat_id', 'file_path', 'file_name'];
-
-    public function diklat()
-    {
-        return $this->belongsTo(Diklat::class);
-    }
-}

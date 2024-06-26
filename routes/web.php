@@ -125,41 +125,65 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::delete('/file/delete/diri/{id}', [UserController::class, 'dataDiriDelete'])->name('file.dataDiri.delete');
 
     Route::get('/admin/edit-pegawai/data-pendidikan/{id}', [UserController::class, 'pendidikan'])->name('user.pendidikan');
-    Route::delete('/file/delete/{id}', [UserController::class, 'pendidikanDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-pendidikan/show/{id}', [UserController::class, 'pendidikanShow'])->name('user.pendidikanShow');
+    Route::put('/admin/edit-pegawai/data-pendidikan/update/{id}', [UserController::class, 'pendidikanUpdate'])->name('user.pendidikanUpdate');
+    Route::delete('/file/delete/pendidikan/{id}', [UserController::class, 'pendidikanDelete'])->name('file.pendidikan.delete');
 
     Route::get('/admin/edit-pegawai/data-ortu/{id}', [UserController::class, 'ortu'])->name('user.ortu');
-    Route::delete('/file/delete/{id}', [UserController::class, 'ortuDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-ortu/show/{id}', [UserController::class, 'ortuShow'])->name('user.ortuShow');
+    Route::put('/admin/edit-pegawai/data-ortu/update/{id}', [UserController::class, 'ortuUpdate'])->name('user.ortuUpdate');
+    Route::delete('/file/delete/ortu/{id}', [UserController::class, 'ortuDelete'])->name('file.ortu.delete');
 
     Route::get('/admin/edit-pegawai/data-pasangan/{id}', [UserController::class, 'pasangan'])->name('user.pasangan');
-    Route::delete('/file/delete/{id}', [UserController::class, 'pasanganDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-pasangan/show/{id}', [UserController::class, 'pasanganShow'])->name('user.pasanganShow');
+    Route::put('/admin/edit-pegawai/data-pasangan/update/{id}', [UserController::class, 'pasanganUpdate'])->name('user.pasanganUpdate');
+    Route::delete('/file/delete/pasangan/{id}', [UserController::class, 'pasanganDelete'])->name('file.pasangan.delete');
 
     Route::get('/admin/edit-pegawai/data-anak/{id}', [UserController::class, 'anak'])->name('user.anak');
-    Route::delete('/file/delete/{id}', [UserController::class, 'anakDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-anak/show/{id}', [UserController::class, 'anakShow'])->name('user.anakShow');
+    Route::put('/admin/edit-pegawai/data-anak/update/{id}', [UserController::class, 'anakUpdate'])->name('user.anakUpdate');
+    Route::delete('/file/delete/anak/{id}', [UserController::class, 'anakDelete'])->name('file.anak.delete');
 
     Route::get('/admin/edit-pegawai/data-skp/{id}', [UserController::class, 'skp'])->name('user.skp');
-    Route::delete('/file/delete/{id}', [UserController::class, 'skp'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-skp/show/{id}', [UserController::class, 'skpShow'])->name('user.skpShow');
+    Route::put('/admin/edit-pegawai/data-skp/update/{id}', [UserController::class, 'skpUpdate'])->name('user.skpUpdate');
+    Route::delete('/file/delete/skp/{id}', [UserController::class, 'skpDelete'])->name('file.skp.delete');
 
     Route::get('/admin/edit-pegawai/data-penghargaan/{id}', [UserController::class, 'penghargaan'])->name('user.penghargaan');
-    Route::delete('/file/delete/{id}', [UserController::class, 'penghargaanDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-penghargaan/show/{id}', [UserController::class, 'penghargaanShow'])->name('user.penghargaanShow');
+    Route::put('/admin/edit-pegawai/data-penghargaan/update/{id}', [UserController::class, 'penghargaanUpdate'])->name('user.penghargaanUpdate');
+    Route::delete('/file/delete/penghargaan/{id}', [UserController::class, 'penghargaanDelete'])->name('file.penghargaan.delete');
 
     Route::get('/admin/edit-pegawai/data-kinerja/{id}', [UserController::class, 'kinerja'])->name('user.kinerja');
-    Route::delete('/file/delete/{id}', [UserController::class, 'kinerjaDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-kinerja/show/{id}', [UserController::class, 'kinerjaShow'])->name('user.kinerjaShow');
+    Route::put('/admin/edit-pegawai/data-kinerja/update/{id}', [UserController::class, 'kinerjaUpdate'])->name('user.kinerjaUpdate');
+    Route::delete('/file/delete/kinerja/{id}', [UserController::class, 'kinerjaDelete'])->name('file.kinerja.delete');
 
     Route::get('/admin/edit-pegawai/data-pns/{id}', [UserController::class, 'pns'])->name('user.pns');
-    Route::delete('/file/delete/{id}', [UserController::class, 'pnsDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-pns/show/{id}', [UserController::class, 'pnsShow'])->name('user.pnsShow');
+    Route::put('/admin/edit-pegawai/data-pns/update/{id}', [UserController::class, 'pnsUpdate'])->name('user.pnsUpdate');
+    Route::delete('/file/delete/pns/{id}', [UserController::class, 'pnsDelete'])->name('file.pns.delete');
 
     Route::get('/admin/edit-pegawai/data-diklat/{id}', [UserController::class, 'diklat'])->name('user.diklat');
-    Route::delete('/file/delete/{id}', [UserController::class, 'diklatDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-diklat/show/{id}', [UserController::class, 'diklatShow'])->name('user.diklatShow');
+    Route::put('/admin/edit-pegawai/data-diklat/update/{id}', [UserController::class, 'diklatUpdate'])->name('user.diklatUpdate');
+    Route::delete('/file/delete/diklat/{id}', [UserController::class, 'diklatDelete'])->name('file.diklat.delete');
 
     Route::get('/admin/edit-pegawai/data-pmk/{id}', [UserController::class, 'pmk'])->name('user.pmk');
-    Route::delete('/file/delete/{id}', [UserController::class, 'pmkDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-pmk/show/{id}', [UserController::class, 'pmkShow'])->name('user.pmkShow');
+    Route::put('/admin/edit-pegawai/data-pmk/update/{id}', [UserController::class, 'pmkUpdate'])->name('user.pmkUpdate');
+    Route::delete('/file/delete/pmk/{id}', [UserController::class, 'pmkDelete'])->name('file.pmk.delete');
 
     Route::get('/admin/edit-pegawai/data-golongan/{id}', [UserController::class, 'golongan'])->name('user.golongan');
-    Route::delete('/file/delete/{id}', [UserController::class, 'golonganDelete'])->name('file.delete');
+    Route::get('/admin/edit-pegawai/data-golongan/show/{id}', [UserController::class, 'golonganShow'])->name('user.golonganShow');
+    Route::put('/admin/edit-pegawai/data-golongan/update/{id}', [UserController::class, 'golonganUpdate'])->name('user.golonganUpdate');
+    Route::delete('/file/delete/golongan/{id}', [UserController::class, 'golonganDelete'])->name('file.golongan.delete');
+
 
     Route::get('/admin/edit-pegawai/data-jabatan/{id}', [UserController::class, 'jabatan'])->name('user.jabatan');
-    Route::delete('/file/delete/{id}', [UserController::class, 'jabatanDelete'])->name('file.delete');
-
+    Route::get('/admin/edit-pegawai/data-jabatan/show/{id}', [UserController::class, 'jabatanShow'])->name('user.jabatanShow');
+    Route::put('/admin/edit-pegawai/data-jabatan/update/{id}', [UserController::class, 'jabatanUpdate'])->name('user.jabatanUpdate');
+    Route::delete('/file/delete/jabatan/{id}', [UserController::class, 'jabatanDelete'])->name('file.jabatan.delete');
     // Route::get('/edit-profile', [GeneralPage::class, 'editProfile']);
 });
 
@@ -335,16 +359,16 @@ Route::controller(GeneralPage::class)->group(function () {
     Route::get('/admin/edit-pegawai/detail-skp', 'detailSkp');
     //SKP
     //KELUARGA-ORANGTUA
-    Route::get('/admin/edit-pegawai/data-orangtua', 'dataOrangtua');
-    Route::get('/admin/edit-pegawai/detail-orangtua', 'detailOrangtua');
-    //KELUARGA-ORANGTUA
-    //KELUARGA-PASANGAN
-    Route::get('/admin/edit-pegawai/data-pasangan', 'dataPasangan');
-    Route::get('/admin/edit-pegawai/detail-pasangan', 'detailPasangan');
-    //KELUARGA-PASANGAN
-    //KELUARGA-ANAK
-    Route::get('/admin/edit-pegawai/data-anak', 'dataAnak');
-    Route::get('/admin/edit-pegawai/detail-anak', 'detailAnak');
+    // Route::get('/admin/edit-pegawai/data-orangtua', 'dataOrangtua');
+    // Route::get('/admin/edit-pegawai/detail-orangtua', 'detailOrangtua');
+    // //KELUARGA-ORANGTUA
+    // //KELUARGA-PASANGAN
+    // Route::get('/admin/edit-pegawai/data-pasangan', 'dataPasangan');
+    // Route::get('/admin/edit-pegawai/detail-pasangan', 'detailPasangan');
+    // //KELUARGA-PASANGAN
+    // //KELUARGA-ANAK
+    // Route::get('/admin/edit-pegawai/data-anak', 'dataAnak');
+    // Route::get('/admin/edit-pegawai/detail-anak', 'detailAnak');
     //KELUARGA-ANAK
     //DATA DIRI
     // Route::get('/admin/edit-pegawai/data-diri', 'dataDiri');

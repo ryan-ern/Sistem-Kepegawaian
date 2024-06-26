@@ -18,15 +18,3 @@ class Penghargaan extends Model
         return $this->hasMany(PenghargaanFile::class);
     }
 }
-
-class PenghargaanFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['penghargaan_id', 'file_path', 'file_name'];
-
-    public function penghargaa()
-    {
-        return $this->belongsTo(Penghargaan::class);
-    }
-}

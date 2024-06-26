@@ -18,15 +18,3 @@ class Skp extends Model
         return $this->hasMany(SkpFile::class);
     }
 }
-
-class SkpFile extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['skp_id', 'file_path', 'file_name'];
-
-    public function skp()
-    {
-        return $this->belongsTo(Skp::class);
-    }
-}

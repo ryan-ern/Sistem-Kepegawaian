@@ -60,7 +60,7 @@
                         <label For="" class="text-black font-medium text-[14px]">Jenis Kelamin</label>
                         <div
                             class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
-                            {{ $ortu->jk_kelamin }}</div>
+                            {{ $ortu->jk }}</div>
                     </div>
                 </div>
                 <div class="wrap">
