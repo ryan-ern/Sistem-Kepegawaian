@@ -11,6 +11,7 @@ use App\Http\Controllers\KeluargaController;
 use App\Http\Controllers\KinerjaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MasaKerjaController;
+use App\Http\Controllers\NotifController;
 use App\Http\Controllers\PendidikanController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\PnsController;
@@ -116,6 +117,7 @@ Route::group(['middleware' => ['auth', 'user']], function () {
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
     Route::get('/admin/pegawai', [UserController::class, 'index'])->name('user.index');
     Route::post('/admin/dashboard', [UserController::class, 'store'])->name('user.store');
     Route::get('/admin/edit-pegawai/{id}', [UserController::class, 'edit'])->name('user.edit');
@@ -184,6 +186,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/edit-pegawai/data-jabatan/show/{id}', [UserController::class, 'jabatanShow'])->name('user.jabatanShow');
     Route::put('/admin/edit-pegawai/data-jabatan/update/{id}', [UserController::class, 'jabatanUpdate'])->name('user.jabatanUpdate');
     Route::delete('/file/delete/jabatan/{id}', [UserController::class, 'jabatanDelete'])->name('file.jabatan.delete');
+
     // Route::get('/edit-profile', [GeneralPage::class, 'editProfile']);
 });
 

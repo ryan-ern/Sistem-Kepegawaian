@@ -15,4 +15,9 @@ class Pendidikan extends Model
     {
         return $this->hasMany(PendidikanFile::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

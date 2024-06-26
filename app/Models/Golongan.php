@@ -18,4 +18,9 @@ class Golongan extends Model
     {
         return $this->hasMany(GolonganFile::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

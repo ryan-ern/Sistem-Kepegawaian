@@ -18,4 +18,9 @@ class Pns extends Model
     {
         return $this->hasMany(PnsFile::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

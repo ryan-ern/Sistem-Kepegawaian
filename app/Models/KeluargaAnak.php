@@ -17,4 +17,9 @@ class KeluargaAnak extends Model
     {
         return $this->hasMany(KeluargaAnakFile::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

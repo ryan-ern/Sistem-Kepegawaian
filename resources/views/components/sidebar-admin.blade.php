@@ -131,38 +131,24 @@
                         <div id="notifikasi"
                             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow max-h-[350px] overflow-y-auto">
                             <ul class="py-2 text-sm text-[#4F8EA5]" aria-labelledby="dropdownDefaultButton">
-                                <li>
-                                    <button data-modal-target="pendidikan" data-modal-toggle="pendidikan"
-                                        class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                        <div class="ledt">
-                                            <img class="w-[20px]" src="../../../Assets/notif2.svg" alt="">
-                                        </div>
-                                        <div class="ledt text-[#4F8EA5] flex flex-col items-start">
-                                            <div class="text-[14px] font-medium">Monica</div>
-                                            <div class="text-[12px]">Pengajuan tambah data riwayat pendidikan</div>
-                                        </div>
-                                    </button>
-                                    <button data-modal-target="pendidikan" data-modal-toggle="pendidikan"
-                                        class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                        <div class="ledt">
-                                            <img class="w-[20px]" src="../../../Assets/notif2.svg" alt="">
-                                        </div>
-                                        <div class="ledt text-[#4F8EA5] flex flex-col items-start">
-                                            <div class="text-[14px] font-medium">Monica</div>
-                                            <div class="text-[12px]">Pengajuan tambah data riwayat pendidikan</div>
-                                        </div>
-                                    </button>
-                                    <button data-modal-target="pendidikan" data-modal-toggle="pendidikan"
-                                        class=" px-4 py-2 bg-gray-100 flex items-center gap-3">
-                                        <div class="ledt">
-                                            <img class="w-[20px]" src="../../../Assets/notif2.svg" alt="">
-                                        </div>
-                                        <div class="ledt text-[#4F8EA5] flex flex-col items-start">
-                                            <div class="text-[14px] font-medium">Monica</div>
-                                            <div class="text-[12px]">Pengajuan tambah data riwayat pendidikan</div>
-                                        </div>
-                                    </button>
-                                </li>
+                                @foreach ($notifications as $notification)
+                                    <li>
+                                        <button data-modal-target="notification-{{ $notification->id }}"
+                                            data-modal-toggle="notification-{{ $notification->id }}"
+                                            class="px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
+                                            <div class="ledt">
+                                                <img class="w-[20px]" src="../../../Assets/notif2.svg" alt="">
+                                            </div>
+                                            <div class="ledt text-[#4F8EA5] flex flex-col items-start">
+                                                <div class="text-[14px] font-medium">{{ $notification->user->name }}
+                                                </div>
+                                                <div class="text-[12px]">Pengajuan
+                                                    {{ formatModelName(class_basename($notification)) }}
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

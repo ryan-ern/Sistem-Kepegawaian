@@ -17,4 +17,9 @@ class MasaKerja extends Model
     {
         return $this->hasMany(MasaKerjaFile::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

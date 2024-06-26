@@ -13,6 +13,11 @@ class DataDiri extends Model
         'user_id', 'nama', 'status',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function files()
     {
         return $this->hasMany(DataDiriFile::class);

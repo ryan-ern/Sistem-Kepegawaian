@@ -17,4 +17,9 @@ class Kinerja extends Model
     {
         return $this->hasMany(KinerjaFile::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
