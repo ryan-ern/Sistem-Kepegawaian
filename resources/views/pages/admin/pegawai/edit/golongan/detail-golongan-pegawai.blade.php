@@ -74,7 +74,7 @@
                     @method('PUT')
                     <div class="hea flex justify-between">
                         <div class="text-[#2F5B6B] font-semibold text-[22px]">Data Golongan</div>
-                        <button type="submit"
+                        <button type="submit" data-modal-target="simpan" data-modal-toggle="simpan"
                             class="p-1 bg-[#9BB8C3] hover:bg-[#2F5B6B] px-5 rounded text-white">Simpan</button>
                     </div>
                     <div class="wrap mt-3">
@@ -260,7 +260,8 @@
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit"
+                                                        <button type="submit" data-modal-target="hapus"
+                                                            data-modal-toggle="hapus"
                                                             class="head p-1 text-white px-5 rounded bg-[#2F5B6B] link">Hapus</button>
                                                     </form>
                                                 </div>
@@ -277,7 +278,7 @@
         </div>
         </div>
         {{-- POP UP simpan --}}
-        {{-- <div id="simpan" tabindex="-1" aria-hidden="true"
+        <div id="simpan" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div data-modal-hide="simpan" class="relative p-4 w-full flex justify-center items-center h-full">
                 <!-- Modal content -->
@@ -309,11 +310,11 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
         {{-- simpan --}}
 
         {{-- POP UP HAPUS --}}
-        {{-- <div id="hapus" tabindex="-1" aria-hidden="true"
+        <div id="hapus" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div data-modal-hide="hapus" class="relative p-4 w-full flex justify-center items-center h-full">
                 <!-- Modal content -->
@@ -345,7 +346,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
         {{-- POP UP HAPUS --}}
     </x-sidebar-admin>
 </body>

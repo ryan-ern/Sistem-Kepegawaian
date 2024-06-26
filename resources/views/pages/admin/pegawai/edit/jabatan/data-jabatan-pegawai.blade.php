@@ -119,24 +119,18 @@
                     <div class="text-[#2F5B6B] font-semibold text-[22px]">Data Jabatan</div>
                 </div>
                 <div class="wrap-content">
-                    <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                        <div class="wrap">
-                            <div class="text-[18px] font-medium">Analisis</div>
-                            <div class="text-[16px]">-2020</div>
+                    @foreach ($user as $u)
+                        <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                            <div class="wrap">
+                                <div class="text-[18px] font-medium">{{ $u->jenis_jabatan }}</div>
+                                <div class="text-[16px]">- {{ $u->tgl_tmt }}</div>
+                            </div>
+                            <a href="{{ route('user.jabatanShow', $u->id) }}" class="link">
+                                <img src="../../../Assets/book.svg" alt="">
+                            </a>
                         </div>
-                        <a href="/admin/edit-pegawai/detail-jabatan" class="link">
-                            <img src="../../Assets/book.svg" alt="">
-                        </a>
-                    </div>
-                    <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                        <div class="wrap">
-                            <div class="text-[18px] font-medium">Kepala</div>
-                            <div class="text-[16px]">-2023</div>
-                        </div>
-                        <a href="/admin/edit-pegawai/detail-jabatan" class="link">
-                            <img src="../../Assets/book.svg" alt="">
-                        </a>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>

@@ -119,18 +119,18 @@
                     <div class="text-[#2F5B6B] font-semibold text-[22px]">Data CPNS/PNS</div>
                 </div>
                 <div class="wrap-content">
-                    <div class="wrap-content">
+                    @foreach ($user as $u)
                         <div class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
                             <div class="wrap">
-                                <div class="text-[18px] font-medium">Monica Adella Aisyah Renaldi</div>
-                                <div class="text-[16px]">Pemerintahan Provinsi Lampung</div>
-                                <div class="text-[16px]">1234567899654</div>
+                                <div class="text-[18px] font-medium">{{ $u->status_pns }}</div>
+                                <div class="text-[16px]">{{ $u->no_sk_pns }}</div>
                             </div>
-                            <a href="/admin/edit-pegawai/detail-cpns" class="link">
-                                <img src="../../Assets/book.svg" alt="">
+                            <a href="{{ route('user.pnsShow', $u->id) }}" class="link">
+                                <img src="../../../Assets/book.svg" alt="">
                             </a>
                         </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
     </x-sidebar-admin>
