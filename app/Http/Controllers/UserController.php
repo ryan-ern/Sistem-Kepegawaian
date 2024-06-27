@@ -91,6 +91,29 @@ class UserController extends Controller
         return view('pages.admin.pegawai.edit.diri.data-diri-pegawai', compact('user'));
     }
 
+    public function dataDiriShow($id)
+    {
+        $user = DataDiri::with('files')->find($id);
+
+        if (!$user) {
+            return redirect()->route('user.pendidikan', $id)->with('error', 'kebutuhan dokumen belum diisi oleh pegawai!');
+        }
+
+        return $user;
+    }
+
+    public function dataDiriUpdate(Request $request, $id)
+    {
+        $user = DataDiri::find($id);
+        if (!$user) {
+            return redirect()->back()->with('error', 'Data pendidikan tidak ditemukan!');
+        }
+
+        $user->update($request->all());
+
+        return redirect()->back()->with('success', 'Data pendidikan berhasil diupdate!');
+    }
+
     public function dataDiriDelete($id)
     {
         $user = DataDiri::find($id);
@@ -573,12 +596,10 @@ class UserController extends Controller
         if (!$user) {
             return redirect()->back()->with('error', 'Data pmk tidak ditemukan!');
         }
-
         $user->update($request->all());
 
         return redirect()->back()->with('success', 'Data pmk berhasil diupdate!');
     }
-
 
     public function pmkDelete($id)
     {

@@ -124,8 +124,10 @@
                 </div>
                 <div class="wrap flex gap-6 md:gap-[60px]">
                     <div class="notif flex items-center">
-                        <button id="dropdownDefaultButton" data-dropdown-toggle="notifikasi">
+                        <button id="dropdownDefaultButton" data-dropdown-toggle="notifikasi" class="relative">
                             <img class="w-[35px]" src="./../../Assets/notif.svg" alt="">
+                            <span
+                                class="absolute top-[-10px] inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">{{ $notifications->count() }}</span>
                         </button>
                         <!-- Dropdown menu -->
                         <div id="notifikasi"
@@ -133,8 +135,8 @@
                             <ul class="py-2 text-sm text-[#4F8EA5]" aria-labelledby="dropdownDefaultButton">
                                 @foreach ($notifications as $notification)
                                     <li>
-                                        <button data-modal-target="notification-{{ $notification->id }}"
-                                            data-modal-toggle="notification-{{ $notification->id }}"
+                                        <button data-modal-target="notification-{{ $loop->iteration }}"
+                                            data-modal-toggle="notification-{{ $loop->iteration }}"
                                             class="px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
                                             <div class="ledt">
                                                 <img class="w-[20px]" src="../../../Assets/notif2.svg" alt="">
@@ -275,179 +277,1953 @@
         </div>
 
         {{-- MODAL PENGAJUAN NOTIFIKASI --}}
-        <div id="pendidikan" tabindex="-1" aria-hidden="true"
-            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-            <div class="relative p-4 w-full flex justify-center items-center h-full">
-                <!-- Modal content -->
-                <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                    <!-- Modal header -->
-                    <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                        <h3 class="text-[30px] font-semibold text-gray-900 ">
-                            Data Pendidikan
-                        </h3>
-                        <button type="button"
-                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                            data-modal-hide="pendidikan">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Close modal</span>
-                        </button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                        <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                            <div class="w-full flex flex-col gap-3 md:gap-3">
-                                <div class="wrap">
-                                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                        <label For=""
-                                            class="text-black font-medium w-[200px] flex-shrink-0">Pendidikan</label>
-                                        <div class="isi">
-                                            Sarjana</div>
+        @foreach ($notifications as $notification)
+            <div id="notification-{{ $loop->iteration }}" tabindex="-1" aria-hidden="true"
+                class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full flex justify-center items-center h-full">
+                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
+                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t">
+                            <h3 class="text-[30px] font-semibold text-gray-900">
+                                {{ formatModelName(class_basename($notification)) }}</h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                data-modal-hide="notification-{{ $loop->iteration }}">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
+                            <!-- Isi Modal -->
+                            @if (class_basename($notification) == 'DataDiri')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    <div class="w-full flex flex-col gap-3 md:gap-3">
+                                        <div class="wrap">
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                <label For=""
+                                                    class="text-black font-medium w-[200px] flex-shrink-0">Nama
+                                                    Dokumen</label>
+                                                <div title="Sarjana" class="isi">
+                                                    {{ $notification->nama }}</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="wrap">
-                                    <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                        <label For=""
-                                            class="text-black font-medium w-[200px] flex-shrink-0">Tingkat
-                                            Pendidikan</label>
-                                        <div class="isi">
-                                            S1-Teknik Informatika</div>
+                            @endif
+                            @if (class_basename($notification) == 'Pendidikan')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    <div class="w-full flex flex-col gap-3 md:gap-3">
+                                        <div class="wrap">
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                <label For=""
+                                                    class="text-black font-medium w-[200px] flex-shrink-0">Pendidikan</label>
+                                                <div title="Sarjana" class="isi">
+                                                    {{ $notification->pendidikan }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]">
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                <label For=""
+                                                    class="text-black font-medium w-[200px] flex-shrink-0">Tingkat
+                                                    Pendidikan</label>
+                                                <div title="S1-Teknik Informatika" class="isi">
+                                                    {{ $notification->tingkat_pendidikan }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]">
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                <label For=""
+                                                    class="text-black font-medium w-[200px] flex-shrink-0">Tahun
+                                                    Lulus</label>
+                                                <div title="1989" class="isi">
+                                                    {{ $notification->tahun_lulus }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]">
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                <label For=""
+                                                    class="text-black font-medium w-[200px] flex-shrink-0">Tanggal
+                                                    Kelulusan</label>
+                                                <div class="isi">
+                                                    {{ $notification->tgl_lulus }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]">
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                <label For=""
+                                                    class="text-black font-medium w-[200px] flex-shrink-0">Gelar
+                                                    Depan</label>
+                                                <div title="-" class="isi">
+                                                    {{ $notification->gelar_depan }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]">
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                <label For=""
+                                                    class="text-black font-medium w-[200px] flex-shrink-0">Gelar
+                                                    Belakang</label>
+                                                <div title="S.Kom" class="isi">
+                                                    {{ $notification->gelar_belakang }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]">
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                <label For=""
+                                                    class="text-black font-medium w-[200px] flex-shrink-0">Nomor
+                                                    Ijazah</label>
+                                                <div title="2342256897845" class="isi">
+                                                    {{ $notification->no_ijasah }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]">
+                                            </div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                                <label For=""
+                                                    class="text-black font-medium w-[200px] flex-shrink-0">Nama
+                                                    Universitas</label>
+                                                <div title="Instititut Teknologi Sumatera" class="isi">
+                                                    {{ $notification->nama_univ }}</div>
+                                            </div>
+                                            <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="wrap">
-                                    <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                        <label For=""
-                                            class="text-black font-medium w-[200px] flex-shrink-0">Tahun
-                                            Lulus</label>
-                                        <div class="isi">
-                                            1989</div>
+                            @endif
+                            @if (class_basename($notification) == 'KeluargaOrtu')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Status
+                                                    Hidup</label>
+                                                <div>{{ $notification->status_keluarga }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Status
+                                                    Pekerjaan
+                                                    Orang Tua</label>
+                                                {{ $notification->status_pekerjaan }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Nama</label>
+                                                {{ $notification->nama }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Status
+                                                    Pernikahan</label>
+                                                <div>{{ $notification->status_pernikahan }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Jenis
+                                                    Kelamin</label>
+                                                {{ $notification->jk }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Email</label>
+                                                {{ $notification->email }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- KANAN --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    Lahir</label>
+                                                {{ $notification->tgl_lahir }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    Meninggal</label>
+                                                {{ $notification->tgl_meninggal ? $notification->tgl_meninggal : '-' }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Identitas</label>
+                                                {{ $notification->no_identitas }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Agama</label>
+                                                {{ $notification->agama }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Telepon</label>
+                                                {{ $notification->no_tel }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Handphone</label>
+                                                {{ $notification->no_hp }}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="wrap">
-                                    <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                        <label For=""
-                                            class="text-black font-medium w-[200px] flex-shrink-0">Tanggal
-                                            Kelulusan</label>
-                                        <div class="isi">
-                                            02/03/1989</div>
+                            @endif
+                            @if (class_basename($notification) == 'KeluargaPasangan')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                        {{-- KIRI --}}
+                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Suami/IStri
+                                                        Ke-</label>
+                                                    {{ $notification->no_pasangan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Status
+                                                        Pekerjaan
+                                                        Pasangan</label>
+                                                    {{ $notification->status_pekerjaan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nama</label>
+                                                    {{ $notification->nama }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Tanggal
+                                                        Lahir</label>
+                                                    {{ $notification->tgl_lahir }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor
+                                                        Identitas</label>
+                                                    {{ $notification->no_identitas }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Jenis
+                                                        Kelamin</label>
+                                                    {{ $notification->jk }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Alamat</label>
+                                                    {{ $notification->alamat }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Agama</label>
+                                                    {{ $notification->agama }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor
+                                                        Karsus/Karis</label>
+                                                    {{ $notification->no_karis }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor
+                                                        Telepon</label>
+                                                    {{ $notification->no_tel }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- KANAN --}}
+                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Status
+                                                        Hidup</label>
+                                                    {{ $notification->status_keluarga }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Status
+                                                        Pernikahan</label>
+                                                    {{ $notification->status_pernikahan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor Akta
+                                                        Menikah</label>
+                                                    {{ $notification->no_akta }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Akta
+                                                        Menikah</label>
+                                                    {{ $notification->akta_nikah }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Tanggal Akta
+                                                        Menikah</label>
+                                                    {{ $notification->tgl_nikah }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Email</label>
+                                                    {{ $notification->email }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor Akta
+                                                        Cerai</label>
+                                                    {{ $notification->no_cerai ? $notification->no_cerai : '-' }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Akta
+                                                        Cerai</label>
+                                                    {{ $notification->akta_cerai ? $notification->akta_cerai : '-' }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Tanggal Akta
+                                                        Cerai</label>
+                                                    {{ $notification->tgl_cerai ? $notification->tgl_cerai : '-' }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor
+                                                        HP</label>
+                                                    {{ $notification->no_hp }}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="wrap">
-                                    <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                        <label For=""
-                                            class="text-black font-medium w-[200px] flex-shrink-0">Gelar
-                                            Depan</label>
-                                        <div class="isi">
-                                            -</div>
+                            @endif
+                            @if (class_basename($notification) == 'KeluargaAnak')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                        {{-- KIRI --}}
+                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Anak
+                                                        Ke-</label>
+                                                    {{ $notification->no_anak }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Status
+                                                        Pekerjaan
+                                                        Anak</label>
+                                                    {{ $notification->status_pekerjaan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nama</label>
+                                                    {{ $notification->nama }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Tanggal
+                                                        Lahir</label>
+                                                    {{ $notification->tgl_lahir }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor
+                                                        Identitas</label>
+                                                    {{ $notification->no_identitas }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Jenis
+                                                        Kelamin</label>
+                                                    {{ $notification->jk }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Status
+                                                        Pernikahan</label>
+                                                    {{ $notification->status_nikah }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- KANAN --}}
+                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Tanggal
+                                                        Meninggal</label>
+                                                    {{ $notification->tgl_meninggal ? $notification->tgl_meninggal : '-' }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor Akta
+                                                        Meninggal</label>
+                                                    {{ $notification->no_akta_meninggal ? $notification->no_akta_meninggal : '-' }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor Akta
+                                                        Kelahiran</label>
+                                                    {{ $notification->no_lahir }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nomor
+                                                        Telepon</label>
+                                                    {{ $notification->no_tel }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Status
+                                                        Hidup</label>
+                                                    {{ $notification->status_keluarga }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Email</label>
+                                                    {{ $notification->email }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Agama</label>
+                                                    {{ $notification->agama }}
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="wrap">
-                                    <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                        <label For=""
-                                            class="text-black font-medium w-[200px] flex-shrink-0">Gelar
-                                            Belakang</label>
-                                        <div class="isi">
-                                            S.Kom</div>
+                            @endif
+                            @if (class_basename($notification) == 'Skp')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                        {{-- KIRI --}}
+                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Tahun</label>
+                                                    {{ $notification->tahun }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nilai
+                                                        SKP</label>
+                                                    {{ $notification->nilai }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Orientasi
+                                                        Pelayanan</label>
+                                                    {{ $notification->ot }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Integritas</label>
+                                                    {{ $notification->integritas }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Komitmen</label>
+                                                    {{ $notification->komitmen }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Disiplin</label>
+                                                    {{ $notification->disiplin }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Kerja
+                                                        Sama</label>
+                                                    {{ $notification->kerja_sama }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Kepemimpinan</label>
+                                                    {{ $notification->kepemimpinan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Status
+                                                        Atasan</label>
+                                                    {{ $notification->status_atasan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Status
+                                                        Penilai</label>
+                                                    {{ $notification->status_penilai }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nama
+                                                        Atasan</label>
+                                                    {{ $notification->nama_atasan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nama
+                                                        Penilai</label>
+                                                    {{ $notification->nama_penilai }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Jenis
+                                                        Jabatan</label>
+                                                    {{ $notification->jenis_jabatan }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- KANAN --}}
+                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Jumlah</label>
+                                                    {{ $notification->jumlah }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nilai
+                                                        Perilaku
+                                                        Kerja</label>
+                                                    {{ $notification->perilaku }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Nilai
+                                                        Prestasi
+                                                        Kerja</label>
+                                                    {{ $notification->prestasi }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Atasan Non
+                                                        PNS
+                                                        ID</label>
+                                                    {{ $notification->atasan_nonpns }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Jabatan
+                                                        Atasan</label>
+                                                    {{ $notification->atasan_jabatan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Jabatan
+                                                        Penilai</label>
+                                                    {{ $notification->penilai_jabatan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Golongan
+                                                        Penilai
+                                                        TMT</label>
+                                                    {{ $notification->golongan_penilai_tmt }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Golongan
+                                                        Atasan
+                                                        TMT</label>
+                                                    {{ $notification->golongan_atasan_tmt }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Golongan
+                                                        Penilai</label>
+                                                    {{ $notification->golongan_penilai }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">Golongan
+                                                        Atasan</label>
+                                                    {{ $notification->golongan_atasan }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">NIP/NIK
+                                                        Penilai</label>
+                                                    {{ $notification->nip_penilai }}
+                                                </div>
+                                            </div>
+                                            <div class="wrap">
+                                                <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                                <div
+                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                    <label For=""
+                                                        class="text-black font-medium text-[14px]">NIP/NIK
+                                                        Atasan</label>
+                                                    {{ $notification->nip_atasan }}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="wrap">
-                                    <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                        <label For=""
-                                            class="text-black font-medium w-[200px] flex-shrink-0">Nomor
-                                            Ijazah</label>
-                                        <div class="isi">
-                                            2342256897845</div>
+                            @endif
+                            @if (class_basename($notification) == 'Penghargaan')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    {{-- KIRI --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Jenis
+                                                    Penghargaan</label>
+                                                {{ $notification->jenis }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Tahun
+                                                    Perolehan</label>
+                                                {{ $notification->tahun }}
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    {{-- KANAN --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Surat
+                                                    Keputusan</label>
+                                                {{ $notification->no_surat }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal Surat
+                                                    Keputusan</label>
+                                                {{ $notification->tgl_surat }}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="wrap">
-                                    <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                    <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                        <label For=""
-                                            class="text-black font-medium w-[200px] flex-shrink-0">Nama
-                                            Universitas</label>
-                                        <div class="isi">
-                                            Instititut Teknologi Sumatera</div>
+                            @endif
+                            @if (class_basename($notification) == 'Kinerja')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    {{-- KIRI --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tahun</label>
+                                                {{ $notification->tahun }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">NIP</label>
+                                                {{ $notification->nip }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Nama</label>
+                                                {{ $notification->nama }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Unit
+                                                    Kerja</label>
+                                                {{ $notification->unit_kerja }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal</label>
+                                                {{ $notification->tgl }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Jabatan</label>
+                                                {{ $notification->jabatan }}
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
+                                    {{-- KANAN --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Hasil
+                                                    Kinerja</label>
+                                                {{ $notification->hasil }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Perilaku
+                                                    Kinerja</label>
+                                                {{ $notification->perilaku }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nama
+                                                    Instansi</label>
+                                                {{ $notification->instansi }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Kuadran
+                                                    Kerja</label>
+                                                {{ $notification->kuadran }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nama
+                                                    Penilai
+                                                    Jabatan</label>
+                                                {{ $notification->penilai_jabatan }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nama
+                                                    Penilai
+                                                </label>
+                                                {{ $notification->penilai }}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                            @endif
+                            @if (class_basename($notification) == 'Pns')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    {{-- KIRI --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Status
+                                                    Pegawai</label>
+                                                {{ $notification->status_pns }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    SK
+                                                    CPNS</label>
+                                                {{ $notification->no_sk_cpns }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    SK
+                                                    PNS</label>
+                                                {{ $notification->no_sk_pns }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    SK
+                                                    STTPL</label>
+                                                {{ $notification->no_sk_sttpl }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Karpeg</label>
+                                                {{ $notification->karpeg }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Surat
+                                                    Dokter</label>
+                                                {{ $notification->no_surat_dokter }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    SPMT</label>
+                                                {{ $notification->no_spmt }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Pertek
+                                                    C2TH</label>
+                                                {{ $notification->no_c2th }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- KANAN --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal Surat
+                                                    Keputusan CPNS</label>
+                                                {{ $notification->tgl_sk_cpns }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal Surat
+                                                    Keputusan PNS</label>
+                                                {{ $notification->tgl_sk_pns }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    STTPL</label>
+                                                {{ $notification->tgl_sttpl }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal TMT
+                                                    CPNS</label>
+                                                {{ $notification->tgl_tmt_cpns }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal TMT
+                                                    PNS</label>
+                                                {{ $notification->tgl_tmt_pns }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    SPMT</label>
+                                                {{ $notification->tgl_spmt }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    Pertek
+                                                    C2TH</label>
+                                                {{ $notification->tgl_c2th }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @if (class_basename($notification) == 'Diklat')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    {{-- KIRI --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Jenis
+                                                    Diklat</label>
+                                                {{ $notification->jenis_diklat }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nama
+                                                    Diklat</label>
+                                                {{ $notification->nama_diklat }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Institusi
+                                                    Penyelenggara</label>
+                                                {{ $notification->institusi }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Tahun
+                                                    Diklat</label>
+                                                {{ $notification->tahun }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    Selesai</label>
+                                                {{ $notification->tgl_selesai }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- KANAN --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    Mulai</label>
+                                                {{ $notification->tgl_mulai }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Durasi
+                                                    (Jam)</label>
+                                                {{ $notification->durasi }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Rumpun
+                                                    Diklat</label>
+                                                {{ $notification->rumpun }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Sertifikat</label>
+                                                {{ $notification->no_sertif }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @if (class_basename($notification) == 'MasaKerja')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Jenis
+                                                    Peninjauan
+                                                    Masa Kerja</label>
+                                                {{ $notification->masa_kerja }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Instansi/Perusahaan</label>
+                                                {{ $notification->instansi }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    Awal</label>
+                                                {{ $notification->tgl_awal }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    Akhir</label>
+                                                {{ $notification->tgl_akhir }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Masa
+                                                    Kerja
+                                                    (Bulan)</label>
+                                                {{ $notification->masa_kerja_bulan }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- KANAN --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Surat
+                                                    Keputusan (SK)</label>
+                                                {{ $notification->no_sk }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal Surat
+                                                    Keputusan (SK)</label>
+                                                {{ $notification->tgl_sk }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Pertek
+                                                    BKN</label>
+                                                {{ $notification->no_bkn }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    Pertek
+                                                    BKN</label>
+                                                {{ $notification->tgl_bkn }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Masa
+                                                    Kerja
+                                                    (Tahun)</label>
+                                                {{ $notification->masa_kerja_tahun }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @if (class_basename($notification) == 'Golongan')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Golongan</label>
+                                                {{ $notification->golongan }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Jenis
+                                                    Kenaikan
+                                                    Pangkat</label>
+                                                {{ $notification->jenis_kp }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Masa
+                                                    Kerja
+                                                    Golongan
+                                                    (Tahun)</label>
+                                                {{ $notification->masa_kerja_tahun }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Masa
+                                                    Kerja
+                                                    Golongan
+                                                    (Bulan)</label>
+                                                {{ $notification->masa_kerja_bulan }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">TMT
+                                                    Golongan</label>
+                                                {{ $notification->tmt }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- KANAN --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Surat
+                                                    Keputusan (SK)</label>
+                                                {{ $notification->no_sk }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal Surat
+                                                    Keputusan (SK)</label>
+                                                {{ $notification->tgl_sk }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    Pertek
+                                                    BKN</label>
+                                                {{ $notification->no_bkn }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    Pertek
+                                                    BKN</label>
+                                                {{ $notification->tgl_bkn }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @if (class_basename($notification) == 'Jabatan')
+                                <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                    {{-- KIRI --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Jenis
+                                                    Jabatan</label>
+                                                {{ $notification->jenis_jabatan }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Jenis
+                                                    Mutasi</label>
+                                                {{ $notification->mutasi }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Jenis
+                                                    Penugasan</label>
+                                                {{ $notification->penugasan }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                    SK</label>
+                                                {{ $notification->tgl_sk }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal TMT
+                                                    Jabatan</label>
+                                                {{ $notification->tgl_tmt }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Tanggal TMT
+                                                    Pelantikan</label>
+                                                {{ $notification->tgl_tmt_pelantikan }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nomor
+                                                    SK</label>
+                                                {{ $notification->no_sk }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- KANAN --}}
+                                    <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Status
+                                                    Riwayat</label>
+                                                {{ $notification->status_riwayat }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Instansi</label>
+                                                {{ $notification->instansi }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Satuan
+                                                    Kerja</label>
+                                                {{ $notification->sk }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For=""
+                                                    class="text-black font-medium text-[14px]">Satuan Kerja
+                                                    Induk</label>
+                                                {{ $notification->sk_induk }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Unit
+                                                    Organisasi</label>
+                                                {{ $notification->unit_organisasi }}
+                                            </div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
+                                            <div
+                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                <label For="" class="text-black font-medium text-[14px]">Nama
+                                                    Jabatan</label>
+                                                {{ $notification->nama_jabatan }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+
+                            {{-- table --}}
+                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                <table
+                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                        <tr>
+                                            <th scope="col" class="px-3 py-3">
+                                                No
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Nama Surat
+                                            </th>
+                                            <th scope="col" class="px-3 py-3">
+                                                Aksi
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($notification->files as $file)
+                                            <tr
+                                                class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                <td class="px-3 py-3">
+                                                    {{ $loop->iteration }}
+                                                </td>
+                                                <td class="px-3 py-3">
+                                                    {{ $file->file_name ? $file->file_name : '-' }}
+                                                </td>
+                                                <td class="px-3 py-3">
+                                                    <div class="flex items-center space-x-3">
+                                                        <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                            download="{{ $file->file_name }}" title="Download">
+                                                            <img src="{{ asset('Assets/download.svg') }}"
+                                                                alt="Download">
+                                                        </a>
+                                                        <button title="Lihat"
+                                                            onclick="event.preventDefault(); window.open('{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}', '_blank');">
+                                                            <img src="{{ asset('Assets/eye.svg') }}" alt="Lihat">
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
-
                         </div>
-                        {{-- table --}}
-                        <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                            <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                    <tr>
-                                        <th scope="col" class="px-3 py-3">
-                                            No
-                                        </th>
-                                        <th scope="col" class="px-3 py-3">
-                                            Nama Surat
-                                        </th>
-                                        <th scope="col" class="px-3 py-3">
-                                            Aksi
-                                        </th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr
-                                        class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                        <td class="px-3 py-3">
-                                            1
-                                        </td>
-                                        <td class="px-3 py-3">
-                                            Dokumen Surat.pdf
-                                        </td>
-                                        <td class="px-3 py-3">
-                                            <button title="Download" class="mr-3">
-                                                <img src="./../../Assets/download.svg" alt="">
-                                            </button>
-                                            <button title="Lihat">
-                                                <img src="./../../Assets/eye.svg" alt="">
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr
-                                        class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                        <td class="px-3 py-3">
-                                            1
-                                        </td>
-                                        <td class="px-3 py-3">
-                                            Dokumen Surat.pdf
-                                        </td>
-                                        <td class="px-3 py-3">
-                                            <button title="Download" class="mr-3">
-                                                <img src="./../../Assets/download.svg" alt="">
-                                            </button>
-                                            <button title="Lihat">
-                                                <img src="./../../Assets/eye.svg" alt="">
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    {{-- BUTTON --}}
-                    <div class="but justify-center flex gap-3 my-5">
-                        <button
-                            class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
-                        <button
-                            class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                        @if (class_basename($notification) == 'DataDiri')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.dataDiriUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.dataDiriUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'Diklat')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.diklatUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.diklatUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'Golongan')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.golonganUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.golonganUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'Jabatan')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.jabatanUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.jabatanUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'KeluargaAnak')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.anakUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.anakUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'KeluargaOrtu')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.ortuUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.ortuUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'KeluargaPasangan')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.pasanganUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.pasanganUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'Kinerja')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.kinerjaUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.kinerjaUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'MasaKerja')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.pmkUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.pmkUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'Pendidikan')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.pendidikanUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.pendidikanUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'Penghargaan')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.penghargaanUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.penghargaanUpdate', $notification->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'Pns')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.pnsUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.pnsUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
+                        @if (class_basename($notification) == 'Skp')
+                            <div class="but justify-center flex gap-3 my-5">
+                                <form action="{{ route('user.skpUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="diterima">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Diterima</button>
+                                </form>
+                                <form action="{{ route('user.skpUpdate', $notification->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="status" value="ditolak">
+                                    <button type="submit"
+                                        class="bg-[#4F8EA5] hover:bg-[#3a697a] text-white px-4 py-2 rounded-lg">Ditolak</button>
+                                </form>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
         {{-- PENDIDIKAN --}}
     </div>
 

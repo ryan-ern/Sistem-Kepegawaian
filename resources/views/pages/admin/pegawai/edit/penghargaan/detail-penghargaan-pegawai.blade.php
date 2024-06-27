@@ -266,7 +266,6 @@
                                             class="isi font-semibold text-[#2F5B6B] p-1 px-4 border focus:ring-[#2F5B6B] focus:border-[#2F5B6B] border-[#C3C3C3] rounded flex-shrink-0 w-[380px]">
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                 </form>
