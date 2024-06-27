@@ -41,8 +41,74 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $user = User::with('files')->findOrFail($id);
-        return view('pages.admin.pegawai.lihat.lihat-pegawai', compact('user'));
+        $user = User::find($id);
+
+        $diri = DataDiri::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($diri->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $pendidikan = Pendidikan::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($pendidikan->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $anak = KeluargaAnak::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($anak->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $ortu = KeluargaOrtu::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($ortu->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $pasangan = KeluargaPasangan::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($pasangan->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $skp = Skp::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($skp->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $penghargaan = Penghargaan::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($penghargaan->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $kinerja = Kinerja::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($kinerja->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $pns = Pns::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($pns->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $diklat = Diklat::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($diklat->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $pmk = MasaKerja::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($pmk->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $golongan = Golongan::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($golongan->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        $jabatan = Jabatan::with('files')->where('user_id', $id)->where('status', 'diterima')->get();
+        if ($jabatan->isEmpty()) {
+            session()->flash('error', 'Beberapa dokumen belum diisi oleh pegawai!');
+        }
+
+        return view('pages.admin.pegawai.lihat.lihat-pegawai', compact('user', 'diri', 'pendidikan', 'anak', 'ortu', 'pasangan', 'skp', 'penghargaan', 'kinerja', 'pns', 'diklat', 'pmk', 'golongan', 'jabatan'));
     }
 
     public function store(Request $request)

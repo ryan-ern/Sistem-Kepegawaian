@@ -104,7 +104,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="/admin/lihat-pegawai"
+                                                <a href="{{ route('user.show', $user->id) }}"
                                                     class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
                                                     <img src="./../Assets/lihat.svg" alt="">
                                                     Lihat

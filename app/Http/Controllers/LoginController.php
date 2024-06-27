@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,6 +28,12 @@ class LoginController extends Controller
             'nip' => 'required',
             'password' => 'required',
         ]);
+
+        $user = User::where('nip', $request->nip)->first();
+
+        if ($user && $user->status !== 'aktif') {
+            return back()->withErrors(['nip' => 'Akun Anda tidak aktif.']);
+        }
 
         if (Auth::attempt(['nip' => $request->nip, 'password' => $request->password, 'role' => 'user'])) {
             return redirect()->route('dashboardUser');

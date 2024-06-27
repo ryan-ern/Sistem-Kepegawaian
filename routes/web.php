@@ -121,6 +121,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/pegawai', [UserController::class, 'index'])->name('user.index');
     Route::post('/admin/dashboard', [UserController::class, 'store'])->name('user.store');
     Route::get('/admin/edit-pegawai/{id}', [UserController::class, 'edit'])->name('user.edit');
+    Route::get('/admin/lihat-pegawai/{id}', [UserController::class, 'show'])->name('user.show');
     Route::put('/admin/edit-pegawai/{id}', [UserController::class, 'update'])->name('user.update');
 
     Route::get('/admin/edit-pegawai/data-diri/{id}', [UserController::class, 'dataDiri'])->name('user.dataDiri');
@@ -380,7 +381,7 @@ Route::controller(GeneralPage::class)->group(function () {
     Route::get('/admin/edit-pegawai/detail-diri', 'detailDiri');
     //DATA DIRI
     // Lihat
-    Route::get('/admin/lihat-pegawai', 'pegawaiLihat');
+    // Route::get('/admin/lihat-pegawai', 'pegawaiLihat');
     // PEGAWAI
 
     // ABSENSI

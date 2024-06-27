@@ -30,7 +30,7 @@
         <div class="wrap flex flex-col md:flex-row gap-3 md:gap-8">
             <div class="left w-full md:w-[12%] ">
                 <div class="avatar">
-                    <img class="w-[120px]" src="../../Assets/user3.png" alt="">
+                    <img class="w-[100%]" src="{{ asset('storage/' . $user->foto) }}" alt="">
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
                     <button data-modal-target="Data Diri" data-modal-toggle="Data Diri"
@@ -81,6 +81,20 @@
             </div>
             <div class="right w-full md:w-[88%]">
                 <div class="wrap mt-3">
+                    @if (session('error'))
+                        <div class="flex items-center bg-red-500 text-white text-sm font-bold px-4 py-3 my-4"
+                            role="alert">
+                            <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20">
+                                <path
+                                    d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z" />
+                            </svg>
+                            <span class="block sm:inline">
+                                {{ session('error') }}
+                            </span>
+                        </div>
+                    @endif
+
                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                         <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
                             <div class="wrap">
@@ -88,7 +102,7 @@
                                     <label For=""
                                         class="text-black font-medium w-[200px] flex-shrink-0">Nama</label>
                                     <div title="Monica Adella" class="is">
-                                        Monica Adella</div>
+                                        {{ $user->name }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -96,7 +110,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">NIP</label>
                                     <div title="120563458" class="is">
-                                        120563458</div>
+                                        {{ $user->nip }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -104,7 +118,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">NIK </label>
                                     <div title="120563458" class="is">
-                                        12345678902</div>
+                                        {{ $user->nik }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -113,7 +127,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">No Kartu
                                         Keluarga</label>
                                     <div title="1879562345789" class="is">
-                                        1879562345789</div>
+                                        {{ $user->no_kk }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -121,7 +135,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Nomor Telepon</label>
                                     <div title="08123456789" class="is">
-                                        08123456789</div>
+                                        {{ $user->no_tel }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -129,7 +143,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px] ">Status</label>
                                     <div title="Aktif" class="is">
-                                        Aktif</div>
+                                        {{ $user->status }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -138,7 +152,7 @@
                                     <label For=""
                                         class="text-black font-medium w-[200px] flex-shrink-0 ">Alamat</label>
                                     <div title="Gajah Mada, Kota Baru, Tanjung Tarang Timur" class="is">
-                                        Gajah Mada, Kota Baru, Tanjung Tarang Timur</div>
+                                        {{ $user->alamat }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -146,7 +160,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Agama</label>
                                     <div title="Islam" class="is">
-                                        Islam</div>
+                                        {{ $user->agama }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -155,7 +169,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">Satuan
                                         Kerja</label>
                                     <div title="Pegawai" class="is">
-                                        Pegawai</div>
+                                        {{ $user->satuan_kerja }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -164,7 +178,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">Kelas
                                         Jabatan(Angka)</label>
                                     <div title="2" class="is">
-                                        2</div>
+                                        {{ $user->kelas_jabatan }}</div>
                                 </div>
                                 <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
                             </div>
@@ -172,7 +186,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">Email</label>
                                     <div title="monica123@gmail.com" class="is">
-                                        monica123@gmail.com</div>
+                                        {{ $user->email }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -181,7 +195,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">Tanggal
                                         Lahir</label>
                                     <div class="is">
-                                        23/06/1992</div>
+                                        {{ $user->tgl_lahir }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -190,7 +204,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">Tempat Lahir
                                     </label>
                                     <div title="Bandar Lampung" class="is">
-                                        Bandar Lampung</div>
+                                        {{ $user->tempat_lahir }}</div>
                                 </div>
                             </div>
                             <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
@@ -204,7 +218,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No NPWP </label>
                                     <div title="1879562345789" class="is">
-                                        1879562345789</div>
+                                        {{ $user->no_npwp }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -213,7 +227,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">Tanggal NPWP
                                     </label>
                                     <div class="is">
-                                        12/03/2002</div>
+                                        {{ $user->tgl_npwp }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -222,7 +236,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">Lokasi Kerja
                                     </label>
                                     <div title="Lampung" class="is">
-                                        Lampung</div>
+                                        {{ $user->lokasi_kerja }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -231,7 +245,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">No BPJS Kesehatan
                                     </label>
                                     <div title="2356889" class="is">
-                                        2356889</div>
+                                        {{ $user->no_bpjs }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -240,7 +254,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">No Akta Kelahitan
                                     </label>
                                     <div title="235689784512" class="is">
-                                        235689784512</div>
+                                        {{ $user->no_akta }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -249,7 +263,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">No Karis/Kasus
                                     </label>
                                     <div title="12345678902" class="is">
-                                        12345678902</div>
+                                        {{ $user->no_karis }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -257,7 +271,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No TASPEN </label>
                                     <div title="12345678902" class="is">
-                                        12345678902</div>
+                                        {{ $user->no_taspen }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -266,7 +280,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">Tanggal
                                         TASPEN</label>
                                     <div class="is">
-                                        23/01/2000</div>
+                                        {{ $user->tgl_taspen }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -274,7 +288,7 @@
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
                                     <label For="" class="text-black font-medium w-[200px]">No TAPERA </label>
                                     <div title="12345678902" class="is">
-                                        12345678902</div>
+                                        {{ $user->no_tapera }}</div>
                                 </div>
                             </div>
                             <div class="wrap">
@@ -283,7 +297,7 @@
                                     <label For="" class="text-black font-medium w-[200px]">No KPPN/Kantor
                                         Pembayaran Gaji</label>
                                     <div title="5623" class="is">
-                                        5623</div>
+                                        {{ $user->kppn }}</div>
                                 </div>
                                 <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
                             </div>
@@ -332,47 +346,41 @@
                                             <th scope="col" class="px-3 py-3">
                                                 Nama
                                             </th>
-                                            <th scope="col" class="px-5 py-3">
+                                            <th scope="col" class="px-3 py-3">
                                                 Aksi
                                             </th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td title="Dokumen Surat" class="px-3 py-3">
-                                                Dokumen Surat
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td title="Dokumen Surat" class="px-3 py-3">
-                                                Dokumen Surat
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
+                                        @foreach ($diri as $u)
+                                            @foreach ($u->files as $file)
+                                                <tr
+                                                    class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                    <td class="px-3 py-3">
+                                                        {{ $loop->iteration }}
+                                                    </td>
+                                                    <td class="px-3 py-3">
+                                                        {{ $u->nama }}
+                                                    </td>
+                                                    <td class="px-3 py-3">
+                                                        <button title="Download" class="mr-3">
+                                                            <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                download="{{ $file->file_name }}" title="Download">
+                                                                <img src="{{ asset('Assets/download.svg') }}"
+                                                                    alt="">
+                                                            </a>
+                                                        </button>
+                                                        <button title="Lihat">
+                                                            <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                target="_blank">
+                                                                <img src="{{ asset('Assets/eye.svg') }}"
+                                                                    alt="">
+                                                            </a>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -408,28 +416,24 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">S1</div>
-                                                <div class="text-[16px]">- Ekonomi</div>
+                                        @foreach ($pendidikan as $u)
+                                            <div
+                                                class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                                <div class="wrap">
+                                                    <div class="text-[18px] font-medium">{{ $u->tingkat_pendidikan }}
+                                                    </div>
+                                                    <div class="text-[16px]">- {{ $u->pendidikan }}</div>
+                                                </div>
+                                                <button data-modal-target="detailpendidikan-{{ $loop->iteration }}"
+                                                    data-modal-toggle="detailpendidikan">
+                                                    <img src="../../../Assets/book.svg" alt="">
+                                                </button>
+                                                <a href="{{ route('user.pendidikanShow', $u->id) }}" class="link">
+                                                    <img src="../../../Assets/book.svg" alt="">
+                                                </a>
+                                                {{ $u->tgl_lulus }}
                                             </div>
-                                            <button data-modal-target="detailpendidikan"
-                                                data-modal-toggle="detailpendidikan">
-                                                <img src="../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">S1</div>
-                                                <div class="text-[16px]">- Ekonomi</div>
-                                            </div>
-                                            <button data-modal-target="detailpendidikan"
-                                                data-modal-toggle="detailpendidikan">
-                                                <img src="../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -504,7 +508,7 @@
                                                 class="text-black font-medium w-[200px] flex-shrink-0">Tanggal
                                                 Kelulusan</label>
                                             <div class="isi">
-                                                02/03/1989</div>
+                                                {{ $pendidikan[0]->tgl_lulus }}</div>
                                         </div>
                                     </div>
                                     <div class="wrap">
@@ -649,7 +653,7 @@
                                                 <div class="text-[16px]">Tahun : 2010</div>
                                             </div>
                                             <button data-modal-target="detailskp" data-modal-toggle="detailskp">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                         <div
@@ -659,7 +663,7 @@
                                                 <div class="text-[16px]">Tahun : 2010</div>
                                             </div>
                                             <button data-modal-target="detailskp" data-modal-toggle="detailskp">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                     </div>
@@ -1069,7 +1073,7 @@
                                             </div>
                                             <button data-modal-target="detailpenghargaan"
                                                 data-modal-toggle="detailpenghargaan">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                         <div
@@ -1080,7 +1084,7 @@
                                             </div>
                                             <button data-modal-target="detailpenghargaan"
                                                 data-modal-toggle="detailpenghargaan">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                     </div>
@@ -1261,7 +1265,7 @@
                                             </div>
                                             <button data-modal-target="detailkinerja"
                                                 data-modal-toggle="detailkinerja">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                         <div
@@ -1271,7 +1275,7 @@
                                             </div>
                                             <button data-modal-target="detailkinerja"
                                                 data-modal-toggle="detailkinerja">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                     </div>
@@ -1540,7 +1544,7 @@
                                                 <div class="text-[16px]">1234567899654</div>
                                             </div>
                                             <button data-modal-target="detailcpns" data-modal-toggle="detailcpns">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                     </div>
@@ -1847,7 +1851,7 @@
                                             </div>
                                             <button data-modal-target="detaildiklat"
                                                 data-modal-toggle="detaildiklat">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                         <div
@@ -1858,7 +1862,7 @@
                                             </div>
                                             <button data-modal-target="detaildiklat"
                                                 data-modal-toggle="detaildiklat">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                     </div>
@@ -2097,7 +2101,7 @@
                                                 <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
                                             </div>
                                             <button data-modal-target="detailpmk" data-modal-toggle="detailpmk">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                         <div
@@ -2107,7 +2111,7 @@
                                                 <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
                                             </div>
                                             <button data-modal-target="detailpmk" data-modal-toggle="detailpmk">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                     </div>
@@ -2356,7 +2360,7 @@
                                             </div>
                                             <button data-modal-target="detailgolongan"
                                                 data-modal-toggle="detailgolongan">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                         <div
@@ -2367,7 +2371,7 @@
                                             </div>
                                             <button data-modal-target="detailgolongan"
                                                 data-modal-toggle="detailgolongan">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                         <div
@@ -2378,7 +2382,7 @@
                                             </div>
                                             <button data-modal-target="detailgolongan"
                                                 data-modal-toggle="detailgolongan">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                     </div>
@@ -2617,7 +2621,7 @@
                                             </div>
                                             <button data-modal-target="detailjabatan"
                                                 data-modal-toggle="detailjabatan">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                         <div
@@ -2628,7 +2632,7 @@
                                             </div>
                                             <button data-modal-target="detailjabatan"
                                                 data-modal-toggle="detailjabatan">
-                                                <img src="../Assets/book.svg" alt="">
+                                                <img src="../../../Assets/book.svg" alt="">
                                             </button>
                                         </div>
                                     </div>
@@ -2913,63 +2917,63 @@
                                 <div id="content1">
                                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                         <div class="w-full p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                                                <div class="w-full flex flex-col gap-3 md:gap-3">
-                                                    <div class="wrap-content">
-                                                        <div
-                                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                                            <div class="wrap">
-                                                                <div class="text-[18px] font-medium">Susaton</div>
-                                                                <div class="text-[16px]">-Ayah</div>
-                                                            </div>
-                                                            <button data-modal-target="detailorangtua"
-                                                                data-modal-toggle="detailorangtua">
-                                                                <img src="../Assets/book.svg" alt="">
-                                                            </button>
+                                            <div class="w-full flex flex-col gap-3 md:gap-3">
+                                                <div class="wrap-content">
+                                                    <div
+                                                        class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                                        <div class="wrap">
+                                                            <div class="text-[18px] font-medium">Susaton</div>
+                                                            <div class="text-[16px]">-Ayah</div>
                                                         </div>
+                                                        <button data-modal-target="detailorangtua"
+                                                            data-modal-toggle="detailorangtua">
+                                                            <img src="../../../Assets/book.svg" alt="">
+                                                        </button>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="content2" class="hidden">
                                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                         <div class="w-full p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                                                <div class="w-full flex flex-col gap-3 md:gap-3">
-                                                    <div class="wrap-content">
-                                                        <div
-                                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                                            <div class="wrap">
-                                                                <div class="text-[18px] font-medium">Rafi Ramadhan</div>
-                                                                <div class="text-[16px]">-Suami</div>
-                                                            </div>
-                                                            <button data-modal-target="detailpasangan"
-                                                                data-modal-toggle="detailpasangan">
-                                                                <img src="../Assets/book.svg" alt="">
-                                                            </button>
+                                            <div class="w-full flex flex-col gap-3 md:gap-3">
+                                                <div class="wrap-content">
+                                                    <div
+                                                        class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                                        <div class="wrap">
+                                                            <div class="text-[18px] font-medium">Rafi Ramadhan</div>
+                                                            <div class="text-[16px]">-Suami</div>
                                                         </div>
+                                                        <button data-modal-target="detailpasangan"
+                                                            data-modal-toggle="detailpasangan">
+                                                            <img src="../../../Assets/book.svg" alt="">
+                                                        </button>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="content3" class="hidden">
                                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                         <div class="w-full p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                                                <div class="w-full flex flex-col gap-3 md:gap-3">
-                                                    <div class="wrap-content">
-                                                        <div
-                                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                                            <div class="wrap">
-                                                                <div class="text-[18px] font-medium">Aisyah</div>
-                                                                <div class="text-[16px]">-Perempuan</div>
-                                                            </div>
-                                                            <button data-modal-target="detailanak"
-                                                                data-modal-toggle="detailanak">
-                                                                <img src="../Assets/book.svg" alt="">
-                                                            </button>
+                                            <div class="w-full flex flex-col gap-3 md:gap-3">
+                                                <div class="wrap-content">
+                                                    <div
+                                                        class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
+                                                        <div class="wrap">
+                                                            <div class="text-[18px] font-medium">Aisyah</div>
+                                                            <div class="text-[16px]">-Perempuan</div>
                                                         </div>
+                                                        <button data-modal-target="detailanak"
+                                                            data-modal-toggle="detailanak">
+                                                            <img src="../../../Assets/book.svg" alt="">
+                                                        </button>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -3143,8 +3147,7 @@
                                 </div>
                             </div>
                             {{-- table --}}
-                            <div
-                                class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
                                 <table
                                     class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
                                     <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
@@ -3457,8 +3460,7 @@
                                 </div>
                             </div>
                             {{-- table --}}
-                            <div
-                                class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
                                 <table
                                     class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
                                     <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
@@ -3544,169 +3546,168 @@
                         <!-- Modal body -->
                         <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                        {{-- KIRI --}}
-                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                            <div class="wrap">
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Anak
-                                                        Ke-</label>
-                                                    <div title="1" class="isi">
-                                                        1</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                        Pekerjaan Anak</label>
-                                                    <div title="Bukan PNS" class="isi">
-                                                        Bukan PNS</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
-                                                    <div title="Yasmin Aisyah" class="isi">
-                                                        Yasmin Aisyah</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                        Lahir</label>
-                                                    <div class="isi">
-                                                        23/20/2000</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                        Identitas</label>
-                                                    <div title="1856897845523" class="isi">
-                                                        1856897845523</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Jenis
-                                                        Kelamin</label>
-                                                    <div title="Perempuan" class="isi">
-                                                        Perempuan</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                        Pernikahan</label>
-                                                    <div title="Belum kawin" class="isi">
-                                                        Belum kawin</div>
-                                                </div>
-                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                            </div>
-                                        </div>
-                                        {{-- KANAN --}}
-                                        <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                            <div class="wrap">
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                        Meninggal</label>
-                                                    <div class="isi">
-                                                        -</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                        Akta
-                                                        Meninggal</label>
-                                                    <div title="-" class="isi">
-                                                        -</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                        Akta
-                                                        Kelahiran</label>
-                                                    <div title="235689784512" class="isi">
-                                                        235689784512</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                        Telepon</label>
-                                                    <div title="235698" class="isi">
-                                                        235698</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                        Hidup</label>
-                                                    <div title="Hidup" class="isi">
-                                                        Hidup</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
-                                                    <div title="yasmin@gmail.com" class="isi">
-                                                        yasmin@gmail.com</div>
-                                                </div>
-                                            </div>
-                                            <div class="wrap">
-                                                <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                                <div
-                                                    class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                                    <label For=""
-                                                        class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
-                                                    <div title="Islam" class="isi">
-                                                        Islam</div>
-                                                </div>
-                                                <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                            </div>
+                                {{-- KIRI --}}
+                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap">
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Anak
+                                                Ke-</label>
+                                            <div title="1" class="isi">
+                                                1</div>
                                         </div>
                                     </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                Pekerjaan Anak</label>
+                                            <div title="Bukan PNS" class="isi">
+                                                Bukan PNS</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
+                                            <div title="Yasmin Aisyah" class="isi">
+                                                Yasmin Aisyah</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
+                                                Lahir</label>
+                                            <div class="isi">
+                                                23/20/2000</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Identitas</label>
+                                            <div title="1856897845523" class="isi">
+                                                1856897845523</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Jenis
+                                                Kelamin</label>
+                                            <div title="Perempuan" class="isi">
+                                                Perempuan</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                Pernikahan</label>
+                                            <div title="Belum kawin" class="isi">
+                                                Belum kawin</div>
+                                        </div>
+                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
+                                    </div>
+                                </div>
+                                {{-- KANAN --}}
+                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
+                                    <div class="wrap">
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
+                                                Meninggal</label>
+                                            <div class="isi">
+                                                -</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Akta
+                                                Meninggal</label>
+                                            <div title="-" class="isi">
+                                                -</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Akta
+                                                Kelahiran</label>
+                                            <div title="235689784512" class="isi">
+                                                235689784512</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
+                                                Telepon</label>
+                                            <div title="235698" class="isi">
+                                                235698</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
+                                                Hidup</label>
+                                            <div title="Hidup" class="isi">
+                                                Hidup</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
+                                            <div title="yasmin@gmail.com" class="isi">
+                                                yasmin@gmail.com</div>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
+                                        <div
+                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
+                                            <label For=""
+                                                class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
+                                            <div title="Islam" class="isi">
+                                                Islam</div>
+                                        </div>
+                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
+                                    </div>
+                                </div>
+                            </div>
                             {{-- table --}}
-                            <div
-                                class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
                                 <table
                                     class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
                                     <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
