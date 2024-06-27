@@ -126,8 +126,12 @@
                     <div class="notif flex items-center">
                         <button id="dropdownDefaultButton" data-dropdown-toggle="notifikasi" class="relative">
                             <img class="w-[35px]" src="./../../Assets/notif.svg" alt="">
-                            <span
-                                class="absolute top-[-10px] inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">{{ $notifications->count() }}</span>
+                            @if ($notifications->count() > 0)
+                                <span
+                                    class="absolute top-[-10px] inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
+                                    {{ $notifications->count() }}
+                                </span>
+                            @endif
                         </button>
                         <!-- Dropdown menu -->
                         <div id="notifikasi"

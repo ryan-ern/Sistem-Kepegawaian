@@ -592,13 +592,14 @@ class UserController extends Controller
 
     public function pmkUpdate(Request $request, $id)
     {
-        $user = MasaKerja::find($id);
-        if (!$user) {
-            return redirect()->back()->with('error', 'Data pmk tidak ditemukan!');
+        $pmk = MasaKerja::find($id);
+        if (!$pmk) {
+            return redirect()->back()->with('error', 'Data diklat tidak ditemukan!');
         }
-        $user->update($request->all());
 
-        return redirect()->back()->with('success', 'Data pmk berhasil diupdate!');
+        $pmk->update($request->all());
+
+        return redirect()->back()->with('success', 'Data diklat berhasil diupdate!');
     }
 
     public function pmkDelete($id)

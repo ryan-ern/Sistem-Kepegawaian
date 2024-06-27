@@ -10,7 +10,7 @@ class MasaKerja extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'masa_kerja', 'instansi', 'tgl_awal', 'tgl_akhir', 'no_sk', 'tgl_sk', 'no_bkn', 'tgl_bkn', 'masa_kerja_tahun', 'masa_kerja_bulan', ' status',
+        'user_id', 'masa_kerja', 'instansi', 'tgl_awal', 'tgl_akhir', 'no_sk', 'tgl_sk', 'no_bkn', 'tgl_bkn', 'masa_kerja_tahun', 'masa_kerja_bulan', 'status',
     ];
 
     public function files()
