@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 
 return new class extends Migration
 {
@@ -42,8 +43,8 @@ return new class extends Migration
             $table->string('kppn')->nullable();
             $table->string('no_akta')->nullable();
             $table->string('no_kk')->nullable();
-            $table->string('kuota_cuti');
-            $table->string('tahun_terakhir_perbarui');
+            $table->string('kuota_cuti')->default('12');
+            $table->string('tahun_terakhir_perbarui')->nullable();
             $table->enum('status', ['aktif', 'tidak aktif'])->default('aktif');
             $table->timestamps();
         });

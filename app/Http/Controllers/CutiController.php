@@ -29,7 +29,10 @@ class CutiController extends Controller
 
         $tahunSekarang = Carbon::now()->year;
 
-        if ($tahunTerakhirPerbarui != $tahunSekarang) {
+        if (is_null($tahunTerakhirPerbarui)) {
+            $user->tahun_terakhir_perbarui = $tahunSekarang;
+            $user->save();
+        } else if ($tahunTerakhirPerbarui != $tahunSekarang) {
             $tahunDiff = $tahunSekarang - $tahunTerakhirPerbarui;
             $user->kuota_cuti += $tahunDiff * 12;
             $user->tahun_terakhir_perbarui = $tahunSekarang;

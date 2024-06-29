@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use Carbon\Carbon;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -36,8 +36,6 @@ class UserFactory extends Factory
             'alamat' => $this->faker->address(),
             'tempat_lahir' => $this->faker->city(),
             'tgl_lahir' => $this->faker->date(),
-            'kuota_cuti' => '12',
-            'tahun_terakhir_perbarui' =>  Carbon::now()->year,
             'foto' => 'uploads/photos/default.png',
         ];
     }
