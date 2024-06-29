@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AbsenController;
+use App\Http\Controllers\CutiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\DiklatController;
@@ -42,6 +43,12 @@ Route::group(['middleware' => ['auth', 'user']], function () {
     Route::post('/absensi/store-absensi', [AbsenController::class, 'store'])->name('absen.store');
     Route::get('/absensi/today', [AbsenController::class, 'getToday'])->name('absen.today');
     Route::get('/absensi/all', [AbsenController::class, 'getAll'])->name('absen.all');
+
+    Route::get('/cuti', [CutiController::class, 'create'])->name('cuti.index');
+    Route::post('/cuti', [CutiController::class, 'store'])->name('cuti.store');
+
+    Route::get('/dashboard/riwayat-cuti', [CutiController::class, 'riwayatCuti'])->name('cuti.riwayat');
+
 
     Route::get('dashboard/riwayat-golongan', [GolonganController::class, 'index'])->name('golongan.index');
     Route::get('dashboard/riwayat-golongan/tambah-golongan', [GeneralPage::class, 'tambahGolongan'])->name('golongan.create');
@@ -128,6 +135,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/absensi', [AbsenController::class, 'show'])->name('absensi.show');
     Route::get('/admin/absensi/detail/{id}/{filter?}', [AbsenController::class, 'showDetail'])->name('absensi.detail');
 
+    Route::get('/admin/cuti', [CutiController::class, 'index'])->name('cuti.home');
+    Route::get('/admin/cuti/form-cuti/{id}', [CutiController::class, 'edit'])->name('cuti.edit');
+    Route::put('/admin/cuti/form-cuti/{id}', [CutiController::class, 'update'])->name('cuti.update');
 
     Route::get('/admin/pegawai', [UserController::class, 'index'])->name('user.index');
     Route::post('/admin/dashboard', [UserController::class, 'store'])->name('user.store');
@@ -299,7 +309,7 @@ Route::controller(GeneralPage::class)->group(function () {
     // Route::get('/dashboard/riwayat-laporan/pengajuan-laporan', 'pengajuanlaporan');
     // LAPORAN
     // CUTI
-    Route::get('/dashboard/riwayat-cuti', 'riwayatcuti');
+    // Route::get('/dashboard/riwayat-cuti', 'riwayatcuti');
     // CUTI
     // ABSENSI
     // Route::get('/dashboard/riwayat-diri', 'riwayatdiri');
@@ -323,7 +333,7 @@ Route::controller(GeneralPage::class)->group(function () {
     // -
 
     // CUTI
-    Route::get('/cuti', 'cuti');
+    // Route::get('/cuti', 'cuti');
     // CUTI
     Route::get('/profile-user', 'profileuser');
 
@@ -401,8 +411,8 @@ Route::controller(GeneralPage::class)->group(function () {
     // ABSENSI
 
     // CUTI
-    Route::get('/admin/cuti', 'cutiAdmin');
-    Route::get('/admin/cuti/form-cuti', 'cutiForm');
+    // Route::get('/admin/cuti', 'cutiAdmin');
+    // Route::get('/admin/cuti/form-cuti', 'cutiForm');
     // CUTI
 
 

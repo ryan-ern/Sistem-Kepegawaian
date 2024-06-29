@@ -38,7 +38,7 @@
 <body>
     <x-sidebar-admin>
         <div class="head">
-            <div class="grid w-full h-full grid-cols-2 md:grid-cols-4 gap-2 md:gap-[25px]">
+            <div class="grid w-full h-full grid-cols-2 md:grid-cols-5 gap-2 md:gap-[25px]">
                 <!-- Kotak 1 -->
                 <div
                     class=" p-4 text-center shadow-lg flex flex-col gap-2 items-center h-[180px] justify-center rounded-[15px] bg-white">
@@ -65,15 +65,15 @@
                     class=" p-4 text-center shadow-lg flex flex-col gap-2 items-center h-[180px] justify-center rounded-[15px] bg-white">
                     <img src="../../Assets/cuti4.svg" alt="">
                     <div class="text-[#616262]">Cuti Hari Ini</div>
-                    <div class="font-medium text-[22px]">2</div>
+                    <div class="font-medium text-[22px]">{{ $sumCuti }}</div>
                 </div>
                 <!-- Kotak 1 -->
-                {{-- <div
+                <div
                     class=" p-4 text-center shadow-lg flex flex-col gap-2 items-center h-[180px] justify-center rounded-[15px] bg-white">
                     <img src="../../Assets/masuk.svg" alt="">
-                    <div class="text-[#616262]">Pegawai Masuk</div>
-                    <div class="font-medium text-[22px]">5</div>
-                </div> --}}
+                    <div class="text-[#616262]">Pegawai Tidak Masuk Hari Ini</div>
+                    <div class="font-medium text-[22px]">{{ $absen }}</div>
+                </div>
             </div>
         </div>
         <div class="wrap mt-6 flex flex-col md:flex-row gap-7 md:gap-7">
@@ -141,78 +141,17 @@
                     <div id="tabContent">
                         <div id="content1">
                             <div class="wrap flex flex-col gap-2 mt-3">
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d ago</div>
-                                </div>
+                                @foreach ($cuti as $a)
+                                    <div class="head text-[14px] flex justify-between">
+                                        <div class="n">{{ $a->user->name }}</div>
+                                        <div class="font-medium"> @php
+                                            $startDate = \Carbon\Carbon::parse($a->start_date);
+                                            $endDate = \Carbon\Carbon::parse($a->end_date);
+                                            $daysDiff = $endDate->diffInDays($startDate);
+                                        @endphp
+                                            {{ $daysDiff }} hari</div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                         <div id="content2" class="hidden">

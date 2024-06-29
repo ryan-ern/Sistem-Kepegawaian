@@ -25,7 +25,6 @@ class SidebarAdmin extends Component
 
     public function render()
     {
-
         $dataDiris = DataDiri::with('files', 'user')->where('status', 'diproses')->orderBy('updated_at', 'desc')->get();
         $diklats = Diklat::with('files', 'user')->where('status', 'diproses')->orderBy('updated_at', 'desc')->get();
         $golongans = Golongan::with('files', 'user')->where('status', 'diproses')->orderBy('updated_at', 'desc')->get();

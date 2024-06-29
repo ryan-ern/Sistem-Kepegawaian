@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cuti', function (Blueprint $table) {
+        Schema::create('cutis', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('cuti');
+            $table->string('golongan');
+            $table->string('jenis_cuti');
             $table->date('start_date');
             $table->date('end_date');
             $table->string('keterangan');
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cuti');
+        Schema::dropIfExists('cutis');
     }
 };

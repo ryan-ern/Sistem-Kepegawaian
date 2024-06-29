@@ -10,7 +10,7 @@ class Cuti extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'cuti', 'start_date', 'end_date', 'keterangan', 'status'
+        'user_id', 'jenis_cuti', 'golongan', 'start_date', 'end_date', 'keterangan', 'status'
     ];
 
     public function user()

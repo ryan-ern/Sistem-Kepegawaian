@@ -42,6 +42,8 @@ return new class extends Migration
             $table->string('kppn')->nullable();
             $table->string('no_akta')->nullable();
             $table->string('no_kk')->nullable();
+            $table->string('kuota_cuti');
+            $table->string('tahun_terakhir_perbarui');
             $table->enum('status', ['aktif', 'tidak aktif'])->default('aktif');
             $table->timestamps();
         });
