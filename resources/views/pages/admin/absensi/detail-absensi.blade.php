@@ -15,12 +15,15 @@
 <body>
     <x-sidebar-admin>
         <div class="text-[32px] font-semibold text-[#2F5B6B] mb-3">Data Absensi Pegawai</div>
-        {{-- konten --}}
+        {{-- Konten --}}
         <div class="">
             <div class="flex justify-between">
                 <div class="left flex gap-2">
-                    <button class="bg-[#9BB8C3] hover:bg-[#485e66] p-1 rounded px-6">Hari Ini</button>
-                    <button class="bg-[#9BB8C3] hover:bg-[#485e66] p-1 rounded px-6">Semua</button>
+                    <a href="{{ route('absensi.detail', ['id' => $absen->first()->user_id, 'filter' => 'today']) }}"
+                        class="bg-[#9BB8C3] hover:bg-[#485e66] p-1 rounded px-6 {{ $filter == 'today' ? 'bg-[#485e66]' : '' }}">Hari
+                        Ini</a>
+                    <a href="{{ route('absensi.detail', ['id' => $absen->first()->user_id, 'filter' => 'all']) }}"
+                        class="bg-[#9BB8C3] hover:bg-[#485e66] p-1 rounded px-6 {{ $filter == 'all' ? 'bg-[#485e66]' : '' }}">Semua</a>
                 </div>
                 <div class="wrap flex gap-3">
                     <div class="sears relative">
@@ -39,96 +42,45 @@
                     </div>
                 </div>
             </div>
-            {{-- hari --}}
-            {{-- table --}}
+            {{-- Hari --}}
+            {{-- Table --}}
             <div class="relative w-full overflow-x-auto rounded-lg shadow border border-[#969BA0] overflow-y-auto mt-5">
-                <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                <table class="w-full text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
                     <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
                         <tr>
-                            <th scope="col" class="px-3 py-3">
-                                No
-                            </th>
-                            <th scope="col" class="px-3 py-3">
-                                Nama
-                            </th>
-                            <th scope="col" class="px-3 py-3">
-                                NIP
-                            </th>
-                            <th scope="col" class="px-3 py-3">
-                                Tanggal
-                            </th>
-                            <th scope="col" class="px-3 py-3">
-                                Jam
-                            </th>
-                            <th scope="col" class="px-3 py-3">
-                                Status
-                            </th>
+                            <th scope="col" class="px-3 py-3">No</th>
+                            <th scope="col" class="px-3 py-3">Nama</th>
+                            <th scope="col" class="px-3 py-3">NIP</th>
+                            <th scope="col" class="px-3 py-3">Tanggal</th>
+                            <th scope="col" class="px-3 py-3">Jam</th>
+                            <th scope="col" class="px-3 py-3">Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                            <td class="px-3 py-3">
-                                1
-                            </td>
-                            <td class="px-3 py-3">
-                                Monica Adela
-                            </td>
-                            <td class="px-3 py-3">
-                                12314534534534
-                            </td>
-                            <td class="px-3 py-3">
-                                13-02-2024
-                            </td>
-                            <td class="px-3 py-3">
-                                08:00:50
-                            </td>
-                            <td class="px-3 py-3 flex items-center gap-2">
-                                <div class="under inline-block p-1 px-3 bg-[#E9F6FB] text-black w-[70px] text-center rounded-sm">Sakit</div>
-                                <img class="bg-[#4F8EA5] py-1 px-3 rounded-sm" src="../../Assets/doc.svg" alt="">
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                            <td class="px-3 py-3">
-                                1
-                            </td>
-                            <td class="px-3 py-3">
-                                Monica Adela
-                            </td>
-                            <td class="px-3 py-3">
-                                12314534534534
-                            </td>
-                            <td class="px-3 py-3">
-                                13-02-2024
-                            </td>
-                            <td class="px-3 py-3">
-                                08:00:50
-                            </td>
-                            <td class="px-3 py-3 flex items-center gap-2">
-                                <div class="under inline-block p-1 px-3 bg-[#E9F6FB] text-black w-[70px] text-center rounded-sm">Izin</div>
-                                <img class="bg-[#4F8EA5] py-1 px-3 rounded-sm" src="../../Assets/doc.svg" alt="">
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                            <td class="px-3 py-3">
-                                1
-                            </td>
-                            <td class="px-3 py-3">
-                                Monica Adela
-                            </td>
-                            <td class="px-3 py-3">
-                                12314534534534
-                            </td>
-                            <td class="px-3 py-3">
-                                13-02-2024
-                            </td>
-                            <td class="px-3 py-3">
-                                08:00:50
-                            </td>
-                            <td class="px-3 py-3 flex items-center gap-2">
-                                <div class="under inline-block p-1 px-3 bg-[#E9F6FB] text-black w-[70px] text-center rounded-sm">Sakit</div>
-                                <img class="bg-[#4F8EA5] py-1 px-3 rounded-sm" src="../../Assets/doc.svg" alt="">
-                            </td>
-                        </tr>
+                        @foreach ($absen as $a)
+                            <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
+                                <td class="px-3 py-3">{{ $loop->iteration }}</td>
+                                <td class="px-3 py-3">{{ $a->user->name }}</td>
+                                <td class="px-3 py-3">{{ $a->user->nip }}</td>
+                                <td class="px-3 py-3">{{ $a->tgl }}</td>
+                                <td class="px-3 py-3">{{ $a->jam }}</td>
+                                <td class="px-3 py-3 flex items-center gap-2">
+                                    <div
+                                        class="under inline-block p-1 px-3 bg-[#E9F6FB] text-black w-[70px] text-center rounded-sm">
+                                        {{ $a->status }}
+                                    </div>
+                                    <a href="{{ asset('storage/' . $a->file_path) }}" target="_blank"
+                                        class="bg-[#E9F6FB] p-1 rounded px-6">
+                                        Lihat File
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        @if ($absen->isEmpty())
+                            <tr>
+                                <td colspan="6" class="text-center py-3">Tidak ada data absensi.</td>
+                            </tr>
+                        @endif
                     </tbody>
                 </table>
             </div>

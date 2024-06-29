@@ -16,7 +16,6 @@
         <div class="font-semibold text-[#2F5B6B] mb-2 md:mb-6">Berikut data riwayat golongan</div>
         <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
             <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
-
                 <div class="wrap">
                     <div class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]"></div>
                     <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
@@ -107,7 +106,6 @@
                             {{ $golongan->tgl_sk }}</div>
                     </div>
                 </div>
-
             </div>
         </div>
 

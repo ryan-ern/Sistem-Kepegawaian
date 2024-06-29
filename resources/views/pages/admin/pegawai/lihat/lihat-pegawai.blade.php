@@ -416,24 +416,203 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        @foreach ($pendidikan as $u)
-                                            <div
-                                                class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                                <div class="wrap">
-                                                    <div class="text-[18px] font-medium">{{ $u->tingkat_pendidikan }}
+                                        <div id="accordion-pendidikan" data-accordion="collapse-pendidikan">
+                                            @foreach ($pendidikan as $u)
+                                                <h2 id="accordion-heading-{{ $loop->iteration }}">
+                                                    <button type="button"
+                                                        class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                        data-accordion-target="#accordion-body-{{ $loop->iteration }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordion-body-{{ $loop->iteration }}">
+                                                        <span>
+                                                            <div class="text-[18px] font-medium">
+                                                                {{ $u->tingkat_pendidikan }}</div>
+                                                            <div class="text-[16px]">- {{ $u->pendidikan }}</div>
+                                                        </span>
+                                                        <img src="../../../Assets/book.svg" alt="">
+                                                    </button>
+                                                </h2>
+                                                <div id="accordion-body-{{ $loop->iteration }}" class="hidden"
+                                                    aria-labelledby="accordion-heading-{{ $loop->iteration }}">
+                                                    <div class="p-5">
+                                                        <div
+                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                            <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Pendidikan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->pendidikan }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Tingkat
+                                                                            Pendidikan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->tingkat_pendidikan }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Tahun
+                                                                            Lulus</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->tahun_lulus }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Tanggal
+                                                                            Kelulusan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->tgl_lulus }}</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {{-- KANAN --}}
+                                                            <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Gelar
+                                                                            Depan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->gelar_depan ? $u->gelar_depan : '-' }}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Gelar
+                                                                            Belakang</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->gelar_belakang ? $u->gelar_belakang : '-' }}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                            Ijazah</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->no_ijasah }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Nama
+                                                                            Universitas</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->nama_univ }}</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- table --}}
+                                                        <div
+                                                            class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                            <table
+                                                                class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                <thead
+                                                                    class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                    <tr>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            No
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Nama Surat
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Aksi
+                                                                        </th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($u->files as $file)
+                                                                        <tr
+                                                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $loop->iteration }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $file->file_name ? $file->file_name : '-' }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                <button title="Download"
+                                                                                    class="mr-3">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                        download="{{ $file->file_name }}"
+                                                                                        title="Download">
+                                                                                        <img src="{{ asset('Assets/download.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button title="Lihat">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
-                                                    <div class="text-[16px]">- {{ $u->pendidikan }}</div>
                                                 </div>
-                                                <button data-modal-target="detailpendidikan-{{ $loop->iteration }}"
-                                                    data-modal-toggle="detailpendidikan">
-                                                    <img src="../../../Assets/book.svg" alt="">
-                                                </button>
-                                                <a href="{{ route('user.pendidikanShow', $u->id) }}" class="link">
-                                                    <img src="../../../Assets/book.svg" alt="">
-                                                </a>
-                                                {{ $u->tgl_lulus }}
-                                            </div>
-                                        @endforeach
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -442,182 +621,6 @@
                 </div>
             </div>
             {{-- DATA PENDIDIKAN --}}
-
-            {{-- DETAIL PENDIDIKAN --}}
-            <div id="detailpendidikan" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Pendidikan
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailpendidikan">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                <div class="w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Pendidikan</label>
-                                            <div title="Sarjana" class="isi">
-                                                Sarjana</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tingkat
-                                                Pendidikan</label>
-                                            <div title="S1-Teknik Informatika" class="isi">
-                                                S1-Teknik Informatika</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tahun
-                                                Lulus</label>
-                                            <div title="1989" class="isi">
-                                                1989</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal
-                                                Kelulusan</label>
-                                            <div class="isi">
-                                                {{ $pendidikan[0]->tgl_lulus }}</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Gelar
-                                                Depan</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Gelar
-                                                Belakang</label>
-                                            <div title="S.Kom" class="isi">
-                                                S.Kom</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nomor
-                                                Ijazah</label>
-                                            <div title="2342256897845" class="isi">
-                                                2342256897845</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nama
-                                                Universitas</label>
-                                            <div title="Instititut Teknologi Sumatera" class="isi">
-                                                Instititut Teknologi Sumatera</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL PENDIDIKAN --}}
 
             {{-- DATA SKP --}}
             <div id="dataskp" tabindex="-1" aria-hidden="true"
@@ -646,25 +649,434 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Nilai SKP : 100</div>
-                                                <div class="text-[16px]">Tahun : 2010</div>
-                                            </div>
-                                            <button data-modal-target="detailskp" data-modal-toggle="detailskp">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Nilai SKP : 100</div>
-                                                <div class="text-[16px]">Tahun : 2010</div>
-                                            </div>
-                                            <button data-modal-target="detailskp" data-modal-toggle="detailskp">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
+                                        <div id="accordion-skp" data-accordion="collapse-skp">
+                                            @foreach ($skp as $u)
+                                                <h2 id="accordion-heading-skp-{{ $loop->iteration }}">
+                                                    <button type="button"
+                                                        class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                        data-accordion-target="#accordion-body-skp-{{ $loop->iteration }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordion-body-skp-{{ $loop->iteration }}">
+                                                        <span>
+                                                            <div class="text-[18px] font-medium">
+                                                                Nilai : {{ $u->nilai }}</div>
+                                                            <div class="text-[16px]">- Tahun : {{ $u->tahun }}
+                                                            </div>
+                                                        </span>
+                                                        <img src="../../../Assets/book.svg" alt="">
+                                                    </button>
+                                                </h2>
+                                                <div id="accordion-body-skp-{{ $loop->iteration }}" class="hidden"
+                                                    aria-labelledby="accordion-heading-skp-{{ $loop->iteration }}">
+                                                    <div class="p-5">
+                                                        <div
+                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                            <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Tahun</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->tahun }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Nilai
+                                                                            SKP</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->nilai }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Orientasi
+                                                                            Pelayanan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->ot }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Integritas</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->integritas }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Komitmen</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->komitmen }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Disiplin</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->disiplin }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Kerja
+                                                                            Sama</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->kerja_sama }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Kepemimpinan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->kepemimpinan }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Status
+                                                                            Atasan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->status_atasan }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Status
+                                                                            Penilai</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->status_penilai }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Nama
+                                                                            Atasan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->nama_atasan }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Nama
+                                                                            Penilai</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->nama_penilai }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Jenis
+                                                                            Jabatan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->jenis_jabatan }}</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {{-- KANAN --}}
+                                                            <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Jumlah</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->jumlah }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Nilai
+                                                                            Perilaku Kerja</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->perilaku }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Nilai
+                                                                            Prestasi Kerja</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->prestasi }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Atasan
+                                                                            Non PNS ID</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->atasan_nonpns }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Jabatan
+                                                                            Atasan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->atasan_jabatan }} </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Jabatan
+                                                                            Penilai</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->penilai_jabatan }} </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Golongan
+                                                                            Penilai TMT</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->golongan_penilai_tmt }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Golongan
+                                                                            Atasan TMT</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->golongan_atasan_tmt }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Golongan
+                                                                            Penilai</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->golongan_penilai }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">Golongan
+                                                                            Atasan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->golongan_atasan }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">NIP/NIK
+                                                                            Penilai</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->nip_penilai }}</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wrap">
+                                                                    <div
+                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                        <label For=""
+                                                                            class="text-black font-medium text-[14px]">NIP/NIK
+                                                                            Atasan</label>
+                                                                        <div
+                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                            {{ $u->nip_atasan }}</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- table --}}
+                                                        <div
+                                                            class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                            <table
+                                                                class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                <thead
+                                                                    class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                    <tr>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            No
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Nama Surat
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Aksi
+                                                                        </th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($u->files as $file)
+                                                                        <tr
+                                                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $loop->iteration }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $file->file_name ? $file->file_name : '-' }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                <button title="Download"
+                                                                                    class="mr-3">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                        download="{{ $file->file_name }}"
+                                                                                        title="Download">
+                                                                                        <img src="{{ asset('Assets/download.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button title="Lihat">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -674,369 +1086,6 @@
                 </div>
             </div>
             {{-- DATA SKP --}}
-
-            {{-- DETAIL SKP --}}
-            <div id="detailskp" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data SKP
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailskp">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                {{-- KIRI --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tahun</label>
-                                            <div title="2021" class="isi">
-                                                2021</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nilai
-                                                SKP</label>
-                                            <div title="85.45" class="isi">
-                                                85.45</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Orientasi
-                                                Pelayanan</label>
-                                            <div title="80" class="isi">
-                                                80</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Integritas</label>
-                                            <div title="80" class="isi">
-                                                80</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Komitmen</label>
-                                            <div title="85" class="isi">
-                                                85</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Disiplin</label>
-                                            <div title="85" class="isi">
-                                                85</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Kerja
-                                                Sama</label>
-                                            <div title="85" class="isi">
-                                                85</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Kepemimpinan</label>
-                                            <div title="80" class="isi">
-                                                80</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Status
-                                                Atasan</label>
-                                            <div title="PNS" class="isi">
-                                                PNS</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Status
-                                                Penilai</label>
-                                            <div title="PNS" class="isi">
-                                                PNS</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nama
-                                                Atasan</label>
-                                            <div title="Ridwan" class="isi">
-                                                Ridwan</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nama
-                                                Penilai</label>
-                                            <div title="Emidianti" class="isi">
-                                                Emidianti</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Jenis
-                                                Jabatan</label>
-                                            <div title="2" class="isi">
-                                                2</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Jumlah</label>
-                                            <div title="505" class="isi">
-                                                505</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nilai
-                                                Perilaku Kerja</label>
-                                            <div title="35" class="isi">
-                                                35</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nilai
-                                                Prestasi Kerja</label>
-                                            <div title="86" class="isi">
-                                                86</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Atasan
-                                                Non PNS ID</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Jabatan
-                                                Atasan</label>
-                                            <div title="KEPALA BADAN PEMBANGUNAN SISTEM INFORMASI" class="isi">
-                                                KEPALA BADAN PEMBANGUNAN.... </div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Jabatan
-                                                Penilai</label>
-                                            <div title="KEPALA BIDANG PERENCANAAN MAKROMIA" class="isi">
-                                                KEPALA BIDANG PERENCANAAN MAKRO.... </div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Golongan
-                                                Penilai TMT</label>
-                                            <div class="isi">
-                                                12/03/2014</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Golongan
-                                                Atasan TMT</label>
-                                            <div class="isi">
-                                                06/03/2023</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Golongan
-                                                Penilai</label>
-                                            <div title="40" class="isi">
-                                                40</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Golongan
-                                                Atasan</label>
-                                            <div title="50" class="isi">
-                                                50</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">NIP/NIK
-                                                Penilai</label>
-                                            <div title="12345678945" class="isi">
-                                                12345678945</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">NIP/NIK
-                                                Atasan</label>
-                                            <div title="1879456231245" class="isi">
-                                                1879456231245</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL SKP --}}
 
             {{-- DATA PENGHARGAAN --}}
             <div id="datapenghargaan" tabindex="-1" aria-hidden="true"
@@ -1065,27 +1114,155 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Olimpiade</div>
-                                                <div class="text-[16px]">Tahun : 2010</div>
-                                            </div>
-                                            <button data-modal-target="detailpenghargaan"
-                                                data-modal-toggle="detailpenghargaan">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Wira Karya</div>
-                                                <div class="text-[16px]">Tahun : 2010</div>
-                                            </div>
-                                            <button data-modal-target="detailpenghargaan"
-                                                data-modal-toggle="detailpenghargaan">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
+                                        <div id="accordion-penghargaan" data-accordion="collapse-penghargaan">
+                                            @foreach ($penghargaan as $u)
+                                                <h2 id="accordion-heading-penghargaan-{{ $loop->iteration }}">
+                                                    <button type="button"
+                                                        class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                        data-accordion-target="#accordion-body-penghargaan-{{ $loop->iteration }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordion-body-penghargaan-{{ $loop->iteration }}">
+                                                        <span>
+                                                            <div class="text-[18px] font-medium">
+                                                                {{ $u->jenis }}</div>
+                                                            <div class="text-[16px]">- Tahun : {{ $u->tahun }}
+                                                            </div>
+                                                        </span>
+                                                        <img src="../../../Assets/book.svg" alt="">
+                                                    </button>
+                                                </h2>
+                                                <div id="accordion-body-penghargaan-{{ $loop->iteration }}"
+                                                    class="hidden"
+                                                    aria-labelledby="accordion-heading-penghargaan-{{ $loop->iteration }}">
+                                                    <div class="p-5">
+                                                        <div
+                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                            <div
+                                                                class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                {{-- KIRI --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Jenis
+                                                                                Penghargaan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->jenis }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tahun
+                                                                                Perolehan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tahun }}</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                {{-- KANAN --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                Surat Keputusan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_surat }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                Surat Keputusan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_surat }}</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- table --}}
+                                                        <div
+                                                            class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                            <table
+                                                                class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                <thead
+                                                                    class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                    <tr>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            No
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Nama Surat
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Aksi
+                                                                        </th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($u->files as $file)
+                                                                        <tr
+                                                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $loop->iteration }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $file->file_name ? $file->file_name : '-' }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                <button title="Download"
+                                                                                    class="mr-3">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                        download="{{ $file->file_name }}"
+                                                                                        title="Download">
+                                                                                        <img src="{{ asset('Assets/download.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button title="Lihat">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -1096,141 +1273,6 @@
             </div>
             {{-- DATA PENGHARGAAN --}}
 
-            {{-- DETAIL PENGHARGAAN --}}
-            <div id="detailpenghargaan" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Penghargaan
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailpenghargaan">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                {{-- KIRI --}}
-                                <div class="w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[400px] flex-shrink-0">Jenis
-                                                Penghargaan</label>
-                                            <div title="Olimpiade" class="isi">
-                                                Olimpiade</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[400px] flex-shrink-0">Tahun
-                                                Perolehan</label>
-                                            <div title="2012" class="isi">
-                                                2012</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[400px] flex-shrink-0">Nomor Surat
-                                                Keputusan</label>
-                                            <div title="65/TK/TAHUN2012" class="isi">
-                                                65/TK/TAHUN2012</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[400px] flex-shrink-0">Tanggal Surat
-                                                Keputusan</label>
-                                            <div class="isi">
-                                                12/02/2012</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL PENGHARGAAN --}}
-
             {{-- DATA KINERJA --}}
             <div id="datakinerja" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -1240,7 +1282,7 @@
                         <!-- Modal header -->
                         <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
                             <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Laporan Kinerja
+                                Data Kinerja
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
@@ -1258,25 +1300,258 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">2020</div>
-                                            </div>
-                                            <button data-modal-target="detailkinerja"
-                                                data-modal-toggle="detailkinerja">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">2021</div>
-                                            </div>
-                                            <button data-modal-target="detailkinerja"
-                                                data-modal-toggle="detailkinerja">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
+                                        <div id="accordion-kinerja" data-accordion="collapse-kinerja">
+                                            @foreach ($kinerja as $u)
+                                                <h2 id="accordion-heading-kinerja-{{ $loop->iteration }}">
+                                                    <button type="button"
+                                                        class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                        data-accordion-target="#accordion-body-kinerja-{{ $loop->iteration }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordion-body-kinerja-{{ $loop->iteration }}">
+                                                        <span>
+                                                            <div class="text-[18px] font-medium">
+                                                                {{ $u->tahun }}</div>
+                                                        </span>
+                                                        <img src="../../../Assets/book.svg" alt="">
+                                                    </button>
+                                                </h2>
+                                                <div id="accordion-body-kinerja-{{ $loop->iteration }}"
+                                                    class="hidden"
+                                                    aria-labelledby="accordion-heading-kinerja-{{ $loop->iteration }}">
+                                                    <div class="p-5">
+                                                        <div
+                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                            <div
+                                                                class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                {{-- KIRI --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tahun</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tahun }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">NIP</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->nip }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nama</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->nama }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Unit
+                                                                                Kerja</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->unit_kerja }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Jabatan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->jabatan }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- KANAN --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Hasil
+                                                                                Kinerja</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->hasil }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Perilaku
+                                                                                Kinerja</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->perilaku }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nama
+                                                                                Instansi</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->instansi }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Kuadran
+                                                                                Kerja</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->kuadran }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nama
+                                                                                Penilai Jabatan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->penilai_jabatan }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nama
+                                                                                Penilai </label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->penilai }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- table --}}
+                                                        <div
+                                                            class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                            <table
+                                                                class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                <thead
+                                                                    class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                    <tr>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            No
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Nama Surat
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Aksi
+                                                                        </th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($u->files as $file)
+                                                                        <tr
+                                                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $loop->iteration }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $file->file_name ? $file->file_name : '-' }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                <button title="Download"
+                                                                                    class="mr-3">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                        download="{{ $file->file_name }}"
+                                                                                        title="Download">
+                                                                                        <img src="{{ asset('Assets/download.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button title="Lihat">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -1287,227 +1562,6 @@
             </div>
             {{-- DATA KINERJA --}}
 
-            {{-- DETAIL KINERJA --}}
-            <div id="detailkinerja" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Laporan Kinerja
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailkinerja">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                {{-- KIRI --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tahun</label>
-                                            <div title="20" class="isi ">
-                                                2020</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">NIP</label>
-                                            <div title="1856457213" class="isi ">
-                                                1856457213</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nama</label>
-                                            <div title="Monica Adella" class="isi ">
-                                                Monica Adella</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Unit
-                                                Kerja</label>
-                                            <div title="-" class="isi ">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal</label>
-                                            <div class="isi ">
-                                                02/03/1989</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Jabatan</label>
-                                            <div title="Pegawai" class="isi ">
-                                                Pegawai</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Hasil
-                                                Kinerja</label>
-                                            <div title="Sesuai Ekspektasi" class="isi ">
-                                                Sesuai Ekspektasi</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Perilaku
-                                                Kinerja</label>
-                                            <div title="Diatas Ekspektasi" class="isi ">
-                                                Diatas Ekspektasi</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nama
-                                                Instansi</label>
-                                            <div title="Pemerintah Provinsi Lampung" class="isi ">
-                                                Pemerintah Provinsi Lampung</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Kuadran
-                                                Kerja</label>
-                                            <div title="Baik" class="isi ">
-                                                Baik</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nama Penilai
-                                                Jabatan</label>
-                                            <div title="Plt. Kepala Dinas Kesehatan Provinsi Lampung" class="isi ">
-                                                Plt. Kepala Dinas Kesehatan Provinsi Lampung</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nama Penilai
-                                            </label>
-                                            <div title="Ridwan" class="isi ">
-                                                Ridwan</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL KINERJA --}}
-
             {{-- DATA CPNS --}}
             <div id="datacpns" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -1517,7 +1571,7 @@
                         <!-- Modal header -->
                         <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
                             <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data CPNS/PNS
+                                Data Cpns
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
@@ -1535,17 +1589,306 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Monica Adella Aisyah Renaldi
+                                        <div id="accordion-cpns" data-accordion="collapse-cpns">
+                                            @foreach ($pns as $u)
+                                                <h2 id="accordion-heading-cpns-{{ $loop->iteration }}">
+                                                    <button type="button"
+                                                        class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                        data-accordion-target="#accordion-body-cpns-{{ $loop->iteration }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordion-body-cpns-{{ $loop->iteration }}">
+                                                        <span>
+                                                            <div class="text-[18px] font-medium">{{ $u->status_pns }}
+                                                            </div>
+                                                            <div class="text-[16px]">{{ $u->no_sk_pns }}</div>
+                                                        </span>
+                                                        <img src="../../../Assets/book.svg" alt="">
+                                                    </button>
+                                                </h2>
+                                                <div id="accordion-body-cpns-{{ $loop->iteration }}" class="hidden"
+                                                    aria-labelledby="accordion-heading-cpns-{{ $loop->iteration }}">
+                                                    <div class="p-5">
+                                                        <div
+                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                            <div
+                                                                class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                {{-- KIRI --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Status
+                                                                                Pegawai</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->status_pns }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                SK CPNS</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_sk_cpns }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                SK PNS</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded min-w-[380px]">
+                                                                                {{ $u->no_sk_pns }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                SK STTPL</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_sk_sttpl }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Karpeg</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->karpeg }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                Surat Dokter</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_surat_dokter }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                SPMT</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_spmt }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                Pertek C2TH</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_c2th }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- KANAN --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                Surat Keputusan
+                                                                                CPNS</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_sk_cpns }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                Surat Keputusan
+                                                                                PNS</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_sk_pns }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                STTPL</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_sttpl }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                TMT CPNS</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_tmt_cpns }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                TMT PNS</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_tmt_pns }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                SPMT</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_spmt }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                Pertek C2TH</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_c2th }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- table --}}
+                                                        <div
+                                                            class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                            <table
+                                                                class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                <thead
+                                                                    class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                    <tr>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            No
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Nama Surat
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Aksi
+                                                                        </th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($u->files as $file)
+                                                                        <tr
+                                                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $loop->iteration }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $file->file_name ? $file->file_name : '-' }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                <button title="Download"
+                                                                                    class="mr-3">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                        download="{{ $file->file_name }}"
+                                                                                        title="Download">
+                                                                                        <img src="{{ asset('Assets/download.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button title="Lihat">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="text-[16px]">Pemerintahan Provinsi Lampung</div>
-                                                <div class="text-[16px]">1234567899654</div>
-                                            </div>
-                                            <button data-modal-target="detailcpns" data-modal-toggle="detailcpns">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -1556,266 +1899,6 @@
             </div>
             {{-- DATA CPNS --}}
 
-
-            {{-- DETAIL CPNS --}}
-            <div id="detailcpns" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data CPNS/PNS
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailcpns">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                {{-- KIRI --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Status
-                                                Pegawai</label>
-                                            <div title="P" class="isi">
-                                                P</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nomor SK
-                                                CPNS</label>
-                                            <div title="813/579/IV.04/KPTS/MSJ/2015" class="isi">
-                                                813/579/IV.04/KPTS/MSJ/2015</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nomor SK
-                                                PNS</label>
-                                            <div title="821/1673/IV.04/KPTS/MSJ/2016/00007866/DIKLAT"
-                                                class="isi">
-                                                821/1673/IV.04/KPTS/MSJ/2016/00007866/DIKLAT</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nomor SK
-                                                STTPL</label>
-                                            <div title="PRAJABATAN III/18/1801/LAN/2015" class="isi">
-                                                PRAJABATAN III/18/1801/LAN/2015</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Karpeg</label>
-                                            <div title="B 05005563" class="isi">
-                                                B 05005563</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nomor Surat
-                                                Dokter</label>
-                                            <div title="441/388/1.3/VII/2015" class="isi">
-                                                441/388/1.3/VII/2015</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nomor
-                                                SPMT</label>
-                                            <div title="813/579/IV.04/KPTS/MSJ/2014" class="isi">
-                                                813/579/IV.04/KPTS/MSJ/2014</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nomor Pertek
-                                                C2TH</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mT-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal Surat
-                                                Keputusan CPNS</label>
-                                            <div class="isi">
-                                                05/05/2015</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal Surat
-                                                Keputusan PNS</label>
-                                            <div class="isi">
-                                                17/12/2016</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal
-                                                STTPL</label>
-                                            <div class="isi">
-                                                17/12/2018</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal TMT
-                                                CPNS</label>
-                                            <div class="isi">
-                                                18/02/2019</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal TMT
-                                                PNS</label>
-                                            <div class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal
-                                                SPMT</label>
-                                            <div class="isi">
-                                                06/03/2023</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal Pertek
-                                                C2TH</label>
-                                            <div class="isi">
-                                                02/03/2023</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL CPNS --}}
-
             {{-- DATA DIKLAT --}}
             <div id="datadiklat" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -1825,7 +1908,7 @@
                         <!-- Modal header -->
                         <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
                             <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Diklat/Kursus
+                                Data Diklat
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
@@ -1843,27 +1926,222 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Diklat Struktur</div>
-                                                <div class="text-[16px]">-Sepada</div>
-                                            </div>
-                                            <button data-modal-target="detaildiklat"
-                                                data-modal-toggle="detaildiklat">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Diklat Struktur</div>
-                                                <div class="text-[16px]">-Sepada</div>
-                                            </div>
-                                            <button data-modal-target="detaildiklat"
-                                                data-modal-toggle="detaildiklat">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
+                                        <div id="accordion-diklat" data-accordion="collapse-diklat">
+                                            @foreach ($diklat as $u)
+                                                <h2 id="accordion-heading-diklat-{{ $loop->iteration }}">
+                                                    <button type="button"
+                                                        class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                        data-accordion-target="#accordion-body-diklat-{{ $loop->iteration }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordion-body-diklat-{{ $loop->iteration }}">
+                                                        <span>
+                                                            <div class="text-[18px] font-medium">
+                                                                {{ $u->jenis_diklat }}</div>
+                                                            <div class="text-[16px]">-{{ $u->nama_diklat }}</div>
+                                                        </span>
+                                                        <img src="../../../Assets/book.svg" alt="">
+                                                    </button>
+                                                </h2>
+                                                <div id="accordion-body-diklat-{{ $loop->iteration }}"
+                                                    class="hidden"
+                                                    aria-labelledby="accordion-heading-diklat-{{ $loop->iteration }}">
+                                                    <div class="p-5">
+                                                        <div
+                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                            <div
+                                                                class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                {{-- KIRI --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Jenis
+                                                                                Diklat</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->jenis_diklat }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nama
+                                                                                Diklat</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->nama_diklat }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Institusi
+                                                                                Penyelenggara</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->institusi }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tahun
+                                                                                Diklat</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tahun }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tahun
+                                                                                Selesai</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_selesai }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- KANAN --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                Mulai</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_mulai }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Durasi
+                                                                                (Jam)</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->durasi }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Rumpun
+                                                                                Diklat</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->rumpun }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                Sertifikat</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_sertif }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- table --}}
+                                                        <div
+                                                            class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                            <table
+                                                                class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                <thead
+                                                                    class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                    <tr>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            No
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Nama Surat
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Aksi
+                                                                        </th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($u->files as $file)
+                                                                        <tr
+                                                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $loop->iteration }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $file->file_name ? $file->file_name : '-' }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                <button title="Download"
+                                                                                    class="mr-3">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                        download="{{ $file->file_name }}"
+                                                                                        title="Download">
+                                                                                        <img src="{{ asset('Assets/download.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button title="Lihat">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -1873,199 +2151,6 @@
                 </div>
             </div>
             {{-- DATA DIKLAT --}}
-
-            {{-- DETAIL DIKLAT --}}
-            <div id="detaildiklat" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Diklat/Kursus
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detaildiklat">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                {{-- KIRI --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Jenis
-                                                Diklat</label>
-                                            <div title="Diklat Struktural" class="isi">
-                                                Diklat Struktural</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nama
-                                                Diklat</label>
-                                            <div title="SEPALA/ADUM/DIKLAT PIM TK.II" class="isi">
-                                                SEPALA/ADUM/DIKLAT PIM TK.II</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Institusi
-                                                Penyelenggara</label>
-                                            <div title="PEMPROV LAMPUNG" class="isi">
-                                                PEMPROV LAMPUNG</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tahun
-                                                Diklat</label>
-                                            <div title="2012" class="isi">
-                                                2012</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tahun
-                                                Selesai</label>
-                                            <div class="isi">
-                                                12/02/2012</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Tanggal
-                                                Mulai</label>
-                                            <div class="isi">
-                                                12/02/2012</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Durasi
-                                                (Jam)</label>
-                                            <div title="315" class="isi">
-                                                315</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Rumpun
-                                                Diklat</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[200px] flex-shrink-0">Nomor
-                                                Sertifikat</label>
-                                            <div title="549/I.09/DIKLATPIM TK.IV/LAN/2012" class="isi">
-                                                549/I.09/DIKLATPIM TK.IV/LAN/2012</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL DIKLAT --}}
 
             {{-- DATA PMK --}}
             <div id="datapmk" tabindex="-1" aria-hidden="true"
@@ -2094,25 +2179,238 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Negeri</div>
-                                                <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
-                                            </div>
-                                            <button data-modal-target="detailpmk" data-modal-toggle="detailpmk">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Negeri</div>
-                                                <div class="text-[16px]">-Dinas Kesehatan Kabupaten Mesuji</div>
-                                            </div>
-                                            <button data-modal-target="detailpmk" data-modal-toggle="detailpmk">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
+                                        <div id="accordion-pmk" data-accordion="collapse-pmk">
+                                            @foreach ($pmk as $u)
+                                                <h2 id="accordion-heading-pmk-{{ $loop->iteration }}">
+                                                    <button type="button"
+                                                        class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                        data-accordion-target="#accordion-body-pmk-{{ $loop->iteration }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordion-body-pmk-{{ $loop->iteration }}">
+                                                        <span>
+                                                            <div class="text-[18px] font-medium">
+                                                                {{ $u->masa_kerja }}</div>
+                                                            <div class="text-[16px]">-{{ $u->instansi }}</div>
+                                                        </span>
+                                                        <img src="../../../Assets/book.svg" alt="">
+                                                    </button>
+                                                </h2>
+                                                <div id="accordion-body-pmk-{{ $loop->iteration }}" class="hidden"
+                                                    aria-labelledby="accordion-heading-pmk-{{ $loop->iteration }}">
+                                                    <div class="p-5">
+                                                        <div
+                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                            <div
+                                                                class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                {{-- KIRI --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Jenis
+                                                                                Peninjauan Masa
+                                                                                Kerja</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->masa_kerja }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Instansi/Perusahaan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->instansi }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                Awal</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_awal }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                Akhir</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_akhir }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Masa
+                                                                                Kerja (Bulan)</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->masa_kerja_bulan }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- KANAN --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                Surat Keputusan
+                                                                                (SK)</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_sk }}/div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="wrap">
+                                                                            <div
+                                                                                class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                            </div>
+                                                                            <div
+                                                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                <label For=""
+                                                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                                                    Surat Keputusan
+                                                                                    (SK)</label>
+                                                                                <div
+                                                                                    class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                    {{ $u->tgl_sk }}</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="wrap">
+                                                                            <div
+                                                                                class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                            </div>
+                                                                            <div
+                                                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                <label For=""
+                                                                                    class="text-black font-medium text-[14px]">Nomor
+                                                                                    Pertek BKN</label>
+                                                                                <div
+                                                                                    class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                    {{ $u->no_bkn }}</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="wrap">
+                                                                            <div
+                                                                                class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                            </div>
+                                                                            <div
+                                                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                <label For=""
+                                                                                    class="text-black font-medium text-[14px]">Tanggal
+                                                                                    Pertek BKN</label>
+                                                                                <div
+                                                                                    class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                    {{ $u->tgl_bkn }}</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="wrap">
+                                                                            <div
+                                                                                class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                            </div>
+                                                                            <div
+                                                                                class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                <label For=""
+                                                                                    class="text-black font-medium text-[14px]">Masa
+                                                                                    Kerja (Tahun)</label>
+                                                                                <div
+                                                                                    class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                    {{ $u->masa_kerja_tahun }}</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- table --}}
+                                                        <div
+                                                            class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                            <table
+                                                                class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                <thead
+                                                                    class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                    <tr>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            No
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Nama Surat
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Aksi
+                                                                        </th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($u->files as $file)
+                                                                        <tr
+                                                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $loop->iteration }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $file->file_name ? $file->file_name : '-' }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                <button title="Download"
+                                                                                    class="mr-3">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                        download="{{ $file->file_name }}"
+                                                                                        title="Download">
+                                                                                        <img src="{{ asset('Assets/download.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button title="Lihat">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -2122,208 +2420,6 @@
                 </div>
             </div>
             {{-- DATA PMK --}}
-
-            {{-- DETAIL PMK --}}
-            <div id="detailpmk" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Peninjauan Masa Kerja
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailpmk">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Jenis
-                                                Peninjauan Masa Kerja</label>
-                                            <div class="isi">
-                                                Negeri</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Instansi/Perusahaan</label>
-                                            <div title="Dinas Kesehatan Kabupaten" class="isi">
-                                                Dinas Kesehatan Kabupaten</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Tanggal
-                                                Awal</label>
-                                            <div class="isi">
-                                                23/03/2014</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Tanggal
-                                                Akhir</label>
-                                            <div class="isi">
-                                                02/03/208</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Masa Kerja
-                                                (Bulan)</label>
-                                            <div title="0" class="isi">
-                                                0</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Nomor Surat
-                                                Keputusan (SK)</label>
-                                            <div title="823.3/88/VI.04/2024" class="isi">
-                                                823.3/88/VI.04/2024</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Tanggal Surat
-                                                Keputusan (SK)</label>
-                                            <div class="isi">
-                                                03/02/2022</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Nomor Pertek
-                                                BKN</label>
-                                            <div title="FG-256897845" class="isi">
-                                                FG-256897845</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Tanggal Pertek
-                                                BKN</label>
-                                            <div class="isi">
-                                                06/03/2023</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[250px] flex-shrink-0">Masa Kerja
-                                                (Tahun)</label>
-                                            <div title="0" class="isi">
-                                                0</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL PMK --}}
 
             {{-- DATA GOLONGAN --}}
             <div id="datagolongan" tabindex="-1" aria-hidden="true"
@@ -2352,38 +2448,228 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div title="Penata..." class="text-[16px]">Penata...</div>
-                                                <div class="text-[16px]">IIB</div>
-                                            </div>
-                                            <button data-modal-target="detailgolongan"
-                                                data-modal-toggle="detailgolongan">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div title="Penata..." class="text-[16px]">Penata...</div>
-                                                <div class="text-[16px]">IVC</div>
-                                            </div>
-                                            <button data-modal-target="detailgolongan"
-                                                data-modal-toggle="detailgolongan">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div title="Penata..." class="text-[16px]">Penata...</div>
-                                                <div class="text-[16px]">IA</div>
-                                            </div>
-                                            <button data-modal-target="detailgolongan"
-                                                data-modal-toggle="detailgolongan">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
+                                        <div id="accordion-golongan" data-accordion="collapse-golongan">
+                                            @foreach ($golongan as $u)
+                                                <h2 id="accordion-heading-golongan-{{ $loop->iteration }}">
+                                                    <button type="button"
+                                                        class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                        data-accordion-target="#accordion-body-golongan-{{ $loop->iteration }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordion-body-golongan-{{ $loop->iteration }}">
+                                                        <span>
+                                                            <div class="text-[16px]">{{ $u->golongan }}</div>
+                                                            <div class="text-[16px]">{{ $u->jenis_kp }}</div>
+                                                        </span>
+                                                        <img src="../../../Assets/book.svg" alt="">
+                                                    </button>
+                                                </h2>
+                                                <div id="accordion-body-golongan-{{ $loop->iteration }}"
+                                                    class="hidden"
+                                                    aria-labelledby="accordion-heading-golongan-{{ $loop->iteration }}">
+                                                    <div class="p-5">
+                                                        <div
+                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                            <div
+                                                                class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                {{-- KIRI --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Golongan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->golongan }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Jenis
+                                                                                Kenaikan
+                                                                                Pangkat</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->jenis_kp }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Masa
+                                                                                Kerja Golongan
+                                                                                (Tahun)</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->masa_kerja_tahun }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Masa
+                                                                                Kerja Golongan
+                                                                                (Bulan)</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->masa_kerja_bulan ? $u->masa_kerja_bulan : '-' }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">TMT
+                                                                                Golongan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tmt }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- KANAN --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                Surat Keputusan
+                                                                                (SK)</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_sk }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                Pertek BKN</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_bkn }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                Pertek BKN</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_bkn ? $u->tgl_bkn : '-' }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                Surat Keputusan
+                                                                                (SK)
+                                                                            </label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_sk }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- table --}}
+                                                        <div
+                                                            class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                            <table
+                                                                class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                <thead
+                                                                    class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                    <tr>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            No
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Nama Surat
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Aksi
+                                                                        </th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($u->files as $file)
+                                                                        <tr
+                                                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $loop->iteration }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $file->file_name ? $file->file_name : '-' }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                <button title="Download"
+                                                                                    class="mr-3">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                        download="{{ $file->file_name }}"
+                                                                                        title="Download">
+                                                                                        <img src="{{ asset('Assets/download.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button title="Lihat">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -2393,198 +2679,6 @@
                 </div>
             </div>
             {{-- DATA GOLONGAN --}}
-
-            {{-- DETAIL GOLONGAN --}}
-            <div id="detail golongan" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Golongan
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detail golongan">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">Golongan</label>
-                                            <div title="II/B" class="isi">
-                                                II/B</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">Jenis Kenaikan
-                                                Pangkat</label>
-                                            <div title="Reguler" class="isi">
-                                                Reguler</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">Masa Kerja
-                                                Golongan (Tahun)</label>
-                                            <div title="9" class="isi">
-                                                9</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">Masa Kerja
-                                                Golongan (Bulan)</label>
-                                            <div title="1" class="isi">
-                                                1</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">TMT
-                                                Golongan</label>
-                                            <div class="isi">
-                                                02/03/2023</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">Nomor Surat
-                                                Keputusan (SK)</label>
-                                            <div title="823.3/88/VI.04/2024" class="isi">
-                                                823.3/88/VI.04/2024</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">Tanggal Surat
-                                                Keputusan (SK)</label>
-                                            <div class="isi">
-                                                03/02/2022</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">Nomor Pertek
-                                                BKN</label>
-                                            <div title="FG-256897845" class="isi">
-                                                FG-256897845</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[260px] flex-shrink-0">Tanggal Pertek
-                                                BKN</label>
-                                            <div class="isi">
-                                                06/03/2023</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL GOLONGAN --}}
 
             {{-- DATA JABATAN --}}
             <div id="datajabatan" tabindex="-1" aria-hidden="true"
@@ -2613,27 +2707,277 @@
                             <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                 <div class="w-full flex flex-col gap-3 md:gap-3">
                                     <div class="wrap-content">
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Analisis</div>
-                                                <div class="text-[16px]">-2020</div>
-                                            </div>
-                                            <button data-modal-target="detailjabatan"
-                                                data-modal-toggle="detailjabatan">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                            <div class="wrap">
-                                                <div class="text-[18px] font-medium">Kepala</div>
-                                                <div class="text-[16px]">-S1</div>
-                                            </div>
-                                            <button data-modal-target="detailjabatan"
-                                                data-modal-toggle="detailjabatan">
-                                                <img src="../../../Assets/book.svg" alt="">
-                                            </button>
+                                        <div id="accordion-jabatan" data-accordion="collapse-jabatan">
+                                            @foreach ($jabatan as $u)
+                                                <h2 id="accordion-heading-jabatan-{{ $loop->iteration }}">
+                                                    <button type="button"
+                                                        class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                        data-accordion-target="#accordion-body-jabatan-{{ $loop->iteration }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordion-body-jabatan-{{ $loop->iteration }}">
+                                                        <span>
+                                                            <div class="text-[18px] font-medium">
+                                                                {{ $u->nama_jabatan }}</div>
+                                                            <div class="text-[16px]">{{ $u->tgl_tmt }}</div>
+                                                        </span>
+                                                        <img src="../../../Assets/book.svg" alt="">
+                                                    </button>
+                                                </h2>
+                                                <div id="accordion-body-jabatan-{{ $loop->iteration }}"
+                                                    class="hidden"
+                                                    aria-labelledby="accordion-heading-jabatan-{{ $loop->iteration }}">
+                                                    <div class="p-5">
+                                                        <div
+                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                            <div
+                                                                class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                {{-- KIRI --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Jenis
+                                                                                Jabatan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->jenis_jabatan }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Jenis
+                                                                                Mutasi</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->mutasi }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Jenis
+                                                                                Penugasan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->penugasan }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                SK</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_sk }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                TMT Jabatan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_tmt }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Tanggal
+                                                                                TMT Pelantikan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->tgl_tmt_pelantikan }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nomor
+                                                                                SK</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->no_sk }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- KANAN --}}
+                                                                <div
+                                                                    class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Status
+                                                                                Riwayat</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->status_riwayat }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Instansi</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->instansi }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Satuan
+                                                                                Kerja</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->sk }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Satuan
+                                                                                Kerja Induk</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->sk_induk }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nama
+                                                                                Organisasi</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->unit_organisasi }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wrap">
+                                                                        <div
+                                                                            class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                        </div>
+                                                                        <div
+                                                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                            <label For=""
+                                                                                class="text-black font-medium text-[14px]">Nama
+                                                                                Jabatan</label>
+                                                                            <div
+                                                                                class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                {{ $u->nama_jabatan }}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- table --}}
+                                                        <div
+                                                            class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                            <table
+                                                                class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                <thead
+                                                                    class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                    <tr>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            No
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Nama Surat
+                                                                        </th>
+                                                                        <th scope="col" class="px-3 py-3">
+                                                                            Aksi
+                                                                        </th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($u->files as $file)
+                                                                        <tr
+                                                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $loop->iteration }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                {{ $file->file_name ? $file->file_name : '-' }}
+                                                                            </td>
+                                                                            <td class="px-3 py-3">
+                                                                                <button title="Download"
+                                                                                    class="mr-3">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                        download="{{ $file->file_name }}"
+                                                                                        title="Download">
+                                                                                        <img src="{{ asset('Assets/download.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button title="Lihat">
+                                                                                    <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                        target="_blank">
+                                                                                        <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                            alt="">
+                                                                                    </a>
+                                                                                </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -2643,243 +2987,6 @@
                 </div>
             </div>
             {{-- DATA JABATAN --}}
-
-
-            {{-- DETAIL JABATAN --}}
-            <div id="detailjabatan" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Jabatan
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailjabatan">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                {{-- KIRI --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Jenis
-                                                Jabatan</label>
-                                            <div title="Jabatan Pelaksana" class="isi">
-                                                Jabatan Pelaksana</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Jenis
-                                                Mutasi</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Jenis
-                                                Penugasan</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                SK</label>
-                                            <div class="isi">
-                                                02/03/1989</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal TMT
-                                                Jabatan</label>
-                                            <div class="isi">
-                                                02/03/1989</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal TMT
-                                                Pelantikan</label>
-                                            <div class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                SK</label>
-                                            <div title="8902/79/AT/VI.01" class="isi">
-                                                8902/79/AT/VI.01</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Riwayat</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Instansi</label>
-                                            <div title="Pemerintahan Kab.Mesuji" class="isi">
-                                                Pemerintahan Kab.Mesuji</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Satuan
-                                                Kerja</label>
-                                            <div title="Pemerintahan Kab.Mesuji" class="isi">
-                                                Pemerintahan Kab.Mesuji</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Satuan Kerja
-                                                Induk</label>
-                                            <div title="Mesuji" class="isi">
-                                                Mesuji</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Unit
-                                                Organisasi</label>
-                                            <div title="RSUD KABUPATEN MESUJI" class="isi">
-                                                RSUD KABUPATEN MESUJI</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nama
-                                                Jabatan</label>
-                                            <div title="Staff" class="isi">
-                                                Staff</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL JABATAN --}}
 
             {{-- KELUARGA --}}
             <div id="keluarga" tabindex="-1" aria-hidden="true"
@@ -2907,7 +3014,8 @@
                         <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
                             <div class="tab flex gap-4">
                                 <button id="tab1" class="font-medium text-[#B3B3B3]"
-                                    onclick="showTab('tab1')">Orang Tua</button>
+                                    onclick="showTab('tab1')">Orang
+                                    Tua</button>
                                 <button id="tab2" class="font-medium text-[#B3B3B3]"
                                     onclick="showTab('tab2')">Pasangan</button>
                                 <button id="tab3" class="font-medium text-[#B3B3B3]"
@@ -2919,58 +3027,971 @@
                                         <div class="w-full p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
                                             <div class="w-full flex flex-col gap-3 md:gap-3">
                                                 <div class="wrap-content">
-                                                    <div
-                                                        class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                                        <div class="wrap">
-                                                            <div class="text-[18px] font-medium">Susaton</div>
-                                                            <div class="text-[16px]">-Ayah</div>
-                                                        </div>
-                                                        <button data-modal-target="detailorangtua"
-                                                            data-modal-toggle="detailorangtua">
-                                                            <img src="../../../Assets/book.svg" alt="">
-                                                        </button>
+                                                    <div id="accordion-ortu" data-accordion="collapse-ortu">
+                                                        @foreach ($ortu as $u)
+                                                            <h2 id="accordion-heading-ortu-{{ $loop->iteration }}">
+                                                                <button type="button"
+                                                                    class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                                    data-accordion-target="#accordion-body-ortu-{{ $loop->iteration }}"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="accordion-body-ortu-{{ $loop->iteration }}">
+                                                                    <span>
+                                                                        <div class="text-[18px] font-medium">
+                                                                            {{ $u->nama }}</div>
+                                                                        <div class="text-[16px]">
+                                                                            -{{ $u->jk == 'Laki - Laki' ? 'Ayah' : 'Ibu' }}
+                                                                        </div>
+                                                                    </span>
+                                                                    <img src="../../../Assets/book.svg"
+                                                                        alt="">
+                                                                </button>
+                                                            </h2>
+                                                            <div id="accordion-body-ortu-{{ $loop->iteration }}"
+                                                                class="hidden"
+                                                                aria-labelledby="accordion-heading-ortu-{{ $loop->iteration }}">
+                                                                <div class="p-5">
+                                                                    <div
+                                                                        class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                        <div
+                                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                            {{-- KIRI --}}
+                                                                            <div
+                                                                                class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Status
+                                                                                            HIdup</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->status_keluarga }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Status
+                                                                                            Pekerjaan Orang
+                                                                                            Tua</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->status_pekerjaan }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nama</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->nama }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Status
+                                                                                            Pernikahan</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->status_pernikahan }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Jenis
+                                                                                            Kelamin</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->jk }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Email</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->email }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            {{-- KANAN --}}
+                                                                            <div
+                                                                                class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Tanggal
+                                                                                            Lahir</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->tgl_lahir }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Tanggal
+                                                                                            Meninggal</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->tgl_meninggal ? $u->tgl_meninggal : '-' }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Identitas</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_identitas }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Agama</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->agama }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Telepon</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_tel }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Handphone</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_hp }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    {{-- table --}}
+                                                                    <div
+                                                                        class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                                        <table
+                                                                            class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                            <thead
+                                                                                class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                                <tr>
+                                                                                    <th scope="col"
+                                                                                        class="px-3 py-3">
+                                                                                        No
+                                                                                    </th>
+                                                                                    <th scope="col"
+                                                                                        class="px-3 py-3">
+                                                                                        Nama Surat
+                                                                                    </th>
+                                                                                    <th scope="col"
+                                                                                        class="px-3 py-3">
+                                                                                        Aksi
+                                                                                    </th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                @foreach ($u->files as $file)
+                                                                                    <tr
+                                                                                        class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                                        <td class="px-3 py-3">
+                                                                                            {{ $loop->iteration }}
+                                                                                        </td>
+                                                                                        <td class="px-3 py-3">
+                                                                                            {{ $file->file_name ? $file->file_name : '-' }}
+                                                                                        </td>
+                                                                                        <td class="px-3 py-3">
+                                                                                            <button title="Download"
+                                                                                                class="mr-3">
+                                                                                                <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                                    download="{{ $file->file_name }}"
+                                                                                                    title="Download">
+                                                                                                    <img src="{{ asset('Assets/download.svg') }}"
+                                                                                                        alt="">
+                                                                                                </a>
+                                                                                            </button>
+                                                                                            <button title="Lihat">
+                                                                                                <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                                    target="_blank">
+                                                                                                    <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                                        alt="">
+                                                                                                </a>
+                                                                                            </button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                @endforeach
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="content2" class="hidden">
+                                <div id="content2">
                                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                         <div class="w-full p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
                                             <div class="w-full flex flex-col gap-3 md:gap-3">
                                                 <div class="wrap-content">
-                                                    <div
-                                                        class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                                        <div class="wrap">
-                                                            <div class="text-[18px] font-medium">Rafi Ramadhan</div>
-                                                            <div class="text-[16px]">-Suami</div>
-                                                        </div>
-                                                        <button data-modal-target="detailpasangan"
-                                                            data-modal-toggle="detailpasangan">
-                                                            <img src="../../../Assets/book.svg" alt="">
-                                                        </button>
+                                                    <div id="accordion-pasangan" data-accordion="collapse-pasangan">
+                                                        @foreach ($pasangan as $u)
+                                                            <h2
+                                                                id="accordion-heading-pasangan-{{ $loop->iteration }}">
+                                                                <button type="button"
+                                                                    class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                                    data-accordion-target="#accordion-body-pasangan-{{ $loop->iteration }}"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="accordion-body-pasangan-{{ $loop->iteration }}">
+                                                                    <span>
+                                                                        <div class="text-[18px] font-medium">
+                                                                            {{ $u->nama }}</div>
+                                                                        <div class="text-[16px]">
+                                                                            -{{ $u->jk_kelamin == 'laki-laki' ? 'Suami' : 'Istri' }}
+                                                                        </div>
+                                                                    </span>
+                                                                    <img src="../../../Assets/book.svg"
+                                                                        alt="">
+                                                                </button>
+                                                            </h2>
+                                                            <div id="accordion-body-pasangan-{{ $loop->iteration }}"
+                                                                class="hidden"
+                                                                aria-labelledby="accordion-heading-pasangan-{{ $loop->iteration }}">
+                                                                <div class="p-5">
+                                                                    <div
+                                                                        class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                        <div
+                                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                            {{-- KIRI --}}
+                                                                            <div
+                                                                                class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Suami/Istri
+                                                                                            Ke-</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_pasangan }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Status
+                                                                                            Pekerjaan Orang
+                                                                                            Tua</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->status_pekerjaan }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nama</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->nama }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Tanggal
+                                                                                            Lahir</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->tgl_lahir }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Identitas</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_identitas }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Jenis
+                                                                                            Kelamin</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->jk }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Alamat</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->alamat }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Agama</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->agama }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Karsus/Karis</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_karis }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Telepon</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_tel }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            {{-- KANAN --}}
+                                                                            <div
+                                                                                class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Status
+                                                                                            Hidup</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->status_keluarga }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Status
+                                                                                            Pernikahan</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->status_pernikahan }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Akta Menikah</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_akta }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Akta
+                                                                                            Menikah</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->akta_nikah }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Tanggal
+                                                                                            Akta Menikah</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->tgl_nikah }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Email</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->email }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Akta Cerai</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_cerai ? $u->no_cerai : '-' }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Akta
+                                                                                            Cerai</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->akta_cerai ? $u->akta_cerai : '-' }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Tanggal
+                                                                                            Akta Cerai</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->tgl_cerai ? $u->tgl_cerai : '-' }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            HP</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_hp }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    {{-- table --}}
+                                                                    <div
+                                                                        class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                                        <table
+                                                                            class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                            <thead
+                                                                                class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                                <tr>
+                                                                                    <th scope="col"
+                                                                                        class="px-3 py-3">
+                                                                                        No
+                                                                                    </th>
+                                                                                    <th scope="col"
+                                                                                        class="px-3 py-3">
+                                                                                        Nama Surat
+                                                                                    </th>
+                                                                                    <th scope="col"
+                                                                                        class="px-3 py-3">
+                                                                                        Aksi
+                                                                                    </th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                @foreach ($u->files as $file)
+                                                                                    <tr
+                                                                                        class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                                        <td class="px-3 py-3">
+                                                                                            {{ $loop->iteration }}
+                                                                                        </td>
+                                                                                        <td class="px-3 py-3">
+                                                                                            {{ $file->file_name ? $file->file_name : '-' }}
+                                                                                        </td>
+                                                                                        <td class="px-3 py-3">
+                                                                                            <button title="Download"
+                                                                                                class="mr-3">
+                                                                                                <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                                    download="{{ $file->file_name }}"
+                                                                                                    title="Download">
+                                                                                                    <img src="{{ asset('Assets/download.svg') }}"
+                                                                                                        alt="">
+                                                                                                </a>
+                                                                                            </button>
+                                                                                            <button title="Lihat">
+                                                                                                <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                                    target="_blank">
+                                                                                                    <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                                        alt="">
+                                                                                                </a>
+                                                                                            </button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                @endforeach
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="content3" class="hidden">
+                                <div id="content3">
                                     <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
                                         <div class="w-full p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
                                             <div class="w-full flex flex-col gap-3 md:gap-3">
                                                 <div class="wrap-content">
-                                                    <div
-                                                        class="data flex items-center justify-between border-2 border-[#969BA0] p-3 px-6">
-                                                        <div class="wrap">
-                                                            <div class="text-[18px] font-medium">Aisyah</div>
-                                                            <div class="text-[16px]">-Perempuan</div>
-                                                        </div>
-                                                        <button data-modal-target="detailanak"
-                                                            data-modal-toggle="detailanak">
-                                                            <img src="../../../Assets/book.svg" alt="">
-                                                        </button>
+                                                    <div id="accordion-anak" data-accordion="collapse-anak">
+                                                        @foreach ($anak as $u)
+                                                            <h2 id="accordion-heading-anak-{{ $loop->iteration }}">
+                                                                <button type="button"
+                                                                    class="flex items-center justify-between w-full p-3 px-6 text-left border-2 border-[#969BA0] light:bg-gray-800"
+                                                                    data-accordion-target="#accordion-body-anak-{{ $loop->iteration }}"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="accordion-body-anak-{{ $loop->iteration }}">
+                                                                    <span>
+                                                                        <div class="text-[18px] font-medium">
+                                                                            {{ $u->nama }}</div>
+                                                                        <div class="text-[16px]">
+                                                                            -{{ $u->jk }}</div>
+                                                                    </span>
+                                                                    <img src="../../../Assets/book.svg"
+                                                                        alt="">
+                                                                </button>
+                                                            </h2>
+                                                            <div id="accordion-body-anak-{{ $loop->iteration }}"
+                                                                class="hidden"
+                                                                aria-labelledby="accordion-heading-anak-{{ $loop->iteration }}">
+                                                                <div class="p-5">
+                                                                    <div
+                                                                        class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                        <div
+                                                                            class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
+                                                                            {{-- KIRI --}}
+                                                                            <div
+                                                                                class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Anak
+                                                                                            Ke-</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_anak }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Status
+                                                                                            Pekerjaan Anak</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->status_pekerjaan }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nama</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->nama }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Tanggal
+                                                                                            Lahir</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->tgl_lahir }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Identitas</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_identitas }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Jenis
+                                                                                            Kelamin</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->jk }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Status
+                                                                                            Pernikahan</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->status_nikah }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            {{-- KANAN --}}
+                                                                            <div
+                                                                                class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Tanggal
+                                                                                            Meninggal</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->tgl_meninggal ? $u->tgl_meninggal : '-' }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Akta Meninggal</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_akta_meninggal ? $u->no_akta_meninggal : '-' }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Akta Kelahiran</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_lahir }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Nomor
+                                                                                            Telepon</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->no_tel }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Status
+                                                                                            Hidup</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->status_keluarga }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Email</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->email }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="wrap">
+                                                                                    <div
+                                                                                        class="garis w-full h-[1px] mb-3 md:mb-6 bg-[#C3C3C3]">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1 justify-between">
+                                                                                        <label For=""
+                                                                                            class="text-black font-medium text-[14px]">Agama</label>
+                                                                                        <div
+                                                                                            class="isi font-semibold text-[#2F5B6B] p-1 px-4 border border-[#C3C3C3] rounded w-[380px]">
+                                                                                            {{ $u->agama }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    {{-- table --}}
+                                                                    <div
+                                                                        class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
+                                                                        <table
+                                                                            class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                                                                            <thead
+                                                                                class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                                                                                <tr>
+                                                                                    <th scope="col"
+                                                                                        class="px-3 py-3">
+                                                                                        No
+                                                                                    </th>
+                                                                                    <th scope="col"
+                                                                                        class="px-3 py-3">
+                                                                                        Nama Surat
+                                                                                    </th>
+                                                                                    <th scope="col"
+                                                                                        class="px-3 py-3">
+                                                                                        Aksi
+                                                                                    </th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                @foreach ($u->files as $file)
+                                                                                    <tr
+                                                                                        class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
+                                                                                        <td class="px-3 py-3">
+                                                                                            {{ $loop->iteration }}
+                                                                                        </td>
+                                                                                        <td class="px-3 py-3">
+                                                                                            {{ $file->file_name ? $file->file_name : '-' }}
+                                                                                        </td>
+                                                                                        <td class="px-3 py-3">
+                                                                                            <button title="Download"
+                                                                                                class="mr-3">
+                                                                                                <a href="{{ asset('storage/' . $file->file_path) }}"
+                                                                                                    download="{{ $file->file_name }}"
+                                                                                                    title="Download">
+                                                                                                    <img src="{{ asset('Assets/download.svg') }}"
+                                                                                                        alt="">
+                                                                                                </a>
+                                                                                            </button>
+                                                                                            <button title="Lihat">
+                                                                                                <a href="{{ asset('storage/' . $file->file_path) ? asset('storage/' . $file->file_path) : '#' }}"
+                                                                                                    target="_blank">
+                                                                                                    <img src="{{ asset('Assets/eye.svg') }}"
+                                                                                                        alt="">
+                                                                                                </a>
+                                                                                            </button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                @endforeach
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -2983,790 +4004,6 @@
                 </div>
             </div>
             {{-- KELUARGA --}}
-
-            {{-- MODAL --}}
-            {{-- DETAIL ORANGTUA --}}
-            <div id="detailorangtua" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Orang Tua
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailorangtua">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                {{-- KIRI --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Hidup</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Pekerjaan Orang Tua</label>
-                                            <div title="PNS" class="isi">
-                                                PNS</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
-                                            <div title="M.Yusuf" class="isi">
-                                                M.Yusuf</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Pernikahan</label>
-                                            <div title="Cerai Mati" class="isi">
-                                                Cerai Mati</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Jenis
-                                                Kelamin</label>
-                                            <div title="Laki-laki" class="isi">
-                                                Laki-laki</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
-                                            <div title="yusuf@gmail.com" class="isi">
-                                                yusuf@gmail.com</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                Lahir</label>
-                                            <div class="isi">
-                                                13/02/1950</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                Meninggal</label>
-                                            <div class="isi">
-                                                12/02/2020</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Identitas</label>
-                                            <div title="2356898784512" class="isi">
-                                                2356898784512</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
-                                            <div title="Islam" class="isi">
-                                                Islam</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Telepon</label>
-                                            <div title="08121235689" class="isi">
-                                                08121235689</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Handphone</label>
-                                            <div title="085645125623" class="isi">
-                                                085645125623</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL ORANGTUA --}}
-
-            {{-- DETAIL PASANGAN --}}
-            <div id="detailpasangan" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Pasangan
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailpasangan">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                {{-- KIRI --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Suami/Istri
-                                                Ke-</label>
-                                            <div title="1" class="isi">
-                                                1</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Pekerjaan Orang Tua</label>
-                                            <div title="PNS" class="isi">
-                                                PNS</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
-                                            <div title="Rafi Ramadhan" class="isi">
-                                                Rafi Ramadhan</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                Lahir</label>
-                                            <div class="isi">
-                                                03/12/1980</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Identitas</label>
-                                            <div title="1879456231202" class="isi">
-                                                1879456231202</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Jenis
-                                                Kelamin</label>
-                                            <div title="Laki-laki" class="isi">
-                                                Laki-laki</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Alamat</label>
-                                            <div title="Pahoman, Bandar Lampung" class="isi">
-                                                Pahoman, Bandar Lampung</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
-                                            <div title="Islam" class="isi">
-                                                Islam</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Karsus/Karis</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Telepon</label>
-                                            <div title="56897845" class="isi">
-                                                56897845</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Hidup</label>
-                                            <div title="Hidup" class="isi">
-                                                Hidup</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Pernikahan</label>
-                                            <div title="Kawin" class="isi">
-                                                Kawin</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Akta
-                                                Menikah</label>
-                                            <div title="56238978" class="isi">
-                                                56238978</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Akta
-                                                Menikah</label>
-                                            <div title="5623" class="isi">
-                                                5623</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                Akta Menikah</label>
-                                            <div class="isi">
-                                                06/03/2023</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
-                                            <div title="rafi@gmail.com" class="isi">
-                                                rafi@gmail.com</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Akta
-                                                Cerai</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Akta
-                                                Cerai</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                Akta Cerai</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                HP</label>
-                                            <div title="085645122356" class="isi">
-                                                085645122356</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL PASANGAN --}}
-
-            {{-- DETAIL ANAK --}}
-            <div id="detailanak" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white w-[85%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <h3 class="text-[30px] font-semibold text-gray-900 ">
-                                Data Anak
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="detailanak">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
-                                {{-- KIRI --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Anak
-                                                Ke-</label>
-                                            <div title="1" class="isi">
-                                                1</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Pekerjaan Anak</label>
-                                            <div title="Bukan PNS" class="isi">
-                                                Bukan PNS</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nama</label>
-                                            <div title="Yasmin Aisyah" class="isi">
-                                                Yasmin Aisyah</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                Lahir</label>
-                                            <div class="isi">
-                                                23/20/2000</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Identitas</label>
-                                            <div title="1856897845523" class="isi">
-                                                1856897845523</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Jenis
-                                                Kelamin</label>
-                                            <div title="Perempuan" class="isi">
-                                                Perempuan</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Pernikahan</label>
-                                            <div title="Belum kawin" class="isi">
-                                                Belum kawin</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                                {{-- KANAN --}}
-                                <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-3">
-                                    <div class="wrap">
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Tanggal
-                                                Meninggal</label>
-                                            <div class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Akta
-                                                Meninggal</label>
-                                            <div title="-" class="isi">
-                                                -</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Akta
-                                                Kelahiran</label>
-                                            <div title="235689784512" class="isi">
-                                                235689784512</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Nomor
-                                                Telepon</label>
-                                            <div title="235698" class="isi">
-                                                235698</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Status
-                                                Hidup</label>
-                                            <div title="Hidup" class="isi">
-                                                Hidup</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Email</label>
-                                            <div title="yasmin@gmail.com" class="isi">
-                                                yasmin@gmail.com</div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
-                                        <div
-                                            class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                            <label For=""
-                                                class="text-black font-medium w-[240px] flex-shrink-0">Agama</label>
-                                            <div title="Islam" class="isi">
-                                                Islam</div>
-                                        </div>
-                                        <div class="garis w-full h-[1px] mb-3 md:mt-3 bg-[#C3C3C3]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- table --}}
-                            <div class="relative w-full overflow-x-auto rounded-lg overflow-y-auto shadow-lg mt-5">
-                                <table
-                                    class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                                        <tr>
-                                            <th scope="col" class="px-3 py-3">
-                                                No
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Nama Surat
-                                            </th>
-                                            <th scope="col" class="px-3 py-3">
-                                                Aksi
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr
-                                            class="bg-white border-b border-[#EEE7DA] hover:bg-gray-50 text-black hover:text-black">
-                                            <td class="px-3 py-3">
-                                                1
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                Dokumen Surat.pdf
-                                            </td>
-                                            <td class="px-3 py-3">
-                                                <button title="Download" class="mr-3">
-                                                    <img src="./../../Assets/download.svg" alt="">
-                                                </button>
-                                                <button title="Lihat">
-                                                    <img src="./../../Assets/eye.svg" alt="">
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- DETAIL ANAK --}}
         </div>
     </x-sidebar-admin>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\DiklatController;
@@ -35,6 +36,12 @@ Route::group(['middleware' => ['auth', 'user']], function () {
     Route::get('edit-profile-pendukung', [GeneralPage::class, 'editProfile2'])->name('profile2.show');
     Route::put('edit-profile', [ProfileController::class, 'update'])->name('profile.edit');
     Route::put('edit-profile-pendukung', [ProfileController::class, 'optionalUpdate'])->name('profile2.edit');
+
+    Route::get('/absensi', [AbsenController::class, 'index'])->name('absen.index');
+    Route::get('/absensi/upload-absensi', [AbsenController::class, 'upload'])->name('absen.upload');
+    Route::post('/absensi/store-absensi', [AbsenController::class, 'store'])->name('absen.store');
+    Route::get('/absensi/today', [AbsenController::class, 'getToday'])->name('absen.today');
+    Route::get('/absensi/all', [AbsenController::class, 'getAll'])->name('absen.all');
 
     Route::get('dashboard/riwayat-golongan', [GolonganController::class, 'index'])->name('golongan.index');
     Route::get('dashboard/riwayat-golongan/tambah-golongan', [GeneralPage::class, 'tambahGolongan'])->name('golongan.create');
@@ -117,6 +124,10 @@ Route::group(['middleware' => ['auth', 'user']], function () {
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/admin/absensi', [AbsenController::class, 'show'])->name('absensi.show');
+    Route::get('/admin/absensi/detail/{id}/{filter?}', [AbsenController::class, 'showDetail'])->name('absensi.detail');
+
 
     Route::get('/admin/pegawai', [UserController::class, 'index'])->name('user.index');
     Route::post('/admin/dashboard', [UserController::class, 'store'])->name('user.store');
@@ -306,8 +317,8 @@ Route::controller(GeneralPage::class)->group(function () {
     // -
 
     // ABSENSI
-    Route::get('/absensi', 'absensi');
-    Route::get('/absensi/upload-absensi', 'uploadabsensi');
+    // Route::get('/absensi', 'absensi');
+    // Route::get('/absensi/upload-absensi', 'uploadabsensi');
     // ABSENSI
     // -
 
@@ -329,40 +340,40 @@ Route::controller(GeneralPage::class)->group(function () {
     // Route::get('/admin/edit-pegawai', 'pegawaiEdit');
 
     //PENDIDIKAN
-    Route::get('/admin/edit-pegawai/data-pendidikan', 'dataPendidikan');
-    Route::get('/admin/edit-pegawai/detail-pendidikan', 'detailPendidikan');
-    //PENDIDIKAN
-    //JABATAN
-    Route::get('/admin/edit-pegawai/data-jabatan', 'dataJabatan');
-    Route::get('/admin/edit-pegawai/detail-jabatan', 'detailJabatan');
-    //JABATAN
-    //GOLONGAN
-    Route::get('/admin/edit-pegawai/data-golongan', 'dataGolongan');
-    Route::get('/admin/edit-pegawai/detail-golongan', 'detailGolongan');
-    //GOLONGAN
-    //CPNS
-    Route::get('/admin/edit-pegawai/data-cpns', 'datacpns');
-    Route::get('/admin/edit-pegawai/detail-cpns', 'detailcpns');
-    //CPNS
-    //DIKLAT
-    Route::get('/admin/edit-pegawai/data-diklat', 'dataDiklat');
-    Route::get('/admin/edit-pegawai/detail-diklat', 'detailDiklat');
-    //DIKLAT
-    //PENGHARGAAN
-    Route::get('/admin/edit-pegawai/data-penghargaan', 'dataPenghargaan');
-    Route::get('/admin/edit-pegawai/detail-penghargaan', 'detailPenghargaan');
-    //PENGHARGAAN
-    //KINERJA
-    Route::get('/admin/edit-pegawai/data-kinerja', 'dataKinerja');
-    Route::get('/admin/edit-pegawai/detail-kinerja', 'detailKinerja');
-    //KINERJA
-    //PMK
-    Route::get('/admin/edit-pegawai/data-pmk', 'dataPmk');
-    Route::get('/admin/edit-pegawai/detail-pmk', 'detailPmk');
-    //PMK
-    //SKP
-    Route::get('/admin/edit-pegawai/data-skp', 'dataSkp');
-    Route::get('/admin/edit-pegawai/detail-skp', 'detailSkp');
+    // Route::get('/admin/edit-pegawai/data-pendidikan', 'dataPendidikan');
+    // Route::get('/admin/edit-pegawai/detail-pendidikan', 'detailPendidikan');
+    // //PENDIDIKAN
+    // //JABATAN
+    // Route::get('/admin/edit-pegawai/data-jabatan', 'dataJabatan');
+    // Route::get('/admin/edit-pegawai/detail-jabatan', 'detailJabatan');
+    // //JABATAN
+    // //GOLONGAN
+    // Route::get('/admin/edit-pegawai/data-golongan', 'dataGolongan');
+    // Route::get('/admin/edit-pegawai/detail-golongan', 'detailGolongan');
+    // //GOLONGAN
+    // //CPNS
+    // Route::get('/admin/edit-pegawai/data-cpns', 'datacpns');
+    // Route::get('/admin/edit-pegawai/detail-cpns', 'detailcpns');
+    // //CPNS
+    // //DIKLAT
+    // Route::get('/admin/edit-pegawai/data-diklat', 'dataDiklat');
+    // Route::get('/admin/edit-pegawai/detail-diklat', 'detailDiklat');
+    // //DIKLAT
+    // //PENGHARGAAN
+    // Route::get('/admin/edit-pegawai/data-penghargaan', 'dataPenghargaan');
+    // Route::get('/admin/edit-pegawai/detail-penghargaan', 'detailPenghargaan');
+    // //PENGHARGAAN
+    // //KINERJA
+    // Route::get('/admin/edit-pegawai/data-kinerja', 'dataKinerja');
+    // Route::get('/admin/edit-pegawai/detail-kinerja', 'detailKinerja');
+    // //KINERJA
+    // //PMK
+    // Route::get('/admin/edit-pegawai/data-pmk', 'dataPmk');
+    // Route::get('/admin/edit-pegawai/detail-pmk', 'detailPmk');
+    // //PMK
+    // //SKP
+    // Route::get('/admin/edit-pegawai/data-skp', 'dataSkp');
+    // Route::get('/admin/edit-pegawai/detail-skp', 'detailSkp');
     //SKP
     //KELUARGA-ORANGTUA
     // Route::get('/admin/edit-pegawai/data-orangtua', 'dataOrangtua');
@@ -378,15 +389,15 @@ Route::controller(GeneralPage::class)->group(function () {
     //KELUARGA-ANAK
     //DATA DIRI
     // Route::get('/admin/edit-pegawai/data-diri', 'dataDiri');
-    Route::get('/admin/edit-pegawai/detail-diri', 'detailDiri');
+    // Route::get('/admin/edit-pegawai/detail-diri', 'detailDiri');
     //DATA DIRI
     // Lihat
     // Route::get('/admin/lihat-pegawai', 'pegawaiLihat');
     // PEGAWAI
 
     // ABSENSI
-    Route::get('/admin/absensi', 'absensiAdmin');
-    Route::get('/admin/absensi/detail-absensi', 'absensiDetail');
+    // Route::get('/admin/absensi', 'absensiAdmin');
+    // Route::get('/admin/absensi/detail-absensi', 'absensiDetail');
     // ABSENSI
 
     // CUTI

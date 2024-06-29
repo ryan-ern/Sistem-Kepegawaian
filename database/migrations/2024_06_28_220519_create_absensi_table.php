@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cuti', function (Blueprint $table) {
+        Schema::create('absens', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('cuti');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->string('keterangan');
-            $table->enum('status', ['diproses', 'disetujui', 'ditolak'])->default('diproses');
+            $table->date('tgl');
+            $table->time('jam');
+            $table->string('status');
+            $table->string('file_path');
+            $table->string('file_name');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cuti');
+        Schema::dropIfExists('absensi');
     }
 };

@@ -17,101 +17,67 @@
         <div class="text-[32px] font-semibold text-[#2F5B6B] mb-3">Data Absensi Pegawai</div>
         {{-- konten --}}
         <div class="">
-        <div class="flex justify-end">
-            <div class="wrap flex gap-3">
-                <div class="sears relative">
-                    <input type="text" class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-4 text-w-full bg-transparent" placeholder="Search here Name">
-                </div>
-                <div class="car flex gap-2 items-center">
-                    <div class="lef">
-                        <input type="date" class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-4 text-w-full bg-transparent">
+            <div class="flex justify-end">
+                <div class="wrap flex gap-3">
+                    <div class="sears relative">
+                        <input type="text"
+                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-4 text-w-full bg-transparent"
+                            placeholder="Search here Name">
                     </div>
-                    <div class="ri">
-                        <button class="bg-[#9BB8C3] p-1 rounded px-6">Cari</button>
+                    <div class="car flex gap-2 items-center">
+                        <div class="lef">
+                            <input type="date"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-4 text-w-full bg-transparent">
+                        </div>
+                        <div class="ri">
+                            <button class="bg-[#9BB8C3] p-1 rounded px-6">Cari</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {{-- hari --}}
-        {{-- table --}}
-        <div class="relative w-full overflow-x-auto rounded-lg shadow border border-[#969BA0] overflow-y-auto mt-5">
-            <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
-                <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
-                    <tr>
-                        <th scope="col" class="px-3 py-3">
-                            No
-                        </th>
-                        <th scope="col" class="px-3 py-3">
-                            Nama
-                        </th>
-                        <th scope="col" class="px-3 py-3">
-                            NIP
-                        </th>
-                        <th scope="col" class="px-3 py-3">
-                            Status
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Monica Adela
-                        </td>
-                        <td class="px-3 py-3">
-                            12314534534534
-                        </td>
-                        <td class="px-3 py-3">
-                            <a href="/admin/absensi/detail-absensi" class="bg-[#E9F6FB] p-1 rounded px-6" >Lihat Absensi</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Monica Adela
-                        </td>
-                        <td class="px-3 py-3">
-                            12314534534534
-                        </td>
-                        <td class="px-3 py-3">
-                            <a href="/admin/absensi/detail-absensi" class="bg-[#E9F6FB] p-1 rounded px-6" >Lihat Absensi</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Monica Adela
-                        </td>
-                        <td class="px-3 py-3">
-                            12314534534534
-                        </td>
-                        <td class="px-3 py-3">
-                            <a href="/admin/absensi/detail-absensi" class="bg-[#E9F6FB] p-1 rounded px-6" >Lihat Absensi</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
-                        <td class="px-3 py-3">
-                            1
-                        </td>
-                        <td class="px-3 py-3">
-                            Monica Adela
-                        </td>
-                        <td class="px-3 py-3">
-                            12314534534534
-                        </td>
-                        <td class="px-3 py-3">
-                            <a href="/admin/absensi/detail-absensi" class="bg-[#E9F6FB] p-1 rounded px-6" >Lihat Absensi</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            {{-- hari --}}
+            {{-- table --}}
+            <div class="relative w-full overflow-x-auto rounded-lg shadow border border-[#969BA0] overflow-y-auto mt-5">
+                <table class="w-full  text-sm text-left rtl:text-right rounded-lg text-gray-500 bg-white">
+                    <thead class="text-base text-white bg-[#4F8EA5] rounded-lg">
+                        <tr>
+                            <th scope="col" class="px-3 py-3">
+                                No
+                            </th>
+                            <th scope="col" class="px-3 py-3">
+                                Nama
+                            </th>
+                            <th scope="col" class="px-3 py-3">
+                                NIP
+                            </th>
+                            <th scope="col" class="px-3 py-3">
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($absen as $a)
+                            <tr class="bg-white border-b border-[#969BA0] hover:bg-gray-50 text-black hover:text-black">
+                                <td class="px-3 py-3">
+                                    {{ $loop->iteration }}
+                                </td>
+                                <td class="px-3 py-3">
+                                    {{ $a->user->name }}
+                                </td>
+                                <td class="px-3 py-3">
+                                    {{ $a->user->nip }}
+                                </td>
+                                <td class="px-3 py-3">
+                                    <a href="{{ route('absensi.detail', $a->user_id) }}"
+                                        class="bg-[#E9F6FB] p-1 rounded px-6">Lihat
+                                        Absensi</a>
+                                </td>
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </x-sidebar-admin>
 </body>
