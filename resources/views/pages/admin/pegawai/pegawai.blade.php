@@ -14,6 +14,50 @@
 
 <body>
     <x-sidebar-admin>
+        @if ($message = Session::get('error'))
+            <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+                <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                        <div
+                            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                                <div class="sm:flex sm:items-start">
+                                    <div
+                                        class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                            class="oc sf axy">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.5 12.75l6 6 9-13.5"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                        <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">
+                                            <span
+                                                class="text-xl font-bold">{{ ucfirst($message[0]) }}</span>{{ substr($message, 1) }}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                <button type="button" onclick="closeModal()"
+                                    class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">
+                                    Ok
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+        <script>
+            function closeModal() {
+                const modal = document.querySelector('.relative.z-10');
+                modal.style.display = 'none';
+            }
+        </script>
         <div class="text-[32px] font-semibold text-[#2F5B6B] mb-3">Data Pegawai</div>
         <div class="flex justify-end">
             <div class="sears relative">
@@ -111,11 +155,15 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <button data-modal-target="hapus" data-modal-toggle="hapus"
-                                                    class=" px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                                    <img src="./../Assets/hapus.svg" alt="">
-                                                    Hapus
-                                                </button>
+                                                <form action="{{ route('user.destroy', $user->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"
+                                                        class="px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
+                                                        <img src="./../Assets/hapus.svg" alt="">
+                                                        Hapus
+                                                    </button>
+                                                </form>
                                             </li>
                                         </ul>
                                     </div>
@@ -125,41 +173,6 @@
                     @endforeach
                 </tbody>
             </table>
-            {{-- POP UP HAPUS --}}
-            <div id="hapus" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div data-modal-hide="hapus" class="relative p-4 w-full flex justify-center items-center h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-[#F4EFEF] w-[35%] rounded-lg shadow max-h-full overflow-y-auto">
-                        <!-- Modal header -->
-                        <div class="flex items-center justify-between p-4 md:p-3 border-b rounded-t ">
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  "
-                                data-modal-hide="hapus">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
-                            <div class="wrap flex items-center gap-8 flex-col">
-                                <div class="head font-medium text-[28px]">Data Berhasil Dihapus</div>
-                                <div class="icon">
-                                    <img src="../../Assets/sampah.svg" alt="">
-                                </div>
-                                <button data-modal-hide="hapus" class="head p-1 text-white px-5 rounded bg-[#2F5B6B]">
-                                    Selesai
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- POP UP HAPUS --}}
         </div>
     </x-sidebar-admin>
 </body>

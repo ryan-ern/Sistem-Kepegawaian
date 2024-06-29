@@ -144,6 +144,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/edit-pegawai/{id}', [UserController::class, 'edit'])->name('user.edit');
     Route::get('/admin/lihat-pegawai/{id}', [UserController::class, 'show'])->name('user.show');
     Route::put('/admin/edit-pegawai/{id}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/admin/delete-pegawai/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
     Route::get('/admin/edit-pegawai/data-diri/{id}', [UserController::class, 'dataDiri'])->name('user.dataDiri');
     Route::delete('/file/delete/diri/{id}', [UserController::class, 'dataDiriDelete'])->name('file.dataDiri.delete');

@@ -821,4 +821,14 @@ class UserController extends Controller
 
         return redirect()->route('user.dataDiri', $id);
     }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        if ($user->role == 'admin') {
+            return redirect()->back()->with('error', 'Tidak dapat menghapus pengguna admin.');
+        }
+        $user->delete();
+        return redirect()->back();
+    }
 }
