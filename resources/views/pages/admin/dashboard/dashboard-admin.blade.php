@@ -156,33 +156,15 @@
                         </div>
                         <div id="content2" class="hidden">
                             <div class="wrap flex flex-col gap-2 mt-3">
-
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d</div>
-                                </div>
-                                <div class="head text-[14px] flex justify-between">
-                                    <div class="n">Rafi Ramadhan Pratama</div>
-                                    <div class="font-medium">3d</div>
-                                </div>
+                                @foreach ($user as $sisa)
+                                    <div class="head text-[14px] flex justify-between">
+                                        <div class="n">{{ $sisa->name }}</div>
+                                        <div class="font-medium">{{ $sisa->total_kuota_cuti }} Hari</div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

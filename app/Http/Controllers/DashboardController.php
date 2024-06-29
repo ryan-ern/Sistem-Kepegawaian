@@ -21,8 +21,12 @@ class DashboardController extends Controller
         $sumCuti = Cuti::where('start_date', '<=', $currentDate)
             ->where('end_date', '>=', $currentDate)
             ->count();
-
         $absen = Absen::where('tgl', $currentDate)->count();
+
+        foreach ($user as $sisa) {
+            $totalKuota = $sisa->kuota_cuti;
+            $sisa->total_kuota_cuti = $totalKuota;
+        }
         return view('pages.admin.dashboard.dashboard-admin', compact('user', 'sumPegawai', 'sumWoman', 'sumMan', 'cuti', 'sumCuti', 'absen'));
     }
 }
