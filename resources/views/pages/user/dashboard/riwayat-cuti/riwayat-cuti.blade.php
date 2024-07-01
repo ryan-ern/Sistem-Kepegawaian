@@ -118,15 +118,25 @@
                                 {{ $a->jenis_cuti }}
                             </td>
                             <td class="px-3 py-3">
-                                <div
-                                    class="p-1 inline-block rounded text-center
-                                     @if ($a->status == 'diproses') bg-[#ef8603]
-                                     @elseif($a->status == 'disetujui') bg-[#00B800]
-                                     @else bg-[#fb0202] text-white @endif ">
-                                    {{ $a->status }}
+                                <div class="flex items-center space-x-2">
+                                    <div
+                                        class="p-1 inline-block rounded text-center
+             @if ($a->status == 'diproses') bg-[#ef8603]
+             @elseif($a->status == 'disetujui') bg-[#00B800]
+             @else bg-[#fb0202] text-white @endif ">
+                                        {{ $a->status }}
+                                    </div>
+
+                                    @if ($a->status != 'diproses')
+                                        <div class="p-1 inline-block rounded text-center">
+                                            <a href="{{ asset('storage/' . $a->file_path) }}" target="_blank">
+                                                <img class="bg-[#4F8EA5] py-1 px-3 rounded-sm"
+                                                    src="../../Assets/doc.svg" alt="View File">
+                                            </a>
+                                        </div>
+                                    @endif
                                 </div>
                             </td>
-
                         </tr>
                     @endforeach
 

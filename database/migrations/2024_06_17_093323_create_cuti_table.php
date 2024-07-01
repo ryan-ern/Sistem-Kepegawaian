@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->string('keterangan');
+            $table->string('file_path')->nullable();
+            $table->string('file_name')->nullable();
             $table->enum('status', ['diproses', 'disetujui', 'ditolak'])->default('diproses');
             $table->timestamps();
         });

@@ -91,7 +91,12 @@ class CutiController extends Controller
             'jenis_cuti' => 'required',
             'keterangan' => 'required',
             'status' => 'required',
+            'file.*' => 'required',
         ]);
+
+        $file = $request->file('file');
+        $originalName = $file->getClientOriginalName();
+        $path = $file->store('uploads/cuti_files', 'public');
 
         $cuti = Cuti::findOrFail($id);
         $cuti->start_date = $request->start_date;
@@ -99,6 +104,8 @@ class CutiController extends Controller
         $cuti->golongan = $request->golongan;
         $cuti->jenis_cuti = $request->jenis_cuti;
         $cuti->keterangan = $request->keterangan;
+        $cuti->file_path = $path;
+        $cuti->file_name = $originalName;
         $cuti->status = $request->status;
 
         if ($request->status === 'disetujui') {

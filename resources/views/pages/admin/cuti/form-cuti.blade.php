@@ -18,7 +18,7 @@
         {{-- konten --}}
         <div class="">
             {{-- form --}}
-            <form action="{{ route('cuti.update', $cuti->id) }}" method="POST">
+            <form action="{{ route('cuti.update', $cuti->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form mt-5">
@@ -143,7 +143,19 @@
                             class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-[80%] h-[250px] bg-transparent"
                             name='keterangan' required>{{ $cuti->keterangan }}</textarea>
                     </div>
-                    <div class="wrap flex mt-[60px] gap-3">
+                    <div class="right flex flex-col gap-1 mt-[20px]">
+                        <div class="font-semibold text-[14px]">Upload Surat</div>
+                        <div class="wrap">
+                            <div class="relative">
+                                <input type="file" id="file" accept="image/*" class="hidden" name="file"
+                                    required />
+                                <label for="file" class="cursor-pointer">
+                                    <img src="../../../Assets/upload.svg" alt="">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap flex mt-[50px] gap-3">
                         <button type="submit" data-modal-target="setuju" data-modal-toggle="setuju"
                             class="p-2 bg-[#9BB8C3] hover:bg-[#4F8EA5] px-16 rounded text-white">Update</button>
                     </div>
