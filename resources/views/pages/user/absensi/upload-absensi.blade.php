@@ -34,11 +34,11 @@
                     <div class="text-[12px] text-[#898989]">Upload surat atau bukti keterangan anda</div>
                     <div class="wrap">
                         <div class="relative">
-                            <input type="file" id="file" accept="image/*" class="hidden" name="file"
+                            <input type="file" id="file" accept="image/*" class="" name="file"
                                 required />
-                            <label for="file" class="cursor-pointer">
+                            {{-- <label for="file" class="cursor-pointer">
                                 <img src="../Assets/upload.svg" alt="">
-                            </label>
+                            </label> --}}
                         </div>
                     </div>
                 </div>

@@ -147,11 +147,11 @@
                         <div class="font-semibold text-[14px]">Upload Surat</div>
                         <div class="wrap">
                             <div class="relative">
-                                <input type="file" id="file" accept="image/*" class="hidden" name="file"
-                                    />
-                                <label for="file" class="cursor-pointer">
+                                <input type="file" id="file" accept="image/*" class=""
+                                    name="file" />
+                                {{-- <label for="file" class="cursor-pointer">
                                     <img src="../../../Assets/upload.svg" alt="">
-                                </label>
+                                </label> --}}
                             </div>
                         </div>
                     </div>

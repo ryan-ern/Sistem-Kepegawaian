@@ -78,12 +78,12 @@
                         <div class="wrap">
                             <label For="image" class="text-black">Surat Diklat</label>
                             <div class="relative">
-                                <input type="file" id="file" accept="application/pdf" class="hidden"
+                                <input type="file" id="file" accept="application/pdf" class=""
                                     name="file_diklat[]" multiple />
-                                <label for="file"
+                                {{-- <label for="file"
                                     class="cursor-pointer bg-[#2F5B6B] text-white py-2 px-4 rounded-lg inline-block">
                                     Unggah File
-                                </label>
+                                </label> --}}
                             </div>
                         </div>
                     </div>

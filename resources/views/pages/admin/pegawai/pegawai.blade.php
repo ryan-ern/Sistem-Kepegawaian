@@ -160,7 +160,7 @@
                                                     @method('DELETE')
                                                     <button type="submit"
                                                         class="px-4 py-2 hover:bg-gray-100 flex items-center gap-3">
-                                                        <img src="./../Assets/hapus.svg" alt="">
+                                                        <img src="./../Assets/hapus3.svg" alt="">
                                                         Hapus
                                                     </button>
                                                 </form>

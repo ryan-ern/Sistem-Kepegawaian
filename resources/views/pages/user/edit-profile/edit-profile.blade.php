@@ -205,11 +205,11 @@
                             <label for="image" class="text-black">Foto Profil</label>
                             <div class="relative">
                                 <input id="image" type="file" name="foto" accept="image/*"
-                                    class="hidden" />
-                                <label for="image"
+                                    class="" />
+                                {{-- <label for="image"
                                     class="cursor-pointer bg-[#2F5B6B] text-white py-2 px-4 rounded-lg inline-block">
                                     Unggah File
-                                </label>
+                                </label> --}}
                             </div>
                         </div>
                     </div>
