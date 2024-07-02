@@ -127,7 +127,7 @@
                                         {{ $a->status }}
                                     </div>
 
-                                    @if ($a->status != 'diproses')
+                                    @if ($a->status != 'diproses' && $a->file_path != null)
                                         <div class="p-1 inline-block rounded text-center">
                                             <a href="{{ asset('storage/' . $a->file_path) }}" target="_blank">
                                                 <img class="bg-[#4F8EA5] py-1 px-3 rounded-sm"
