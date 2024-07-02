@@ -93,20 +93,32 @@ class CutiController extends Controller
             'status' => 'required',
             'file.*' => 'nullable',
         ]);
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $originalName = $file->getClientOriginalName();
+            $path = $file->store('uploads/cuti_files', 'public');
 
-        $file = $request->file('file');
-        $originalName = $file->getClientOriginalName();
-        $path = $file->store('uploads/cuti_files', 'public');
-
-        $cuti = Cuti::findOrFail($id);
-        $cuti->start_date = $request->start_date;
-        $cuti->end_date = $request->end_date;
-        $cuti->golongan = $request->golongan;
-        $cuti->jenis_cuti = $request->jenis_cuti;
-        $cuti->keterangan = $request->keterangan;
-        $cuti->file_path = $path;
-        $cuti->file_name = $originalName;
-        $cuti->status = $request->status;
+            $cuti = Cuti::findOrFail($id);
+            $cuti->start_date = $request->start_date;
+            $cuti->end_date = $request->end_date;
+            $cuti->golongan = $request->golongan;
+            $cuti->jenis_cuti = $request->jenis_cuti;
+            $cuti->keterangan = $request->keterangan;
+            $cuti->file_path = $path;
+            $cuti->file_name = $originalName;
+            $cuti->status = $request->status;
+        } else {
+            unset($validatedData['file']);
+            $cuti = Cuti::findOrFail($id);
+            $cuti->start_date = $request->start_date;
+            $cuti->end_date = $request->end_date;
+            $cuti->golongan = $request->golongan;
+            $cuti->jenis_cuti = $request->jenis_cuti;
+            $cuti->keterangan = $request->keterangan;
+            $cuti->file_path = null;
+            $cuti->file_name = null;
+            $cuti->status = $request->status;
+        }
 
         if ($request->status === 'disetujui') {
             $startDate = Carbon::parse($request->start_date);
