@@ -21,7 +21,7 @@
             </div>
             <div class="nama">
                 <div class="text-[22px] font-medium">{{ auth()->user()->name }}</div>
-                <div class="text-[14px] text-[#999999]">{{ auth()->user()->jabatan }}</div>
+                {{-- <div class="text-[14px] text-[#999999]">{{ auth()->user()->jabatan }}</div> --}}
             </div>
         </div>
         <div class="wrap flex flex-col gap-3">
