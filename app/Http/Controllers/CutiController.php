@@ -108,7 +108,7 @@ class CutiController extends Controller
             $cuti->file_name = $originalName;
             $cuti->status = $request->status;
         } else {
-            unset($validatedData['file']);
+            unset($request['file']);
             $cuti = Cuti::findOrFail($id);
             $cuti->start_date = $request->start_date;
             $cuti->end_date = $request->end_date;
