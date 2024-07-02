@@ -148,7 +148,7 @@
                         <div class="wrap">
                             <div class="relative">
                                 <input type="file" id="file" accept="image/*" class="hidden" name="file"
-                                    required />
+                                    />
                                 <label for="file" class="cursor-pointer">
                                     <img src="../../../Assets/upload.svg" alt="">
                                 </label>

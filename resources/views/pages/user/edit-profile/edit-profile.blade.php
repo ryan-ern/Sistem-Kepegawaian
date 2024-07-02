@@ -183,7 +183,6 @@
                                 </div>
                                 <div class="flex flex-col gap-1 items-center">
                                     <div class="User text-[30px] font-semibold">{{ auth()->user()->name }} </div>
-                                    <div class="User text-[18px]">{{ auth()->user()->jabatan }} </div>
                                 </div>
                             </div>
                             {{-- <div class="bg-red absolute bottom-2 right-2">

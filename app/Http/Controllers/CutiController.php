@@ -91,7 +91,7 @@ class CutiController extends Controller
             'jenis_cuti' => 'required',
             'keterangan' => 'required',
             'status' => 'required',
-            'file.*' => 'required',
+            'file.*' => 'nullable',
         ]);
 
         $file = $request->file('file');
