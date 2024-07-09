@@ -826,9 +826,9 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if ($user->role == 'admin') {
-            return redirect()->back()->with('error', 'Tidak dapat menghapus pengguna admin.');
+            return redirect()->back()->with('errors', 'Tidak dapat menghapus pengguna admin.');
         }
         $user->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Berhasil menghapus pengguna');
     }
 }
