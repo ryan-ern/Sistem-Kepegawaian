@@ -118,7 +118,7 @@
             <div class="wrap w-full flex items-center justify-between">
                 <div class="head pt-3 text-[#2F5B6B] hidden gap-1 items-center font-semibold text-[12px] mb-4 md:flex">
                     <div class="logo w-[45px] aspect-auto">
-                        <img class="w-full" src="./../../Assets/logoo.png" alt="">
+                        <img class="w-full" src="../../../Assets/logoo.png" alt="">
                     </div>
                     Laboratorium Kesehatan <br> Provinsi Lampung
                 </div>
@@ -160,7 +160,7 @@
                     </div>
                     <div class="wrap flex items-center gap-2">
                         <div class="icon w-[30px] aspect-square">
-                            <img class="w-full h-full object-cover" src="../../Assets/adminn.png" alt="">
+                            <img class="w-full h-full object-cover" src="../../../Assets/adminn.png" alt="">
                         </div>
                         <div class="text-[15px] text-[#2F5B6B]">Admin</div>
                     </div>
