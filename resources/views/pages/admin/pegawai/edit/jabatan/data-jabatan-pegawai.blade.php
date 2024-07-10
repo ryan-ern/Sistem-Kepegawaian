@@ -69,7 +69,7 @@
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
                     <a href="{{ route('user.dataDiri', $user->first()->user_id) }}"
-                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Data Diri
                     </a>
                     <a href="{{ route('user.pendidikan', $user->first()->user_id) }}"
@@ -109,7 +109,7 @@
                         Golongan
                     </a>
                     <a href="{{ route('user.jabatan', $user->first()->user_id) }}"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Jabatan
                     </a>
                 </div>

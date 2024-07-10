@@ -20,9 +20,11 @@
             <div class="flex justify-end">
                 <div class="wrap flex gap-3">
                     <div class="sears relative">
-                        <input type="text"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-4 text-w-full bg-transparent"
-                            placeholder="Search here Name">
+                        <form action="{{route('absensi.show')}}" method="GET">
+                            <input type="text"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-4 text-w-full bg-transparent"
+                                placeholder="Search here Name" name="search" value="{{request('search')}}">
+                        </form>
                     </div>
                     <div class="car flex gap-2 items-center">
                         <div class="lef">

@@ -23,7 +23,7 @@
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
                     <a href="{{ route('user.dataDiri', $user->first()->user_id) }}"
-                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Data Diri
                     </a>
                     <a href="{{ route('user.pendidikan', $user->first()->user_id) }}"
@@ -31,7 +31,7 @@
                         Pendidikan
                     </a>
                     <a href="{{ route('user.ortu', $user->first()->user_id) }}"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         Keluarga
                     </a>
                     <a href="{{ route('user.skp', $user->first()->user_id) }}"
@@ -79,10 +79,10 @@
                     </div>
                     <div class="tab flex gap-2">
                         <a href="{{ route('user.ortuShow', $user->first()->user_id) }}"
-                            class="font-medium text-[#B3B3B3] underline">Orang
+                            class="font-medium text-[#B3B3B3] ">Orang
                             Tua</a>
                         <a href="{{ route('user.pasanganShow', $user->first()->user_id) }}"
-                            class="font-medium text-[#4F8EA5] ">Pasangan</a>
+                            class="font-medium text-[#4F8EA5] underline">Pasangan</a>
                         <a href="{{ route('user.anakShow', $user->first()->user_id) }}"
                             class="font-medium text-[#B3B3B3] ">Anak</a>
                     </div>

@@ -23,7 +23,7 @@
                 </div>
                 <div class="wrap-menu mt-5 flex flex-col gap-3">
                     <a href="{{ route('user.dataDiri', $user->first()->user_id) }}"
-                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
                         Data Diri
                     </a>
                     <a href="{{ route('user.pendidikan', $user->first()->user_id) }}"
@@ -35,7 +35,7 @@
                         Keluarga
                     </a>
                     <a href="{{ route('user.skp', $user->first()->user_id) }}"
-                        class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
+                        class="w-full p-3 text-white bg-[#093545] text-center rounded-md">
                         SKP
                     </a>
                     <a href="{{ route('user.penghargaan', $user->first()->user_id) }}"

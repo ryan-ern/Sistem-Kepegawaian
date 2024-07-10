@@ -33,10 +33,15 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
-        return view('pages.admin.pegawai.pegawai', compact('users'));
+        $search = $request->input('search');
+        if(!empty($search)){
+            $users = User::where('name', 'LIKE', '%' . $search . '%')->get();
+        }else {
+            $users = User::all();
+        }
+        return view('pages.admin.pegawai.pegawai', compact('users','search'));
     }
 
     public function show($id)

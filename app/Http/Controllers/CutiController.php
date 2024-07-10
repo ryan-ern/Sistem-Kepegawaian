@@ -9,11 +9,21 @@ use Illuminate\Http\Request;
 
 class CutiController extends Controller
 {
-    public function index()
-    {
-        $cuti = Cuti::all();
-        return view('pages.admin.cuti.cuti', compact('cuti'));
+    public function index(Request $request)
+{
+    $search = $request->input('search');
+
+    $query = Cuti::join('users', 'cutis.user_id', '=', 'users.id')
+                 ->select('cutis.*', 'users.name');
+
+    if (!empty($search)) {
+        $query->where('users.name', 'LIKE', '%' . $search . '%');
     }
+    $cuti = $query->get();
+
+    return view('pages.admin.cuti.cuti', compact('cuti', 'search'));
+}
+
 
     public function riwayatCuti()
     {

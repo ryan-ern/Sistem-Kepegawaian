@@ -11,6 +11,7 @@ class AbsenController extends Controller
     public function index()
     {
         $absen = Absen::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
+        
         return view('pages.user.absensi.absensi', compact('absen'));
     }
 
@@ -48,11 +49,20 @@ class AbsenController extends Controller
     }
 
 
-    public function show()
+    public function show(Request $request)
     {
-        $absen = Absen::select('user_id')->groupBy('user_id')->get();
+        $search = $request->input('search');
 
-        return view('pages.admin.absensi.absensi', compact('absen'));
+        $query = Absen::join('users', 'absens.user_id', '=', 'users.id')
+                      ->select('absens.user_id', 'users.name')
+                      ->groupBy('absens.user_id', 'users.name');
+    
+        if (!empty($search)) {
+            $query->where('users.name', 'LIKE', '%' . $search . '%');
+        }
+        $absen = $query->get();
+
+        return view('pages.admin.absensi.absensi', compact('absen','search'));
     }
 
     public function showDetail($id, $filter = 'today')

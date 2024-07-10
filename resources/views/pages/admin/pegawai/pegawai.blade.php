@@ -102,7 +102,9 @@
                 <div class="absolute right-[10px] top-[8px]">
                     <img src="./../Assets/cari.svg" alt="">
                 </div>
-                <input type="text" class="rounded-lg border border-gray-400 pr-10" placeholder="Search here">
+                <form action="{{route('user.index')}}" method="GET">
+                    <input type="text" class="rounded-lg border border-gray-400 pr-10" placeholder="Search here" name="search" value="{{request('search')}}">
+                </form>
             </div>
         </div>
         {{-- table --}}
