@@ -19,10 +19,10 @@
         <div class="">
             <div class="flex justify-between">
                 <div class="left flex gap-2">
-                    <a href="{{ route('absensi.detail', ['id' => $absen->first()->user_id, 'filter' => 'today']) }}"
+                    <a href="{{ route('absensi.detail', ['id' => request()->route('id'), 'filter' => 'today']) }}"
                         class="bg-[#9BB8C3] hover:bg-[#485e66] p-1 rounded px-6 {{ $filter == 'today' ? 'bg-[#485e66]' : '' }}">Hari
                         Ini</a>
-                    <a href="{{ route('absensi.detail', ['id' => $absen->first()->user_id, 'filter' => 'all']) }}"
+                    <a href="{{ route('absensi.detail', ['id' => request()->route('id'), 'filter' => 'all']) }}"
                         class="bg-[#9BB8C3] hover:bg-[#485e66] p-1 rounded px-6 {{ $filter == 'all' ? 'bg-[#485e66]' : '' }}">Semua</a>
                 </div>
                 <div class="wrap flex gap-3">

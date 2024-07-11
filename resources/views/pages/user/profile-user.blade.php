@@ -96,7 +96,7 @@
                 <div class="nama p-2 px-3 rounded bg-[#EDF4F2] w-full">{{ auth()->user()->no_bpjs }}</div>
             </div>
             <div class="input flex flex-col md:flex-row md:items-center gap-1 md:gap-3">
-                <div class="nama flex-shrink-0 w-[200px] font-medium text-[#828282]">No. Karis/Karsus</div>
+                <div class="nama flex-shrink-0 w-[200px] font-medium text-[#828282]">No. Karis/Karsu</div>
                 <div class="nama p-2 px-3 rounded bg-[#EDF4F2] w-full">{{ auth()->user()->no_karis }}</div>
             </div>
             <div class="input flex flex-col md:flex-row md:items-center gap-1 md:gap-3">

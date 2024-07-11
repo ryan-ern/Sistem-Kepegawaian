@@ -79,7 +79,7 @@
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent" />
                         </div>
                         <div class="wrap">
-                            <label For="" class="text-black ">No. Karis/Karsus </label>
+                            <label For="" class="text-black ">No. Karis/Karsu </label>
                             <input type="text" name="no_karis"
                                 value="{{ old('no_karis', auth()->user()->no_karis) }}"
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"

@@ -260,7 +260,7 @@
                             <div class="wrap">
                                 <div class="garis w-full h-[1px] mb-3 md:mb-3 bg-[#C3C3C3]"></div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-5 gap-1">
-                                    <label For="" class="text-black font-medium w-[200px]">No Karis/Kasus
+                                    <label For="" class="text-black font-medium w-[200px]">No Karis/Karsu
                                     </label>
                                     <div title="12345678902" class="is">
                                         {{ $user->no_karis }}</div>

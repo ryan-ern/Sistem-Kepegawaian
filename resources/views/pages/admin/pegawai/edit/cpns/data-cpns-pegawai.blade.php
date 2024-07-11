@@ -98,7 +98,7 @@
                     </a>
                     <a href="{{ route('user.diklat', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md">
-                        Diklat/Kursus
+                        Diklat/Kasus
                     </a>
                     <a href="{{ route('user.pmk', $user->first()->user_id) }}"
                         class="w-full p-3 text-white bg-[#4F8EA5] text-center rounded-md text-[14px]">

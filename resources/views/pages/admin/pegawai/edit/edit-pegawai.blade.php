@@ -216,10 +216,10 @@
                                 placeholder="Masukkan No Akta Kelahiran" />
                         </div>
                         <div class="wrap">
-                            <label For="" class="text-black ">No Karis/Kasus</label>
+                            <label For="" class="text-black ">No Karis/Karsu</label>
                             <input type="text" value="{{ $user->no_karis }}" name="no_karis"
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                                placeholder="Masukkan No Karis/Kasus" />
+                                placeholder="Masukkan No Karis/Karsu" />
                         </div>
                         <div class="wrap">
                             <label For="" class="text-black ">No TASPEN</label>
