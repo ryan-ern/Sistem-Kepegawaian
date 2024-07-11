@@ -8,11 +8,17 @@ use Illuminate\Http\Request;
 
 class AbsenController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $absen = Absen::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
+        $query = Absen::with('user')->where('user_id', auth()->id())->orderBy('created_at', 'desc');
+        $date = $request->input('date');
         
-        return view('pages.user.absensi.absensi', compact('absen'));
+        if(!empty($date)){
+            $query->whereDate('tgl', $date);
+        }
+        $absen = $query->get();
+          
+        return view('pages.user.absensi.absensi', compact('absen','date'));
     }
 
     public function upload()
@@ -52,6 +58,7 @@ class AbsenController extends Controller
     public function show(Request $request)
     {
         $search = $request->input('search');
+        $date = $request->input('date');
 
         $query = Absen::join('users', 'absens.user_id', '=', 'users.id')
                       ->select('absens.user_id', 'users.name')
@@ -60,23 +67,49 @@ class AbsenController extends Controller
         if (!empty($search)) {
             $query->where('users.name', 'LIKE', '%' . $search . '%');
         }
+
+        if(!empty($date)){
+            $query->whereDate('absens.tgl', '=' ,$date);
+        }
+
         $absen = $query->get();
 
         return view('pages.admin.absensi.absensi', compact('absen','search'));
     }
 
-    public function showDetail($id, $filter = 'today')
+    public function showDetail(Request $request, $id, $filter = 'today')
     {
+        $search = $request->input('search');
+        $date = $request->input('date');
+
+        $query = Absen::join('users','absens.user_id','=','users.id')->select('absens.user_id','users.name','absens.tgl','absens.jam','absens.status')->where('absens.user_id',$id)->orderBy('absens.created_at','desc');
+
         if ($filter == 'today') {
             $today = Carbon::today();
-            $absen = Absen::where('user_id', $id)
-                ->where('tgl', $today)
-                ->orderBy('created_at', 'desc')
-                ->get();
+            $data = $query->where('absens.user_id', $id)
+                ->where('absens.tgl', $today)
+                ->orderBy('absens.created_at', 'desc');
+            
+                if(!empty($search)){
+                    $data->where('users.name','LIKE','%'.$search.'%');
+                }
+        
+                if(!empty($date)){
+                    $data->whereDate('absens.tgl', '=' ,$date);
+                }
         } else {
-            $absen = Absen::where('user_id', $id)->orderBy('created_at', 'desc')->get();
+            $data = $query->where('absens.user_id', $id)->orderBy('absens.created_at', 'desc');
+            if(!empty($search)){
+                $data->where('users.name','LIKE','%'.$search.'%');
+            }
+    
+            if(!empty($date)){
+                $data->whereDate('absens.tgl', '=' ,$date);
+            }
         }
 
+        $absen = $query->get();
+        // dd($absen);
         return view('pages.admin.absensi.detail-absensi', compact('absen', 'filter'));
     }
 }

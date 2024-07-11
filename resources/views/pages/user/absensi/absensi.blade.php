@@ -24,12 +24,14 @@
             <div class="wrap flex">
                 <div class="car flex gap-2 items-center">
                     <div class="lef">
-                        <input type="date"
-                            class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-4 text-w-full bg-transparent">
-                    </div>
-                    <div class="ri">
-                        <button class="bg-[#9BB8C3] p-1 rounded px-6">Cari</button>
-                    </div>
+                        <form action="{{route('absen.index')}}" method="GET">
+                            <input type="date"
+                                class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-4 text-w-full bg-transparent" value="{{request('date')}}" name="date">
+                        </div>
+                        <div class="ri">
+                            <button class="bg-[#9BB8C3] p-1 rounded px-6">Cari</button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>
