@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <x-sidebar-user title="Tambah Data Riwayat Golongan">
+    <x-sidebar-user title="Tambah Data Riwayat Pendidikan">
         <div class="text-[22px] font-semibold text-[#2F5B6B]">Masukkan Data</div>
         <form action="{{ route('pendidikan.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -43,10 +43,10 @@
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent" />
                         </div>
                         <div class="wrap">
-                            <label For="" class="text-black ">Nomer Ijazah</label>
+                            <label For="" class="text-black ">Nomor Ijazah</label>
                             <input type="text" name='no_ijasah' required
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                                placeholder="Masukkan Tahun Kelulusan" />
+                                placeholder="Masukkan Nomor Ijazah" />
                         </div>
                     </div>
                     {{-- KANAN --}}

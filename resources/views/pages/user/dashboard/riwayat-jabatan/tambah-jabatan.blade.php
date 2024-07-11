@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tambah Pendidikan</title>
+    <title>Tambah Jabatan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="./../../Assets/logoo.png">
 </head>
 
 <body>
-    <x-sidebar-user title="Tambah Data Riwayat Golongan">
+    <x-sidebar-user title="Tambah Data Riwayat Jabatan">
         <div class="text-[22px] font-semibold text-[#2F5B6B]">Masukkan Data</div>
         <form action="{{ route('jabatan.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -27,7 +27,7 @@
                                 placeholder="Masukkan Jenis Jabatan" />
                         </div>
                         <div class="wrap">
-                            <label For="" class="text-black ">Jenis Mutas</label>
+                            <label For="" class="text-black ">Jenis Mutasi</label>
                             <input type="text" id="kontak" name="mutasi" required
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
                                 placeholder="Masukkan Jenis Mutasi" />
@@ -98,10 +98,10 @@
                     {{-- KANAN --}}
                     <div class="md:w-1/3 w-full flex flex-col gap-3">
                         <div class="wrap">
-                            <label For="" class="text-black ">Nomer SK</label>
+                            <label For="" class="text-black ">Nomor SK</label>
                             <input type="text" id="" name="no_sk" required
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-2 w-full bg-transparent"
-                                placeholder="Masukkan Nama Universitas" />
+                                placeholder="Masukkan Nomor SK" />
                         </div>
                         <div class="wrap">
                             <label For="image" class="text-black">Surat Keterangan Jabatan</label>

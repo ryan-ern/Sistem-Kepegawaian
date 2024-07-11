@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lihat Diklat/Kursus</title>
+    <title>Lihat Pernghargaan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="./../../Assets/logoo.png">
@@ -13,7 +13,7 @@
 
 <body>
     <x-sidebar-user title="Data Riwayat Penghargaan">
-        <div class="font-semibold text-[#2F5B6B] mb-2 md:mb-6">Berikut Data Riwayat Diklat/Kursus</div>
+        <div class="font-semibold text-[#2F5B6B] mb-2 md:mb-6">Berikut Data Riwayat Pernghargaan</div>
         <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
             {{-- KIRI --}}
             <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">

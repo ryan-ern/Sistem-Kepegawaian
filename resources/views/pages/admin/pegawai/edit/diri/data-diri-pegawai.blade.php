@@ -104,8 +104,8 @@
                                         <td class="px-3 py-3">
                                             {{ $file->file_name ? $file->file_name : '-' }}
                                         </td>
-                                        <td class="px-3 py-3">
-                                            <button title="Download" class="mr-3">
+                                        <td class="flex gap-2 px-3 py-3">
+                                            <button title="Download" class="">
                                                 <a href="{{ asset('storage/' . $file->file_path) }}"
                                                     download="{{ $file->file_name }}" title="Download">
                                                     <img src="{{ asset('Assets/download.svg') }}" alt="">

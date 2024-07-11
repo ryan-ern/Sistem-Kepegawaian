@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <x-sidebar-user title="Data Riwayat Golongan">
+    <x-sidebar-user title="Data Riwayat Pendidikan">
         <div class="font-semibold text-[#2F5B6B] mb-2 md:mb-6">Berikut Data Riwayat Pendidikan</div>
         <div class="wrap w-full md:flex-row flex-col  flex gap-3 md:gap-8">
             <div class="md:w-1/2 w-full flex flex-col gap-3 md:gap-6">
