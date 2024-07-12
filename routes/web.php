@@ -133,7 +133,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/admin/absensi', [AbsenController::class, 'show'])->name('absensi.show');
-    Route::get('/admin/absensi/detail/{id}/{filter?}', [AbsenController::class, 'showDetail'])->name('absensi.detail');
+    Route::get('/admin/absensi/detail/{id}', [AbsenController::class, 'showDetail'])->name('absensi.detail');
 
     Route::get('/admin/cuti', [CutiController::class, 'index'])->name('cuti.home');
     Route::get('/admin/cuti/form-cuti/{id}', [CutiController::class, 'edit'])->name('cuti.edit');

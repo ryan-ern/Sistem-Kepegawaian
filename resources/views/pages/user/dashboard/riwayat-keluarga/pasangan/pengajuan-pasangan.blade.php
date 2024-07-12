@@ -8,7 +8,7 @@
     <title>Riwayat Pengajuan Pasangan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="./Assets/logoo.png">
+    <link rel="icon" type="image/x-icon" href="../../../Assets/logoo.png">
 </head>
 
 <body>

@@ -17,17 +17,17 @@
         <div class="text-[32px] font-semibold text-[#2F5B6B] mb-3">Data Absensi Pegawai</div>
         {{-- Konten --}}
         <div class="">
-            <div class="flex justify-between">
-                <div class="left flex gap-2">
+            <div class="flex justify-end">
+                {{-- <div class="left flex gap-2">
                     <a href="{{ route('absensi.detail', ['id' => request()->route('id'), 'filter' => 'today']) }}"
                         class="bg-[#9BB8C3] hover:bg-[#485e66] p-1 rounded px-6 {{ $filter == 'today' ? 'bg-[#485e66]' : '' }}">Hari
                         Ini</a>
                     <a href="{{ route('absensi.detail', ['id' => request()->route('id'), 'filter' => 'all']) }}"
                         class="bg-[#9BB8C3] hover:bg-[#485e66] p-1 rounded px-6 {{ $filter == 'all' ? 'bg-[#485e66]' : '' }}">Semua</a>
-                </div>
-                <div class="wrap flex gap-3">
+                </div> --}}
+                <div class="wrap right flex gap-3">
                     <div class="sears relative">
-                    <form action="{{route('absensi.detail', ['id' => request()->route('id'),'filter' => request()->route('filter') ?? ''])}}" method="GET">
+                    <form action="{{route('absensi.detail', ['id' => request()->route('id')])}}" method="GET">
                             <input type="text"
                                 class="border border-[#C3C3C3] text-gray-900 text-sm rounded-md focus:ring-[#C3C3C3] focus:border-[#C3C3C3] px-4 text-w-full bg-transparent"
                                 placeholder="Search here Name" name="search" value="{{request('search')}}">
